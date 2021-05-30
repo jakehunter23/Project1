@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="278dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="101dp"
+                    android:layout_marginTop="47dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="60dp"
+                    android:text="Roles &amp; Responsibility"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:layout_marginEnd="329dp"
+                        android:layout_marginBottom="67dp"
+                        app:srcCompat="@drawable/roles" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView78"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Roles and responsibility"
+                android:layout_marginStart="30dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName14"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter roles and responsibility"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:paddingTop="10dp"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/textView79"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="30dp"
+                android:text="Growth opportunities"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName15"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter potential growth oportunities"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:paddingTop="10dp"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/textView80"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="30dp"
+                android:text="Learning opportunities"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName16"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter learning opportunities"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:accessibilityPaneTitle="10dp"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/textView81"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="30dp"
+                android:text="Employee endorsements"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName18"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter employee endorsements"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:paddingTop="10dp"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/textView82"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="30dp"
+                android:text="Employee benefits"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName23"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter employee benefits"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:paddingTop="10dp"
+                android:gravity="top"/>
+
+            <TextView
+                android:id="@+id/textView83"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="30dp"
+                android:text="Reputation of organisation"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName24"
+                android:layout_width="match_parent"
+                android:layout_height="119dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter reputation of organisation"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:paddingTop="10dp"
+                android:gravity="top"/>
+
+
+
+            <TextView
+                android:id="@+id/textView86"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="28dp"
+                android:text="Workspace view"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button18"
+                    android:layout_width="118dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Browse"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <TextView
+                    android:id="@+id/textView87"
+                    android:layout_width="192dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="35dp"
+                    android:textSize="17dp"
+                    android:layout_toEndOf="@+id/button18"
+                    android:text="No file selected"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button20"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/button18"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="76dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginBottom="103dp"
+                    android:background="@drawable/background_solid"
+                    android:drawableRight="@drawable/next_icon"
+                    android:drawablePadding="12dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:paddingRight="140dp"
+                    android:text="Next"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="19dp" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

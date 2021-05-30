@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/task_indi_item"
+    app:cardCornerRadius="5dp"
+    android:layout_marginBottom="30dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"
+            android:layout_marginStart="14dp"
+            android:id="@+id/task_company_dp">
+
+            <ImageView
+                android:id="@+id/imageView45"
+                android:layout_width="101dp"
+                android:layout_height="71dp"
+                android:src="@drawable/fox_hub" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView336"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="39dp"
+            android:layout_toEndOf="@+id/task_company_dp"
+            android:text="Fox Hunt"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <TextView
+            android:id="@+id/textView337"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView336"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="0dp"
+            android:layout_toEndOf="@+id/task_company_dp"
+            android:text="www.foxhunt.com"
+            android:drawableLeft="@drawable/open_in_new"
+            android:drawablePadding="6dp"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView338"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Task Name"
+        android:layout_marginTop="22dp"
+        android:layout_marginStart="32dp"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <TextView
+        android:id="@+id/textView339"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur scing sed do eiusmod tempor incididunt"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="40dp"
+        android:textSize="14dp"
+        android:textColor="@color/grey"
+        android:fontFamily="@font/nunito"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="31dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="123dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/light_red"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:id="@+id/textView340"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due in 3 days"
+                android:textColor="@color/red"
+                android:layout_gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="47dp"
+            android:src="@drawable/mode_comment_black" />
+
+        <TextView
+            android:id="@+id/textView341"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="34dp"
+            android:text="7" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="44dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="250dp"
+            android:layout_marginStart="32dp"
+            android:id="@+id/task_dp1"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageView47"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/small_dp_1" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/task_dp1"
+            android:id="@+id/task_dp2"
+            app:cardCornerRadius="250dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageView48"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/ellipse_1" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/task_dp2"
+            android:id="@+id/task_dp3"
+            app:cardCornerRadius="250dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageView49"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/dp_1" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/task_dp3"
+            android:id="@+id/task_dp4"
+            app:cardCornerRadius="250dp"
+            app:cardElevation="0dp">
+
+            <ImageView
+                android:id="@+id/imageView50"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:src="@drawable/ellipse_234" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView342"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/task_dp4"
+            android:text="+3"
+            android:textSize="16dp"
+            android:fontFamily="@font/nunito"/>
+    </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

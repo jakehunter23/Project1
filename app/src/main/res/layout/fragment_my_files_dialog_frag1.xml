@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+        <Spinner
+            android:id="@+id/spinner60"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="27dp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button37"
+        android:layout_width="153dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="45dp"
+        android:text="Button" />
+
+
+</RelativeLayout>

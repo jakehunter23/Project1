@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="28dp"
+            android:text="Step 1/3"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/textView454"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select type of the task"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="32dp"
+            android:textSize="18dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito_semibold"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:id="@+id/first_task_recycler"
+           android:layout_marginTop="34dp"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="100dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ct_dot1"
+                android:foreground="@color/text_blue"
+                app:cardCornerRadius="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ct_dot2"
+                android:layout_toEndOf="@id/ct_dot1"
+                android:foreground="@color/light_grey"
+                app:cardCornerRadius="250dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/ct_dot3"
+                android:foreground="@color/light_grey"
+                android:layout_toEndOf="@id/ct_dot2"
+                app:cardCornerRadius="250dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

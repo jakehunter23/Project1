@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView426"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Candidate"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <TextView
+        android:id="@+id/textView427"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView426"
+        android:layout_marginTop="43dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Create Job"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24dp" />
+
+    <TextView
+        android:id="@+id/textView428"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Client"
+        android:layout_below="@+id/textView427"
+        android:layout_marginTop="43dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <TextView
+        android:id="@+id/textView429"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Contact"
+        android:layout_below="@+id/textView428"
+        android:layout_marginTop="43dp"
+        android:textAlignment="center"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"/>
+
+
+</RelativeLayout>

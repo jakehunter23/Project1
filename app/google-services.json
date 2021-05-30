@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "282134405104",
+    "project_id": "jobrecruiter-c66f7",
+    "storage_bucket": "jobrecruiter-c66f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282134405104:android:76b5f44bee6215510a0735",
+        "android_client_info": {
+          "package_name": "com.example.project1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "282134405104-s76hdnl7t9untisgtlnf2mok5cai3olr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCThpo3imltffYkOs0L-hBq6B8ePBo6_8I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "282134405104-s76hdnl7t9untisgtlnf2mok5cai3olr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

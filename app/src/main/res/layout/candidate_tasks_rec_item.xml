@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cand_imageView30"
+            android:layout_width="43dp"
+            android:layout_height="43dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:layout_marginBottom="27dp"/>
+
+        <TextView
+            android:id="@+id/cand_textView249"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@+id/cand_imageView30"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/cand_textView250"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/nunito"
+            android:text="TextView"
+            android:textColor="@color/light_green"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cand_textView251"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"/>
+
+    <TextView
+        android:id="@+id/cand_textView252"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginTop="18dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cand_textView253"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assigned on:"
+            android:layout_marginTop="18dp"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/cand_textView254"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="18dp"
+            android:layout_toEndOf="@+id/cand_textView253"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/cand_textView255"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cand_textView253"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/nunito"
+            android:text="Deadline:"
+            android:textColor="@color/grey"
+            android:textSize="16dp"
+            android:layout_marginBottom="39dp"/>
+
+        <TextView
+            android:id="@+id/cand_textView256"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cand_textView254"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="18dp"
+            android:layout_toEndOf="@+id/cand_textView255"
+            android:fontFamily="@font/nunito"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2.5dp"
+        android:background="@color/light_grey"
+        android:id="@+id/task_line"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="39dp"/>
+</LinearLayout>

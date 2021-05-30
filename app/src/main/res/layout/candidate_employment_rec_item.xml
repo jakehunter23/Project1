@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/cand_textView237"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/cand_textView238"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="16dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/cand_textView239"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/cand_textView238"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+    </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/cand_textView240"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp">
+
+        <TextView
+            android:id="@+id/cand_textView242"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/cand_textView241"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/cand_textView242"
+            android:fontFamily="@font/nunito"
+            android:text="-"
+            android:textColor="@color/grey"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/cand_textView248"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/cand_textView241"
+            android:fontFamily="@font/nunito"
+            android:text="TextView"
+            android:textColor="@color/grey"
+            android:textSize="16dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:id="@+id/endline1"
+        android:layout_height="2.5dp"
+        android:background="@color/light_grey"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="29dp"/>
+
+</LinearLayout>

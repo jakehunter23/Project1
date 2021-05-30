@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="28dp"
+    android:layout_marginEnd="27dp"
+    android:layout_marginBottom="34dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/con_notes_dp"
+            app:cardCornerRadius="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="28dp">
+
+            <ImageView
+                android:id="@+id/con_imageView23"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/con_note_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="44dp"
+            android:layout_toEndOf="@+id/con_notes_dp"
+            android:text="TextView"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/con_edit_note_card"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="16dp"
+            android:layout_toStartOf="@+id/con_del_note_card">
+
+            <ImageView
+                android:id="@+id/con_imageView24"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/create" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/con_del_note_card"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="20dp">
+
+            <ImageView
+                android:id="@+id/con_imageView25"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/delete_red" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/con_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_notes_dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="19dp"
+            android:text="Type:"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_textView220"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_notes_dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="19dp"
+            android:layout_toEndOf="@+id/con_type"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_time_spent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_type"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:text="Time spent:"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_textView222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_textView220"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/con_time_spent"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_last_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_time_spent"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:text="Last updated"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_textView224"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_last_updated"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_added_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_textView222"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="88dp"
+            android:text="Added on"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_textView226"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_added_on"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="88dp"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/con_textView227"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/con_textView224"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"
+            android:text="@string/Text" />
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

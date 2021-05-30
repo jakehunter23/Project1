@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="124dp">
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="79dp"
+                android:layout_height="79dp"
+                android:src="@drawable/fox_hub"
+                android:layout_marginTop="4dp"
+                android:layout_marginStart="29dp"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:fontFamily="@font/nunito"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                tools:text="Fox Hunt"
+                android:drawableRight="@drawable/open_in_new"
+                android:drawablePadding="12dp"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/textView"
+                android:text="#CL13069" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:text="Information Technology"
+                android:textColor="@color/text_blue"
+                android:textSize="13dp"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/imageView"
+                android:text="London"
+                android:textColor="#7D7D7D"
+                android:drawablePadding="5dp"
+                android:drawableLeft="@drawable/location_on"/>
+
+        </RelativeLayout>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button"
+            android:layout_width="128dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="47dp"
+            android:text="Edit Client"
+            android:background="@drawable/background_solid"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="17dp"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expand_layout">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expand_view"
+                app:cardCornerRadius="10dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="2dp"
+                android:elevation="8dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:textAlignment="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Text"
+                    android:layout_margin="10dp"
+                    android:id="@+id/text_card"/>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/item_description_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="38dp"
+            android:layout_gravity="center"
+            android:minHeight="48dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/item_description_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/item_description_title"
+                android:src="@drawable/expand_more" />
+
+            <TextView
+                android:id="@+id/item_description_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center" />
+
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/text_blue"
+            app:tabIndicatorColor="@color/text_blue"
+            app:tabTextColor="@color/black"
+            app:tabTextAppearance="@style/MyCustomTextAppearance"
+            app:tabMinWidth="140dp"
+            android:layout_marginTop="30dp"
+            android:id="@+id/client_activity_tab">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="At a glance"
+                android:id="@+id/client_at_a_glance"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hires"
+                android:id="@+id/client_hires"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contacts"
+                android:id="@+id/client_contacts"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Appointments"
+                android:id="@+id/client_apps"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Activity"
+                android:id="@+id/client_act"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Files"
+                android:id="@+id/client_files"/>
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notes"
+                android:id="@+id/client_notes"/>
+        </com.google.android.material.tabs.TabLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tab_host_fragment">
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.core.widget.NestedScrollView>

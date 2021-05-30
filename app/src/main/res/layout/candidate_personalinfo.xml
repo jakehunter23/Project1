@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/con_per_scroll">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="101dp"
+
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="97dp"
+                    android:text="Personal Information"
+                    android:textSize="22dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="67dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+
+
+                        android:layout_marginEnd="329dp"
+                        android:layout_marginBottom="67dp"
+                        app:srcCompat="@drawable/ic_launcher_background" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/textView94"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="First Name"
+                android:textSize="18dp"
+                android:layout_marginStart="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName31"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter First Name"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView95"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last Name"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName32"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter Last Name"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView96"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner19"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:foreground="@drawable/background"/>
+
+            <TextView
+                android:id="@+id/textView97"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Main Mail"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress3"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                android:hint="Enter main email ID"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView98"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact Number"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+            <EditText
+                android:id="@+id/editTextPhone2"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="phone"
+                android:hint="Enter 10 digit number"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView99"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Address"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName33"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter address"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName34"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="City name"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView101"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Zipcode"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName35"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter zipcode of the city"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"/>
+
+            <TextView
+                android:id="@+id/textView102"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner20"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:foreground="@drawable/background"/>
+
+            <TextView
+                android:id="@+id/textView103"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Country"
+                android:layout_marginTop="34dp"
+                android:layout_marginStart="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner21"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:foreground="@drawable/background"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:padding="2dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button10"
+                    android:layout_width="124dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="23dp"
+                    android:layout_toEndOf="@+id/imageView18"
+                    android:text="Add Photo"
+                    android:textSize="15dp"
+                    android:background="@drawable/background_solid_white"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginBottom="0dp"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button11"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="53dp"
+                android:layout_marginBottom="93dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginEnd="26dp"
+                android:text="Next"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/next_icon"
+                android:textAlignment="textEnd"
+                android:drawablePadding="12dp"
+                android:paddingRight="140dp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</ScrollView>

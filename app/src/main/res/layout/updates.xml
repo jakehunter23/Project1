@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView130"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Updates"
+        android:textSize="27dp"
+        android:textColor="@color/text_blue"
+        android:fontFamily="@font/nunito"
+        android:layout_marginTop="99dp"
+        android:layout_marginStart="28dp"/>
+
+    <TextView
+        android:id="@+id/textView131"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum lorem lorem ipsum"
+        android:textSize="15dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="28dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:id="@+id/textView132"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current version"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/ver_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="37dp"
+             android:layout_marginBottom="2dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="#676767"/>
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button23"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Check for updates"
+        android:layout_marginStart="28dp"
+        android:background="@drawable/background_solid"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="17dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:drawableRight="@drawable/update_icon"
+        android:drawablePadding="14dp"
+        android:paddingRight="29dp"
+        android:textAlignment="center"
+        android:paddingLeft="26dp"/>
+
+    <TextView
+        android:id="@+id/textView134"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other settings"
+        android:layout_marginTop="42dp"
+        android:layout_marginStart="28dp"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/text_blue"/>
+</LinearLayout>

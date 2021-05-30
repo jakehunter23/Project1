@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_icon_fileback"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="105dp"
+        android:fontFamily="@font/nunito"
+        android:text="MyFiles"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Manage you Files"
+        android:textColor="#7D7D7D"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/storageHead"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="7dp">
+
+
+
+        <SearchView
+            android:id="@+id/cand_usage_search"
+            android:layout_width="286dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/searchview_bg"
+            android:layoutDirection="rtl"
+            android:queryBackground="@drawable/searchview_bg"
+            android:queryHint="Search for Files by Id or title"
+            android:searchIcon="@null"
+            android:theme="@style/AppSearchView">
+
+        </SearchView>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/search" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/cand_usage_search"
+            android:elevation="2dp"
+            app:cardCornerRadius="10dp">
+
+
+            <ImageView
+                android:id="@+id/cand_imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/dash_note" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:id="@+id/storageHead"
+        android:layout_below="@+id/fileSearch"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="31dp"
+        android:background="@drawable/storage_display_bg"
+        android:elevation="8dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView42"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Storage"
+                android:textSize="18dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="23dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="30MB/10GB"
+                android:textSize="10dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/nunito"
+                android:gravity="right"
+                android:layout_marginEnd="21dp"/>
+
+            <SeekBar
+                android:id="@+id/seekBar6"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:max="100"
+                android:min="0"
+                android:progress="60"
+                android:progressDrawable="@drawable/seek_bar"
+                android:progressTint="@color/text_blue"
+                android:thumb="@null" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="146dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="28dp"
+            android:background="@drawable/background_solid"
+            android:drawableRight="@drawable/add"
+            android:layout_marginTop="31dp"
+            android:drawablePadding="12dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingRight="20dp"
+            android:text="Add File"
+            android:textAlignment="textEnd"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+            android:layout_marginTop="56dp"
+        android:layout_marginStart="29dp"
+        android:text="TextView"
+        android:textSize="16dp"
+            android:fontFamily="@font/nunito_semibold"/>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="271dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="21dp"
+        android:layout_toEndOf="@+id/textView19"
+        app:srcCompat="@android:drawable/ic_dialog_dialer" />
+        </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/my_file_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginTop="21dp"/>
+
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

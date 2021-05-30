@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/menu_icon_myContact"
+                    android:src="@drawable/menu_black_24dp"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView266"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Contact"
+            android:layout_marginTop="19dp"
+            android:layout_marginStart="27dp"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView270"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create new contact and manage the old ones."
+            android:layout_marginStart="27dp"
+            android:textSize="15dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="7dp">
+
+            <SearchView
+                android:layout_width="286dp"
+                android:id="@+id/cand_usage_search"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="27dp"
+                android:background="@drawable/searchview_bg"
+                android:layoutDirection="rtl"
+                android:searchIcon="@null"
+                android:queryHint="Search for job by Id or title"
+                android:queryBackground="@drawable/searchview_bg"
+                android:theme="@style/AppSearchView">
+
+            </SearchView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="264dp"
+                android:src="@drawable/search"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="23dp"
+                android:layout_toEndOf="@+id/cand_usage_search"
+                app:cardCornerRadius="10dp"
+                android:elevation="2dp">
+
+
+                <ImageView
+                    android:id="@+id/cand_imageView"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_margin="13dp"
+                    android:layout_marginTop="5dp"
+                    tools:src="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:id="@+id/contact_add"
+            android:layout_marginTop="41dp"
+            android:layout_marginStart="27dp"
+            android:background="@drawable/background_solid"
+           android:text="Add Contact"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textAlignment="textEnd"
+            android:fontFamily="@font/nunito_semibold"
+            android:drawableRight="@drawable/add"
+            android:paddingRight="15dp"
+            android:drawablePadding="10dp"/>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="41dp"
+           android:layout_marginStart="27dp"
+           android:text="Recent"
+           android:textSize="18dp"
+           android:textColor="@color/text_blue"
+           android:fontFamily="@font/nunito_semibold"
+           android:drawableRight="@drawable/arrow_up"
+           android:drawablePadding="4dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_contact_recycler"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:nestedScrollingEnabled="false" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

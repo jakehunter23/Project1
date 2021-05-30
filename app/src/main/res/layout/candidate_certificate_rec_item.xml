@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/cand_imageView32"
+            android:layout_width="52dp"
+            android:layout_height="62dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/cand_textView265"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@+id/cand_imageView32"
+            android:fontFamily="@font/nunito_semibold"
+            android:text="TextView"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/cand_textView266"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cand_textView265"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/cand_imageView32"
+            android:text="TextView"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/cand_textView267"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="37dp"
+            android:layout_marginEnd="33dp"
+            android:fontFamily="@font/nunito"
+            android:text="TextView"
+            android:textColor="@color/grey"
+            android:textSize="16dp"
+            android:layout_marginBottom="20dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/cand_textView268"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="View certificate"
+        android:layout_gravity="center"
+        android:textSize="16dp"
+        android:textColor="@color/text_blue"
+        android:fontFamily="@font/nunito"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2.5dp"
+        android:background="@color/light_grey"
+        android:id="@+id/cert_line"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="34dp"/>
+</LinearLayout>

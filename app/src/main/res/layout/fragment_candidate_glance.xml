@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Summary"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <TextView
+                    android:id="@+id/textView201"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="05-05-2021"
+                    android:textSize="15dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/imageView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="71dp"
+                    android:src="@drawable/description" />
+
+                <TextView
+                    android:id="@+id/textView203"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="71dp"
+                    android:layout_toEndOf="@+id/imageView27"
+                    android:text="Files"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView204"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="71dp"
+                    android:layout_toEndOf="@+id/textView203"
+                    android:text="10"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView209"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="98dp"
+                    android:text="Source:"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView210"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="98dp"
+                    android:layout_toEndOf="@+id/textView209"
+                    android:text=" LinkedIn"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView218"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="178dp"
+                    android:layout_marginTop="98dp"
+                    android:text="Current Salary:"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView221"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="98dp"
+                    android:layout_toEndOf="@+id/textView218"
+                    android:text=" N/A"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/imageView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView209"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="29dp"
+                    android:src="@drawable/note" />
+
+                <TextView
+                    android:id="@+id/textView223"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="146dp"
+                    android:layout_toEndOf="@+id/imageView28"
+                    android:text="Notes"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView225"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="159dp"
+                    android:layout_marginTop="146dp"
+                    android:text="35"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/imageView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView28"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/textView228"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="204dp"
+                    android:layout_toEndOf="@+id/imageView29"
+                    android:text="Experience"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView229"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="204dp"
+                    android:layout_toEndOf="@+id/textView228"
+                    android:text="2 years"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView230"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView29"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Available for:"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/textView231"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="237dp"
+                    android:layout_toEndOf="@+id/textView230"
+                    android:text=" Contract Job"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView232"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView230"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Daily rate:"
+                    android:layout_marginBottom="35dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView233"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="267dp"
+                    android:layout_toEndOf="@+id/textView232"
+                    android:text=" N/A"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView234"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="29dp"
+                    android:text="Skills"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_skill_recycler"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="20dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView235"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Employement history"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="30dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_employ_recycler"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="23dp"
+                    android:layout_marginBottom="11dp"
+                    android:nestedScrollingEnabled="false"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView243"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tasks"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="29dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_task_recycler"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView244"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Languages"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="29dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_lang_recycler"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="47dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView245"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Education"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="29dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_education_recycler"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView246"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Certification"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="29dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_certificate_recycler"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="12dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp"
+            android:layout_marginBottom="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView247"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Achievements"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginStart="29dp"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cand_achieve_recycler"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:layout_marginBottom="15dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</ScrollView>

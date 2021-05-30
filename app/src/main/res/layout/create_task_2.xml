@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView305"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Step 3/3"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_semibold" />
+
+        <TextView
+            android:id="@+id/textView306"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Assign task"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito_semibold" />
+
+        <TextView
+            android:id="@+id/textView307"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Text"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="21dp"
+            android:textSize="14dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView308"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select list individuals to assign the task to"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginTop="31dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter Main Email ID"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito"/>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="24dp"
+            android:text="Select all"
+            android:textSize="17dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:layout_gravity="right"
+            android:buttonTint="@color/text_blue"/>
+
+        <TextView
+            android:id="@+id/textView309"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name of the task"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName59"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter the name of the task"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView310"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName60"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Give a short description of the task"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView311"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skill Requirements"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName61"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Select a few skills required for task"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView312"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accuracy"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName62"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter value inn percentage"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView313"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start date"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName63"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Today | 21-03-2021"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView314"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End date"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName64"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Today | 21-03-2021"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView315"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deadline"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName65"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter number of weeks"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName66"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter number of days"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName67"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Enter number of hours"
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <TextView
+            android:id="@+id/textView316"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginTop="23dp"
+            android:layout_marginStart="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName68"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/background_sharp"
+            android:hint="Ex .png, .xml, .pdf, etc."
+            android:paddingLeft="27dp"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button30"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="40dp"
+            android:text="Create Task"
+            android:background="@drawable/background_solid"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="80dp">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/dot_dummy_1"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="45dp"
+                app:cardCornerRadius="250dp"
+                android:foreground="@color/med_grey">
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/dot_dummy2"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="45dp"
+                android:layout_toEndOf="@+id/dot_dummy_1"
+                app:cardCornerRadius="250dp"
+                android:foreground="@color/med_grey"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:id="@+id/dot_dummy3"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="45dp"
+                android:layout_toEndOf="@+id/dot_dummy2"
+                app:cardCornerRadius="250dp"
+                android:foreground="@color/text_blue"
+                android:layout_marginBottom="5dp"/>
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

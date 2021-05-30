@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="127dp">
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="278dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="101dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="33dp"
+                android:fontFamily="@font/nunito"
+                android:text="Personal Information"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="52dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="44dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_marginEnd="329dp"
+                    android:layout_marginBottom="44dp"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView425"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:layout_marginStart="26dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName71"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Enter First Name"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView430"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName72"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter Last Name"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView431"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Middle Name"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName73"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter Middle Name"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView432"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName74"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="India"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView433"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner57"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView434"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Main Email"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress5"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter main email ID"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView435"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact Number"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextPhone4"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="phone"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter 10 digit number"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView436"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName75"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter address"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView437"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName76"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="City name"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp" />
+
+        <TextView
+            android:id="@+id/textView438"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Zipcode"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName77"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter zipcode of the city"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp" />
+
+        <TextView
+            android:id="@+id/textView439"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner58"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView440"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner61"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <ImageView
+            android:id="@+id/imageView62"
+            android:layout_width="157dp"
+            android:layout_height="162dp"
+            android:layout_marginTop="34dp"
+            android:background="@drawable/imageview_bg"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button41"
+            android:layout_width="124dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:text="Add Photo"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:background="@drawable/special_button"
+            android:layout_marginTop="-22dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button44"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="Next"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="120dp"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/next_icon"
+            android:textAlignment="textEnd"
+            android:drawablePadding="12dp"
+            android:paddingRight="140dp"/>
+
+    </LinearLayout>
+</ScrollView>

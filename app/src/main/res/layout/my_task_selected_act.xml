@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_icon_jobl"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView276"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Task Name"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="18dp"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView277"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/textView276"
+                android:text="|"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView278"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/textView277"
+                android:text="MCQ"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView279"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView276"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="0dp"
+                android:text="Which Job"
+                android:textSize="13dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <TextView
+                android:id="@+id/textView280"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView277"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/textView279"
+                android:text="|"
+                android:textSize="13dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <TextView
+                android:id="@+id/textView281"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView278"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/textView280"
+                android:text="Which Company"
+                android:textSize="13dp"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/nunito_semibold"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView282"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Instructions"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <TextView
+            android:id="@+id/textView283"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Added by XYZ"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView284"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/long_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="4dp"
+            android:elevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView285"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expected Output"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="25dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView286"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example Input"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="25dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView287"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consecte"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="33dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+
+                <TextView
+                    android:id="@+id/textView288"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Example Output"
+                    android:layout_marginTop="57dp"
+                    android:layout_marginStart="25dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView289"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Lorem ipsum dolor sit amet, consecte"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginEnd="33dp"
+                    android:layout_marginBottom="40dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView290"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Constraints"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="38dp"
+            android:textSize="22dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/task_sel_recycler1"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_gravity="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button27"
+            android:layout_width="158dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:text="End Task"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:background="@drawable/background_solid_red"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="46dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="27dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView291"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="27dp"
+                    android:text="Deadline countdown"
+                    android:textSize="20dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <TextView
+                    android:id="@+id/textView292"
+                    android:layout_width="209dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="21dp"
+                    android:text="TextView"
+                    android:layout_marginBottom="49dp"
+                    android:textSize="41dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="23dp"
+            android:layout_marginTop="42dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView37"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginEnd="30dp"
+                        app:srcCompat="@drawable/more_vert" />
+
+                    <TextView
+                        android:id="@+id/textView296"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assigned to"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginStart="28dp"
+                        android:textSize="23dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_semibold"/>
+                </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/task_sel_recycler_2"
+                android:layout_marginTop="32dp"
+                android:nestedScrollingEnabled="false"/>
+
+            <RelativeLayout
+                android:id="@+id/item_description_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="38dp"
+                android:layout_gravity="center"
+                android:minHeight="48dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/item_description_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toEndOf="@+id/item_description_title"
+                    android:src="@drawable/expand_more" />
+
+                <TextView
+                    android:id="@+id/item_description_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center" />
+
+
+            </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="100dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="23dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView38"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="31dp"
+                        app:srcCompat="@drawable/more_vert" />
+
+                    <TextView
+                        android:id="@+id/textView297"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Queries"
+                        android:layout_marginTop="35dp"
+                        android:layout_marginStart="28dp"
+                        android:textSize="23dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_semibold"/>
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/task_sel_recycler_3"
+                    android:layout_marginTop="29dp"
+                    android:nestedScrollingEnabled="false"/>
+
+                <RelativeLayout
+                    android:id="@+id/item_description_layout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="38dp"
+                    android:layout_gravity="center"
+                    android:minHeight="48dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/item_description_img1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_gravity="center_vertical|end"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/item_description_title1"
+                        android:src="@drawable/expand_more" />
+
+                    <TextView
+                        android:id="@+id/item_description_title1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView42"
+        android:layout_width="296dp"
+        android:layout_height="128dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="113dp"
+        app:srcCompat="@drawable/layer_x_2" />
+
+    <TextView
+        android:id="@+id/textView323"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView42"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="55dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Task created successfully"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        android:textSize="22dp" />
+
+
+    <TextView
+        android:id="@+id/textView322"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView323"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="114dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="@font/nunito"
+        android:text="Task name: "
+        android:textColor="@color/med_grey"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView324"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView323"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_toEndOf="@+id/textView322"
+        android:text="Task Name"
+        android:textSize="16dp"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/med_grey"/>
+
+    <TextView
+        android:id="@+id/textView325"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView322"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nunito"
+        android:text="Task deadline:"
+        android:textColor="@color/med_grey"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/textView326"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView324"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/textView325"
+        android:text="20/12/2021"
+        android:textSize="16dp"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/med_grey"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button34"
+        android:layout_width="212dp"
+        android:layout_height="48dp"
+        android:layout_below="@+id/textView325"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="101dp"
+        android:background="@drawable/background_green"
+        android:fontFamily="@font/nunito_semibold"
+        android:text="Finish"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="17dp" />
+</RelativeLayout>

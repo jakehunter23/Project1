@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/menu_icon_jobl"
+                    android:src="@drawable/menu_black_24dp"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView266"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Listings"
+            android:layout_marginTop="19dp"
+            android:layout_marginStart="27dp"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView270"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Check and manage all your job listing"
+            android:layout_marginStart="27dp"
+            android:textSize="15dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="7dp">
+
+            <SearchView
+                android:layout_width="286dp"
+                android:id="@+id/cand_usage_search"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="27dp"
+                android:background="@drawable/searchview_bg"
+                android:layoutDirection="rtl"
+                android:searchIcon="@null"
+                android:queryHint="Search for job by Id or title"
+                android:queryBackground="@drawable/searchview_bg"
+                android:theme="@style/AppSearchView">
+
+            </SearchView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="264dp"
+                android:src="@drawable/search"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="23dp"
+                android:layout_toEndOf="@+id/cand_usage_search"
+                app:cardCornerRadius="10dp"
+                android:elevation="2dp">
+
+
+                <ImageView
+                    android:id="@+id/cand_imageView"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_margin="13dp"
+                    android:layout_marginTop="5dp"
+                    tools:src="@tools:sample/avatars" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <Spinner
+            android:id="@+id/spinner59"
+            android:layout_width="134dp"
+            android:layout_height="55dp"
+            style="@style/Widget.App.Spinner_black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:id="@+id/job_dot1"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/imageView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/dot_red"
+                    />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView271"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_toEndOf="@+id/job_dot1"
+                android:text="TextView" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@+id/textView271"
+                android:id="@+id/job_dot2"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/imageView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/dot_yellow" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView272"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_toEndOf="@+id/job_dot2"
+                android:text="TextView" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@+id/textView272"
+                android:id="@+id/job_dot_3"
+                app:cardCornerRadius="250dp">
+
+                <ImageView
+                    android:id="@+id/imageView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/dot_yellow" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView273"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_toEndOf="@+id/job_dot_3"
+                android:text="TextView" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/job_list_recycler"
+            android:layout_marginTop="40dp"
+            android:nestedScrollingEnabled="false" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

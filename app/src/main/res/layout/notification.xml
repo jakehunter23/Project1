@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView125"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notification"
+        android:layout_marginTop="99dp"
+        android:layout_marginStart="28dp"
+        android:textSize="27dp"
+        android:textColor="@color/text_blue"
+        android:fontFamily="@font/nunito"/>
+
+    <TextView
+        android:id="@+id/textView126"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lorem Ipsum lorem lorem ipsum"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="28dp"
+        android:textSize="15dp"
+        android:fontFamily="@font/nunito_semibold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="39dp">
+
+        <TextView
+            android:id="@+id/textView127"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Notification"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="29dp"
+            app:track="@drawable/custom_track"
+            app:thumbTint="@color/white"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp">
+
+        <TextView
+            android:id="@+id/textView128"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Notification"
+            android:layout_marginBottom="2dp"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="2dp"
+            app:track="@drawable/custom_track"
+            app:thumbTint="@color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView129"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other settings"
+        android:layout_marginStart="28dp"
+        android:textSize="18dp"
+        android:textColor="@color/text_blue"
+        android:fontFamily="@font/nunito"/>
+</LinearLayout>

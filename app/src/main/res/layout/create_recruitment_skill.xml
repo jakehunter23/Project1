@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="278dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="101dp"
+                    android:layout_marginTop="47dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="60dp"
+                    android:text="Skills &amp; Experience"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="40dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:layout_marginEnd="329dp"
+                        android:layout_marginBottom="67dp"
+                        app:srcCompat="@drawable/skills" />
+                </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:text="Skills"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"
+                android:textSize="18dp"/>
+
+
+        <EditText
+            android:id="@+id/editTextTextPersonName8"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:hint="Enter skills required for the job"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:id="@+id/textView73"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Qualification"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName9"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Minimum qualification requirement"
+            android:textSize="17dp"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingLeft="29dp"/>
+
+        <TextView
+            android:id="@+id/textView74"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:text="Eligibility criteria"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName10"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Ex. citizenship requirement"
+            android:textSize="17dp"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingLeft="29dp"/>
+
+        <TextView
+            android:id="@+id/textView75"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:text="Experience requirement"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName11"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Minimum Experience Requirement"
+            android:textSize="17dp"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingLeft="29dp"
+            android:paddingTop="10dp"
+            android:gravity="top"/>
+
+        <TextView
+            android:id="@+id/textView76"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:text="Relevant experience"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName12"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Specify Industry Requirement"
+            android:textSize="17dp"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingLeft="29dp"
+            android:paddingTop="10dp"
+            android:gravity="top"/>
+
+        <TextView
+            android:id="@+id/textView77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:text="Irrelevant experience"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName13"
+            android:layout_width="match_parent"
+            android:layout_height="119dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="23dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Any Irrelevant Internship Experience"
+            android:textSize="17dp"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito_semibold"
+            android:paddingLeft="29dp"
+            android:paddingTop="10dp"
+            android:gravity="top"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button17"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="62dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginBottom="80dp"
+                android:text="Next"
+                android:textSize="19dp"
+                android:textAlignment="textEnd"
+                android:drawableRight="@drawable/next_icon"
+                android:drawablePadding="12dp"
+                android:paddingRight="140dp"
+                android:background="@drawable/background_solid"
+                android:textColor="@color/white"
+                android:fontFamily="@font/nunito_semibold"
+                android:textAllCaps="false"/>
+        </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</ScrollView>

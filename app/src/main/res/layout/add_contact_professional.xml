@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="127dp">
+
+            <TextView
+                android:id="@+id/textView44"
+                android:layout_width="278dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="101dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="33dp"
+                android:fontFamily="@font/nunito"
+                android:text="Professional Information"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="52dp"
+                android:layout_height="51dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="44dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="53dp"
+                    android:layout_height="53dp"
+                    android:layout_marginEnd="329dp"
+                    android:layout_marginBottom="44dp"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textView441"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Title"
+            android:layout_marginStart="26dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName78"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter current job title of the candidate"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp"/>
+
+        <TextView
+            android:id="@+id/textView442"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Company Name"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName79"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Candidate currently employed in?"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp" />
+
+        <TextView
+            android:id="@+id/textView443"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Type"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner62"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView444"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Division"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner63"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView445"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Source"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner64"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView446"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reports to"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner65"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView447"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Industry"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <Spinner
+            android:id="@+id/spinner66"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
+            android:foreground="@drawable/background_sharp"
+            style="@style/Widget.App.Spinner"/>
+
+        <TextView
+            android:id="@+id/textView448"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Required Skills"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="23dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <EditText
+            android:id="@+id/editTextTextPersonName80"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:hint="Enter required skills"
+            android:paddingLeft="10dp"
+            android:background="@drawable/background_sharp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button42"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="Next"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="120dp"
+            android:textSize="17dp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/next_icon"
+            android:textAlignment="textEnd"
+            android:drawablePadding="12dp"
+            android:paddingRight="140dp" />
+    </LinearLayout>
+</ScrollView>

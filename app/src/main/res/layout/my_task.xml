@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_icon_backtask"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView274"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Tasks"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="15dp"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView275"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View and manage your tasks"
+            android:layout_marginStart="28dp"
+            android:textSize="13dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="7dp">
+
+            <SearchView
+                android:layout_width="286dp"
+                android:id="@+id/cand_usage_search"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="27dp"
+                android:background="@drawable/searchview_bg"
+                android:layoutDirection="rtl"
+                android:searchIcon="@null"
+                android:queryHint="Search for job by Id or title"
+                android:queryBackground="@drawable/searchview_bg"
+                android:theme="@style/AppSearchView">
+
+            </SearchView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="264dp"
+                android:src="@drawable/search"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="23dp"
+                android:layout_toEndOf="@+id/cand_usage_search"
+                app:cardCornerRadius="10dp"
+                android:elevation="2dp">
+
+
+                <ImageView
+                    android:id="@+id/cand_imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/filter_icon"/>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView250"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="27dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner55"
+                android:layout_width="177dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textView250"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="14dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:foreground="@drawable/background_black"
+                style="@style/Widget.App.Spinner_black"/>
+
+            <TextView
+                android:id="@+id/textView251"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="36dp"
+                android:layout_toEndOf="@+id/spinner55"
+                android:text="TextView"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner56"
+                android:layout_width="144dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textView251"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/spinner55"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:foreground="@drawable/background_black"
+                style="@style/Widget.App.Spinner_black"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2.5dp"
+            android:background="@color/light_grey"
+            android:id="@+id/cert_line"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="34dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/task_rec_item"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="24dp"
+            android:nestedScrollingEnabled="false"/>
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

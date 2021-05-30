@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/entire_indi_nav">
+
+
+    <ImageView
+        android:id="@+id/iconView"
+        android:layout_width="38dp"
+        android:layout_height="33dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="80dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="244dp"
+        android:layout_height="46dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="30dp"
+        android:padding="8dp"
+        android:textColor="@color/navText"
+        android:textSize="20dp" />
+    </RelativeLayout>

@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:nestedScrollingEnabled="false">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="34dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp">
+
+                <TextView
+                    android:id="@+id/clihire_company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginStart="30dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+
+                <TextView
+                    android:id="@+id/clihire_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_company_name"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Hyderabad"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_company_name"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/clihire_location"
+                    android:text="#1544-1"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="26dp"
+                    app:cardCornerRadius="250dp">
+
+                    <ImageView
+                        android:id="@+id/clihire_priority_dot"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        app:srcCompat="@drawable/add_icon"
+                        android:layout_gravity="center"/>
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/hidden_info"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView199"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Added on:"
+                    android:layout_marginStart="30dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_timestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/textView199"
+                    android:text="05-05-2021"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_type_job"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView199"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Full-time"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/textView202"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_type_job"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="13dp"
+                    android:text="Company contact"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_contact_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView202"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Philip Martin"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_contact_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_contact_name"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="6dp"
+                    android:text="sandrovicenta@gmail.com"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/imageView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_contact_mail"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="14dp"
+                    app:srcCompat="@drawable/visibility" />
+
+                <TextView
+                    android:id="@+id/textView205"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView10"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center"
+                    android:layout_marginStart="34dp"
+                    android:text="10"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/imageView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_contact_mail"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toEndOf="@+id/imageView10"
+                    app:srcCompat="@drawable/assignment_turned_in" />
+
+                <TextView
+                    android:id="@+id/textView206"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView13"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/imageView10"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_contact_mail"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_toEndOf="@+id/imageView13"
+                    app:srcCompat="@drawable/how_to_reg" />
+
+                <TextView
+                    android:id="@+id/textView207"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView16"
+                    android:layout_marginStart="27dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_toEndOf="@+id/imageView13"
+                    android:gravity="center"
+                    android:text="1/4"
+                    android:textSize="14dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <TextView
+                    android:id="@+id/textView208"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView205"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="30dp"
+                    android:text="Recruiter"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_rec_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView208"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Sandro Vicenta"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/clihire_rec_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/clihire_rec_name"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="18dp"
+                    android:text="sandrovicenta@gmail.com"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="19dp">
+
+                <TextView
+                    android:id="@+id/textView211"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show more"
+                    android:textSize="15dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@+id/textView211"
+                    app:srcCompat="@drawable/expand_more" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</ScrollView>

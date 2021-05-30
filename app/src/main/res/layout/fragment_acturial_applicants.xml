@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:paddingBottom="7dp">
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:id="@+id/act_usage_search"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="27dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/searchview_bg"
+                android:layoutDirection="rtl"
+                android:searchIcon="@null"
+                android:queryHint="Search by candidate name"
+                android:queryBackground="@drawable/searchview_bg"
+                android:theme="@style/AppSearchView">
+
+            </SearchView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="332dp"
+                android:src="@drawable/search"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:elevation="3dp"
+                android:id="@+id/act_app_all_card"
+                app:cardCornerRadius="10dp"
+                android:background="@drawable/background_solid"
+                app:cardBackgroundColor="@color/text_blue">
+
+
+                <TextView
+                    android:id="@+id/textView394"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="All"
+                    android:paddingLeft="23dp"
+                    android:paddingRight="23dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/nunito_semibold"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="3dp"
+                android:id="@+id/act_app_short_card"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@id/act_app_all_card">
+
+                <TextView
+                    android:id="@+id/textView392"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shortlisted"
+                    android:paddingLeft="23dp"
+                    android:paddingRight="23dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/text_blue"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/nunito_semibold"/>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="3dp"
+                android:id="@+id/act_app_hire_card"
+                android:layout_marginStart="24dp"
+                android:layout_toEndOf="@id/act_app_short_card">
+
+                <TextView
+                    android:id="@+id/textView393"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hired"
+                    android:paddingLeft="23dp"
+                    android:paddingRight="23dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/text_blue"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/nunito_semibold"/>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView389"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/act_app_all_card"
+                android:layout_marginTop="38dp"
+                android:text="Select"
+                android:textSize="16dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="@color/text_blue"/>
+
+            <ImageView
+                android:id="@+id/imageView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:src="@drawable/more_vert" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/act_apt_rec"
+            android:layout_marginTop="39dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:nestedScrollingEnabled="false"/>
+
+    </LinearLayout>
+</LinearLayout>

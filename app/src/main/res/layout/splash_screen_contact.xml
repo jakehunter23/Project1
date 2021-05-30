@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_top">
+
+    <ImageView
+        android:id="@+id/imageView39"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="223dp"
+        android:layout_marginEnd="169dp"
+        android:layout_marginBottom="378dp"
+        app:srcCompat="@drawable/tick_img"
+        />
+
+    <TextView
+        android:id="@+id/textView317"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="288dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:gravity="center"
+        android:text="New Contact Created Successfully!"
+        android:textColor="@color/text_blue"
+        android:textSize="27dp" />
+</RelativeLayout>

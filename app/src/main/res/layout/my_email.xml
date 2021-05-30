@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="106dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/nunito"
+        android:text="My Mail"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="156dp"
+            android:layout_marginEnd="32dp"
+            android:layout_toEndOf="@+id/spinner"
+            android:gravity="center"
+            android:text="New Mail"
+            android:textColor="@color/white"
+            android:drawableRight="@drawable/add"
+
+            android:background="@drawable/background_solid"/>
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="184dp"
+            android:layout_height="42dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="160dp"
+            android:foreground="@drawable/background_black"
+            android:dropDownWidth="184dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/MailRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="212dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/fragment_search_candidate">
+
+    <Spinner
+        android:id="@+id/spinner27"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="34dp"
+        android:foreground="@drawable/background_black"/>
+
+    <Spinner
+        android:id="@+id/spinner28"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="34dp"
+        android:foreground="@drawable/background_black"/>
+
+    <Spinner
+        android:id="@+id/spinner29"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="34dp"
+        android:foreground="@drawable/background_black"/>
+
+    <Spinner
+        android:id="@+id/spinner30"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="34dp"
+        android:foreground="@drawable/background_black"/>
+
+    <Spinner
+        android:id="@+id/spinner31"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="34dp"
+        android:foreground="@drawable/background_black"/>
+
+    <TextView
+        android:id="@+id/textView119"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Qualifications"
+        android:layout_marginTop="33dp"
+        android:layout_marginStart="31dp"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:drawableRight="@drawable/add_icon"
+        android:drawablePadding="6dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/textView120"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Company"
+        android:layout_marginTop="27dp"
+        android:layout_marginStart="31dp"
+        android:textSize="22dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:drawableRight="@drawable/add_icon"
+        android:drawablePadding="8dp"/>
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>

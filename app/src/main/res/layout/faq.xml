@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_icon_jobl"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView248"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complaint Tickets"
+            android:layout_marginTop="107dp"
+            android:layout_marginStart="27dp"
+            android:textSize="35dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView249"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Raise an issue or check for updates on previous issues"
+            android:layout_marginStart="27dp"
+            android:textSize="15dp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/nunito_semibold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_ticket"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:text="Create ticket"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="27dp"
+            android:background="@drawable/background_solid"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textAllCaps="false"
+            android:drawableRight="@drawable/add"
+            android:drawablePadding="6dp"
+            android:paddingRight="25dp"
+            android:textAlignment="textEnd"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView250"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:layout_marginTop="36dp"
+                android:layout_marginStart="27dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner55"
+                android:layout_width="177dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textView250"
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="14dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:foreground="@drawable/background_black"
+                style="@style/Widget.App.Spinner_black"/>
+
+            <TextView
+                android:id="@+id/textView251"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="36dp"
+                android:layout_toEndOf="@+id/spinner55"
+                android:text="TextView"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <Spinner
+                android:id="@+id/spinner56"
+                android:layout_width="144dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/textView251"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="14dp"
+                android:layout_toEndOf="@+id/spinner55"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:foreground="@drawable/background_black"
+                style="@style/Widget.App.Spinner_black"/>
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:tabSelectedTextColor="@color/text_blue"
+            app:tabTextColor="@color/black"
+            app:tabIndicatorColor="@color/text_blue"
+            app:tabTextAppearance="@style/MyCustomTextAppearance">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recent" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unassigned" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Closed" />
+        </com.google.android.material.tabs.TabLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:id="@+id/faq_item_rec"
+            android:layout_marginTop="27dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

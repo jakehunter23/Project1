@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="6dp"
+        app:cardCornerRadius="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/RefName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="TextView"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/RefEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="47dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/nunito"
+                android:text="TextView"
+                android:textColor="#7D7D7D"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/RefStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/nunito"
+                android:text="TextView"
+                android:textColor="#7D7D7D"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/RefSent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="93dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/nunito"
+                android:text="TextView"
+                android:textColor="#7D7D7D"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/RefSentThrough"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="117dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginBottom="27dp"
+                android:fontFamily="@font/nunito"
+                android:text="TextView"
+                android:textColor="#7D7D7D"
+                android:textSize="16dp" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

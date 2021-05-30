@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:nestedScrollingEnabled="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="38dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/con_textView200"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="25dp"
+                    android:text="Summary"
+                    android:textSize="22dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <TextView
+                    android:id="@+id/con_textView201"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="25dp"
+                    android:text="05-05-2021"
+                    android:textSize="15dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/con_imageView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="71dp"
+                    android:src="@drawable/description" />
+
+                <TextView
+                    android:id="@+id/con_textView203"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="71dp"
+                    android:layout_toEndOf="@+id/con_imageView27"
+                    android:text="Files"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView204"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="71dp"
+                    android:layout_toEndOf="@+id/con_textView203"
+                    android:text="10"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView209"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="98dp"
+                    android:text="Source:"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView210"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="98dp"
+                    android:layout_toEndOf="@+id/con_textView209"
+                    android:text=" LinkedIn"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView218"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="178dp"
+                    android:layout_marginTop="98dp"
+                    android:text="Current Salary:"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView221"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="98dp"
+                    android:layout_toEndOf="@+id/con_textView218"
+                    android:text=" N/A"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/con_imageView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/con_textView209"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="29dp"
+                    android:src="@drawable/note" />
+
+                <TextView
+                    android:id="@+id/con_textView223"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="146dp"
+                    android:layout_toEndOf="@+id/con_imageView28"
+                    android:text="Notes"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView225"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="159dp"
+                    android:layout_marginTop="146dp"
+                    android:text="35"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <ImageView
+                    android:id="@+id/con_imageView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/con_imageView28"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/con_textView228"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="204dp"
+                    android:layout_toEndOf="@+id/con_imageView29"
+                    android:text="Experience"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView229"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="43dp"
+                    android:layout_marginTop="204dp"
+                    android:layout_toEndOf="@+id/con_textView228"
+                    android:text="2 years"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView230"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/con_imageView29"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Available for:"
+                    android:textColor="@color/grey"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/con_textView231"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="237dp"
+                    android:layout_toEndOf="@+id/con_textView230"
+                    android:text=" Contract Job"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView232"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/con_textView230"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Daily rate:"
+                    android:layout_marginBottom="35dp"
+                    android:textSize="16dp"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/con_textView233"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="267dp"
+                    android:layout_toEndOf="@+id/con_textView232"
+                    android:text=" N/A"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="34dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp">
+
+            <TextView
+                android:id="@+id/textView353"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Required Skills"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="29dp"
+                android:textSize="22dp"
+                android:layout_marginBottom="134dp"
+                android:textColor="@color/text_blue"
+                android:fontFamily="@font/nunito_semibold"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView358"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Package Type"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView359"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Monthly"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView360"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Package"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView361"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Rs. XXXXXXXX"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView362"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Transportation"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView363"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Anywhere"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView364"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Experience Requirement"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:id="@+id/textView365"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:layout_marginEnd="31dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/Text"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView366"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Relevant Experience"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView367"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/Text"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_marginEnd="31dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView368"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:text="Irrelevant Experience"
+                    android:textColor="@color/grey"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView369"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginBottom="23dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="@string/Text"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:layout_marginEnd="31dp"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/textView370"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Roles and Responsibility"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView371"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/long_text"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView372"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Learning Opportunity"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView373"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/long_text"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView374"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Employee Endorsement"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView375"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/long_text"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView376"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Employee Benefits"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView377"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/long_text"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView378"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Description for the Advert"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView379"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Text"
+            android:layout_marginTop="22dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <TextView
+            android:id="@+id/textView380"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Contact Information for the Advert"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:textSize="20dp"
+            android:textColor="@color/text_blue"
+            android:fontFamily="@font/nunito"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+            <TextView
+                android:id="@+id/textView381"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="22dp"
+                android:text="Name"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView382"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="22dp"
+                android:layout_toEndOf="@+id/textView381"
+                android:text="LastName"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView383"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView381"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:text="name.name@gmail.com"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView384"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8915236012"
+                android:layout_below="@+id/textView383"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView385"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address-1"
+                android:layout_below="@+id/textView384"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView386"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView384"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/textView385"
+                android:text="City"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView387"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="State"
+                android:layout_below="@+id/textView385"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="10dp"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+
+            <TextView
+                android:id="@+id/textView388"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView385"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/textView387"
+                android:text="Country"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="101dp"
+
+                    android:layout_marginTop="43dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Skills &amp; Qualifications"
+                    android:textColor="@color/black"
+                    android:textSize="24dp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="67dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+
+
+                        android:layout_marginEnd="329dp"
+                        android:layout_marginBottom="67dp"
+                        app:srcCompat="@drawable/ic_launcher_background" />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView422"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Talent"
+                android:layout_marginStart="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName69"
+                android:layout_width="match_parent"
+                android:layout_height="118dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:hint="Write any special qualities the candidate \nhas..."
+                android:paddingRight="2dp"
+                android:paddingLeft="12dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:background="@drawable/background_sharp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/add_skill_lay">
+
+                <TextView
+                    android:id="@+id/textView423"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skills"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginStart="26dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"/>
+
+                <ImageView
+                    android:id="@+id/imageView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_toEndOf="@+id/textView423"
+                    app:srcCompat="@drawable/add_icon" />
+            </RelativeLayout>
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="189dp"
+                android:id="@+id/chip_group_canskill"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/background_sharp">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/textView424"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Degrees"
+                android:layout_marginTop="31dp"
+                android:layout_marginStart="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName70"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Enter Candidate's degree"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/background_sharp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button31"
+                android:layout_width="156dp"
+                android:layout_height="43dp"
+                android:text="Add Resume"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="31dp"
+                android:background="@drawable/background_solid_white"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button40"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginTop="47dp"
+                android:layout_marginBottom="93dp"
+                android:layout_marginStart="31dp"
+                android:layout_marginEnd="26dp"
+                android:text="Next"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+                android:drawableRight="@drawable/next_icon"
+                android:textAlignment="textEnd"
+                android:drawablePadding="12dp"
+                android:paddingRight="140dp"/>
+        </LinearLayout>
+
+
+    </FrameLayout>
+</ScrollView>

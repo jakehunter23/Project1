@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.wajahatkarim3.easyflipview.EasyFlipView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:flipOnTouch="true"
+    app:flipEnabled="true"
+    app:flipDuration="400"
+    app:flipFrom="right"
+    app:flipType="horizontal"
+    app:autoFlipBack="false"
+    android:layout_marginBottom="34dp"
+    android:id="@+id/con_card">
+
+    <!-- Back Layout Goes Here -->
+    <include layout="@layout/client_contact_item_back"/>
+
+    <!-- Front Layout Goes Here -->
+    <include layout="@layout/client_contact_item_front"/>
+
+
+
+</com.wajahatkarim3.easyflipview.EasyFlipView>
