@@ -27,7 +27,8 @@
         <activity android:name=".StorageActivity"></activity>
         <activity android:name=".MyTools"></activity>
         <activity android:name=".Referral"></activity>
-        <activity android:name=".CreateTask"></activity>
+        <activity android:name=".CreateTask">
+        </activity>
         <activity android:name=".TaskCreationSuccess"></activity>
         <activity android:name=".CandidateEdit"></activity>
         <activity android:name=".sampleActivity"></activity>

@@ -301,7 +301,7 @@
             android:id="@+id/textView316"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="List of accepted file extensions"
             android:layout_marginTop="23dp"
             android:layout_marginStart="24dp"
             android:textSize="18dp"

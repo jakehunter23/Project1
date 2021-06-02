@@ -22,6 +22,8 @@ public class CreateTaskFragment1 extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    String designation, createdDate;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -62,10 +64,12 @@ public class CreateTaskFragment1 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.create_task, container, false);
+        designation = getArguments().getString("designation");
+        createdDate = getArguments().getString("createdDate");
         RecyclerView Task1Rec;
         Task1Rec=view.findViewById(R.id.first_task_recycler);
         Task1Rec.setLayoutManager(new LinearLayoutManager(getContext()));
-        Task1Rec.setAdapter(new CreateTaskFrag1Adapter(getContext()));
+        Task1Rec.setAdapter(new CreateTaskFrag1Adapter(getContext(), designation, createdDate));
         return view;
     }
 }

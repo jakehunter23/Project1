@@ -228,6 +228,10 @@ public class AddRecruitPaymentFragment extends Fragment {
             public void onResponse(String response) {
 
                 Intent intent = new Intent(getContext(),RecruitmentSplashScreenActivity.class);
+                Bundle specificBundle = new Bundle();
+                specificBundle.putString("designation", designation);
+                specificBundle.putString("createdDate", strDate);
+                intent.putExtras(specificBundle);
                 startActivity(intent);
             }
         }, new Response.ErrorListener() {
