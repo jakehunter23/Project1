@@ -1,40 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/splash_top">
-
-    <ImageView
-        android:id="@+id/imageView39"
-        android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#2E91CD">
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="167dp"
-        android:layout_marginTop="223dp"
-        android:layout_marginEnd="169dp"
-        android:layout_marginBottom="378dp"
-        app:srcCompat="@drawable/tick_img"
-        />
+        android:background="#2E91CD">
 
-    <TextView
-        android:id="@+id/textView317"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginBottom="289dp"
-        android:fontFamily="@font/nunito_semibold"
-        android:gravity="center"
-        android:text="New Recruitment Created \nSuccessfully!"
-        android:textColor="@color/text_blue"
-        android:textSize="27dp" />
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="0dp"
+                android:layout_marginTop="239dp"
+                android:layout_marginLeft="33dp"
+                android:layout_marginRight="33dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#2E91CD">
+                    <ImageView
+                        android:layout_width="77.37dp"
+                        android:layout_height="77.32dp"
+                        android:layout_marginTop="1dp"
+                        app:tint="#fff"
+                        android:src="@drawable/check_circle"
+                        android:layout_marginStart="121dp"
+                        android:layout_marginEnd="141.63dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="55.68dp"
+                        android:text="New recruitment created sucessfully!"
+                        android:textSize="28sp"
+                        android:fontFamily="@font/nunito"
+                        android:gravity="center"
+                        android:textColor="#FFFFFF"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="255dp"
+                android:layout_marginEnd="42dp"
+                android:background="@drawable/splash_bg1"
+                android:fontFamily="@font/nunito"
+                android:text="Finish"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="#3CA6DA" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginStart="42dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginBottom="52dp"
+                android:background="@drawable/background_white"
+                android:text="Create New Recruitment"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:fontFamily="@font/nunito"
+                android:textColor="#fff"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

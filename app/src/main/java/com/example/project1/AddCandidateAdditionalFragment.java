@@ -1,12 +1,16 @@
 package com.example.project1;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import com.android.volley.AuthFailureError;
@@ -44,6 +48,8 @@ public class AddCandidateAdditionalFragment extends Fragment {
     String strDate = dateFormat.format(date);
     EditText Comments;
     EditText AvailabilityDate;
+    String date_selected_availablity;
+    EditText mdate_available;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -88,6 +94,14 @@ public class AddCandidateAdditionalFragment extends Fragment {
         Button toCandAct = view.findViewById(R.id.button12);
         Comments = view.findViewById(R.id.editTextTextPersonName5);
         AvailabilityDate = view.findViewById(R.id.availability_date);
+        view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showdate_picker_dialog(AvailabilityDate);
+                // AvailabilityDate.setText(date_selected_availablity);
+            }
+        });
+
 
         Bundle bundle = this.getArguments();
         firstName = bundle.getString("firstName");
@@ -186,4 +200,27 @@ public class AddCandidateAdditionalFragment extends Fragment {
         Volley.newRequestQueue(getContext()).add(insertRequest);
 
     }
+
+    private void showdate_picker_dialog(EditText mdate_available){
+
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int date=calendar.get(Calendar.DATE);
+
+
+        DatePickerDialog datePickerDialog=new DatePickerDialog(
+                getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        date_selected_availablity=dayOfMonth+"-"+(month+1)+"-"+year;
+                        mdate_available.setText(date_selected_availablity);
+                        Log.e("Date selected by user: ",date_selected_availablity);
+                    }
+                },
+                year,month,date);
+        datePickerDialog.show();
+    }
+
 }

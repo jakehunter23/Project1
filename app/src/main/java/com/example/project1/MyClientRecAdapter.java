@@ -5,9 +5,20 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -61,6 +72,8 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
 
     class MyClientViewHolder extends RecyclerView.ViewHolder {
 
+        String fetchSpecificClient = "";
+
         ImageView arrow;
         LinearLayout hiddenView;
         CardView cardView;
@@ -71,6 +84,7 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
         TextView email;
         TextView address;
         TextView date;
+        Button view;
 
         public MyClientViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +99,7 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
             email =itemView.findViewById(R.id.textView412);
             address =itemView.findViewById(R.id.textView413);
             date = itemView.findViewById(R.id.textView415);
+            view = itemView.findViewById(R.id.button38);
 
             ClickBait.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -110,6 +125,16 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
                 }
 
             });
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+
+                }
+            });
         }
+
     }
+
 }

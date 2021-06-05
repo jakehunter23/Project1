@@ -239,7 +239,7 @@
                         android:id="@+id/button38"
                         android:layout_width="96dp"
                         android:layout_height="43dp"
-                        android:text="Edit"
+                        android:text="View"
                         android:layout_marginTop="25dp"
                         android:layout_marginStart="37dp"
                         android:layout_marginBottom="27dp"
