@@ -48,8 +48,8 @@ public class AddCandidateAdditionalFragment extends Fragment {
     String strDate = dateFormat.format(date);
     EditText Comments;
     EditText AvailabilityDate;
+
     String date_selected_availablity;
-    EditText mdate_available;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -222,5 +222,4 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 year,month,date);
         datePickerDialog.show();
     }
-
 }

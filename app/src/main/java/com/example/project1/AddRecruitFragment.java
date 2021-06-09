@@ -1,17 +1,20 @@
 package com.example.project1;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -26,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -76,6 +80,13 @@ public class AddRecruitFragment extends Fragment {
     String jobTypeItem, statusItem, priorityItem;
     int positionId, industryId, companyId, recruiterId, countryId, stateId, cityId;
 
+
+    EditText StartDate ;
+    EditText EndDate;
+    String start_date_selected;
+    String end_date_selected;
+
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -119,8 +130,10 @@ public class AddRecruitFragment extends Fragment {
         Button next = view.findViewById(R.id.button15);
         EditText Designation = view.findViewById(R.id.editTextTextPersonName17);
         EditText Openings = view.findViewById(R.id.editTextTextPersonName19);
-        EditText StartDate = view.findViewById(R.id.editTextDate2);
-        EditText EndDate = view.findViewById(R.id.editTextDate3);
+        //date picker id's
+        StartDate = view.findViewById(R.id.editTextDate2);
+         EndDate = view.findViewById(R.id.editTextDate3);
+
         position = view.findViewById(R.id.spinner3);
         industry = view.findViewById(R.id.spinner4);
         jobType = view.findViewById(R.id.spinner5);
@@ -142,6 +155,9 @@ public class AddRecruitFragment extends Fragment {
         stateList = new ArrayList<>();
         countryList =new ArrayList<>();
 
+
+
+
         loadPosition();
         loadIndustry();
         loadJobType();
@@ -153,6 +169,19 @@ public class AddRecruitFragment extends Fragment {
         loadState();
         loadCountry();
 
+        view.findViewById(R.id.show_dialog_1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showdate_picker_dialog_start();
+            }
+        });
+
+        view.findViewById(R.id.show_dialog_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showdate_picker_dialog_end();
+            }
+        });
         position.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -344,6 +373,48 @@ public class AddRecruitFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    private void showdate_picker_dialog_end() {
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int date=calendar.get(Calendar.DATE);
+
+
+        DatePickerDialog datePickerDialog=new DatePickerDialog(
+                getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        end_date_selected=dayOfMonth+"-"+(month+1)+"-"+year;
+                        EndDate.setText(end_date_selected);
+                        Log.e("Date selected by user: ",end_date_selected);
+                    }
+                },
+                year,month,date);
+        datePickerDialog.show();
+    }
+
+    private void showdate_picker_dialog_start() {
+        Calendar calendar=Calendar.getInstance();
+        int year=calendar.get(Calendar.YEAR);
+        int month=calendar.get(Calendar.MONTH);
+        int date=calendar.get(Calendar.DATE);
+
+
+        DatePickerDialog datePickerDialog=new DatePickerDialog(
+                getActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                       start_date_selected=dayOfMonth+"-"+(month+1)+"-"+year;
+                        StartDate.setText(start_date_selected);
+                        Log.e("Date selected by user: ",start_date_selected);
+                    }
+                },
+                year,month,date);
+        datePickerDialog.show();
     }
 
     private void loadCountry() {
