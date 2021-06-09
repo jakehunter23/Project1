@@ -1,6 +1,7 @@
 package com.example.project1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -129,7 +130,8 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(context, ClientActivity.class);
+                    context.startActivity(intent);
 
                 }
             });
