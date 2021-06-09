@@ -73,7 +73,7 @@ public class AddRecruitFragment extends Fragment {
     ArrayAdapter stateAdapter;
     ArrayAdapter countryAdapter;
 
-    String jobTypeItem, statusItem, priorityItem, jobPreferenceNumber, designation, openings, startDate, endDate, clientMargin;
+    String jobTypeItem, statusItem, priorityItem;
     int positionId, industryId, companyId, recruiterId, countryId, stateId, cityId;
 
     // TODO: Rename and change types of parameters
@@ -472,6 +472,7 @@ public class AddRecruitFragment extends Fragment {
 
                         String divisionName = countryObject.getString("first_name");
                         String lastName = countryObject.getString("last_name");
+                        recruiterId = countryObject.getInt("id");
                         recruiterList.add(divisionName+" "+lastName);
                     }
 

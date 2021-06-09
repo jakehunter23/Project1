@@ -37,7 +37,6 @@
             <ImageView
                 android:layout_width="21.03dp"
                 android:layout_height="21.03dp"
-                android:src=""
                 android:layout_marginEnd="36.39dp"
                 android:layout_marginTop="35dp"
                 android:layout_marginBottom="34.97dp"
@@ -92,7 +91,6 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="17.75dp"
                         android:layout_marginEnd="40.75dp"
-                        android:src=""
                         />
                 </LinearLayout>
 
