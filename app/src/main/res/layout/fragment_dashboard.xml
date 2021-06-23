@@ -57,7 +57,7 @@
 
                     <SearchView
                         android:layout_width="match_parent"
-                        android:id="@+id/cand_usage_search"
+                        android:id="@+id/card_usage_search"
                         android:layout_height="50dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginStart="27dp"

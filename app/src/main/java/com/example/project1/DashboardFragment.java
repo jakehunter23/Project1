@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
@@ -42,6 +44,7 @@ public class DashboardFragment extends Fragment {
     private ImageButton mailButton;
     private ImageButton fileButton;
     private ImageView Menu;
+    private SearchView esearch_bar;
     Button CalInt;
 
     String [] names={"Job created","Applied candidate","Interviews Done","Hired candidate","Task Assigned","Other Statistics"};
@@ -99,6 +102,13 @@ public class DashboardFragment extends Fragment {
         Dash3Recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         Dash3Recyclerview.setAdapter(new DashboardRec3Adapter(name,date,getContext(),dp));
 
+        esearch_bar=view.findViewById(R.id.card_usage_search);
+        esearch_bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),SearchActivity.class));
+            }
+        });
 
         Menu=view.findViewById(R.id.menu_icon);
         Menu.setOnClickListener(new View.OnClickListener() {

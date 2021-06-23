@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
-        <activity android:name=".MessageAcitvity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".MessageAcitvity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -25,14 +26,14 @@
         </activity>
         <activity
             android:name=".NavActivity"
-            android:parentActivityName=".DashBoardActivity"></activity>
+            android:parentActivityName=".DashBoardActivity" />
         <activity android:name=".Contact" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".MyMail" />
         <activity android:name=".StorageActivity" />
         <activity android:name=".MyTools" />
         <activity android:name=".Referral" />
-        <activity android:name=".CreateTask"></activity>
+        <activity android:name=".CreateTask" />
         <activity android:name=".TaskCreationSuccess" />
         <activity android:name=".CandidateEdit" />
         <activity android:name=".sampleActivity" />
@@ -57,7 +58,7 @@
         <activity android:name=".AddCandidateResumate" />
         <activity android:name=".AddContactActivity" />
         <activity android:name=".AddRecruitmentActivity" />
-        <activity android:name=".DashBoardActivity"></activity>
+        <activity android:name=".DashBoardActivity" />
         <activity android:name=".TaskSelectedActivity" />
 
         <meta-data

@@ -60,7 +60,7 @@
 
             <SearchView
                 android:layout_width="286dp"
-                android:id="@+id/cand_usage_search"
+                android:id="@+id/card_usage_search"
                 android:layout_height="50dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="27dp"
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginStart="23dp"
-                android:layout_toEndOf="@+id/cand_usage_search"
+                android:layout_toEndOf="@+id/card_usage_search"
                 app:cardCornerRadius="10dp"
                 android:elevation="2dp">
 
