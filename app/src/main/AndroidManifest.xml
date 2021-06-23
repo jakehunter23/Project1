@@ -3,72 +3,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.project1">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".OneSignalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project1"
-        android:name=".OneSignalApplication">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".NavActivity"
-            android:parentActivityName=".DashBoardActivity">
-
-        </activity>
-
-        <activity android:name=".Contact"></activity>
-        <activity android:name=".SettingActivity"></activity>
-        <activity android:name=".MyMail"></activity>
-        <activity android:name=".StorageActivity"></activity>
-        <activity android:name=".MyTools"></activity>
-        <activity android:name=".Referral"></activity>
-        <activity android:name=".CreateTask">
-        </activity>
-        <activity android:name=".TaskCreationSuccess"></activity>
-        <activity android:name=".CandidateEdit"></activity>
-        <activity android:name=".sampleActivity"></activity>
-        <activity android:name=".SearchFor"></activity>
-        <activity android:name=".MyContact"></activity>
-        <activity android:name=".MyClients"></activity>
-        <activity android:name=".MyDatabase"></activity>
-        <activity android:name=".MyFilesActivity"></activity>
-        <activity android:name=".MyTaskActivity"></activity>
-        <activity android:name=".FaqActivity"></activity>
-        <activity android:name=".TicketSuccess"></activity>
-        <activity android:name=".CandidateActivity"></activity>
-        <activity android:name=".ClientActivity"></activity>
-        <activity android:name=".ContactActivity"></activity>
-        <activity android:name=".ActurialActivity"></activity>
-        <activity android:name=".JobListings"
-            android:parentActivityName=".NavActivity"></activity>
-        <activity android:name=".CreateTicket"></activity>
-        <activity android:name=".Add_client_activity"></activity>
-        <activity android:name=".AddCandidateActivity"></activity>
-        <activity android:name=".AddCandidateResumate"></activity>
-        <activity android:name=".AddContactActivity"></activity>
-        <activity android:name=".AddRecruitmentActivity"></activity>
-        <activity android:name=".DashBoardActivity">
+        android:theme="@style/Theme.Project1">
+        <activity android:name=".MessageAcitvity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".TaskSelectedActivity"></activity>
+        <activity
+            android:name=".NavActivity"
+            android:parentActivityName=".DashBoardActivity"></activity>
+        <activity android:name=".Contact" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".MyMail" />
+        <activity android:name=".StorageActivity" />
+        <activity android:name=".MyTools" />
+        <activity android:name=".Referral" />
+        <activity android:name=".CreateTask"></activity>
+        <activity android:name=".TaskCreationSuccess" />
+        <activity android:name=".CandidateEdit" />
+        <activity android:name=".sampleActivity" />
+        <activity android:name=".SearchFor" />
+        <activity android:name=".MyContact" />
+        <activity android:name=".MyClients" />
+        <activity android:name=".MyDatabase" />
+        <activity android:name=".MyFilesActivity" />
+        <activity android:name=".MyTaskActivity" />
+        <activity android:name=".FaqActivity" />
+        <activity android:name=".TicketSuccess" />
+        <activity android:name=".CandidateActivity" />
+        <activity android:name=".ClientActivity" />
+        <activity android:name=".ContactActivity" />
+        <activity android:name=".ActurialActivity" />
+        <activity
+            android:name=".JobListings"
+            android:parentActivityName=".NavActivity" />
+        <activity android:name=".CreateTicket" />
+        <activity android:name=".Add_client_activity" />
+        <activity android:name=".AddCandidateActivity" />
+        <activity android:name=".AddCandidateResumate" />
+        <activity android:name=".AddContactActivity" />
+        <activity android:name=".AddRecruitmentActivity" />
+        <activity android:name=".DashBoardActivity"></activity>
+        <activity android:name=".TaskSelectedActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <activity android:name=".SplashScreenActivity"></activity>
-        <activity android:name=".CandidateSplashScreen"></activity>
-        <activity android:name=".ContactSplashScreenActivity"></activity>
-        <activity android:name=".RecruitmentSplashScreenActivity"></activity>
+
+        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".CandidateSplashScreen" />
+        <activity android:name=".ContactSplashScreenActivity" />
+        <activity android:name=".RecruitmentSplashScreenActivity" />
     </application>
 
 </manifest>
