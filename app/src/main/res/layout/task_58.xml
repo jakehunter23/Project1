@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:id="@+id/navbotton"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="81dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/nunito"
+                android:text="Task Name | MCQ"
+                android:textColor="@color/black"
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Which Job | Which Company"
+                android:textColor="#7D7D7D"
+                android:textSize="13dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="13dp"
+                android:fontFamily="@font/nunito_semibold"                android:text="Instructions"
+                android:textColor="#3CA6DA"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Added by XYZ"
+                android:textColor="#7D7D7D"
+                android:textSize="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                android:textColor="#7D7D7D"
+                android:textSize="16dp"
+                android:lineSpacingExtra="6dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_marginTop="13dp"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="358dp"
+                android:layout_height="308dp"
+                app:cardCornerRadius="12dp"
+                android:backgroundTint="@color/white"
+                android:outlineAmbientShadowColor="#0000001F"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="28dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Expected Output"
+                        android:textColor="#3CA6DA"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/nunito"
+                        android:text="Example Input"
+                        android:textColor="#575757"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consecte,Lorem ipsum dolor sit amet, consecte"
+                        android:textColor="#7D7D7D"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/nunito"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/nunito"
+                        android:text="Example Output"
+                        android:textColor="#575757"
+                        android:textSize="18dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consecte,Lorem ipsum dolor sit amet, consecte"
+                        android:textColor="#7D7D7D"
+                        android:textSize="18dp"
+                        android:fontFamily="@font/nunito"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginTop="10dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="33dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Constraints"
+                android:textColor="#3CA6DA"
+                android:textSize="20dp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:layout_marginTop="31dp">
+                <ImageView
+                    android:id="@+id/screenmonit"
+                    android:layout_width="42dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/screen_monti"
+                    android:layout_marginLeft="46dp"/>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Screen monitoring"
+                    android:textSize="12dp"
+                    android:textColor="#7D7D7D"
+                    android:fontFamily="@font/nunito"
+                    android:layout_below="@+id/screenmonit"
+                    android:layout_marginLeft="39dp"
+                    android:gravity="center_horizontal" />
+                <ImageView
+                    android:id="@+id/candidatemonit"
+                    android:layout_width="42dp"
+                    android:layout_height="28dp"
+                    android:layout_toRightOf="@id/screenmonit"
+                    android:src="@drawable/candidi"
+                    android:layout_marginLeft="46dp"/>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Candidate monitoring"
+                    android:textSize="12dp"
+                    android:textColor="#7D7D7D"
+                    android:fontFamily="@font/nunito"
+
+                    android:layout_below="@+id/candidatemonit"
+                    android:layout_marginLeft="127dp"
+                    android:gravity="center_horizontal" />
+                <ImageView
+                    android:id="@+id/faceunlock"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_toRightOf="@id/candidatemonit"
+                    android:src="@drawable/faceunlock"
+                    android:layout_marginLeft="46dp"/>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Face unlock"
+                    android:textSize="12dp"
+                    android:textColor="#7D7D7D"
+                    android:fontFamily="@font/nunito"
+
+                    android:layout_below="@+id/faceunlock"
+                    android:layout_marginLeft="209dp"
+                    android:gravity="center_horizontal" />
+                <ImageView
+                    android:id="@+id/tablock"
+                    android:layout_width="21dp"
+                    android:layout_height="33dp"
+                    android:layout_toRightOf="@id/faceunlock"
+                    android:src="@drawable/tablock"
+                    android:layout_marginLeft="46dp"/>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="Face unlock"
+                    android:textSize="12dp"
+                    android:textColor="#7D7D7D"
+                    android:fontFamily="@font/nunito"
+                    android:layout_below="@+id/tablock"
+                    android:layout_marginLeft="282dp"
+                    android:gravity="center_horizontal" />
+            </RelativeLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="158dp"
+                android:layout_height="50dp"
+                android:background="@drawable/background_red"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="End Task"
+                android:textColor="@color/white"
+                android:layout_marginLeft="117dp"
+                android:textSize="18dp" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="358dp"
+                android:layout_height="179dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="28dp"
+                app:cardCornerRadius="12dp"
+                android:backgroundTint="@color/white"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Deadline countdown"
+                        android:textColor="@color/text_blue"
+                        android:layout_marginLeft="28dp"
+                        android:layout_marginTop="27dp"
+                        android:textSize="20dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="72 : 35 : 04"
+                        android:textSize="41dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito"
+                        android:layout_marginLeft="74dp"
+                        android:layout_marginTop="73dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hrs"
+                        android:textColor="#7D7D7D"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_marginTop="127dp"
+                        android:layout_marginLeft="89dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Min"
+                        android:textColor="#7D7D7D"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_marginTop="127dp"
+                        android:layout_marginLeft="168dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sec"
+                        android:textColor="#7D7D7D"
+                        android:textSize="13dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_marginTop="127dp"
+                        android:layout_marginLeft="247dp"/>
+
+
+
+
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="361dp"
+                android:layout_height="468dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="26dp"
+                app:cardCornerRadius="12dp"
+                android:backgroundTint="@color/white">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assigned to"
+                        android:textColor="@color/black"
+                        android:textSize="23dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginLeft="28dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginLeft="326dp"
+                        android:src="@drawable/more_vert"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="100dp"
+                        android:layout_marginBottom="68dp"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show more"
+                        android:textSize="15dp"
+                        android:textColor="#7D7D7D"
+                        android:fontFamily="@font/nunito"
+                        android:layout_marginTop="430dp"
+                        android:layout_marginLeft="127dp"/>
+
+
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="362dp"
+                android:layout_height="1106dp"
+                android:layout_marginTop="36dp"
+                android:layout_marginLeft="26dp"
+                app:cardCornerRadius="12dp"
+
+                android:backgroundTint="@color/white">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Queries"
+                        android:textColor="@color/black"
+                        android:textSize="23dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:layout_marginTop="32dp"
+                        android:layout_marginLeft="28dp"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="38dp"
+                        android:layout_marginLeft="326dp"
+                        android:src="@drawable/more_vert"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="50dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Show more"
+                        android:textSize="15dp"
+                        android:textColor="#7D7D7D"
+                        android:fontFamily="@font/nunito"
+                        android:layout_marginTop="1064dp"
+                        android:layout_marginLeft="135dp"/>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

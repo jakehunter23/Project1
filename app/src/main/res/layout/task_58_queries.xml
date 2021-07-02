@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <androidx.cardview.widget.CardView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:cardCornerRadius="250dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginLeft="28dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/people1"/>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="19dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24 July 2021 | 9:00 pm"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"
+        android:layout_marginLeft="94dp"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ...."
+        android:textSize="14dp"
+        android:textColor="#7D7D7D"
+        android:fontFamily="@font/nunito_semibold"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="24dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Replay"
+        android:textColor="@color/text_blue"
+        android:textSize="14dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:layout_marginTop="185dp"
+        android:layout_marginLeft="303dp"/>
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="186dp"
+        android:layout_marginLeft="283dp"
+        android:src="@drawable/reply_black_24dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginRight="27dp"
+        android:layout_height="2dp"
+        android:background="#F2F2F2"
+        android:layout_marginTop="225dp"
+        android:layout_marginLeft="27dp" />
+
+
+</RelativeLayout>

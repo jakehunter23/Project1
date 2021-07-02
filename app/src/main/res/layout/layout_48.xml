@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:background="@drawable/gradient">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/back_arrow"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="70dp"
+                android:fontFamily="@font/nunito"
+                android:text="Add Recruiter"
+                android:textSize="30dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fill in the details to create new recruiter"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="110dp"
+                android:fontFamily="@font/nunito"
+                android:textSize="14dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="170dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:id="@+id/card_pro_1"
+                    app:cardElevation="0dp"
+                    android:layout_marginLeft="100dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginBottom="34dp">
+
+                    <ImageView
+                        android:id="@+id/imageView_2"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/circle_new" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/resume"
+                         />
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:id="@+id/card_dot_4"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_toEndOf="@id/card_pro_1"
+                    android:foreground="@color/luc_white"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/card_pro_1" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:id="@+id/card_dot_5"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_toEndOf="@id/card_dot_4"
+                    android:foreground="@color/luc_white"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/card_dot_4" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:id="@+id/card_dot_6"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_toEndOf="@id/card_dot_5"
+                    android:foreground="@color/luc_white"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/card_dot_5" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:id="@+id/card_dot_7"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_toEndOf="@id/card_dot_6"
+                    android:foreground="@color/luc_white"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_toRightOf="@id/card_dot_6" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_toEndOf="@id/card_dot_7"
+                    android:layout_marginLeft="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginBottom="34dp"
+                    android:layout_toRightOf="@id/card_dot_7">
+
+                    <ImageView
+
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/circle_new" />
+
+                    <ImageView
+
+                        android:layout_width="26dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/iconfinder_general_office_34_3592855"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/resume"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal Information"
+                android:textSize="26dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:layout_marginTop="22dp"
+                android:layout_marginLeft="20dp"/>
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="250dp"
+            android:layout_gravity="center_horizontal"
+            app:cardBackgroundColor="#E8E6E6"
+            android:layout_marginTop="22dp">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/person_outline"/>
+        </androidx.cardview.widget.CardView>
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+        android:text="First Name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:textSize="14dp"/>
+
+
+        <EditText
+            android:id="@+id/editTextTextPersonName8"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="27dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter First Name"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Last Name"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="27dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter Last Name"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Status"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <Spinner
+            android:id="@+id/spinner3"
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:foreground="@drawable/background" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter main Email ID"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Contact Number"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter 10 digit number"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="18dp"
+            android:text="Add Contact Number +"
+            android:textSize="13dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginTop="7dp"
+            android:textColor="@color/text_blue"
+            android:layout_marginLeft="250dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="26dp"
+            android:text="Address"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter address"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="City"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="City name"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Zipcode"
+
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:hint="Enter zipcode of city"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="State"
+
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <Spinner
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:foreground="@drawable/background" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="Country"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="14dp"/>
+        <Spinner
+
+            android:layout_width="match_parent"
+            android:layout_marginRight="27dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="26dp"
+            android:foreground="@drawable/background" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_marginTop="51dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="123dp"
+            android:text="Next"
+            android:textSize="18dp"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:textAlignment="textEnd"
+            android:drawableRight="@drawable/next_icon"
+            android:drawablePadding="12dp"
+            android:paddingRight="125dp"
+            android:layout_gravity="end"
+            />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</ScrollView>

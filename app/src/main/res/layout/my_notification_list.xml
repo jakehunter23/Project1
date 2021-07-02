@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_marginRight="27dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="12dp"
+        android:outlineAmbientShadowColor="#00000029"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="23dp"
+                android:src="@drawable/work_outline"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FaceBook"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="for Web Developer"
+                android:textColor="#ADADAD"
+                android:textSize="11dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Task assigned"
+                android:textColor="#FF9D18"
+                android:textSize="13dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2:38 pm"
+                android:textSize="10dp"
+                android:textColor="#C5C5C5"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="44dp"
+                android:layout_marginLeft="304dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deadline : 26th May 2021"
+                android:textColor="#707070"
+                android:textSize="11dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="78dp"
+                android:layout_marginLeft="77dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

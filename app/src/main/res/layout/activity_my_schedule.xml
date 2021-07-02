@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/navbotton"
+                    android:src="@drawable/menu_black_24dp"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView267"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Schedule"
+        android:layout_marginTop="92dp"
+        android:layout_marginLeft="28dp"
+        android:textSize="30dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"/>
+        <Spinner
+            android:layout_width="170dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="27dp"
+            android:layout_marginLeft="28dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:foreground="@drawable/background_black"
+            style="@style/Widget.App.Spinner_black"/>
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:background="#C1BBBB"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="29dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
