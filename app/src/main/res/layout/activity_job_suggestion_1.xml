@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:id="@+id/menu_icon_jobl"
+                android:src="@drawable/arrow_back_black"/>
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView237"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/editTextTextPersonName55"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:textColor="@color/grey"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textColorHint="#B1ADAD"
+                android:hint="Type Location"/>
+            <TextView
+                
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pay type salary"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:layout_marginTop="20dp">
+                <EditText
+                    android:id="@+id/editText1"
+                    android:layout_width="142dp"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:textColor="@color/grey"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:inputType="textPersonName"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textColorHint="#B1ADAD"
+                    android:hint="Min"/>
+                <EditText
+                    android:layout_width="142dp"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:textColor="@color/grey"
+                    android:layout_toRightOf="@+id/editText1"
+                    android:inputType="textPersonName"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textColorHint="#B1ADAD"
+                    android:hint="Max"/>
+
+
+            </RelativeLayout>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Industry"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+            <Spinner
+                android:id="@+id/countryspinner"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:layout_marginStart="24dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="14dp"
+                android:foreground="@drawable/background"
+                style="@style/Widget.App.Spinner"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Job Type"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Full-time"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="31dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:buttonTint="#3CA6DA"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Part-time"
+                    android:paddingLeft="13dp"
+                    android:paddingRight="31dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:buttonTint="#3CA6DA"/>
+
+
+            </RadioGroup>
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Internship"
+
+                android:paddingLeft="13dp"
+                android:paddingRight="5dp"
+                android:layout_marginLeft="27dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"
+                android:buttonTint="#3CA6DA"/>
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Skills"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button24"
+                android:layout_width="153dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="123dp"
+                android:text="Apply"
+                android:textSize="18dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+
+
+                android:layout_gravity="center"
+                />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</LinearLayout>

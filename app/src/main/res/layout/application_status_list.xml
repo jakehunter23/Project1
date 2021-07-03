@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_marginRight="27dp"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="12dp"
+        android:outlineAmbientShadowColor="#00000029"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="37dp"
+                android:layout_height="37dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="23dp"
+                android:src="@drawable/work_outline"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FaceBook"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="19dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="for Web Developer"
+                android:textColor="#ADADAD"
+                android:textSize="11dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Task assigned"
+                android:textColor="#FF9D18"
+                android:textSize="13dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginRight="12dp"
+                android:background="#F2F2F2"
+                android:layout_marginTop="89dp"
+                android:layout_marginLeft="12dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Check details"
+                android:textSize="11dp"
+                android:textColor="#707070"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="98dp"
+                android:layout_marginLeft="144dp"/>
+
+
+
+
+
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

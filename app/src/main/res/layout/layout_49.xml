@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:background="@drawable/gradient">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/back_arrow"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/nunito"
+            android:text="Add Recruiter"
+            android:textSize="30dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fill in the details to create new recruiter"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/nunito"
+            android:textSize="14dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="170dp"
+            >
+            <androidx.cardview.widget.CardView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:id="@+id/card_pro_1"
+                app:cardElevation="0dp"
+                android:layout_marginLeft="100dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="250dp"
+                android:layout_marginBottom="34dp">
+
+                <ImageView
+                    android:id="@+id/imageView_2"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_new" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/resume"
+                    />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:id="@+id/card_dot_4"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                android:layout_toEndOf="@id/card_pro_1"
+                android:foreground="@color/luc_white"
+                app:cardCornerRadius="250dp"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/card_pro_1" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:id="@+id/card_dot_5"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                android:layout_toEndOf="@id/card_dot_4"
+                android:foreground="@color/luc_white"
+                app:cardCornerRadius="250dp"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/card_dot_4" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:id="@+id/card_dot_6"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                android:layout_toEndOf="@id/card_dot_5"
+                android:foreground="@color/luc_white"
+                app:cardCornerRadius="250dp"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/card_dot_5" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:id="@+id/card_dot_7"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="32dp"
+                android:layout_toEndOf="@id/card_dot_6"
+                android:foreground="@color/luc_white"
+                app:cardCornerRadius="250dp"
+                android:layout_marginLeft="14dp"
+                android:layout_toRightOf="@id/card_dot_6" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_toEndOf="@id/card_dot_7"
+                android:layout_marginLeft="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardCornerRadius="250dp"
+                android:layout_marginBottom="34dp"
+                android:layout_toRightOf="@id/card_dot_7">
+
+                <ImageView
+
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/circle_new" />
+
+                <ImageView
+
+                    android:layout_width="26dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/iconfinder_general_office_34_3592855"
+                    />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/iconfinder_general_office_34_3592855"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Professional Information"
+            android:textSize="26dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:layout_marginTop="22dp"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="26dp"
+        android:text="Company Name"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:textSize="14dp"/>
+
+
+    <EditText
+        android:id="@+id/editTextTextPersonName8"
+        android:layout_width="match_parent"
+        android:layout_marginRight="27dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="26dp"
+        android:textColorHint="#B8B6B6"
+        android:hint="Candidate currently employed in?"
+        android:background="@drawable/background"
+        android:paddingLeft="29dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="26dp"
+        android:text="Designation"
+        android:textColor="@color/black"
+
+        android:fontFamily="@font/nunito_semibold"
+        android:textSize="14dp"/>
+
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_marginRight="27dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="26dp"
+        android:hint="Enter current job title of the candidate"
+        android:background="@drawable/background"
+        android:textColorHint="#B8B6B6"
+        android:paddingLeft="29dp"
+        android:textSize="17dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginLeft="26dp"
+        android:text="Business email"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito_semibold"
+        android:textSize="14dp"/>
+
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_marginRight="27dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="26dp"
+        android:hint="Enter business Email ID"
+        android:textColorHint="#B8B6B6"
+        android:background="@drawable/background"
+        android:paddingLeft="29dp"
+        android:textSize="17dp"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonsubmit"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="123dp"
+        android:text="Save and Proceed"
+        android:textSize="18dp"
+        android:fontFamily="@font/nunito_semibold"
+        android:textColor="@color/white"
+        android:background="@drawable/background_solid"
+        android:textAllCaps="false"
+        android:textAlignment="textEnd"
+        android:drawableRight="@drawable/next_icon"
+        android:drawablePadding="12dp"
+        android:paddingRight="75dp"
+        android:layout_gravity="end"
+        />
+
+
+
+</LinearLayout>

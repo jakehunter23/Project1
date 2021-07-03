@@ -83,5 +83,9 @@
 <style name="seekbar_style" parent="Theme.AppCompat.Light.NoActionBar">
     <item name="trackHeight">7dp</item>
 </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/yellow</item>
+        <item name="colorControlActivated">@color/light_grey</item>
+    </style>
 
 </resources>

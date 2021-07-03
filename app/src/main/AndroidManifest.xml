@@ -14,15 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
-        <activity android:name=".SearchActivity"></activity>
-        <activity android:name=".MessageAcitvity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".MessageAcitvity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity">
+
         </activity>
         <activity
             android:name=".NavActivity"
@@ -60,6 +63,21 @@
         <activity android:name=".AddRecruitmentActivity" />
         <activity android:name=".DashBoardActivity" />
         <activity android:name=".TaskSelectedActivity" />
+        <activity android:name=".myFiles_3" />
+        <activity android:name=".MainActivity_JS" />
+        <activity android:name=".profile" />
+        <activity android:name=".jobSuggestion_1" />
+        <activity android:name=".navigation" />
+        <activity android:name=".faq" />
+        <activity android:name=".mySchedule" />
+        <activity android:name=".myfiles" />
+        <activity android:name=".storage" />
+        <activity android:name=".Referal" />
+        <activity android:name=".CreateTicketJobSeeker" />
+        <activity android:name=".mytask" />
+        <activity android:name=".jobSuggestion" />
+        <activity android:name=".signin" />
+        <activity android:name=".dashboard"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
