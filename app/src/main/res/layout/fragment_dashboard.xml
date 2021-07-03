@@ -51,34 +51,35 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:paddingBottom="7dp">
-
                     <SearchView
-                        android:layout_width="match_parent"
                         android:id="@+id/card_usage_search"
+                        android:layout_width="match_parent"
                         android:layout_height="50dp"
+                        android:layout_marginLeft="27dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginStart="27dp"
-                        android:layout_marginEnd="27dp"
+                        android:layout_marginRight="20dp"
                         android:background="@drawable/searchview_bg"
                         android:layoutDirection="rtl"
-                        android:searchIcon="@null"
-                        android:queryHint="Search for job or Candidate"
                         android:queryBackground="@drawable/searchview_bg"
+                        android:queryHint="Search for job or Candidate"
                         android:theme="@style/AppSearchView">
 
                     </SearchView>
-
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
+                        android:layout_alignEnd="@id/card_usage_search"
                         android:layout_marginTop="5dp"
-                        android:layout_marginStart="334dp"
-                        android:src="@drawable/search"/>
+                        android:theme="@style/AppSearchView"
+                        android:src="@drawable/search"
+                        android:layout_alignRight="@id/card_usage_search" />
 
                 </RelativeLayout>
+
+
 
                 <TextView
                     android:id="@+id/textView256"

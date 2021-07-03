@@ -62,22 +62,37 @@
             android:textColor="#7D7D7D"
             android:textSize="15dp" />
 
-        <SearchView
-            android:id="@+id/search_tools"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView23"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="41dp"
-            android:layout_marginEnd="33dp"
-            android:searchIcon="@drawable/search"
-            android:background="@drawable/searchview_bgant" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="7dp">
+                <SearchView
+                    android:id="@+id/cand_usage_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/searchview_bg"
+                    android:layoutDirection="rtl"
+                    android:queryBackground="@drawable/searchview_bg"
+                    android:queryHint="Search for job or Candidate"
+                    android:theme="@style/AppSearchView">
 
-        </SearchView>
+                </SearchView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignEnd="@id/cand_usage_search"
+                    android:layout_marginTop="5dp"
+                    android:theme="@style/AppSearchView"
+                    android:src="@drawable/search"
+                    android:layout_alignRight="@id/cand_usage_search" />
 
-        <TextView
+            </RelativeLayout>
+
+            <TextView
             android:id="@+id/textView24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

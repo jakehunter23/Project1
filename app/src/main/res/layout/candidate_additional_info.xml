@@ -86,6 +86,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginStart="24dp"
             android:text="Availability Date"
+            android:layout_marginBottom="15dp"
             android:textSize="18dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito_semibold"/>
@@ -151,6 +152,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:textSize="18dp"
+                android:layout_marginLeft="27dp"
                 android:text="Web Response"
                 android:buttonTint="#3CA6DA"
                 android:fontFamily="@font/nunito_semibold"/>
@@ -159,6 +161,7 @@
                 android:id="@+id/radioButton2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="27dp"
                 android:textSize="18dp"
                 android:text="Submission"
                 android:buttonTint="#3CA6DA"

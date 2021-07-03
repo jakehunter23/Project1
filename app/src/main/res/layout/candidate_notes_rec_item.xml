@@ -26,7 +26,7 @@
                 android:id="@+id/cand_imageView23"
                 android:layout_width="44dp"
                 android:layout_height="44dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/dp_1" />
 
         </androidx.cardview.widget.CardView>
 
@@ -37,7 +37,7 @@
             android:layout_marginStart="19dp"
             android:layout_marginTop="44dp"
             android:layout_toEndOf="@+id/cand_notes_dp"
-            android:text="TextView"
+            android:text="Philip Martin"
             android:textSize="18dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
@@ -94,7 +94,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="19dp"
             android:layout_toEndOf="@+id/cand_type"
-            android:text="TextView"
+            android:text="Resume evaluation"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
@@ -119,7 +119,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@+id/cand_time_spent"
-            android:text="TextView"
+            android:text="30mins"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
@@ -143,7 +143,7 @@
             android:layout_below="@+id/cand_last_updated"
             android:layout_marginStart="29dp"
             android:layout_marginTop="3dp"
-            android:text="TextView"
+            android:text="10-05-2021"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
@@ -168,8 +168,8 @@
             android:layout_below="@+id/cand_added_on"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="88dp"
-            android:text="TextView"
+            android:layout_marginEnd="70dp"
+            android:text="10-12-2020"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>

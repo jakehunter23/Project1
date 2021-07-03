@@ -14,34 +14,37 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:paddingBottom="7dp">
-
             <SearchView
+                android:id="@+id/cand_usage_search"
                 android:layout_width="match_parent"
-                android:id="@+id/act_usage_search"
                 android:layout_height="50dp"
+                android:layout_marginLeft="27dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/searchview_bg"
                 android:layoutDirection="rtl"
-                android:searchIcon="@null"
-                android:queryHint="Search by candidate name"
                 android:queryBackground="@drawable/searchview_bg"
+                android:queryHint="Search for job or Candidate"
                 android:theme="@style/AppSearchView">
 
             </SearchView>
-
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_alignEnd="@id/cand_usage_search"
                 android:layout_marginTop="5dp"
-                android:layout_marginStart="332dp"
-                android:src="@drawable/search"/>
+                android:theme="@style/AppSearchView"
+                android:src="@drawable/search"
+                android:layout_alignRight="@id/cand_usage_search" />
 
         </RelativeLayout>
+
+
+
+
 
         <RelativeLayout
             android:layout_width="match_parent"

@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="250dp"
         android:layout_marginStart="28dp"
+        android:layout_marginTop="10dp"
         android:id="@+id/task_item2_dp">
 
         <ImageView
@@ -25,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="19dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@+id/task_item2_dp"
         android:text="Username"
         android:textSize="18dp"
@@ -94,8 +96,16 @@
         android:text="Reply"
         android:drawableLeft="@drawable/reply_black_24dp"
         android:drawablePadding="4dp"
-        android:layout_marginBottom="42dp"
         android:textSize="15dp"
         android:fontFamily="@font/nunito_semibold"
         android:textColor="@color/text_blue"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_below="@+id/textView348"
+        android:background="@color/light_grey"/>
 </RelativeLayout>

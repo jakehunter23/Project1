@@ -57,60 +57,63 @@
         android:fontFamily="@font/nunito_semibold"
         android:text="Manage you Files"
         android:textColor="#7D7D7D"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/storageHead"
-        android:layout_marginTop="30dp"
-        android:paddingBottom="7dp">
-
-
-
-        <SearchView
-            android:id="@+id/card_usage_search"
-            android:layout_width="286dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/searchview_bg"
-            android:layoutDirection="rtl"
-            android:queryBackground="@drawable/searchview_bg"
-            android:queryHint="Search for Files by Id or title"
-            android:searchIcon="@null"
-            android:theme="@style/AppSearchView">
-
-        </SearchView>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="264dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/search" />
-
-        <androidx.cardview.widget.CardView
+        <LinearLayout
             android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
-            android:layout_marginTop="5dp"
-            android:layout_toEndOf="@+id/card_usage_search"
-            android:elevation="2dp"
-            app:cardCornerRadius="10dp">
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <SearchView
+                    android:id="@+id/cand_usage_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/searchview_bg"
+                    android:layoutDirection="rtl"
+                    android:queryBackground="@drawable/searchview_bg"
+                    android:queryHint="Search for job by Id or title"
+                    android:theme="@style/AppSearchView">
+
+                </SearchView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignEnd="@id/cand_usage_search"
+                    android:theme="@style/AppSearchView"
+                    android:src="@drawable/search"
+                    android:layout_alignRight="@id/cand_usage_search" />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_toEndOf="@+id/cand_usage_search"
+                app:cardCornerRadius="10dp"
+                android:elevation="2dp">
 
 
-            <ImageView
-                android:id="@+id/cand_imageView"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/dash_note" />
-        </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/cand_imageView"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/dash_note"/>
+            </androidx.cardview.widget.CardView>
 
-    </RelativeLayout>
+
+        </LinearLayout>
+
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="94dp"
+        android:layout_marginRight="25dp"
         android:id="@+id/storageHead"
         android:layout_below="@+id/fileSearch"
         app:cardCornerRadius="10dp"

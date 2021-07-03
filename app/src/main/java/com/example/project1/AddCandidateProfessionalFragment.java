@@ -43,7 +43,7 @@ public class AddCandidateProfessionalFragment extends Fragment {
     String fetchOwnership = "https://demotic-recruit.000webhostapp.com/ownership_fetch.php";
 
     String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName;
-    int stateId, countryId, candidateType, preference, sourceId, ownerId;
+    int stateId, countryId,  sourceId, ownerId;
 
     Spinner ownership, source;
     ArrayList<String> ownershipList;
@@ -85,6 +85,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -104,6 +106,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
         EditText HourlyRateLow = view.findViewById(R.id.editTextTextPersonName39);
         EditText DesiredSalary = view.findViewById(R.id.editTextTextPersonName40);
         EditText HourlyRateHigh = view.findViewById(R.id.editTextTextPersonName41);
+        Spinner cand=view.findViewById(R.id.spinner22);
+        Spinner emp=view.findViewById(R.id.spinner23);
 
         Bundle bundle = this.getArguments();
         firstName = bundle.getString("firstName");
@@ -116,6 +120,29 @@ public class AddCandidateProfessionalFragment extends Fragment {
         zipcode = bundle.getString("zipcode");
         stateId = bundle.getInt("stateId");
         countryId = bundle.getInt("countryId");
+
+
+
+        ArrayList<String> can_List=new ArrayList<>();
+        can_List.add("CandidateType1");
+        can_List.add("CandidateTpye2");
+        can_List.add("CandidateType3");
+        can_List.add("All");
+        ArrayAdapter CanAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,can_List);
+        CanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cand.setAdapter(CanAdapter);
+
+        ArrayList<String> emp_List=new ArrayList<>();
+        emp_List.add("Employment Pref Type1");
+        emp_List.add("Employment Pref Type2");
+        emp_List.add("Employment Pref Type3");
+        emp_List.add("All");
+        ArrayAdapter EmpAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,emp_List);
+        EmpAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        emp.setAdapter(EmpAdapter);
+
+
+
 
         loadOwnership();
         loadSource();
