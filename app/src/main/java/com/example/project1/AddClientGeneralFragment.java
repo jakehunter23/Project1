@@ -107,6 +107,27 @@ public class AddClientGeneralFragment extends Fragment{
         EditText companyText = view.findViewById(R.id.editTextTextPersonName43);
         EditText companyUrlText = view.findViewById(R.id.editTextTextPersonName44);
         EditText companyDescriptionText = view.findViewById(R.id.editTextTextPersonName45);
+        Spinner parent=view.findViewById(R.id.parent_cmny);
+        Spinner active=view.findViewById(R.id.active_cntact);
+
+        ArrayList<String> con_List=new ArrayList<>();
+        con_List.add("Active contact1");
+        con_List.add("Active contact2");
+        con_List.add("ActiveContact3");
+        con_List.add("All");
+        ArrayAdapter contactAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,con_List);
+        contactAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        active.setAdapter(contactAdapter);
+
+        ArrayList<String> parent_list=new ArrayList<>();
+        parent_list.add("Facebook");
+        parent_list.add("Google");
+        parent_list.add("Microsoft");
+        parent_list.add("Amazon");
+        parent_list.add("Analysed");
+        ArrayAdapter parentAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,parent_list);
+        parentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        parent.setAdapter(parentAdapter);
 
         Button next = view.findViewById(R.id.client_to_contact_button);
         status =view.findViewById(R.id.spinner45);

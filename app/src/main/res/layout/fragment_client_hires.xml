@@ -71,7 +71,7 @@
             android:layout_height="match_parent">
 
             <Spinner
-                android:id="@+id/spinner53"
+                android:id="@+id/highmedSpinner"
                 android:layout_width="150dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="27dp"
@@ -102,6 +102,7 @@
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
+            android:layout_marginBottom="20dp"
             android:layout_height="22dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="39dp"

@@ -46,7 +46,7 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
         String creator_name = creator_item.getFirst_name().toString();
         String creator_last = creator_item.getLast_name().toString();
         holder.creatorName.setText(creator_name + " " + creator_last);
-        holder.cardView.setVisibility(View.GONE);
+        holder.hiddenView.setVisibility(View.GONE);
         holder.companyName.setText(client_item.getName());
         holder.phoneNumber.setText(client_item.getPhone_number());
         holder.email.setText(client_item.getEmail());

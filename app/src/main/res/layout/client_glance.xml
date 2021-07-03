@@ -83,6 +83,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="29dp"
             android:layout_marginTop="47dp"
+            android:layout_marginBottom="20dp"
             android:text="Edit Client"
             android:background="@drawable/background_solid"
             android:textColor="@color/white"
