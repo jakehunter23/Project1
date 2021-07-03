@@ -181,7 +181,7 @@
             android:fontFamily="@font/nunito_semibold"/>
 
         <Spinner
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/jobSpinner"
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:layout_marginTop="14dp"
@@ -206,7 +206,7 @@
             android:fontFamily="@font/nunito_semibold"/>
 
         <Spinner
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/accessSpinner"
             android:layout_width="match_parent"
             android:layout_height="62dp"
             android:ems="10"

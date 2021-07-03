@@ -100,6 +100,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:id="@+id/hidden_info"
                 android:visibility="visible">
 
@@ -309,11 +310,14 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/click"
                 android:layout_gravity="center"
-                android:layout_marginBottom="19dp">
+                android:layout_marginBottom="5dp">
 
                 <TextView
-                    android:id="@+id/textView211"
+                    android:id="@+id/more"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Show more"
@@ -322,11 +326,11 @@
                     android:fontFamily="@font/nunito"/>
 
                 <ImageView
-                    android:id="@+id/imageView19"
+                    android:id="@+id/downarrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
-                    android:layout_toEndOf="@+id/textView211"
+                    android:layout_toEndOf="@+id/more"
                     app:srcCompat="@drawable/expand_more" />
             </RelativeLayout>
 

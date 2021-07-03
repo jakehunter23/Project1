@@ -9,9 +9,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -22,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,13 +44,15 @@ public class AddCandidateAdditionalFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     String insertCandidate = "https://demotic-recruit.000webhostapp.com/candidate_insert.php";
 
-    String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName, skill, talent, degree, comments, availabilityDate;
+    String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName, skill,specialization, talent, degree, comments, availabilityDate;
     int stateId, countryId, candidateType, preference, sourceId, ownerId;
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     String strDate = dateFormat.format(date);
     EditText Comments;
     EditText AvailabilityDate;
+
+    Spinner job,accessibility;
 
     String date_selected_availablity;
 
@@ -93,7 +98,32 @@ public class AddCandidateAdditionalFragment extends Fragment {
         View view = inflater.inflate(R.layout.candidate_additional_info, container, false);
         Button toCandAct = view.findViewById(R.id.button12);
         Comments = view.findViewById(R.id.editTextTextPersonName5);
+        job=view.findViewById(R.id.jobSpinner);
+        accessibility=view.findViewById(R.id.accessSpinner);
         AvailabilityDate = view.findViewById(R.id.availability_date);
+
+        ArrayList<String> job_List=new ArrayList<>();
+        job_List.add("Student");
+        job_List.add("Software Engineer");
+        job_List.add("Android Developer");
+        job_List.add("Web Developer");
+        job_List.add("Data Scientist");
+
+
+        ArrayAdapter jobAdapter= new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, job_List);
+        jobAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        job.setAdapter(jobAdapter);
+
+        ArrayList<String> access_List=new ArrayList<>();
+        access_List.add("Private");
+        access_List.add("Public");
+        access_List.add("Dummy1");
+        access_List.add("Dummy2");
+
+        ArrayAdapter accessAdapter= new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, access_List);
+        accessAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        accessibility.setAdapter(accessAdapter);
+
         view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -126,6 +156,7 @@ public class AddCandidateAdditionalFragment extends Fragment {
         hourlyRateh = bundle.getString("hourlyRateh");
         talent = bundle.getString("talent");
         degree = bundle.getString("degree");
+        specialization=bundle.getString("specialization");
         skill = bundle.getString("skill");
         toCandAct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,11 +213,14 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 param.put("talent", talent);
                 param.put("skill", skill);
                 param.put("degree", degree);
+                param.put("specialization",specialization);
                 param.put("comments",comments);
                 param.put("availability_date", availabilityDate);
                 param.put("job", String.valueOf(0));
                 param.put("accessibility", String.valueOf(0));
                 param.put("created_date", strDate);
+                param.put("job",job.getSelectedItem().toString().trim());
+                param.put("accessibility",accessibility.getSelectedItem().toString());
 
 
 

@@ -10,12 +10,17 @@ import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,7 +84,21 @@ public class AddCandidateSkillFragment extends Fragment {
         Button toAdditional = view.findViewById(R.id.button40);
         chipGroup =view.findViewById(R.id.chip_group_canskill);
         EditText Talent = view.findViewById(R.id.editTextTextPersonName69);
-        EditText Degree = view.findViewById(R.id.editTextTextPersonName70);
+       Spinner Degree = view.findViewById(R.id.degreeSpinner);
+       EditText specialiation=view.findViewById(R.id.specialization);
+
+        ArrayList<String> deg_List=new ArrayList<>();
+        deg_List.add("Bachelors (graduate)");
+        deg_List.add("Masters (post graduate");
+        deg_List.add("Doctorate");
+        deg_List.add("Diploma");
+        deg_List.add("ITI");
+        deg_List.add("Higher secondary");
+        deg_List.add("Other");
+
+        ArrayAdapter DegAdapter= new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, deg_List);
+        DegAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        Degree.setAdapter(DegAdapter);
 
         Bundle bundle = this.getArguments();
         firstName = bundle.getString("firstName");
@@ -130,7 +149,8 @@ public class AddCandidateSkillFragment extends Fragment {
                 bundle2.putString("hourlyRateh" , hourlyRateh);
                 bundle2.putString("talent", Talent.getText().toString().trim());
                 bundle2.putString("skill", skill);
-                bundle2.putString("degree", Degree.getText().toString().trim());
+                bundle2.putString("degree", Degree.getSelectedItem().toString().trim());
+                bundle2.putString("specialiation",specialiation.getText().toString().trim());
 
 
                 ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateAdditionalFragment(), bundle2);

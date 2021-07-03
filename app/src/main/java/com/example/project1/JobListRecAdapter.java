@@ -5,12 +5,16 @@ import android.hardware.display.VirtualDisplay;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.AutoTransition;
+import androidx.transition.TransitionManager;
 
 public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.JobRecViewHolder> {
 
@@ -48,6 +52,8 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
         String creatorName = creator_item.getFirst_name();
         String creatorLast = creator_item.getLast_name();
         String creatorMail = creator_item.getEmail();
+        holder.hidden.setVisibility(View.GONE);
+
 
         holder.companyName.setText(companyName);
         holder.companyAddress.setText(companyAddress);
@@ -67,10 +73,13 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
 
         TextView companyName;
         TextView companyAddress;
+        RelativeLayout hidden;
+        RelativeLayout click;
         TextView addedOn;
         TextView openings;
         TextView recruiterName;
-        TextView recruiterEmail;
+        TextView recruiterEmail,information;
+        ImageView arrow;
 
         public JobRecViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +90,32 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
             openings = itemView.findViewById(R.id.clihire_contact_mail);
             recruiterName = itemView.findViewById(R.id.clihire_rec_name);
             recruiterEmail = itemView.findViewById(R.id.clihire_rec_mail);
+            click=itemView.findViewById(R.id.click);
+            hidden=itemView.findViewById(R.id.hidden_info);
+            arrow=itemView.findViewById(R.id.downarrow);
+            information=itemView.findViewById(R.id.more);
+
+            click.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (hidden.getVisibility() == View.VISIBLE) {
+
+
+                        TransitionManager.beginDelayedTransition(hidden,
+                                new AutoTransition());
+                        hidden.setVisibility(View.GONE);
+                        arrow.setImageResource(R.drawable.expand_more);
+                        information.setText(R.string.show_more);
+
+                    }  else {
+                        TransitionManager.beginDelayedTransition(hidden,
+                                new AutoTransition());
+                        hidden.setVisibility(View.VISIBLE);
+                        arrow.setImageResource(R.drawable.expand_less);
+                        information.setText(R.string.show_less);
+                    }
+                }
+            });
         }
 
     }

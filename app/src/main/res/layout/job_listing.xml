@@ -61,7 +61,7 @@
                 <SearchView
                     android:id="@+id/cand_usage_search"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
+                    android:layout_height="502dp"
                     android:layout_marginLeft="27dp"
                     android:layout_marginRight="5dp"
                     android:background="@drawable/searchview_bg"
@@ -101,15 +101,24 @@
 
         </LinearLayout>
 
-
-        <Spinner
-            android:id="@+id/spinner59"
-            android:layout_width="134dp"
-            android:layout_marginStart="27dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
+            app:cardCornerRadius="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_height="55dp"
-            style="@style/Widget.App.Spinner_black" />
+            android:layout_marginStart="27dp"
+            android:layout_height="wrap_content">
+            <Spinner
+                android:id="@+id/spinnerAll"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:paddingRight="45dp"
+                style="@style/Widget.App.Spinner_black" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
 
         <RadioGroup
             android:layout_width="wrap_content"
@@ -141,7 +150,7 @@
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"
-                android:buttonTint="@android:color/holo_orange_light"/>
+                android:buttonTint="@android:color/holo_orange_dark"/>
 
             <RadioButton
                 android:id="@+id/radioButton5"

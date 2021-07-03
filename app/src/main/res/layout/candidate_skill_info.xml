@@ -105,7 +105,7 @@
             <com.google.android.material.chip.ChipGroup
                 android:layout_width="match_parent"
                 android:layout_height="189dp"
-                android:paddingLeft="20dp"
+                android:padding="20dp"
                 android:id="@+id/chip_group_canskill"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="24dp"
@@ -125,18 +125,40 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
-            <EditText
-                android:id="@+id/editTextTextPersonName70"
+            <Spinner
+                android:id="@+id/degreeSpinner"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:foreground="@drawable/background"/>
+
+            <TextView
+                android:id="@+id/others"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="34dp"
+                android:text="Specialization"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_semibold"/>
+
+            <EditText
+                android:id="@+id/specialization"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:hint="Enter Candidate's degree"
+                android:fontFamily="@font/nunito_semibold"
                 android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                android:layout_marginTop="16dp"
-                android:paddingLeft="10dp"
-                android:background="@drawable/background_sharp"/>
+                android:layout_marginEnd="23dp"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"
+                android:background="@drawable/background"/>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button31"

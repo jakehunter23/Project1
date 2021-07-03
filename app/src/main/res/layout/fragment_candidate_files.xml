@@ -58,8 +58,7 @@
                     android:id="@+id/cand_imageView"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
-                    android:background="@drawable/roundcorner"
-                    android:src="@drawable/add"/>
+                    android:src="@drawable/note_solid"/>
             </androidx.cardview.widget.CardView>
 
 
@@ -88,6 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginStart="32dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginTop="39dp"
             android:fontFamily="@font/nunito_semibold"
             android:text="Recent"

@@ -3,7 +3,9 @@ package com.example.project1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -23,9 +25,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import static java.security.AccessController.getContext;
+
 public class JobListings extends AppCompatActivity {
 
     private ImageView menu;
+
      RecyclerView jobRec;
     String [] name ={"Philip Martin","Philip Martin","Philip Martin","Philip Martin"};
     String [] company = {"XYZ Pharmaceuticals","XYZ Pharmaceuticals","XYZ Pharmaceuticals","XYZ Pharmaceuticals"};
@@ -36,6 +41,7 @@ public class JobListings extends AppCompatActivity {
     List<ClientModel> clientModelList;
     List<CreatorModel> creatorModelList;
     JobListRecAdapter jobListRecAdapter;
+    Spinner sp;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,6 +53,19 @@ public class JobListings extends AppCompatActivity {
         jobModelList = new ArrayList<>();
         clientModelList = new ArrayList<>();
         creatorModelList = new ArrayList<>();
+        sp=findViewById(R.id.spinnerAll);
+
+        ArrayList<String> sp_List=new ArrayList<>();
+        sp_List.add("All");
+        sp_List.add("Software Engineer");
+        sp_List.add("Android Developer");
+        sp_List.add("Web Developer");
+        sp_List.add("Data Scientist");
+
+
+        ArrayAdapter SPAdapter= new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, sp_List);
+        SPAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp.setAdapter(SPAdapter);
 
         loadJob();
         loadClient();

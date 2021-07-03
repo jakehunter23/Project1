@@ -110,10 +110,7 @@ public class MyDataRecAdapter extends RecyclerView.Adapter<MyDataRecAdapter.MyDa
                         arrow.setImageResource(R.drawable.expand_less);
                         information.setText(R.string.show_less);
                     }
-
-
                 }
-
             });
         }
     }
