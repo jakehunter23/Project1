@@ -30,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
         jobseeker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),dashboard.class);
+                Intent intent = new Intent(getApplicationContext(),JobLoginActivity.class);
                 startActivity(intent);
             }
         });

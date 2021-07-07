@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CandidateGenInfo">
+
+<ScrollView
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/back_arrow_genInfo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:tint="@color/black"
+        android:src="@drawable/ic_arrow_back"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/nunito"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="1. Your Information"
+        android:textSize="26dp" />
+    <TextView
+        android:id="@+id/personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/nunito"
+        android:textStyle="bold"
+        android:textColor="@color/text_blue"
+        android:text="Personal Information"
+        android:textSize="20dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/personal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="26dp"
+            android:text="First Name *"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+           android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:gravity="center_vertical"
+            android:hint="John"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Last Name *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+
+            android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+            android:gravity="center_vertical"
+            android:hint="Doe"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Email *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+            android:gravity="center_vertical"
+            android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:hint="xyz@gmail.com"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Phone"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+            android:layout_width="72dp"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:textStyle="bold"
+                android:fontFamily="@font/nunito"
+            android:textColorHint="#60B4DE"
+            android:gravity="center_vertical"
+            android:hint="+91"
+                android:background="@drawable/background"
+            android:paddingLeft="20dp"
+            android:textSize="17dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:elevation="0dp"
+            android:layout_marginEnd="23.83dp"
+            android:layout_marginTop="7dp"
+          android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:gravity="center_vertical"
+            android:hint="123456789"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Street Address *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+         android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:gravity="center_vertical"
+            android:hint="21, Brockston road, CP"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="City *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+            android:gravity="center_vertical"
+            android:hint="Mumbai"
+            android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Country *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+            android:gravity="center_vertical"
+            android:hint="India"
+          android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="26dp"
+            android:text="Postal Code *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_marginTop="7dp"
+            android:layout_marginStart="23.83dp"
+            android:layout_marginEnd="23.83dp"
+            android:gravity="center_vertical"
+            android:hint="400605"
+         android:fontFamily="@font/nunito"
+            android:textColorHint="#000000"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="123dp"
+            android:text="Next"
+            android:textSize="20dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>
+
+</RelativeLayout>

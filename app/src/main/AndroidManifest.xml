@@ -79,6 +79,41 @@
         <activity android:name=".signin" />
         <activity android:name=".dashboard" />
 
+        <activity android:name=".JobLoginActivity" android:exported="true"/>
+        <activity android:name=".JSCareerInfo"  android:exported="true" />
+        <activity
+            android:name=".JSPassword"  android:exported="true" />
+        <activity
+            android:name=".JSDetails"  android:exported="true" />
+        <activity
+            android:name=".JSPersonalInfo"   android:exported="true" />
+
+        <activity android:name=".UpdateActivity" android:exported="true"/>
+
+        <activity
+            android:name=".CandidateComplete"
+            android:exported="true" />
+        <activity
+            android:name=".CandidateReview"
+            android:exported="true" />
+        <activity
+            android:name=".CandidateEducation"
+            android:exported="true" />
+
+        <activity android:name=".RecyclerView"
+            android:parentActivityName=".CandidateEducation"/>
+
+
+        <activity
+            android:name=".CandidateCertificates"
+            android:exported="true" />
+        <activity
+            android:name=".CandidateGenInfo"
+            android:exported="true" />
+        <activity
+            android:name=".JobDetail"
+            android:exported="true" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
