@@ -33,7 +33,7 @@ public class CandidateComplete extends AppCompatActivity {
       btn_comp_done.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
-              Intent intent = new Intent(CandidateComplete.this, DashBoardActivity.class);
+              Intent intent = new Intent(CandidateComplete.this, dashboard.class);
               startActivity(intent);
           }
       });
