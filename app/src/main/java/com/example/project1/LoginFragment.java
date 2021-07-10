@@ -18,6 +18,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -94,6 +96,43 @@ public class LoginFragment extends Fragment {
         EditText loginPass = view.findViewById(R.id.login_password);
         pass = loginPass.getText().toString().trim();
         Button login = view.findViewById(R.id.button36);
+        CheckBox rememberMe = view.findViewById(R.id.remember_me);
+
+        //creating shared preference object
+        SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+        String checkbox = preferences.getString("remember","");
+        if(checkbox.equals("true"))
+        {//calling login method
+            login();
+        }else if (checkbox.equals("false"))
+        {
+            Toast.makeText(getContext(), "Please Login", Toast.LENGTH_SHORT).show();
+        }
+
+        //listener for remember me
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isChecked()){
+                    //creating shared preferences object
+                    SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor =preferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+
+
+                }else if(!buttonView.isChecked()){
+
+                    SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor =preferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+
+                }
+            }
+        });
+
+        //listener for login button
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

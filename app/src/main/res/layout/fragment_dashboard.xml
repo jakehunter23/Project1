@@ -24,6 +24,21 @@
                     android:id="@+id/menu_icon"
                     android:src="@drawable/menu_black_24dp"/>
 
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:paddingEnd="8dp"
+                    android:drawableTint="@color/text_blue"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginStart="270dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"
+                    app:drawableEndCompat="@drawable/ic_logout" />
+
+
             </RelativeLayout>
 
         </androidx.appcompat.widget.Toolbar>
