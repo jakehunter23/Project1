@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -222,6 +223,48 @@ public class AddRecruitPaymentFragment extends Fragment {
         daysOn = DaysOn.getText().toString().trim();
         daysOff = DaysOff.getText().toString().trim();
         shiftPattern = ShiftPattern.getText().toString().trim();
+        if (packageItem.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Package",Toast.LENGTH_LONG).show();
+            Package.setError("Please Enter Package");
+            Package.requestFocus();
+            return;
+        }
+        if (billRate.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Bill Rate",Toast.LENGTH_LONG).show();
+            BillRate.setError("Please Enter Bill Rate");
+            BillRate.requestFocus();
+            return;
+        }
+        if (markupPercentage.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Markup%",Toast.LENGTH_LONG).show();
+            MarkupPercentage.setError("Please Enter Markup%");
+            MarkupPercentage.requestFocus();
+            return;
+        }
+        if (clientMargin.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Client Margin",Toast.LENGTH_LONG).show();
+            ClientMargin.setError("Please Enter Client Margin");
+            ClientMargin.requestFocus();
+            return;
+        }
+        if (daysOn.isEmpty()){
+            Toast.makeText(getContext(),"Please fill dayOn",Toast.LENGTH_LONG).show();
+            DaysOn.setError("Please fill dayOn");
+            DaysOn.requestFocus();
+            return;
+        }
+        if (daysOff.isEmpty()){
+            Toast.makeText(getContext(),"Please ill dayOff",Toast.LENGTH_LONG).show();
+            DaysOff.setError("Please ill dayOff");
+            DaysOff.requestFocus();
+            return;
+        }
+        if (shiftPattern.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter ShiftPattern",Toast.LENGTH_LONG).show();
+            ShiftPattern.setError("Please Enter ShiftPattern");
+            ShiftPattern.requestFocus();
+            return;
+        }
 
         StringRequest insertRequest = new StringRequest(Request.Method.POST, jobInsert, new Response.Listener<String>() {
             @Override

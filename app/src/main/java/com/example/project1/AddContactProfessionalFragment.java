@@ -12,7 +12,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -56,6 +58,9 @@ public class AddContactProfessionalFragment extends Fragment {
     ArrayAdapter sourceAdapter;
     ArrayAdapter reportsAdapter;
     ArrayAdapter industryAdapter;
+    EditText CurrentTitle;
+    EditText CompanyName;
+    EditText RequierdSkill;
 
 
     // TODO: Rename and change types of parameters
@@ -109,6 +114,9 @@ public class AddContactProfessionalFragment extends Fragment {
         sourceList =new ArrayList<>();
         reportsToList=new ArrayList<>();
         industryList=new ArrayList<>();
+        CurrentTitle=view.findViewById(R.id.editTextTextPersonName78);
+        CompanyName=view.findViewById(R.id.editTextTextPersonName79);
+        RequierdSkill=view.findViewById(R.id.editTextTextPersonName80);
 
         loadContactType();
         loadDivision();
@@ -199,11 +207,39 @@ public class AddContactProfessionalFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactAAdditionalFragment());
-                ((AddContactActivity)getActivity()).changeViewForAdditional();
+                userNext();
+
             }
         });
         return view;
+    }
+    private void userNext() {
+        String currentTitle = CurrentTitle.getText().toString().trim();
+        String companyname = CompanyName.getText().toString().trim();
+        String requierdskill = RequierdSkill.getText().toString().trim();
+
+
+
+        if(currentTitle.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Current Title",Toast.LENGTH_LONG).show();
+            CurrentTitle.setError("Please Enter Current Title");
+            CurrentTitle.requestFocus();
+            return;
+        }
+        if(companyname.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
+            CompanyName.setError("Please Enter Company Name");
+            CompanyName.requestFocus();
+            return;
+        }
+        if(requierdskill.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Required Skill",Toast.LENGTH_LONG).show();
+            RequierdSkill.setError("Please Enter Required Skill");
+            RequierdSkill.requestFocus();
+            return;
+        }
+        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactAAdditionalFragment());
+        ((AddContactActivity)getActivity()).changeViewForAdditional();
     }
 
     private void loadIndustry() {

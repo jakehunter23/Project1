@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -52,6 +53,11 @@ public class AddClientContactFragment extends Fragment {
 
     ArrayAdapter stateAdapter;
     ArrayAdapter countryAdapter;
+    EditText email;
+    EditText phoneNumber;
+    EditText address;
+    EditText city ;
+    EditText zipCode;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -94,11 +100,11 @@ public class AddClientContactFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.add_client_contact, container, false);
         Button next = view.findViewById(R.id.ac_contact_next);
-        EditText email=view.findViewById(R.id.editTextTextEmailAddress4);
-        EditText phoneNumber =view.findViewById(R.id.editTextPhone3);
-        EditText address = view.findViewById(R.id.editTextTextPersonName48);
-        EditText city = view.findViewById(R.id.editTextTextPersonName49);
-        EditText zipCode = view.findViewById(R.id.editTextNumber);
+        email=view.findViewById(R.id.editTextTextEmailAddress4);
+        phoneNumber =view.findViewById(R.id.editTextPhone3);
+        address = view.findViewById(R.id.editTextTextPersonName48);
+        city = view.findViewById(R.id.editTextTextPersonName49);
+        zipCode = view.findViewById(R.id.editTextNumber);
         state =view.findViewById(R.id.spinner51);
         country=view.findViewById(R.id.spinner52);
         stateList=new ArrayList<>();
@@ -155,30 +161,76 @@ public class AddClientContactFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("companyName",companyName);
-                bundle2.putString("companyUrl",companyUrl);
-                bundle2.putInt("activeContactId",-1);
-                bundle2.putInt("parentId", -1);
-                bundle2.putString("status",statusItem);
-                bundle2.putInt("ownershipId", ownershipId);
-                bundle2.putInt("industryId",indutryId);
-                bundle2.putInt("sourceId",sourceId);
-                bundle2.putString("companyDescription", description);
-                bundle2.putString("email",email.getText().toString().trim());
-                bundle2.putString("contactNumber",phoneNumber.getText().toString().trim());
-                bundle2.putString("address",address.getText().toString().trim());
-                bundle2.putString("city",city.getText().toString().trim());
-                bundle2.putString("zipcode",zipCode.getText().toString().trim());
-                bundle2.putInt("stateId",stateId+1);
-                bundle2.putInt("countryId",countryId+1);
-                ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientBillingFragment(), bundle2);
-                ((Add_client_activity)getActivity()).changeViewForBilling();
+
+                userNext();
+
             }
         });
 
 
         return view;
+    }
+    private void userNext() {
+        String emails = email.getText().toString().trim();
+        String phoneNumbers = phoneNumber.getText().toString().trim();
+        String addresss = address.getText().toString().trim();
+        String citys = city.getText().toString().trim();
+        String zipcodes = zipCode.getText().toString().trim();
+        if(emails.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Email",Toast.LENGTH_LONG).show();
+            email.setError("Please Enter Email");
+            email.requestFocus();
+            return;
+        }
+        if(phoneNumbers.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Phone Number",Toast.LENGTH_LONG).show();
+            phoneNumber.setError("Please Enter PhoneNumber");
+            phoneNumber.requestFocus();
+            return;
+        }
+        if(phoneNumbers.length() < 10) {
+            Toast.makeText(getContext(),"Phone Number Length must be 10",Toast.LENGTH_LONG).show();
+            phoneNumber.setError("Phone Number Length must be 10");
+            phoneNumber.requestFocus();
+            return;
+        }
+        if(addresss.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Address",Toast.LENGTH_LONG).show();
+            address.setError("Please Enter Address");
+            address.requestFocus();
+            return;
+        }
+        if(citys.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter City",Toast.LENGTH_LONG).show();
+            city.setError("Please Enter City");
+            city.requestFocus();
+            return;
+        }
+        if(zipcodes.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Zipcode",Toast.LENGTH_LONG).show();
+            zipCode.setError("Please Enter Zipcode");
+            zipCode.requestFocus();
+            return;
+        }
+        Bundle bundle2 = new Bundle();
+        bundle2.putString("companyName",companyName);
+        bundle2.putString("companyUrl",companyUrl);
+        bundle2.putInt("activeContactId",-1);
+        bundle2.putInt("parentId", -1);
+        bundle2.putString("status",statusItem);
+        bundle2.putInt("ownershipId", ownershipId);
+        bundle2.putInt("industryId",indutryId);
+        bundle2.putInt("sourceId",sourceId);
+        bundle2.putString("companyDescription", description);
+        bundle2.putString("email",email.getText().toString().trim());
+        bundle2.putString("contactNumber",phoneNumber.getText().toString().trim());
+        bundle2.putString("address",address.getText().toString().trim());
+        bundle2.putString("city",city.getText().toString().trim());
+        bundle2.putString("zipcode",zipCode.getText().toString().trim());
+        bundle2.putInt("stateId",stateId+1);
+        bundle2.putInt("countryId",countryId+1);
+        ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientBillingFragment(), bundle2);
+        ((Add_client_activity)getActivity()).changeViewForBilling();
     }
 
     private void loadCountry() {

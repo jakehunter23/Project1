@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -106,6 +107,48 @@ public class AddRecruitRolesFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String role = RolesResponsibility.getText().toString().trim();
+                String growth = GrowthOportunity.getText().toString().trim();
+                String learn = LearningOpportunity.getText().toString().trim();
+                String endro = EmployeeEndorsement.getText().toString().trim();
+                String benefits = EmployeeBenefits.getText().toString().trim();
+                String reputataion = CompanyReputation.getText().toString().trim();
+                if (role.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter  RolesResponsibility",Toast.LENGTH_LONG).show();
+                    RolesResponsibility.setError("Please Enter  RolesResponsibility");
+                    RolesResponsibility.requestFocus();
+                    return;
+                }
+                if (growth.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter GrowthOportunity",Toast.LENGTH_LONG).show();
+                    GrowthOportunity.setError("Please Enter GrowthOportunity");
+                    GrowthOportunity.requestFocus();
+                    return;
+                }
+                if (learn.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter LearningOpportunity",Toast.LENGTH_LONG).show();
+                    LearningOpportunity.setError("Please Enter LearningOpportunity");
+                    LearningOpportunity.requestFocus();
+                    return;
+                }
+                if (endro.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter EmployeeEndorsement",Toast.LENGTH_LONG).show();
+                    EmployeeEndorsement.setError("Please Enter EmployeeEndorsement");
+                    EmployeeEndorsement.requestFocus();
+                    return;
+                }
+                if (benefits.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter EmployeeBenefits",Toast.LENGTH_LONG).show();
+                    EmployeeBenefits.setError("Please Enter EmployeeBenefits");
+                    EmployeeBenefits.requestFocus();
+                    return;
+                }
+                if (reputataion.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter CompanyReputation",Toast.LENGTH_LONG).show();
+                    CompanyReputation.setError("Please Enter CompanyReputation");
+                    CompanyReputation.requestFocus();
+                    return;
+                }
                 Bundle bundle2 = new Bundle();
                 bundle2.putInt("positionId", positionId);
                 bundle2.putInt("industryId", industryId);
