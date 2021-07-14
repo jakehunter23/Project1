@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -63,6 +64,10 @@ public class AddClientGeneralFragment extends Fragment{
     ArrayAdapter industryAdapter;
     ArrayAdapter sourceAdapter;
 
+    EditText companyText;
+    EditText companyUrlText;
+    EditText companyDescriptionText;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -104,9 +109,9 @@ public class AddClientGeneralFragment extends Fragment{
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.add_client_general, container, false);
 
-        EditText companyText = view.findViewById(R.id.editTextTextPersonName43);
-        EditText companyUrlText = view.findViewById(R.id.editTextTextPersonName44);
-        EditText companyDescriptionText = view.findViewById(R.id.editTextTextPersonName45);
+        companyText = view.findViewById(R.id.editTextTextPersonName43);
+        companyUrlText = view.findViewById(R.id.editTextTextPersonName44);
+        companyDescriptionText = view.findViewById(R.id.editTextTextPersonName45);
         Spinner parent=view.findViewById(R.id.parent_cmny);
         Spinner active=view.findViewById(R.id.active_cntact);
 
@@ -212,21 +217,57 @@ public class AddClientGeneralFragment extends Fragment{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("companyName",companyText.getText().toString().trim());
-                bundle.putString("companyUrl",companyUrlText.getText().toString().trim());
-                bundle.putInt("activeContactId",-1);
-                bundle.putInt("parentId", -1);
-                bundle.putString("status",statusItem);
-                bundle.putInt("ownershipId", ownershipId+1);
-                bundle.putInt("industryId",indutryId+1);
-                bundle.putInt("sourceId",sourceId+1);
-                bundle.putString("companyDescription", companyDescriptionText.getText().toString().trim());
-                ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientContactFragment(),bundle);
-                ((Add_client_activity)getActivity()).changeViewForContact();
+                userLogin();
+
+
+
+
+
+
             }
         });
+
+
         return view;
+    }
+    private void userLogin() {
+        String companyName = companyText.getText().toString().trim();
+        String companyURL = companyUrlText.getText().toString().trim();
+        String companyDes = companyDescriptionText.getText().toString().trim();
+        if(companyName.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
+            companyText.setError("Please Enter Company Name");
+            companyText.requestFocus();
+            return;
+        }
+        if(companyURL.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company URL",Toast.LENGTH_LONG).show();
+            companyUrlText.setError("Please Enter Company URL");
+            companyUrlText.requestFocus();
+            return;
+        }
+        if(companyDes.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            companyDescriptionText.setError("Please Enter Description");
+            companyDescriptionText.requestFocus();
+            return;
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("companyName",companyText.getText().toString().trim());
+        bundle.putString("companyUrl",companyUrlText.getText().toString().trim());
+        bundle.putInt("activeContactId",-1);
+        bundle.putInt("parentId", -1);
+        bundle.putString("status",statusItem);
+        bundle.putInt("ownershipId", ownershipId+1);
+        bundle.putInt("industryId",indutryId+1);
+        bundle.putInt("sourceId",sourceId+1);
+        bundle.putString("companyDescription", companyDescriptionText.getText().toString().trim());
+        ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientContactFragment(),bundle);
+        ((Add_client_activity)getActivity()).changeViewForContact();
+
+
+
     }
 
     private void loadSource() {

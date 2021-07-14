@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -149,6 +150,37 @@ public class AddClientBillingFragment extends Fragment {
         iban = IBAN.getText().toString().trim();
         String vatString = VAT.getText().toString().trim();
         vat = ParseFloat(vatString);
+
+        if(bankName.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
+            BankName.setError("Please Enter Company Name");
+            BankName.requestFocus();
+            return;
+        }
+        if(bankId.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company URL",Toast.LENGTH_LONG).show();
+            BankId.setError("Please Enter Company URL");
+            BankId.requestFocus();
+            return;
+        }
+        if(bankAccountNumber.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            BankAccNo.setError("Please Enter Description");
+            BankAccNo.requestFocus();
+            return;
+        }
+        if(iban.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            IBAN.setError("Please Enter Description");
+            IBAN.requestFocus();
+            return;
+        }
+        if(vatString.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            VAT.setError("Please Enter Description");
+            VAT.requestFocus();
+            return;
+        }
 
         StringRequest insertRequest = new StringRequest(Request.Method.POST, insertClient, new Response.Listener<String>() {
             @Override
