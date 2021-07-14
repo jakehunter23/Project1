@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +25,7 @@ public class dashboard extends AppCompatActivity {
     SpecificJobAdoptor adaptor;
     private RecyclerView suggestRecyclerViews;
     private RecyclerView specific_recycle;
+    private TextView logout;
 
 
     @Override
@@ -51,6 +54,7 @@ public class dashboard extends AppCompatActivity {
         navbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent navid = new Intent(dashboard.this,navigation.class);
                 startActivity(navid);
 
@@ -80,9 +84,24 @@ public class dashboard extends AppCompatActivity {
         });
         iniData();
         initRecylerView();
-        
 
-
+        //setting listener for logout button
+        logout = findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //creating shared preferences object
+                SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                SharedPreferences.Editor editor =preferences.edit();
+                editor.putString("remember","false");
+                editor.apply();
+                Toast.makeText(getApplicationContext(), "Logout Successfully", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(getApplicationContext(),JobLoginActivity.class);
+                // set the new task and clear flags
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(i);
+            }
+        });
 
     }
 
