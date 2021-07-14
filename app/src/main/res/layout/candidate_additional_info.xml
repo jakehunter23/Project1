@@ -180,19 +180,19 @@
             android:textColor="@color/black"
             android:fontFamily="@font/nunito_semibold"/>
 
-        <Spinner
-            android:id="@+id/jobSpinner"
+        <EditText
+            android:id="@+id/ejobEditText"
             android:layout_width="match_parent"
             android:layout_height="62dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginStart="26dp"
-            android:layout_marginEnd="24dp"
+            android:paddingLeft="29dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingLeft="29dp"
-            android:hint="Applying for which Job"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="23dp"
+            android:hint="Enter the job"
             android:fontFamily="@font/nunito_semibold"
-            android:foreground="@drawable/background"/>
+            android:background="@drawable/background"/>
 
         <TextView
             android:id="@+id/textView52"

@@ -58,7 +58,8 @@
                 android:layout_marginTop="42dp"
                 android:layout_toEndOf="@+id/textView116"
                 android:foreground="@drawable/background_black"
-                android:paddingLeft="19dp"
+                android:paddingLeft="20dp"
+
                 android:dropDownWidth="144dp"/>
         </RelativeLayout>
 

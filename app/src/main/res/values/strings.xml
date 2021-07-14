@@ -19,6 +19,29 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="recruiter_name">First Name<font color='#3CA6DA'>*</font></string>
+    <string name="recruiter_lastname">Last Name<font color='#3CA6DA'>*</font></string>
+    <string name="Email">Email<font color='#3CA6DA'>*</font></string>
+    <string name="Contact_number">Contact Number<font color='#3CA6DA'>*</font></string>
+    <string name="address">Address<font color='#3CA6DA'>*</font></string>
+    <string name="city">City<font color='#3CA6DA'>*</font></string>
+    <string name="ZipCode">Zip Code<font color='#3CA6DA'>*</font></string>
+    <string name="State">State<font color='#3CA6DA'>*</font></string>
+    <string name="Country">Country<font color='#3CA6DA'>*</font></string>
+    <string name="designation">Designation<font color='#3CA6DA'>*</font></string>
+    <string name="comny_name">Company Name<font color='#3CA6DA'>*</font></string>
+    <string name="firstname">First Name<font color='#3CA6DA'>*</font></string>
+    <string name="streetAddress">Street Address<font color='#3CA6DA'>*</font></string>
+    <string name="postalcode">Postal Code<font color='#3CA6DA'>*</font></string>
+    <string name="qualification">Qualification<font color='#3CA6DA'>*</font></string>
+    <string name="yrofpassing">Year of passing<font color='#3CA6DA'>*</font></string>
+    <string name="experience">Experience<font color='#3CA6DA'>*</font></string>
+    <string name="skills">Skills<font color='#3CA6DA'>*</font></string>
+    <string name="password">Password<font color='#3CA6DA'>*</font></string>
+    <string name="repeatpasswrd">Repeat Password<font color='#3CA6DA'>*</font></string>
+    <string name="positiontitle">Position Title<font color='#3CA6DA'>*</font></string>
+    <string name="Datefrom">Date from<font color='#3CA6DA'>*</font></string>
+    <string name="dateto">Date to<font color='#3CA6DA'>*</font></string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>

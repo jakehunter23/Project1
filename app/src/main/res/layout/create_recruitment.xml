@@ -233,10 +233,11 @@
 
             <EditText
                 android:id="@+id/editTextTextPersonName17"
-                android:layout_width="371dp"
+                android:layout_width="match_parent"
                 android:layout_height="69dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="14dp"
+                android:layout_marginRight="23dp"
                 android:layout_marginEnd="23dp"
                 android:background="@drawable/background"
                 android:ems="10"
@@ -309,6 +310,7 @@
                     android:layout_marginStart="27dp"
                     android:background="@drawable/background"
                     android:ems="10"
+                    android:layout_marginTop="14dp"
                     android:hint="Start date"
                     android:paddingLeft="29dp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -346,6 +348,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layout_marginTop="14dp"
                 android:layout_height="wrap_content">
 
 

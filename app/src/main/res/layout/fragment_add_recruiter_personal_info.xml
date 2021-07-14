@@ -18,60 +18,114 @@
 
 
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:orientation="horizontal"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardView3"
-                    android:layout_width="52dp"
-                    android:layout_height="51dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="30dp"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <ImageView
-                        android:id="@+id/imageView17"
-                        android:layout_width="53dp"
-                        android:layout_height="53dp"
-                        android:src="@drawable/profile"/>
-                </androidx.cardview.widget.CardView>
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/textView44"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="25dp"
-                    android:fontFamily="@font/nunito"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="101dp"
+
+                    android:layout_marginTop="43dp"
+                    android:layout_marginEnd="97dp"
                     android:text="Personal Information"
-                    android:textColor="@color/black"
                     android:textSize="22dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/cardView3"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="52dp"
+                    android:layout_height="51dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="37dp"
+
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="67dp"
+                    app:cardCornerRadius="10dp">
+
+                    <ImageView
+                        android:id="@+id/imageView17"
+                        android:layout_width="53dp"
+                        android:layout_height="53dp"
+                        android:layout_marginEnd="329dp"
+                        android:layout_marginBottom="67dp"
+                        app:srcCompat="@drawable/ic_launcher_background" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView44">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
+                        android:layout_width="98dp"
+                        android:layout_height="98dp"
+
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp"
+                        android:background="@color/light_grey"
+                        app:cardBackgroundColor="@color/light_grey"
+                        app:cardCornerRadius="250dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="34dp"
+                            android:layout_height="34dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/iconfinder_general_office_34_3592855" />
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="230dp"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginEnd="152dp"
+                        app:cardBackgroundColor="@color/text_blue"
+                        app:cardCornerRadius="250dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="29dp"
+                            android:layout_height="29dp"
+                            android:src="@drawable/add" />
+
+                    </androidx.cardview.widget.CardView>
 
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RelativeLayout>
 
 
             <TextView
-                android:id="@+id/textView94"
+                android:id="@+id/recruiter_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="First Name"
-                android:textSize="18dp"
+                android:text="@string/recruiter_name"
+                android:textSize="14dp"
                 android:layout_marginStart="26dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextPersonName31"
+                android:id="@+id/recruiterNameET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -85,17 +139,17 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView95"
+                android:id="@+id/recruiterLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Last Name"
+                android:text="@string/recruiter_lastname"
                 android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextPersonName32"
+                android:id="@+id/recruiterLastNameET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -109,7 +163,7 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView96"
+                android:id="@+id/recruiterStatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Status"
@@ -119,7 +173,7 @@
                 android:fontFamily="@font/nunito_semibold"/>
 
             <Spinner
-                android:id="@+id/spinner19"
+                android:id="@+id/recruiterStatusSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:layout_marginStart="24dp"
@@ -128,17 +182,17 @@
                 android:foreground="@drawable/background"/>
 
             <TextView
-                android:id="@+id/textView97"
+                android:id="@+id/recruiterMail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Main Mail"
+                android:text="@string/Email"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="34dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress3"
+                android:id="@+id/recruiterMailET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -152,10 +206,10 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView98"
+                android:id="@+id/recruiterContactNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Contact Number"
+                android:text="@string/Contact_number"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="34dp"
                 android:textColor="@color/black"
@@ -174,18 +228,33 @@
                 android:background="@drawable/background"
                 android:paddingLeft="29dp"/>
 
+
             <TextView
-                android:id="@+id/textView99"
+                android:id="@+id/textView153"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Contact Number"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="20dp"
+                android:layout_gravity="right"
+                android:textSize="17dp"
+                android:textColor="@color/text_blue"
+                android:drawableRight="@drawable/add_icon"
+                android:drawablePadding="4dp"/>
+
+
+            <TextView
+                android:id="@+id/recruiterAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Address"
-                android:layout_marginTop="34dp"
+                android:text="@string/address"
+                android:layout_marginTop="15dp"
                 android:layout_marginStart="26dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextPersonName33"
+                android:id="@+id/recruiterAddressEditTextET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -199,17 +268,17 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView100"
+                android:id="@+id/recruiterCity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="City"
+                android:text="@string/city"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="34dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextPersonName34"
+                android:id="@+id/recruiterCityET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -223,17 +292,17 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView101"
+                android:id="@+id/ZipcodeOfRecruiter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Zipcode"
+                android:text="@string/ZipCode"
                 android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <EditText
-                android:id="@+id/editTextTextPersonName35"
+                android:id="@+id/ZipCodeET"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:ems="10"
@@ -247,74 +316,77 @@
                 android:paddingLeft="29dp"/>
 
             <TextView
-                android:id="@+id/textView102"
+                android:id="@+id/RecruiterState"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="State"
+                android:text="@string/State"
                 android:layout_marginStart="26dp"
                 android:layout_marginTop="34dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <Spinner
-                android:id="@+id/spinner20"
+                android:id="@+id/recruiterStateSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="23dp"
+                android:textColor="@color/text_blue"
                 android:layout_marginTop="14dp"
                 android:foreground="@drawable/background"/>
 
             <TextView
-                android:id="@+id/textView103"
+                android:id="@+id/recruiterCountry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Country"
+                android:text="@string/Country"
+                android:textSize="14dp"
                 android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <Spinner
-                android:id="@+id/spinner21"
+                android:id="@+id/recruiterCountrySpinner"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
                 android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="23dp"
+                android:textColor="@color/text_blue"
                 android:foreground="@drawable/background"/>
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="40dp"
-                android:padding="2dp">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button10"
-                    android:layout_width="124dp"
-                    android:layout_height="43dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="43dp"
-                    android:layout_marginTop="23dp"
-                    android:layout_toEndOf="@+id/imageView18"
-                    android:text="Add Photo"
-                    android:textSize="15dp"
-                    android:background="@drawable/background_solid_white"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/nunito_semibold"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:id="@+id/ct_dot1"
+                    app:cardBackgroundColor="@color/text_blue"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
 
-                <ImageView
-                    android:id="@+id/imageView18"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginBottom="0dp"
-                    android:src="@drawable/dp_1" />
+                <androidx.cardview.widget.CardView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:id="@+id/ct_dot2"
+                    android:layout_toEndOf="@id/ct_dot1"
+                    android:foreground="@drawable/background"
+                    app:cardCornerRadius="250dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+
             </RelativeLayout>
+
+
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button11"
