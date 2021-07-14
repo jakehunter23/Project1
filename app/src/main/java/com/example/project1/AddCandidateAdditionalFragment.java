@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -168,6 +169,12 @@ public class AddCandidateAdditionalFragment extends Fragment {
     private void insertData() {
         comments = Comments.getText().toString().trim();
         availabilityDate= AvailabilityDate.getText().toString().trim();
+        if (comments.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Comments",Toast.LENGTH_LONG).show();
+            Comments.setError("Please Enter Comments");
+            Comments.requestFocus();
+            return;
+        }
 
         StringRequest insertRequest = new StringRequest(Request.Method.POST, insertCandidate, new Response.Listener<String>() {
             @Override

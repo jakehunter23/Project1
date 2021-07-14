@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -64,6 +65,15 @@ public class  AddContactPersonalFragment extends Fragment {
     ArrayAdapter countryAdapter;
     ArrayAdapter stateAdapter;
     ArrayAdapter statusAdapter;
+    EditText FirstName;
+    EditText LastName;
+    EditText MiddleName;
+    EditText Title;
+    EditText MainEmail;
+    EditText ContactNumber;
+    EditText Address;
+    EditText City;
+    EditText Zipcode;
 
 
     // TODO: Rename and change types of parameters
@@ -112,6 +122,17 @@ public class  AddContactPersonalFragment extends Fragment {
         spinnerCountry = view.findViewById(R.id.spinner58);
         spinnerState =view.findViewById(R.id.spinner61);
         spinnerStatus=view.findViewById(R.id.spinner57);
+        FirstName=view.findViewById(R.id.editTextTextPersonName71);
+        LastName=view.findViewById(R.id.editTextTextPersonName72);
+        MiddleName=view.findViewById(R.id.editTextTextPersonName73);
+        Title=view.findViewById(R.id.editTextTextPersonName74);
+        MainEmail=view.findViewById(R.id.editTextTextEmailAddress5);
+        ContactNumber=view.findViewById(R.id.editTextPhone4);
+        Address=view.findViewById(R.id.editTextTextPersonName75);
+        City=view.findViewById(R.id.editTextTextPersonName76);
+        Zipcode=view.findViewById(R.id.editTextTextPersonName77);
+
+
         countryList = new ArrayList<>();
         stateList = new ArrayList<>();
         statusList = new ArrayList<>();
@@ -177,8 +198,9 @@ public class  AddContactPersonalFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactProfessionalFragment());
-                ((AddContactActivity)getActivity()).changeViewForProfessional();
+                userNext();
+
+
             }
         });
 
@@ -187,6 +209,80 @@ public class  AddContactPersonalFragment extends Fragment {
 
         return view;
 
+    }
+
+    private void userNext() {
+        String firstname = FirstName.getText().toString().trim();
+        String lastname = LastName.getText().toString().trim();
+        String middlename = MiddleName.getText().toString().trim();
+        String title = Title.getText().toString().trim();
+        String emails = MainEmail.getText().toString().trim();
+        String phoneNumbers = ContactNumber.getText().toString().trim();
+        String addresss = Address.getText().toString().trim();
+        String citys = City.getText().toString().trim();
+        String zipcodes = Zipcode.getText().toString().trim();
+        if(firstname.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter First Name",Toast.LENGTH_LONG).show();
+            FirstName.setError("Please Enter First Name");
+            FirstName.requestFocus();
+            return;
+        }
+        if(lastname.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Last Name",Toast.LENGTH_LONG).show();
+            LastName.setError("Please Enter Last Name");
+            LastName.requestFocus();
+            return;
+        }
+        if(middlename.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Middle Name",Toast.LENGTH_LONG).show();
+            MiddleName.setError("Please Enter Middle Name");
+            MiddleName.requestFocus();
+            return;
+        }
+        if(title.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Title",Toast.LENGTH_LONG).show();
+            Title.setError("Please Enter Title");
+            Title.requestFocus();
+            return;
+        }
+        if(emails.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter MainEmail",Toast.LENGTH_LONG).show();
+            MainEmail.setError("Please Enter Main Email");
+            MainEmail.requestFocus();
+            return;
+        }
+        if(phoneNumbers.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Phone Number",Toast.LENGTH_LONG).show();
+            ContactNumber.setError("Please Enter PhoneNumber");
+            ContactNumber.requestFocus();
+            return;
+        }
+        if(phoneNumbers.length() < 10) {
+            Toast.makeText(getContext(),"Phone Number Length must be 10",Toast.LENGTH_LONG).show();
+            ContactNumber.setError("Phone Number Length must be 10");
+            ContactNumber.requestFocus();
+            return;
+        }
+        if(addresss.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Address",Toast.LENGTH_LONG).show();
+            Address.setError("Please Enter Address");
+            Address.requestFocus();
+            return;
+        }
+        if(citys.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter City",Toast.LENGTH_LONG).show();
+            City.setError("Please Enter City");
+            City.requestFocus();
+            return;
+        }
+        if(zipcodes.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Zipcode",Toast.LENGTH_LONG).show();
+            Zipcode.setError("Please Enter Zipcode");
+            Zipcode.requestFocus();
+            return;
+        }
+        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactProfessionalFragment());
+        ((AddContactActivity)getActivity()).changeViewForProfessional();
     }
 
     private void loadStatus() {

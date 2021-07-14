@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -56,6 +57,14 @@ public class AddCandidatePersonalFragment extends Fragment {
     ArrayAdapter statusAdapter;
     ArrayAdapter stateAdapter;
     ArrayAdapter countryAdapter;
+
+    EditText FirstName;
+    EditText LastName;
+    EditText MainMail;
+    EditText ContactNumber;
+    EditText Address;
+    EditText City;
+    EditText Zipcode;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -106,13 +115,13 @@ public class AddCandidatePersonalFragment extends Fragment {
         stateList = new ArrayList<>();
         countryList = new ArrayList<>();
 
-        EditText FirstName = view.findViewById(R.id.editTextTextPersonName31);
-        EditText LastName = view.findViewById(R.id.editTextTextPersonName32);
-        EditText MainMail = view.findViewById(R.id.editTextTextEmailAddress3);
-        EditText ContactNumber = view.findViewById(R.id.editTextPhone2);
-        EditText Address = view.findViewById(R.id.editTextTextPersonName33);
-        EditText City = view.findViewById(R.id.editTextTextPersonName34);
-        EditText Zipcode = view.findViewById(R.id.editTextTextPersonName35);
+        FirstName = view.findViewById(R.id.editTextTextPersonName31);
+        LastName = view.findViewById(R.id.editTextTextPersonName32);
+        MainMail = view.findViewById(R.id.editTextTextEmailAddress3);
+        ContactNumber = view.findViewById(R.id.editTextPhone2);
+        Address = view.findViewById(R.id.editTextTextPersonName33);
+        City = view.findViewById(R.id.editTextTextPersonName34);
+        Zipcode = view.findViewById(R.id.editTextTextPersonName35);
 
         loadStatus();
         loadState();
@@ -170,25 +179,80 @@ public class AddCandidatePersonalFragment extends Fragment {
         toPro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putString("firstName",FirstName.getText().toString().trim());
-                bundle.putString("lastName", LastName.getText().toString().trim());
-                bundle.putString("status", statusItem);
-                bundle.putString("mainMail" , MainMail.getText().toString().trim());
-                bundle.putString("contactNumber", ContactNumber.getText().toString().trim());
-                bundle.putString("address" , Address.getText().toString().trim());
-                bundle.putString("city" , City.getText().toString().trim());
-                bundle.putString("zipcode", Zipcode.getText().toString().trim());
-                bundle.putInt("stateId" , stateId+1);
-                bundle.putInt("countryId", countryId+1);
+                userNext();
 
-                ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateProfessionalFragment(),bundle);
-                ((AddCandidateActivity)getActivity()).changeViewForProfessional();
             }
         });
 
         return view;
     }
+    private void userNext() {
+        String firstname = FirstName.getText().toString().trim();
+        String lastname = LastName.getText().toString().trim();
+        String mainmail = MainMail.getText().toString().trim();
+        String contactnumber = ContactNumber.getText().toString().trim();
+        String address = Address.getText().toString().trim();
+        String city = City.getText().toString().trim();
+        String zipcode = Zipcode.getText().toString().trim();
+        if(firstname.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter First Name",Toast.LENGTH_LONG).show();
+            FirstName.setError("Please Enter First Name");
+            FirstName.requestFocus();
+            return;
+        }
+        if(lastname.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Last Name",Toast.LENGTH_LONG).show();
+            LastName.setError("Please Enter Last Name");
+            LastName.requestFocus();
+            return;
+        }
+        if(mainmail.isEmpty()) {
+            Toast.makeText(getContext(),"Please Enter Main Mail",Toast.LENGTH_LONG).show();
+            MainMail.setError("Please Enter Main Mail");
+            MainMail.requestFocus();
+            return;
+        }
+        if(contactnumber.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Contact Number",Toast.LENGTH_LONG).show();
+            ContactNumber.setError("Please Enter Contact Number");
+            ContactNumber.requestFocus();
+            return;
+        }
+        if(address.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Address",Toast.LENGTH_LONG).show();
+            Address.setError("Please Enter Address");
+            Address.requestFocus();
+            return;
+        }
+        if(city.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter City",Toast.LENGTH_LONG).show();
+            City.setError("Please Enter City");
+            City.requestFocus();
+            return;
+        }
+        if(zipcode.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter  Zipcode", Toast.LENGTH_LONG).show();
+            Zipcode.setError("Please Enter  Zipcode");
+            Zipcode.requestFocus();
+            return;
+        }
+        Bundle bundle = new Bundle();
+        bundle.putString("firstName",FirstName.getText().toString().trim());
+        bundle.putString("lastName", LastName.getText().toString().trim());
+        bundle.putString("status", statusItem);
+        bundle.putString("mainMail" , MainMail.getText().toString().trim());
+        bundle.putString("contactNumber", ContactNumber.getText().toString().trim());
+        bundle.putString("address" , Address.getText().toString().trim());
+        bundle.putString("city" , City.getText().toString().trim());
+        bundle.putString("zipcode", Zipcode.getText().toString().trim());
+        bundle.putInt("stateId" , stateId+1);
+        bundle.putInt("countryId", countryId+1);
+
+        ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateProfessionalFragment(),bundle);
+        ((AddCandidateActivity)getActivity()).changeViewForProfessional();
+
+        }
+
 
     private void loadCountry() {
         StringRequest countryRequest = new StringRequest(Request.Method.GET, fetchCountry, new Response.Listener<String>() {

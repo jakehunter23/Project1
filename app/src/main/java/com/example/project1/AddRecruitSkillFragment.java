@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -103,6 +104,48 @@ public class AddRecruitSkillFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String skilss = Skills.getText().toString().trim();
+                String qua = Qualification.getText().toString().trim();
+                String eligib = EligibilityCriteria.getText().toString().trim();
+                String experience = ExperienceRequirement.getText().toString().trim();
+                String reExp = RelevantExperience.getText().toString().trim();
+                String irreExp = IrrelevantExperience.getText().toString().trim();
+                if (skilss.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter skills ",Toast.LENGTH_LONG).show();
+                    Skills.setError("Please Enter Skills");
+                    Skills.requestFocus();
+                    return;
+                }
+                if (qua.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter Qualification",Toast.LENGTH_LONG).show();
+                    Qualification.setError("Please Enter Qualification");
+                    Qualification.requestFocus();
+                    return;
+                }
+                if (eligib.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter EligibilityCriteria",Toast.LENGTH_LONG).show();
+                    EligibilityCriteria.setError("Please Enter EligibilityCriteria");
+                    EligibilityCriteria.requestFocus();
+                    return;
+                }
+                if (experience.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter ExperienceRequirement",Toast.LENGTH_LONG).show();
+                    ExperienceRequirement.setError("Please Enter ExperienceRequirement");
+                    ExperienceRequirement.requestFocus();
+                    return;
+                }
+                if (reExp.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter RelevantExperience",Toast.LENGTH_LONG).show();
+                    RelevantExperience.setError("Please Enter RelevantExperience");
+                    RelevantExperience.requestFocus();
+                    return;
+                }
+                if (irreExp.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter IrrelevantExperience",Toast.LENGTH_LONG).show();
+                    IrrelevantExperience.setError("Please Enter IrrelevantExperience");
+                    IrrelevantExperience.requestFocus();
+                    return;
+                }
                 Bundle bundle1 = new Bundle();
                 bundle1.putInt("positionId", positionId);
                 bundle1.putInt("industryId", industryId);

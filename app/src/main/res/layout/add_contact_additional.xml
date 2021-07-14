@@ -171,6 +171,7 @@
             android:fontFamily="@font/nunito"
             android:hint="Profile URL"
             android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:background="@drawable/background_sharp" />
 
         <androidx.appcompat.widget.AppCompatButton
