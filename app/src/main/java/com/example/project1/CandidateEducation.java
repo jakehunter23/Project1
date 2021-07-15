@@ -14,13 +14,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class CandidateEducation extends AppCompatActivity {
-    Button visibility_btn, cancel_btn,btn_next,btn_save, btn_recycler;
+    Button visibility_btn,edu_visibility_btn,btn_next, cancel_btn, btn_save, btn_recycler ,edu_recycler, edu_save,edu_cancel;
     ImageView back_btn_edu;
-    TextView tv_showHistory1,tv_showHistory2;
-    RelativeLayout relativeLayout;
+    TextView tv_showHistory1,tv_showHistory2, tv_showHistory3;
+    RelativeLayout relativeLayout,edu_relativeLayout;
 
     // declaring variables
     EditText new_Title,new_Name,new_dateFrom,new_dateTo;
+    EditText new_Skill,new_Study,new_instName,new_dateEnd;
 
 
     @Override
@@ -104,6 +105,58 @@ public class CandidateEducation extends AppCompatActivity {
             }
         });
 
+        //EDUCATION HISTORY PART
+        edu_relativeLayout = findViewById(R.id.Edu_Visibility_layout);
+        edu_visibility_btn = findViewById(R.id.edu_visibility_layout_button);
+        edu_save = findViewById(R.id.edu_save);
+        edu_cancel = findViewById(R.id.edu_cancel);
+        tv_showHistory3 = findViewById(R.id.tv_showHistory3);
+        edu_recycler = findViewById(R.id.edu_recycler_button);
+
+        //getting variables
+        new_Skill = findViewById(R.id.et_skill);
+        new_Study = findViewById(R.id.et_study);
+        new_instName = findViewById(R.id.et_instName);
+        new_dateEnd = findViewById(R.id.et_DateEnd);
+
+        //calling viewAll methods
+        viewAll2();
+
+
+        //setting visibility
+        edu_visibility_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edu_relativeLayout.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //setting invisibility
+        edu_cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                edu_relativeLayout.setVisibility(View.GONE);
+            }
+        });
+
+        //setting listener on SAVE BUTTON
+        edu_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EduProcessInsert(new_Skill.getText().toString().trim(), new_Study.getText().toString().trim(), new_instName.getText().toString().trim(), new_dateEnd.getText().toString().trim());
+            }
+        });
+
+        //redirecting to recycler view
+        edu_recycler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), EduRecyclerView.class));
+            }
+        });
+
+
+
     }
 
     //METHOD FOR VIEWDATA
@@ -160,6 +213,46 @@ public class CandidateEducation extends AppCompatActivity {
         new_Name.setText("");
         new_dateFrom.setText("");
         new_dateTo.setText("");
+
+    }
+
+    // for EDUCATION HISTORY
+
+    //METHOD FOR VIEWDATA
+
+    public void viewAll2() {
+
+        //setting listener for showDataButton 3
+        tv_showHistory3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EduDatabaseHelper myDB = new EduDatabaseHelper(CandidateEducation.this);
+                Cursor cursor = myDB.readTop3();
+
+                if (cursor.getCount() == 0) {
+                    //show messages
+                    Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
+                }
+                if(cursor.moveToFirst()){
+                    do {
+                        tv_showHistory3.setText("Skill : " + cursor.getString(1) + " \n" + "Field : " + cursor.getString(2) + " \n" + "Institution : " + cursor.getString(3) + " \n" + "Date End : " + cursor.getString(4));
+                    }
+                    while(cursor.moveToNext());
+                }}
+
+        });
+    }
+
+
+    //method for inserting data into database
+    private void EduProcessInsert(String skill, String study, String instName, String dateEnd) {
+
+        EduDatabaseHelper myDB = new EduDatabaseHelper(CandidateEducation.this);
+        myDB.EduAddData(skill,study,instName,dateEnd);
+        new_Skill.setText("");
+        new_Study.setText("");
+        new_instName.setText("");
+        new_dateEnd.setText("");
 
     }
 

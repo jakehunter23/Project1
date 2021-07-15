@@ -119,6 +119,13 @@
             android:name=".JobDetail"
             android:exported="true" />
 
+        <activity android:name=".EduRecyclerView"
+            android:exported="true"
+            android:parentActivityName=".CandidateEducation"/>
+
+        <activity android:name=".EduUpdateActivity"
+            android:exported="true"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

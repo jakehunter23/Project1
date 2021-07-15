@@ -96,16 +96,38 @@
         android:background="@drawable/background"
         android:textSize="17dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/JS_remember_me"
+            android:text="Remember me"
+            android:paddingLeft="5dp"
+            android:textColor="#3598DB"
+            android:backgroundTint="#3598DB"
+            android:buttonTint="#3598DB"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/nunito"
+            />
+
+
+        <TextView
+        android:layout_width="wrap_content"
         android:layout_height="19dp"
         android:layout_marginTop="5dp"
-        android:layout_marginStart="245dp"
-        android:layout_marginEnd="31dp"
-        android:text="Forget Password"
+            android:layout_marginStart="60dp"
+            android:text="Forget Password"
         android:textColor="#3598DB"
         android:fontFamily="@font/nunito"
         android:textSize="14sp"/>
+        </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonsubmit"
@@ -130,7 +152,7 @@
             android:layout_marginTop="18dp"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="65dp"
-            android:layout_marginEnd="65dp"
+            android:layout_marginEnd="60dp"
             android:textColor="#3598DB"
             android:text="Don't have an account yet? Sign Up."
             android:fontFamily="@font/nunito"
