@@ -31,13 +31,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
         <TextView
             android:id="@+id/textView248"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:text="Complaint Tickets"
-            android:layout_marginTop="107dp"
             android:layout_marginStart="27dp"
             android:textSize="35dp"
             android:textColor="@color/black"
@@ -78,7 +79,7 @@
                 android:id="@+id/textView250"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="Ticket type"
                 android:layout_marginTop="36dp"
                 android:layout_marginStart="27dp"
                 android:textSize="18dp"
@@ -86,7 +87,7 @@
                 android:fontFamily="@font/nunito_semibold"/>
 
             <Spinner
-                android:id="@+id/spinner55"
+                android:id="@+id/spinnerTickType"
                 android:layout_width="177dp"
                 android:layout_height="48dp"
                 android:layout_below="@+id/textView250"
@@ -104,20 +105,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="36dp"
-                android:layout_toEndOf="@+id/spinner55"
-                android:text="TextView"
+                android:layout_toEndOf="@+id/spinnerTickType"
+                android:text="Priority"
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
 
             <Spinner
-                android:id="@+id/spinner56"
+                android:id="@+id/spinnerPriority"
                 android:layout_width="144dp"
                 android:layout_height="48dp"
                 android:layout_below="@+id/textView251"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="14dp"
-                android:layout_toEndOf="@+id/spinner55"
+                android:layout_toEndOf="@+id/spinnerTickType"
                 android:textSize="18dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito"
@@ -156,6 +157,7 @@
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="false"
             android:id="@+id/faq_item_rec"
+            android:layout_marginBottom="30dp"
             android:layout_marginTop="27dp"/>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

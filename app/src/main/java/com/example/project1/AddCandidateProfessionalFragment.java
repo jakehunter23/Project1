@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -43,7 +44,7 @@ public class AddCandidateProfessionalFragment extends Fragment {
     String fetchOwnership = "https://demotic-recruit.000webhostapp.com/ownership_fetch.php";
 
     String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName;
-    int stateId, countryId, candidateType, preference, sourceId, ownerId;
+    int stateId, countryId,  sourceId, ownerId;
 
     Spinner ownership, source;
     ArrayList<String> ownershipList;
@@ -51,6 +52,12 @@ public class AddCandidateProfessionalFragment extends Fragment {
 
     ArrayAdapter ownershipAdapter;
     ArrayAdapter sourceAdapter;
+    EditText CurrentTitle ;
+    EditText CompanyName ;
+    EditText CurrentSalary ;
+    EditText HourlyRateLow ;
+    EditText DesiredSalary;
+    EditText HourlyRateHigh;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -85,6 +92,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
@@ -98,12 +107,14 @@ public class AddCandidateProfessionalFragment extends Fragment {
         sourceList = new ArrayList<>();
         ownershipList = new ArrayList<>();
 
-        EditText CurrentTitle = view.findViewById(R.id.editTextTextPersonName36);
-        EditText CompanyName = view.findViewById(R.id.editTextTextPersonName37);
-        EditText CurrentSalary = view.findViewById(R.id.editTextTextPersonName38);
-        EditText HourlyRateLow = view.findViewById(R.id.editTextTextPersonName39);
-        EditText DesiredSalary = view.findViewById(R.id.editTextTextPersonName40);
-        EditText HourlyRateHigh = view.findViewById(R.id.editTextTextPersonName41);
+         CurrentTitle = view.findViewById(R.id.editTextTextPersonName36);
+        CompanyName = view.findViewById(R.id.editTextTextPersonName37);
+        CurrentSalary = view.findViewById(R.id.editTextTextPersonName38);
+        HourlyRateLow = view.findViewById(R.id.editTextTextPersonName39);
+        DesiredSalary = view.findViewById(R.id.editTextTextPersonName40);
+        HourlyRateHigh = view.findViewById(R.id.editTextTextPersonName41);
+        Spinner cand=view.findViewById(R.id.spinner22);
+        Spinner emp=view.findViewById(R.id.spinner23);
 
         Bundle bundle = this.getArguments();
         firstName = bundle.getString("firstName");
@@ -116,6 +127,29 @@ public class AddCandidateProfessionalFragment extends Fragment {
         zipcode = bundle.getString("zipcode");
         stateId = bundle.getInt("stateId");
         countryId = bundle.getInt("countryId");
+
+
+
+        ArrayList<String> can_List=new ArrayList<>();
+        can_List.add("CandidateType1");
+        can_List.add("CandidateTpye2");
+        can_List.add("CandidateType3");
+        can_List.add("All");
+        ArrayAdapter CanAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,can_List);
+        CanAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        cand.setAdapter(CanAdapter);
+
+        ArrayList<String> emp_List=new ArrayList<>();
+        emp_List.add("Employment Pref Type1");
+        emp_List.add("Employment Pref Type2");
+        emp_List.add("Employment Pref Type3");
+        emp_List.add("All");
+        ArrayAdapter EmpAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,emp_List);
+        EmpAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        emp.setAdapter(EmpAdapter);
+
+
+
 
         loadOwnership();
         loadSource();
@@ -155,34 +189,81 @@ public class AddCandidateProfessionalFragment extends Fragment {
         toSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                userNext();
 
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("firstName",firstName);
-                bundle1.putString("lastName", lastName);
-                bundle1.putString("status", statusItem);
-                bundle1.putString("mainMail" , mainMail);
-                bundle1.putString("contactNumber", contactNumber);
-                bundle1.putString("address" , address);
-                bundle1.putString("city" , city);
-                bundle1.putString("zipcode", zipcode);
-                bundle1.putInt("stateId" , stateId);
-                bundle1.putInt("countryId", countryId);
-                bundle1.putString("title" , CurrentTitle.getText().toString().trim());
-                bundle1.putString("companyName" , CompanyName.getText().toString().trim());
-                bundle1.putInt("type", 0);
-                bundle1.putInt("preference" , 0);
-                bundle1.putInt("sourceId" , sourceId);
-                bundle1.putInt("ownerId" , ownerId);
-                bundle1.putString("currentSalary" , CurrentSalary.getText().toString().trim());
-                bundle1.putString("hourlyRatel" , HourlyRateLow.getText().toString().trim());
-                bundle1.putString("desiredSalary" , DesiredSalary.getText().toString().trim());
-                bundle1.putString("hourlyRateh" , HourlyRateHigh.getText().toString().trim());
 
-                ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateSkillFragment(), bundle1);
-                ((AddCandidateActivity)getActivity()).changeViewForSkill();
             }
         });
         return view;
+    }
+
+    private void userNext() {
+        String currentTitle = CurrentTitle.getText().toString().trim();
+        String companyName = CompanyName.getText().toString().trim();
+        String currentlysalary = CurrentSalary.getText().toString().trim();
+        String hourlyratelow = HourlyRateLow.getText().toString().trim();
+        String desiredsalary = DesiredSalary.getText().toString().trim();
+        String hourlyratehigh = HourlyRateHigh.getText().toString().trim();
+        if (currentTitle.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter Current Title", Toast.LENGTH_LONG).show();
+            CurrentTitle.setError("Please Enter Current Title");
+            CurrentTitle.requestFocus();
+            return;
+        }
+        if (companyName.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter Company Name", Toast.LENGTH_LONG).show();
+            CompanyName.setError("Please Enter Company Name");
+            CompanyName.requestFocus();
+            return;
+        }
+        if (currentlysalary.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter Currently Salary", Toast.LENGTH_LONG).show();
+            CurrentSalary.setError("Please Enter Currently Salary");
+            CurrentSalary.requestFocus();
+            return;
+        }
+        if (hourlyratelow.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter Hourly Rate Low", Toast.LENGTH_LONG).show();
+            HourlyRateLow.setError("Please Enter Hourly Rate Low");
+            HourlyRateLow.requestFocus();
+            return;
+        }
+        if (desiredsalary.isEmpty()) {
+            Toast.makeText(getContext(), "Please Enter Desired Salary", Toast.LENGTH_LONG).show();
+            DesiredSalary.setError("Please Enter Desired Salary");
+            DesiredSalary.requestFocus();
+            return;
+        }
+        if (hourlyratehigh.isEmpty()) {
+            Toast.makeText(getContext(), "Please Hourly Rate High", Toast.LENGTH_LONG).show();
+            HourlyRateHigh.setError("Please Hourly Rate High");
+            HourlyRateHigh.requestFocus();
+            return;
+        }
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("firstName",firstName);
+        bundle1.putString("lastName", lastName);
+        bundle1.putString("status", statusItem);
+        bundle1.putString("mainMail" , mainMail);
+        bundle1.putString("contactNumber", contactNumber);
+        bundle1.putString("address" , address);
+        bundle1.putString("city" , city);
+        bundle1.putString("zipcode", zipcode);
+        bundle1.putInt("stateId" , stateId);
+        bundle1.putInt("countryId", countryId);
+        bundle1.putString("title" , CurrentTitle.getText().toString().trim());
+        bundle1.putString("companyName" , CompanyName.getText().toString().trim());
+        bundle1.putInt("type", 0);
+        bundle1.putInt("preference" , 0);
+        bundle1.putInt("sourceId" , sourceId);
+        bundle1.putInt("ownerId" , ownerId);
+        bundle1.putString("currentSalary" , CurrentSalary.getText().toString().trim());
+        bundle1.putString("hourlyRatel" , HourlyRateLow.getText().toString().trim());
+        bundle1.putString("desiredSalary" , DesiredSalary.getText().toString().trim());
+        bundle1.putString("hourlyRateh" , HourlyRateHigh.getText().toString().trim());
+
+        ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateSkillFragment(), bundle1);
+        ((AddCandidateActivity)getActivity()).changeViewForSkill();
     }
 
     private void loadSource() {

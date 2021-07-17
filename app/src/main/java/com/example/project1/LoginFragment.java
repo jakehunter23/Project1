@@ -12,13 +12,23 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.util.regex.Matcher;
@@ -43,7 +53,7 @@ public class LoginFragment extends Fragment {
     private String mParam2;
     String mail;
     String pass;
-
+    private FirebaseAuth mAuth;
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -79,12 +89,50 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        mAuth = FirebaseAuth.getInstance();
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         EditText loginEmail =view.findViewById(R.id.Login_email);
         mail = loginEmail.getText().toString().trim();
         EditText loginPass = view.findViewById(R.id.login_password);
         pass = loginPass.getText().toString().trim();
         Button login = view.findViewById(R.id.button36);
+        CheckBox rememberMe = view.findViewById(R.id.remember_me);
+
+        //creating shared preference object
+        SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+        String checkbox = preferences.getString("remember","");
+        if(checkbox.equals("true"))
+        {//calling login method
+            login();
+        }else if (checkbox.equals("false"))
+        {
+            Toast.makeText(getContext(), "Please Login", Toast.LENGTH_SHORT).show();
+        }
+
+        //listener for remember me
+        rememberMe.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(buttonView.isChecked()){
+                    //creating shared preferences object
+                    SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor =preferences.edit();
+                    editor.putString("remember","true");
+                    editor.apply();
+
+
+                }else if(!buttonView.isChecked()){
+
+                    SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor =preferences.edit();
+                    editor.putString("remember","false");
+                    editor.apply();
+
+                }
+            }
+        });
+
+        //listener for login button
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,12 +143,36 @@ public class LoginFragment extends Fragment {
                 }*/ else if (loginPass.getText().toString().equals("")) {
                     Toast.makeText(getContext(), "Please Enter Password", Toast.LENGTH_SHORT).show();
                 } else {
+                    loginusingFirebase(loginEmail.getText().toString(),loginPass.getText().toString());
                     login();
                 }
 
             }
         });
         return view;
+    }
+
+    private void loginusingFirebase(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+//                            Toast.makeText(getContext(),
+//                                    "Login successful!! FIREBASE",
+//                                    Toast.LENGTH_LONG)
+//                                    .show();
+
+                        }
+                        else{
+                            Toast.makeText(getContext(),
+                                    "Login failed!! FIREBASE",
+                                    Toast.LENGTH_LONG)
+                                    .show();
+
+                        }
+                    }
+                });
     }
 
     public static void hideSoftKeyboard(Activity activity) {
@@ -133,11 +205,13 @@ public class LoginFragment extends Fragment {
                         /*editor.putString(Constants.KEY_LASTNAME, responseBody.getUserDetailObject().getUserDetails().get(0).getLastName());*/
                         editor.putString(Constants.KEY_EMAIL, responseBody.getUserDetailObject().getUserDetails().get(0).getEmail());
                         editor.apply();
+                        Log.e("Success","1 ");
                         Toast.makeText(getContext(), responseBody.getMessage(), Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(getContext(),DashBoardActivity.class);
                         startActivity(i);
 
                     } else {
+                        Log.e("Success","1 ");
                         Toast.makeText(getContext(), responseBody.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -146,6 +220,7 @@ public class LoginFragment extends Fragment {
 
             @Override
             public void onFailure(@NonNull Call<LoginResponseModel> call, @NonNull Throwable t) {
+                Log.e("get message",t.getMessage().toString());
                 progressDialog.dismiss();
             }
         });

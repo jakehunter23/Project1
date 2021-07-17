@@ -63,32 +63,36 @@
         </RelativeLayout>
 
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp">
-
+            android:layout_marginTop="30dp"
+            android:paddingBottom="7dp">
             <SearchView
+                android:id="@+id/cand_usage_search"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="34dp"
-                android:layout_marginEnd="34dp"
-                android:layoutDirection="rtl"
+                android:layout_height="50dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/searchview_bg"
-                android:searchIcon="@null"
-                android:queryHint="Search here..."
-                android:queryBackground="@color/grey">
+                android:layoutDirection="rtl"
+                android:queryBackground="@drawable/searchview_bg"
+                android:queryHint="Search for job or Candidate"
+                android:theme="@style/AppSearchView">
 
             </SearchView>
-
             <ImageView
-                android:id="@+id/imageView4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="340dp"
-                app:srcCompat="@drawable/search" />
+                android:layout_alignEnd="@id/cand_usage_search"
+                android:layout_marginTop="5dp"
+                android:theme="@style/AppSearchView"
+                android:src="@drawable/search"
+                android:layout_alignRight="@id/cand_usage_search" />
 
-        </FrameLayout>
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/textView117"

@@ -2,27 +2,33 @@ package com.example.project1;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.jetbrains.annotations.NotNull;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import java.io.BufferedReader;
+
 import java.util.HashMap;
 
 /**
@@ -40,8 +46,10 @@ public class SignupFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private FirebaseAuth mAuth;
 
-
+    private DatabaseReference databaseReference;
+    private String eemail, eeusername;
 
     public SignupFragment() {
         // Required empty public constructor
@@ -88,6 +96,13 @@ public class SignupFragment extends Fragment {
         CheckBox terms = view.findViewById(R.id.checkBox2);
         Button signup = view.findViewById(R.id.signup_button);
 
+
+        //Firebase
+        mAuth=FirebaseAuth.getInstance();
+
+
+
+
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,13 +123,51 @@ public class SignupFragment extends Fragment {
                     params.put("username", username.getText().toString());
                     params.put("email", email.getText().toString());
                     params.put("password", pass.getText().toString());
+
+                    eemail=email.getText().toString();
+                    eeusername= username.getText().toString();
+
+
+                    registerUsingFirebase(email.getText().toString(),pass.getText().toString());
                     register(params);
+
                 }
 
 
             }
         });
       return view;
+    }
+
+    private void registerUsingFirebase(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email,password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
+                            if(task.isSuccessful()){
+                                String userId=FirebaseAuth.getInstance().getUid();
+                                databaseReference= FirebaseDatabase.getInstance().getReference().child("Users").child(userId);
+                                HashMap<String,String> hashMap=new HashMap<>();
+                                hashMap.put("id",userId);
+                                hashMap.put("email",eemail);
+                                hashMap.put("username",eeusername);
+                                databaseReference.setValue(hashMap);
+                                Intent i= new Intent(getContext(),LoginActivity.class);
+                                startActivity(i);
+                               Log.e("Sucess","1");
+                            }
+                            else{
+                                Log.e("eroor",task.getException().toString());
+                                Toast.makeText(
+                                        getContext(),
+                                        "Registration failed!!"
+                                                + " FIREBASE",
+                                        Toast.LENGTH_LONG)
+                                        .show();
+
+                            }
+                    }
+                });
     }
 
 

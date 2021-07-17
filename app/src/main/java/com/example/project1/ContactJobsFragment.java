@@ -9,6 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +29,7 @@ public class ContactJobsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    Spinner hiresSpinner;
 
     public ContactJobsFragment() {
         // Required empty public constructor
@@ -65,6 +70,18 @@ public class ContactJobsFragment extends Fragment {
         RecyclerView CJRec = view.findViewById(R.id.con_job_rec);
         CJRec.setLayoutManager(new LinearLayoutManager(getContext()));
         CJRec.setAdapter(new ContactJobRecAdapter());
-         return view;
+
+
+        hiresSpinner=view.findViewById(R.id.spinner53);
+        ArrayList<String> list=new ArrayList<>();
+        list.add("High");
+        list.add("Medium");
+        list.add("Low");
+        ArrayAdapter Adapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,list);
+        Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        hiresSpinner.setAdapter(Adapter);
+
+
+        return view;
     }
 }

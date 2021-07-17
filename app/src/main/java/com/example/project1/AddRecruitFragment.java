@@ -17,6 +17,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -349,6 +350,20 @@ public class AddRecruitFragment extends Fragment {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String designation = Designation.getText().toString().trim();
+                String opening = Openings.getText().toString().trim();
+                if (designation.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter Designation",Toast.LENGTH_LONG).show();
+                    Designation.setError("Please Enter Designation");
+                    Designation.requestFocus();
+                    return;
+                }
+                if (opening.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter Number Of Opening",Toast.LENGTH_LONG).show();
+                    Openings.setError("Please Enter LinkedIn Number Of Opening");
+                    Openings.requestFocus();
+                    return;
+                }
                 Bundle bundle = new Bundle();
                 bundle.putInt("positionId", positionId+1);
                 bundle.putInt("industryId", industryId+1);

@@ -1,9 +1,11 @@
 package com.example.project1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,9 +18,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -42,7 +48,9 @@ public class DashboardFragment extends Fragment {
     private ImageButton mailButton;
     private ImageButton fileButton;
     private ImageView Menu;
+    private SearchView esearch_bar;
     Button CalInt;
+    private TextView logout;
 
     String [] names={"Job created","Applied candidate","Interviews Done","Hired candidate","Task Assigned","Other Statistics"};
     int [] numbers = {140,250,310,140,437,437};
@@ -99,6 +107,13 @@ public class DashboardFragment extends Fragment {
         Dash3Recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
         Dash3Recyclerview.setAdapter(new DashboardRec3Adapter(name,date,getContext(),dp));
 
+        esearch_bar=view.findViewById(R.id.card_usage_search);
+        esearch_bar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),SearchActivity.class));
+            }
+        });
 
         Menu=view.findViewById(R.id.menu_icon);
         Menu.setOnClickListener(new View.OnClickListener() {
@@ -138,6 +153,21 @@ public class DashboardFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(),MyFilesActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //setting listener for logout button
+        logout = view.findViewById(R.id.logout);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //creating shared preferences object
+                SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
+                SharedPreferences.Editor editor =preferences.edit();
+                editor.putString("remember","false");
+                editor.apply();
+                getActivity().finish();
+                Toast.makeText(getContext(), "Logout Successfully", Toast.LENGTH_SHORT).show();
             }
         });
 

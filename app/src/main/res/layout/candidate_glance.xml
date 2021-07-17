@@ -30,8 +30,8 @@
                     android:id="@+id/candidate_dp"
                     android:layout_width="97dp"
                     android:layout_height="97dp"
-
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/dp_1"
+ />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -41,7 +41,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="17dp"
                 android:layout_toEndOf="@+id/cand_dpcard"
-                android:text="TextView"
+                android:text="John Smith"
                 android:textSize="22dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito"/>
@@ -53,7 +53,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="24dp"
                 android:layout_toEndOf="@+id/cand_name"
-                android:text="TextView"
+                android:text="#JB13069"
                 android:textSize="13dp"
                 android:textColor="@color/grey"
                 android:fontFamily="@font/nunito_semibold"/>
@@ -66,7 +66,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/cand_dpcard"
-                android:text="TextView"
+                android:text="Web Developer"
                 android:textSize="13dp"
                 android:textColor="@color/text_blue"
                 android:fontFamily="@font/nunito_semibold"
@@ -80,7 +80,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="11dp"
                 android:layout_toEndOf="@+id/cand_title"
-                android:text="TextView"
+                android:text="-Fox Hunt"
                 android:textSize="13dp"
                 android:textColor="@color/grey"
                 android:fontFamily="@font/nunito_semibold"/>
@@ -93,7 +93,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/cand_dpcard"
-                android:text="TextView"
+                android:text="Hyderabad"
                 android:textSize="13dp"
                 android:textColor="@color/grey"
                 android:fontFamily="@font/nunito_semibold"/>
@@ -109,6 +109,7 @@
                 android:layout_width="159dp"
                 android:layout_height="48dp"
                 android:text="Edit Candidate"
+                android:layout_marginBottom="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="28dp"
                 android:background="@drawable/background_solid"
@@ -143,11 +144,246 @@
         </LinearLayout>
 
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/contactGlance"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="519dp"
+                android:backgroundTint="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#JB13069"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginTop="22dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="05-05-2021"
+                    android:textColor="#7D7D7D"
+                    android:textSize="16dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="245dp"
+                    android:layout_marginTop="22dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Justin Soto"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="128dp"
+                    android:layout_marginTop="63dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fox Hunt"
+                    android:textColor="@color/text_blue"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="133dp"
+                    android:layout_marginTop="102dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="| HR"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="198dp"
+                    android:layout_marginTop="102dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="142dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="InActive"
+                    android:textColor="#FB3B57"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="44dp"
+                    android:layout_marginTop="166dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Availability Date"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="202dp"
+                    android:layout_marginTop="142dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20-05-2021"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="202dp"
+                    android:layout_marginTop="166dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Division"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="213dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="others"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="237dp"/>
+                <TextView
+                    android:layout_width="115dp"
+                    android:layout_height="42dp"
+                    android:text="Internal
+            System verified"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="184dp"
+                    android:layout_marginTop="213dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact info"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="401dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="email@gmail.com"
+                    android:textColor="@color/text_blue"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="425dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 9090687890"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="448dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 9090687890"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="471dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="221dp"
+                    android:layout_marginTop="401dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address line 1,"
+                    android:textColor="@color/text_blue"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="221dp"
+                    android:layout_marginTop="425dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City - 530961,"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="221dp"
+                    android:layout_marginTop="448dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State, Country"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="221dp"
+                    android:layout_marginTop="471dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created by"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="284dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Curtis Kelley"
+                    android:textColor="@color/text_blue"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="308dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="philipmartin@gmail.com"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="331dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+91 9090687890"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginLeft="39dp"
+                    android:layout_marginTop="354dp"/>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
             android:id="@+id/item_description_layout"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="38dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:minHeight="48dp"
             android:paddingStart="16dp"
@@ -168,6 +404,8 @@
                 android:id="@+id/item_description_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="More information"
+                android:textColor="@color/grey"
                 android:layout_marginTop="10dp"
                 android:gravity="center" />
 

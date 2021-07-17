@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="27dp"
             android:layout_marginEnd="27dp"
             android:elevation="8dp"
@@ -28,6 +29,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -66,8 +68,8 @@
 
                         <ImageView
                             android:id="@+id/cand_imageView24"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
+                            android:layout_width="22dp"
+                            android:layout_height="36dp"
                             android:layout_gravity="center"
                             app:srcCompat="@drawable/delete_red" />
                     </androidx.cardview.widget.CardView>
@@ -135,18 +137,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:layout_marginEnd="18dp"
-                    android:layout_marginTop="44dp"
+                    android:layout_marginTop="20dp"
+                    android:maxLines="4"
+                    android:inputType="textMultiLine"
                     android:fontFamily="@font/nunito"
-                    android:text="@string/Text"
+                    android:text="@string/long_text"
                     android:textColor="@color/grey"
                     android:textSize="14dp" />
 
                 <RelativeLayout
                     android:id="@+id/item_description_layout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
                     android:gravity="center"
                     android:minHeight="48dp"
                     android:paddingStart="16dp"
@@ -159,7 +164,6 @@
                         android:layout_alignParentTop="true"
                         android:layout_gravity="center_vertical|end"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="10dp"
                         android:layout_toEndOf="@+id/item_description_title"
                         android:src="@drawable/expand_more" />
 
@@ -167,7 +171,6 @@
                         android:id="@+id/item_description_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:gravity="center"
                         android:text="Read more"
                         android:textSize="15dp"

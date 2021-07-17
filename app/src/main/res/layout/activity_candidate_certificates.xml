@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CandidateCertificates">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/back_arrow_certificate"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/black" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="90dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"
+        android:text="2. Upload Resume and other documents"
+        android:textSize="26dp" />
+    <TextView
+        android:id="@+id/personal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="183dp"
+        android:fontFamily="@font/nunito"
+        android:textColor="@color/text_blue"
+        android:text="Upload your Resume"
+        android:textSize="20dp" />
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="217dp"
+        android:fontFamily="@font/nunito"
+        android:textColor="#BDBDBD"
+        android:text="Upload your resume if you have not already done so."
+        android:textSize="14dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="270dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonsubmit"
+                android:layout_width="171dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:text="Add File"
+                android:textSize="14dp"
+                android:drawableLeft="@drawable/ic_baseline_add_circle"
+                android:fontFamily="@font/nunito"
+                android:drawablePadding="12dp"
+                android:paddingLeft="30dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+                android:gravity="center_vertical"
+                />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="47dp"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textColor="@color/text_blue"
+            android:text="Certificates and Licenses"
+            android:textSize="20dp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="171dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Add File"
+            android:textSize="14dp"
+            android:drawableLeft="@drawable/ic_baseline_add_circle"
+            android:fontFamily="@font/nunito"
+            android:drawablePadding="12dp"
+            android:paddingLeft="30dp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center_vertical"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="47dp"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textColor="@color/text_blue"
+            android:text="Attachments"
+            android:textSize="20dp" />
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="#BDBDBD"
+            android:text="Upload your resume if you have not already done so."
+            android:textSize="14dp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="171dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:text="Add File"
+            android:textSize="14dp"
+            android:drawableLeft="@drawable/ic_baseline_add_circle"
+            android:fontFamily="@font/nunito"
+            android:drawablePadding="12dp"
+            android:paddingLeft="30dp"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center_vertical"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="179dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="123dp"
+            android:text="Next"
+            android:id="@+id/cert_next"
+            android:textSize="20dp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+        </RelativeLayout></ScrollView>
+</RelativeLayout>

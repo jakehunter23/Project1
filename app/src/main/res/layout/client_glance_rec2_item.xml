@@ -30,7 +30,7 @@
             android:id="@+id/textView196"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
+            android:text="Acturial Assistant"
             android:layout_marginTop="31dp"
             android:layout_marginStart="30dp"
             android:textSize="18dp"
@@ -107,6 +107,7 @@
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@+id/textView199"
             android:textSize="16dp"
+            android:text="05-05-2021"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
 
@@ -118,6 +119,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="13dp"
             android:textSize="16dp"
+            android:text="Full time"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
 
@@ -139,6 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/textView202"
             android:layout_marginStart="30dp"
+            android:text="Philip Martin"
             android:layout_marginTop="10dp"
             android:textSize="16dp"
             android:textColor="@color/black"
@@ -151,6 +154,7 @@
             android:layout_below="@+id/cliglan_rec2_com_contact"
             android:layout_marginStart="30dp"
             android:layout_marginTop="6dp"
+            android:text="philipmartin@gmail.com"
             android:textSize="16dp"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
@@ -245,6 +249,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:textSize="16dp"
+            android:text="Sandra Viscenta"
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
 
@@ -254,6 +259,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/cliglan_rec2_recname"
             android:layout_marginStart="30dp"
+            android:text="sandaviscenta@gmail.com"
             android:layout_marginTop="6dp"
             android:layout_marginBottom="18dp"
             android:textSize="16dp"

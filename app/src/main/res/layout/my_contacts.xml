@@ -49,39 +49,42 @@
             android:textColor="@color/grey"
             android:fontFamily="@font/nunito_semibold"/>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_marginTop="30dp"
-            android:paddingBottom="7dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <SearchView
+                    android:id="@+id/cand_usage_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/searchview_bg"
+                    android:layoutDirection="rtl"
+                    android:queryBackground="@drawable/searchview_bg"
+                    android:queryHint="Search for job by Id or title"
+                    android:theme="@style/AppSearchView">
 
-            <SearchView
-                android:layout_width="286dp"
-                android:id="@+id/cand_usage_search"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="27dp"
-                android:background="@drawable/searchview_bg"
-                android:layoutDirection="rtl"
-                android:searchIcon="@null"
-                android:queryHint="Search for job by Id or title"
-                android:queryBackground="@drawable/searchview_bg"
-                android:theme="@style/AppSearchView">
-
-            </SearchView>
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="264dp"
-                android:src="@drawable/search"/>
-
+                </SearchView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignEnd="@id/cand_usage_search"
+                    android:theme="@style/AppSearchView"
+                    android:src="@drawable/search"
+                    android:layout_alignRight="@id/cand_usage_search" />
+            </RelativeLayout>
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="23dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="25dp"
                 android:layout_toEndOf="@+id/cand_usage_search"
                 app:cardCornerRadius="10dp"
                 android:elevation="2dp">
@@ -89,14 +92,15 @@
 
                 <ImageView
                     android:id="@+id/cand_imageView"
-                    android:layout_width="27dp"
-                    android:layout_height="27dp"
-                    android:layout_margin="13dp"
-                    android:layout_marginTop="5dp"
-                    tools:src="@tools:sample/avatars" />
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:background="@drawable/roundcorner"
+                    android:src="@drawable/add"/>
             </androidx.cardview.widget.CardView>
 
-        </RelativeLayout>
+
+        </LinearLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="200dp"

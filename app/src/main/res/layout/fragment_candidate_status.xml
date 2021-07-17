@@ -37,7 +37,7 @@
                     android:fontFamily="@font/nunito_semibold"/>
 
                 <Spinner
-                    android:id="@+id/spinner26"
+                    android:id="@+id/statusSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_below="@+id/textView159"

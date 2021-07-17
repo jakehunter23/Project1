@@ -15,7 +15,7 @@
             android:id="@+id/cand_imageView32"
             android:layout_width="52dp"
             android:layout_height="62dp"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/small_dp_1" />
 
         <TextView
             android:id="@+id/cand_textView265"

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardviewrelative"
+    android:layout_width="wrap_content"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="420dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="15dp"
+        android:backgroundTint="@color/white"
+        android:outlineAmbientShadowColor="#00000029">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:layout_marginTop="16dp"
+                >
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="236dp"
+                    android:background="@drawable/ic_baseline_share_24"/>
+                <RatingBar
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:layout_marginLeft="277dp"
+                    android:numStars="1"
+                    android:stepSize="1"
+                    style="@style/RatingBar"
+                    />
+
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="48dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="26dp"
+                    app:cardCornerRadius="250dp">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/maskprofile"/>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:fontFamily="@font/nunito_semibold"
+
+                    android:layout_marginLeft="87dp"/>
+                <TextView
+                    android:id="@+id/textview2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="London, UK"
+                    android:textColor="#979797"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:layout_marginTop="20dp"
+
+                    android:layout_marginLeft="87dp"/>
+
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textview3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="App store screenshot design"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="26dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="21dp"
+                android:orientation="horizontal">
+                <SeekBar
+                    android:layout_width="190dp"
+                    android:layout_height="9dp"
+                    android:max="100"
+                    android:min="0"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:progress="60"
+                    android:progressDrawable="@drawable/seek_bar"
+                    android:progressTint="@color/red"
+                    android:thumb="@null" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 days left"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="16dp"
+                    android:textColor="#979797"/>
+
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CSS, HTML, UI, FrontEnd"
+                android:textSize="14dp"
+                android:textColor="@color/text_blue"
+                android:textStyle="italic"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="27dp"
+                />
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:textColor="#979797"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="50dp"/>
+            <TextView
+                android:layout_width="270dp"
+                android:layout_height="65dp"
+                android:text="Lorem ipsum dolo"
+                android:textSize="14dp"
+                android:textColor="#979797"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="27dp"/>
+            <TextView
+                android:layout_width="56dp"
+                android:layout_height="19dp"
+                android:text="Full time"
+                android:layout_marginBottom="10dp"
+                android:textColor="#979797"
+                android:textSize="14dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:layout_marginTop="23dp"
+                android:layout_marginLeft="27dp"/>
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="111dp"
+                android:layout_height="36dp"
+                android:layout_marginLeft="183dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginTop="370dp"
+                android:backgroundTint="#3CA6DA"
+                android:outlineAmbientShadowColor="#CFCFCF80"
+
+                app:cardCornerRadius="15dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_semibold"
+                    android:gravity="center"
+                    android:id="@+id/apply_now"
+                    android:text="Apply Now"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

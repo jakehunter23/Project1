@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -48,6 +49,7 @@ public class AddContactAAdditionalFragment extends Fragment {
     ArrayList<String> validityList;
     ArrayAdapter visibilityAdapter;
     ArrayAdapter validityAdapter;
+    EditText LinkedIn;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -92,6 +94,7 @@ public class AddContactAAdditionalFragment extends Fragment {
         Button save = view.findViewById(R.id.button43);
         visibilty=view.findViewById(R.id.spinner67);
         validity=view.findViewById(R.id.spinner68);
+        LinkedIn=view.findViewById(R.id.editTextTextPersonName83);
         visibilityList = new ArrayList<>();
         validityList = new ArrayList<>();
 
@@ -136,6 +139,13 @@ public class AddContactAAdditionalFragment extends Fragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String link = LinkedIn.getText().toString().trim();
+                if (link.isEmpty()){
+                    Toast.makeText(getContext(),"Please Enter LinkedIn Profile URL",Toast.LENGTH_LONG).show();
+                    LinkedIn.setError("Please Enter LinkedIn Profile URL");
+                    LinkedIn.requestFocus();
+                    return;
+                }
                 Intent intent = new Intent(getContext(),ContactSplashScreenActivity.class);
                 startActivity(intent);
             }

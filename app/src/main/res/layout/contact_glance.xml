@@ -30,8 +30,7 @@
                     android:id="@+id/candidate_dp"
                     android:layout_width="97dp"
                     android:layout_height="97dp"
-
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:src="@drawable/dp_1"/>
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -41,7 +40,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="17dp"
                 android:layout_toEndOf="@+id/cand_dp_hold"
-                android:text="TextView"
+                android:text="John Smith"
                 android:textSize="22dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito"/>
@@ -53,7 +52,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="23dp"
                 android:layout_toEndOf="@+id/cand_name"
-                android:text="TextView"
+                android:text="#JB13096"
                 android:fontFamily="@font/nunito_semibold"
                 android:textSize="13dp"
                 android:textColor="@color/grey"/>
@@ -66,7 +65,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/cand_dp_hold"
-                android:text="TextView"
+                android:text="Web Developer"
                 android:fontFamily="@font/nunito_semibold"
                 android:textSize="13dp"
                 android:textColor="@color/text_blue"/>
@@ -79,7 +78,7 @@
                 android:layout_marginStart="9dp"
                 android:layout_marginTop="11dp"
                 android:layout_toEndOf="@+id/cand_title"
-                android:text="TextView"
+                android:text="-Fox Hunt"
                 android:fontFamily="@font/nunito_semibold"
                 android:textSize="13dp"
                 android:textColor="@color/grey"/>
@@ -89,10 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cand_title"
+                android:textColor="@color/grey"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/cand_dp_hold"
-                android:text="TextView"
+                android:text="Hydderabad"
                 android:drawableLeft="@drawable/location_on"/>
         </RelativeLayout>
 
@@ -103,6 +103,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/cand_edit_button"
                 android:layout_width="159dp"
+                android:layout_marginBottom="20dp"
                 android:layout_height="48dp"
                 android:text="Edit Contact"
                 android:layout_marginTop="30dp"
@@ -150,6 +151,8 @@
             <TextView
                 android:id="@+id/item_description_title"
                 android:layout_width="wrap_content"
+                android:text="More information"
+                android:textColor="@color/grey"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center" />

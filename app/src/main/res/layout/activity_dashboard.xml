@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/white">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/navbotton"
+                    android:src="@drawable/menu_black_24dp"/>
+
+                <TextView
+                    android:id="@+id/logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout"
+                    android:paddingEnd="8dp"
+                    android:drawableTint="@color/text_blue"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginStart="270dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/text_blue"
+                    android:fontFamily="@font/nunito_semibold"
+                    app:drawableEndCompat="@drawable/ic_logout" />
+
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:lineSpacingExtra="30dp"
+                android:text="Looking for a Job?"
+                android:textColor="@color/black"
+
+                android:textSize="27dp" />
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/storageHead"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:paddingBottom="7dp">-->
+<!--            <SearchView-->
+<!--                android:id="@+id/cand_usage_search"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_marginLeft="27dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:background="@drawable/searchviewbg"-->
+<!--                android:layoutDirection="rtl"-->
+<!--                android:queryBackground="@drawable/searchviewbg"-->
+<!--                android:queryHint="Search for Files by Id or title"-->
+<!--                android:theme="@style/AppSearchView">-->
+
+<!--            </SearchView>-->
+<!--                <ImageView-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
+
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:theme="@style/AppSearchView"-->
+<!--                    android:src="@drawable/search" />-->
+
+<!--            </RelativeLayout>-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingBottom="7dp">
+                <SearchView
+                    android:id="@+id/cand_usage_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/searchviewbg"
+                    android:layoutDirection="rtl"
+                    android:queryBackground="@drawable/searchviewbg"
+                    android:queryHint="Search for job or Candidate"
+                    android:theme="@style/AppSearchView">
+
+                </SearchView>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignEnd="@id/cand_usage_search"
+                    android:layout_marginTop="5dp"
+                    android:theme="@style/AppSearchView"
+                    android:src="@drawable/search"
+                    android:layout_alignRight="@id/cand_usage_search" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:lineSpacingExtra="30dp"
+                android:text="Dashboard"
+                android:textColor="@color/black"
+                android:textSize="27dp" />
+            <View
+                android:layout_width="361dp"
+                android:layout_height="2dp"
+                android:background="#F2F2F2"
+                android:layout_marginTop="21dp"
+                android:layout_marginLeft="27dp" />
+
+           <GridLayout
+               android:layout_width="match_parent"
+               android:layout_height="170dp"
+               android:rowCount="2"
+               android:layout_marginBottom="20dp"
+               android:layout_marginTop="20dp"
+               android:columnCount="2">
+
+               <androidx.constraintlayout.widget.ConstraintLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintHorizontal_bias="0.5"
+                   app:layout_constraintStart_toStartOf="parent">
+
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/c1"
+                       android:layout_width="wrap_content"
+                       android:layout_height="59dp"
+                       android:backgroundTint="@color/white"
+                       android:outlineAmbientShadowColor="#CFCFCF80"
+                       app:cardCornerRadius="15dp"
+                       app:layout_constraintBottom_toTopOf="@+id/c3"
+                       app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_margin="8dp"
+                           android:orientation="horizontal">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="match_parent"
+                               android:layout_marginEnd="15dp"
+                               android:orientation="vertical"
+                               android:layout_marginRight="15dp">
+
+                               <TextView
+                                   android:id="@+id/textView"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="Jobs Applied"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="10dp" />
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_gravity="center"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:gravity="center"
+                                   android:text="1"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="18dp" />
+                           </LinearLayout>
+
+                           <ImageView
+                               android:id="@+id/imageView2"
+                               android:layout_width="37dp"
+                               android:layout_height="37dp"
+                               android:layout_gravity="center"
+                               android:layout_marginEnd="10dp"
+                               android:layout_marginRight="10dp"
+                               android:background="@drawable/job_portal" />
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/c2"
+                       android:layout_width="wrap_content"
+                       android:layout_height="59dp"
+
+                       android:backgroundTint="@color/white"
+                       android:outlineAmbientShadowColor="#CFCFCF80"
+                       app:cardCornerRadius="15dp"
+                       app:layout_constraintBottom_toTopOf="@+id/c4"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="@+id/guideline3"
+                       app:layout_constraintTop_toTopOf="parent">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_marginRight="15dp"
+                           android:orientation="horizontal">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_margin="10dp"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/textView2"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="Jobs Nearby"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="10dp" />
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_gravity="center"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="30"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="18dp" />
+                           </LinearLayout>
+
+                           <ImageView
+                               android:id="@+id/imageView3"
+                               android:layout_width="37dp"
+                               android:layout_height="37dp"
+                               android:layout_gravity="center"
+                               android:layout_marginEnd="10dp"
+                               android:layout_marginRight="10dp"
+                               android:background="@drawable/job_des" />
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/c3"
+                       android:layout_width="wrap_content"
+                       android:layout_height="59dp"
+                       android:backgroundTint="@color/white"
+                       android:outlineAmbientShadowColor="#CFCFCF80"
+                       app:cardCornerRadius="15dp"
+
+                       android:layout_marginBottom="20dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toStartOf="@+id/guideline3"
+                       app:layout_constraintStart_toStartOf="parent">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_margin="10dp"
+                           android:orientation="horizontal">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginRight="15dp"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/textView3"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="Jobs Applied"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="10dp" />
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_gravity="center"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="15"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="18dp" />
+                           </LinearLayout>
+
+                           <ImageView
+                               android:id="@+id/imageView4"
+                               android:layout_width="37dp"
+                               android:layout_height="37dp"
+                               android:layout_gravity="center"
+                               android:layout_marginEnd="10dp"
+                               android:layout_marginRight="10dp"
+                               android:background="@drawable/contacts" />
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.cardview.widget.CardView
+                       android:id="@+id/c4"
+                       android:layout_width="wrap_content"
+                       android:layout_height="59dp"
+                       android:layout_marginBottom="20dp"
+                       android:backgroundTint="@color/white"
+                       android:outlineAmbientShadowColor="#CFCFCF80"
+                       app:cardCornerRadius="15dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="@+id/guideline3">
+
+                       <LinearLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:layout_margin="10dp"
+                           android:orientation="horizontal">
+
+                           <LinearLayout
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:layout_marginRight="15dp"
+                               android:orientation="vertical">
+
+                               <TextView
+                                   android:id="@+id/textView4"
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="Jobs Applied"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="10dp" />
+
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:layout_gravity="center"
+                                   android:fontFamily="@font/nunito_bold"
+                                   android:text="65"
+                                   android:textColor="#7D7D7D"
+                                   android:textSize="18dp" />
+                           </LinearLayout>
+
+                           <ImageView
+                               android:id="@+id/imageView5"
+                               android:layout_width="37dp"
+                               android:layout_height="37dp"
+                               android:layout_gravity="center"
+                               android:layout_marginEnd="10dp"
+                               android:layout_marginRight="10dp"
+                               android:background="@drawable/note_solid" />
+                       </LinearLayout>
+                   </androidx.cardview.widget.CardView>
+
+                   <androidx.constraintlayout.widget.Guideline
+                       android:id="@+id/guideline3"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:orientation="vertical"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintGuide_begin="205dp"
+                       app:layout_constraintStart_toStartOf="parent" />
+
+               </androidx.constraintlayout.widget.ConstraintLayout>
+
+           </GridLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="34dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/sjob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="41dp"
+                        android:layout_marginStart="27dp"
+                        android:layout_marginLeft="27dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:lineSpacingExtra="30dp"
+                        android:text="Suggested jobs"
+                        android:textColor="@color/black"
+                        android:textSize="26dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/showall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="27dp"
+                        android:layout_marginRight="27dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:gravity="center"
+                        android:text="show all"
+                        android:textColor="@color/text_blue"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/suggestrecycle"
+                        android:layout_marginRight="27dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </HorizontalScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+
+                android:layout_marginTop="34dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/specific_job"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="25dp"
+                        android:layout_marginLeft="25dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:lineSpacingExtra="30dp"
+                        android:text="Search for specific job"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        app:layout_constraintStart_toEndOf="@id/specific_job"
+                        android:layout_marginEnd="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:gravity="center"
+                        android:text="show all"
+                        android:textColor="@color/text_blue"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </RelativeLayout>
+
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclejob"
+                        android:layout_width="match_parent"
+                        android:layout_marginRight="27dp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+
+
+
+
+
+
+
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="297.97dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="27dp"
+                app:cardCornerRadius="15dp"
+                android:outlineAmbientShadowColor="#CFCFCF80"
+
+                android:backgroundTint="@color/white">
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="27dp"
+                        android:textColor="@color/black"
+                        android:text="Jobs near you"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textSize="26dp"
+                        android:layout_marginLeft="23dp"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="297.97dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginLeft="27dp"
+                app:cardCornerRadius="15dp"
+                android:outlineAmbientShadowColor="#CFCFCF80"
+                android:backgroundTint="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="27dp"
+                        android:textColor="@color/black"
+                        android:text="Profile viewed"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textSize="26dp"
+                        android:layout_marginLeft="23dp"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginRight="27dp"
+                android:layout_height="297.97dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="27dp"
+                app:cardCornerRadius="15dp"
+                android:outlineAmbientShadowColor="#CFCFCF80"
+                android:backgroundTint="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:padding="5dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="27dp"
+                        android:textColor="@color/black"
+                        android:text="New Applicants"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textSize="26dp"
+                        android:layout_marginLeft="23dp"
+                        />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginRight="27dp"
+                android:layout_height="297.97dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginBottom="30dp"
+                app:cardCornerRadius="15dp"
+                android:outlineAmbientShadowColor="#CFCFCF80"
+                android:backgroundTint="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="27dp"
+                        android:textColor="@color/black"
+                        android:text="Upcoming Interviews"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:textSize="26dp"
+                        android:layout_marginLeft="23dp"
+                        />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/buttonschedule"
+                        android:layout_width="239dp"
+                        android:layout_height="49dp"
+                        android:layout_marginLeft="26dp"
+                        android:background="@drawable/background_solid"
+                        android:drawableRight="@drawable/add"
+                        android:layout_marginTop="20dp"
+                        android:drawablePadding="12dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:paddingRight="5dp"
+                        android:paddingLeft="5dp"
+                        android:text="Schedule an Interview"
+
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

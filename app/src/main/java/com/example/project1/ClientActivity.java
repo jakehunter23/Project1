@@ -2,7 +2,12 @@ package com.example.project1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -12,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.transition.AutoTransition;
+import androidx.transition.TransitionManager;
 
 public class ClientActivity extends AppCompatActivity {
 
@@ -21,6 +28,10 @@ public class ClientActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     Fragment fragment =null;
     FragmentTransaction fragmentTransaction;
+    LinearLayout expand;
+    RelativeLayout more_info;
+    ImageView arrow;
+    TextView information;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +47,12 @@ public class ClientActivity extends AppCompatActivity {
         tab6 =findViewById(R.id.client_files);
         tab7 = findViewById(R.id.client_notes);
 
+        expand=findViewById(R.id.expand_layout);
+        more_info=findViewById(R.id.item_description_layout);
+        expand.setVisibility(View.GONE);
+        arrow=findViewById(R.id.item_description_img);
+        information=findViewById(R.id.item_description_title);
+
         frameLayout = findViewById(R.id.tab_host_fragment);
         fragment = new ClientGlanceFragment();
         fragmentManager =getSupportFragmentManager();
@@ -43,6 +60,28 @@ public class ClientActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.tab_host_fragment,fragment);
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         fragmentTransaction.commit();
+
+        more_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (expand.getVisibility() == View.VISIBLE) {
+
+
+                    TransitionManager.beginDelayedTransition(expand,
+                            new AutoTransition());
+                    expand.setVisibility(View.GONE);
+                    arrow.setImageResource(R.drawable.expand_more);
+                    information.setText(R.string.show_more);
+
+                }  else {
+                    TransitionManager.beginDelayedTransition(expand,
+                            new AutoTransition());
+                    expand.setVisibility(View.VISIBLE);
+                    arrow.setImageResource(R.drawable.expand_less);
+                    information.setText(R.string.show_less);
+                }
+            }
+        });
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
