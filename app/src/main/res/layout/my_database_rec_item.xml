@@ -21,7 +21,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/toCandDetails">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="55dp"
@@ -76,6 +77,23 @@
                     android:textSize="16dp"
                     android:textColor="@color/grey"
                     android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/delete_card"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="34dp">
+
+                    <ImageView
+                        android:id="@+id/imageView59"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/delete_red" />
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
             <LinearLayout
