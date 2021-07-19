@@ -14,10 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
-        <activity android:name=".RecruiterProfile"></activity>
-        <activity android:name=".AddRecruiterActivity" />
-        <activity android:name=".MeetingCreation" />
-        <activity android:name=".OnboardingProcess" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,7 +24,9 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".MessageAcitvity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity
             android:name=".NavActivity"
             android:parentActivityName=".DashBoardActivity" />
@@ -79,25 +77,19 @@
         <activity android:name=".mytask" />
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
-        <activity android:name=".dashboard" />
+        <activity android:name=".dashboard"></activity>
+
+        <activity android:name=".JobLoginActivity" android:exported="true"/>
+        <activity android:name=".JSCareerInfo"  android:exported="true" />
         <activity
-            android:name=".JobLoginActivity"
-            android:exported="true" />
+            android:name=".JSPassword"  android:exported="true" />
         <activity
-            android:name=".JSCareerInfo"
-            android:exported="true" />
+            android:name=".JSDetails"  android:exported="true" />
         <activity
-            android:name=".JSPassword"
-            android:exported="true" />
-        <activity
-            android:name=".JSDetails"
-            android:exported="true" />
-        <activity
-            android:name=".JSPersonalInfo"
-            android:exported="true" />
-        <activity
-            android:name=".UpdateActivity"
-            android:exported="true" />
+            android:name=".JSPersonalInfo"   android:exported="true" />
+
+        <activity android:name=".UpdateActivity" android:exported="true"/>
+
         <activity
             android:name=".CandidateComplete"
             android:exported="true" />
@@ -107,9 +99,11 @@
         <activity
             android:name=".CandidateEducation"
             android:exported="true" />
-        <activity
-            android:name=".RecyclerView"
-            android:parentActivityName=".CandidateEducation" />
+
+        <activity android:name=".RecyclerView"
+            android:parentActivityName=".CandidateEducation"/>
+
+
         <activity
             android:name=".CandidateCertificates"
             android:exported="true" />

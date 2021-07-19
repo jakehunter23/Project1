@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -27,7 +28,13 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,12 +51,24 @@ public class AddContactAAdditionalFragment extends Fragment {
     String fetchVisibility = "https://demotic-recruit.000webhostapp.com/visibility_fetch.php";
     String fetchValidity = "https://demotic-recruit.000webhostapp.com/validity_fetch.php";
 
-    Spinner visibilty, validity;
+    Spinner Visibilty, Validity;
     ArrayList<String> visibilityList;
     ArrayList<String> validityList;
     ArrayAdapter visibilityAdapter;
     ArrayAdapter validityAdapter;
-    EditText LinkedIn;
+
+    String insertContact = "https://demotic-recruit.000webhostapp.com/contact_insert.php";
+    String updatecon = "https://demotic-recruit.000webhostapp.com/contact_update.php";
+
+    EditText LastContactDate;
+    EditText LastVisitDate;
+
+    Date date = Calendar.getInstance().getTime();
+    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    String strDate = dateFormat.format(date);
+
+    String id, firstName, lastName, middleName, title, email, phoneNumber, address, city, zipcode, division, reportsToId, visibility, validity;
+    String photo, contactTypeId, industryId, sourceId, statusId, lastContactDate, companyId, stateId, countryId, createdDate, lastVisitDate;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -92,23 +111,76 @@ public class AddContactAAdditionalFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.add_contact_additional, container, false);
         Button save = view.findViewById(R.id.button43);
-        visibilty=view.findViewById(R.id.spinner67);
-        validity=view.findViewById(R.id.spinner68);
-        LinkedIn=view.findViewById(R.id.editTextTextPersonName83);
+        Visibilty=view.findViewById(R.id.spinner67);
+        Validity=view.findViewById(R.id.spinner68);
         visibilityList = new ArrayList<>();
         validityList = new ArrayList<>();
 
         loadVisibility();
         loadValidity();
 
+        LastContactDate = view.findViewById(R.id.editTextTextPersonName81);
+        LastVisitDate = view.findViewById(R.id.editTextTextPersonName82);
 
-        visibilty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedVisibilityPosition = visibilty.getSelectedItemPosition();
+        Bundle bundle = this.getArguments();
+        id = bundle.getString("id");
+        firstName = bundle.getString("first_name");
+        lastName = bundle.getString("last_name");
+        middleName = bundle.getString("middle_name");
+        statusId = bundle.getString("status");
+        email = bundle.getString("email");
+        phoneNumber = bundle.getString("contact_number");
+        address = bundle.getString("address");
+        city = bundle.getString("city");
+        zipcode = bundle.getString("zipcode");
+        sourceId = bundle.getString("source_id");
+        stateId = bundle.getString("state_id");
+        countryId = bundle.getString("country_id");
+        title = bundle.getString("current_title");
+        companyId = bundle.getString("company_name");
+        contactTypeId = bundle.getString("contact_type_id");
+        division = bundle.getString("division");
+        reportsToId = bundle.getString("report_to_id");
+        industryId = bundle.getString("industry_id");
+        lastContactDate = bundle.getString("last_contact_date");
+        lastVisitDate = bundle.getString("last_visit_date");
+        visibility = bundle.getString("visibility");
+        validity = bundle.getString("validity");
+        createdDate = bundle.getString("created_date");
+        photo = bundle.getString("photo");
+
+        if(id!=null){
+            LastContactDate.setText(bundle.getString("last_contact_date"));
+            LastVisitDate.setText(bundle.getString("last_visit_date"));
+
+            if(visibility!=null){
+                Visibilty.setSelection(Integer.parseInt(visibility));
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("Visibility",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_item",SelectedVisibilityPosition);
+                prefEditor.putInt("spinner_item", Integer.parseInt(visibility));
+                prefEditor.commit();
+            }
+
+            if(validity!=null){
+                Validity.setSelection(Integer.parseInt(validity));
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Validity",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_item2", Integer.parseInt(validity));
+                prefEditor.commit();
+            }
+        }
+
+
+
+        Visibilty.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                visibility = String.valueOf(Visibilty.getSelectedItemPosition());
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Visibility",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_item", Integer.parseInt(visibility));
                 prefEditor.commit();
 
             }
@@ -119,13 +191,14 @@ public class AddContactAAdditionalFragment extends Fragment {
             }
         });
 
-        validity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Validity.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedValidityPosition = validity.getSelectedItemPosition();
+
+                validity = String.valueOf(Validity.getSelectedItemPosition());
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("Validity",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_item2",SelectedValidityPosition);
+                prefEditor.putInt("spinner_item2", Integer.parseInt(validity));
                 prefEditor.commit();
 
             }
@@ -139,18 +212,150 @@ public class AddContactAAdditionalFragment extends Fragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String link = LinkedIn.getText().toString().trim();
-                if (link.isEmpty()){
-                    Toast.makeText(getContext(),"Please Enter LinkedIn Profile URL",Toast.LENGTH_LONG).show();
-                    LinkedIn.setError("Please Enter LinkedIn Profile URL");
-                    LinkedIn.requestFocus();
-                    return;
+                if(id!=null){
+                    updateContact();
                 }
-                Intent intent = new Intent(getContext(),ContactSplashScreenActivity.class);
-                startActivity(intent);
+                else {
+                    loadContact();
+                }
             }
         });
         return view;
+    }
+
+    private void updateContact() {
+        lastContactDate = LastContactDate.getText().toString().trim();
+        lastVisitDate= LastVisitDate.getText().toString().trim();
+
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, updatecon, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Intent intent = new Intent(getContext(),ContactSplashScreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("first_name", firstName);
+                bundle.putString("last_name", lastName);
+                bundle.putString("middle_name", middleName);
+                bundle.putString("email", email);
+                bundle.putString("contact_number", phoneNumber);
+                bundle.putString("last_contact_date", lastContactDate);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+
+                param.put("id", id);
+                param.put("first_name", firstName);
+                param.put("last_name", lastName);
+                param.put("middle_name", middleName);
+                param.put("status", statusId);
+                param.put("email", email);
+                param.put("contact_number", phoneNumber);
+                param.put("address", address);
+                param.put("city", city);
+                param.put("zipcode", zipcode);
+                param.put("source_id", sourceId);
+                param.put("state_id", stateId);
+                param.put("country_id", countryId);
+                param.put("current_title", title);
+                param.put("company_name", companyId);
+                param.put("contact_type_id", contactTypeId);
+                param.put("division", division);
+                param.put("report_to_id", reportsToId);
+                param.put("industry_id", industryId);
+                param.put("last_contact_date", lastContactDate);
+                param.put("last_visit_date", lastVisitDate);
+                param.put("visibility", visibility);
+                param.put("validity", validity);
+                param.put("created_date", createdDate);
+                param.put("photo", photo);
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getContext()).add(insertRequest);
+
+    }
+
+    private void loadContact() {
+        lastContactDate = LastContactDate.getText().toString().trim();
+        lastVisitDate= LastVisitDate.getText().toString().trim();
+
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, insertContact, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Intent intent = new Intent(getContext(),ContactSplashScreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("first_name", firstName);
+                bundle.putString("last_name", lastName);
+                bundle.putString("middle_name", middleName);
+                bundle.putString("email", email);
+                bundle.putString("contact_number", phoneNumber);
+                bundle.putString("last_contact_date", lastContactDate);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+
+                param.put("first_name", firstName);
+                param.put("last_name", lastName);
+                param.put("middle_name", middleName);
+                param.put("status", statusId);
+                param.put("email", email);
+                param.put("contact_number", phoneNumber);
+                param.put("address", address);
+                param.put("city", city);
+                param.put("zipcode", zipcode);
+                param.put("source_id", sourceId);
+                param.put("state_id", stateId);
+                param.put("country_id", countryId);
+                param.put("current_title", title);
+                param.put("company_name", companyId);
+                param.put("contact_type_id", contactTypeId);
+                param.put("division", division);
+                param.put("report_to_id", reportsToId);
+                param.put("industry_id", industryId);
+                param.put("last_contact_date", lastContactDate);
+                param.put("last_visit_date", lastVisitDate);
+                param.put("visibility", visibility);
+                param.put("validity", validity);
+                param.put("created_date", strDate);
+
+
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getContext()).add(insertRequest);
     }
 
     private void loadValidity() {
@@ -169,13 +374,13 @@ public class AddContactAAdditionalFragment extends Fragment {
 
                     validityAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,validityList);
                     validityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    validity.setAdapter(validityAdapter);
+                    Validity.setAdapter(validityAdapter);
 
                     SharedPreferences sharedPref = getActivity().getSharedPreferences("Validity", Context.MODE_PRIVATE);
                     int spinnerValue = sharedPref.getInt("spinner_item2",-1);
                     if(spinnerValue != -1) {
                         // set the value of the spinner
-                        visibilty.setSelection(spinnerValue,true);
+                        Validity.setSelection(spinnerValue,true);
                     }
 
                 } catch (JSONException e) {
@@ -209,13 +414,13 @@ public class AddContactAAdditionalFragment extends Fragment {
 
                     visibilityAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,visibilityList);
                     visibilityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    visibilty.setAdapter(visibilityAdapter);
+                    Visibilty.setAdapter(visibilityAdapter);
 
                     SharedPreferences sharedPref = getActivity().getSharedPreferences("Visibility", Context.MODE_PRIVATE);
                     int spinnerValue = sharedPref.getInt("spinner_item",-1);
                     if(spinnerValue != -1) {
                         // set the value of the spinner
-                        visibilty.setSelection(spinnerValue,true);
+                        Visibilty.setSelection(spinnerValue,true);
                     }
 
                 } catch (JSONException e) {

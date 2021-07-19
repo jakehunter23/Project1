@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        app:cardElevation="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="30.91dp"
+                android:layout_height="30.91dp"
+                android:src="@drawable/arrow_back_black"
+                android:layout_marginStart="20.34dp"
+                android:layout_marginTop="29.34dp"
+                android:layout_marginBottom="30.75dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="27dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="102.75dp"
+                android:layout_marginEnd="96.58dp"
+                android:text="JOB DETAIL"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunito"/>
+
+            <ImageView
+                android:layout_width="21.03dp"
+                android:layout_height="21.03dp"
+                android:layout_marginEnd="36.39dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="34.97dp"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="28.5dp"
+                    android:text="Twitter"
+                    android:textColor="#707070"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="20dp"
+                    android:gravity="left"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="0.5dp">
+                    <TextView
+                        android:layout_width="242dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="28dp"
+                        android:text="Junior Product Designer"
+                        android:textColor="#000"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="35dp"
+                        android:gravity="left"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginStart="17.75dp"
+                        android:layout_marginEnd="40.75dp"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="112dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:text="Fulltime,Contract"
+                    android:textStyle="bold"
+                    android:textColor="#3CA6DA"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="14dp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10.77dp"
+                    android:text="Bengalore, India"
+                    android:textColor="#676767"
+                    android:drawablePadding="5dp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:gravity="left"
+                    app:drawableStartCompat="@drawable/location_on" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="43.23dp">
+                    <TextView
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="33dp"
+                        android:text="Salary"
+                        android:textColor="#707070"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+                    <TextView
+                        android:layout_width="68dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="48dp"
+                        android:text="Applicants"
+                        android:textStyle="bold"
+                        android:textColor="#707070"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+
+                    <TextView
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="48dp"
+                        android:text="Expiry Date"
+                        android:textColor="#707070"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:layout_width="52dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="33dp"
+                        android:layout_marginTop="2dp"
+                        android:text="120 K/Y"
+                        android:textStyle="bold"
+                        android:textColor="#2B2B2B"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+
+                    <TextView
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="68dp"
+                        android:text="130"
+
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+                    <TextView
+                        android:layout_width="95dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="91dp"
+                        android:text="1 April 2021"
+                        android:textStyle="bold"
+                        android:textColor="#2B2B2B"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunito"
+                        android:textSize="14sp"
+                        android:gravity="left"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="23dp"
+                    android:text="Job Description"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="20sp"
+                    android:gravity="left"/>
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="11dp"
+                    android:text="Requirements"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="18sp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/Text"
+                    android:textSize="16sp"
+                    android:textColor="#999999"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:layout_width="142dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="34dp"
+                    android:text="About the Job"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="18sp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/Text"
+                    android:textSize="16sp"
+                    android:textColor="#999999"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="34dp"
+                    android:text="Roles and Responsibility"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="18sp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/Text"
+                    android:textSize="16sp"
+                    android:textColor="#999999"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:layout_width="151dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginTop="34dp"
+                    android:text="Employee Benefits"
+                    android:textStyle="bold"
+                    android:textColor="#2B2B2B"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/nunito"
+                    android:textSize="18sp"
+                    android:gravity="left"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="31dp"
+                    android:layout_marginEnd="85dp"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/Text"
+                    android:textSize="16sp"
+                    android:textColor="#999999"
+                    android:fontFamily="@font/nunito"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="282dp"
+                    android:layout_height="192dp"
+                    app:cardElevation="0dp"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="99dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginBottom="146dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="282dp"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Information for the Advert"
+                            android:textStyle="bold"
+                            android:textColor="#2B2B2B"
+                            android:textAllCaps="false"
+                            android:fontFamily="@font/nunito"
+                            android:textSize="18sp"
+                            android:gravity="left"/>
+
+
+                        <TextView
+                            android:layout_width="192dp"
+                            android:layout_height="74dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="90dp"
+                            android:text="Name Lastname
+                        namelastname@gmail.com
+                        +91 8916703502"
+                            android:textStyle="bold"
+                            android:textColor="#999999"
+                            android:textAllCaps="false"
+                            android:fontFamily="@font/nunito"
+                            android:textSize="16sp"
+                            android:gravity="left"/>
+
+                        <TextView
+                            android:layout_width="161dp"
+                            android:layout_height="74dp"
+                            android:layout_marginTop="11dp"
+                            android:layout_marginEnd="121dp"
+                            android:text="Address line1, Locality
+                      line2, City
+                      State, Country"
+                            android:textStyle="bold"
+                            android:textColor="#999999"
+                            android:textAllCaps="false"
+                            android:fontFamily="@font/nunito"
+                            android:textSize="16sp"
+                            android:gravity="left"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</LinearLayout>
