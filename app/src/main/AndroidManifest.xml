@@ -18,7 +18,11 @@
         <activity android:name=".AddRecruiterProfessionalInfo" />
         <activity android:name=".AddRecruiterPersonalInfo" />
         <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".MessageAcitvity" />
@@ -31,6 +35,8 @@
         <activity android:name=".SettingActivity" />
         <activity android:name=".MyMail" />
         <activity android:name=".StorageActivity" />
+        <activity android:name=".CalendarSchedule" />
+        <activity android:name=".AfterSchedule" />
         <activity android:name=".MyTools" />
         <activity android:name=".Referral" />
         <activity android:name=".CreateTask" />
@@ -74,13 +80,7 @@
         <activity android:name=".mytask" />
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
-        <activity android:name=".dashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".dashboard" />
         <activity
             android:name=".JobLoginActivity"
             android:exported="true" />

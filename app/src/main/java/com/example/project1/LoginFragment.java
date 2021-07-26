@@ -158,10 +158,10 @@ public class LoginFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-//                            Toast.makeText(getContext(),
-//                                    "Login successful!! FIREBASE",
-//                                    Toast.LENGTH_LONG)
-//                                    .show();
+                            Toast.makeText(getContext(),
+                                    "Login successful!! FIREBASE",
+                                    Toast.LENGTH_LONG)
+                                    .show();
 
                         }
                         else{
