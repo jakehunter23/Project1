@@ -14,6 +14,7 @@ import android.widget.Toast;
 public class AddRecruiterPersonalInfo extends AppCompatActivity {
     EditText Firstname,Lastname,Email,ContactNumber,Address,City,Zipcode;
     Button infoSave;
+    String firstname, lastname, email, phoneNumber, address,city,zipcode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,13 +39,13 @@ public class AddRecruiterPersonalInfo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String firstname = Firstname.getText().toString().trim();
-                String lastname = Lastname.getText().toString().trim();
-                String email = Email.getText().toString().trim();
-               String phoneNumber = ContactNumber.getText().toString().trim();
-                String address = Address.getText().toString().trim();
-                String city = City.getText().toString().trim();
-                String zipcode = Zipcode.getText().toString().trim();
+                firstname = Firstname.getText().toString().trim();
+                 lastname = Lastname.getText().toString().trim();
+                 email = Email.getText().toString().trim();
+                phoneNumber = ContactNumber.getText().toString().trim();
+                 address = Address.getText().toString().trim();
+                 city = City.getText().toString().trim();
+                 zipcode = Zipcode.getText().toString().trim();
 
 
                 if(firstname.isEmpty()){
@@ -99,14 +100,19 @@ public class AddRecruiterPersonalInfo extends AppCompatActivity {
                 }
 
                //putting the data
+
                 Intent intent = new Intent (getApplicationContext(),AddRecruiterProfessionalInfo.class);
-                intent.putExtra("First Name", firstname);
-                intent.putExtra("Last Name", lastname);
-                intent.putExtra("Email", email);
-                intent.putExtra("Phone Number", phoneNumber);
-                intent.putExtra("Address", address);
-                intent.putExtra("City", city);
-                intent.putExtra("Zipcode", zipcode);
+               Bundle bundle = new Bundle();
+
+               bundle.putString("First Name", firstname);
+                bundle.putString("Last Name", lastname);
+               bundle.putString("Email", email);
+                bundle.putString("Phone Number", phoneNumber);
+                bundle.putString("Address", address);
+               bundle.putString("City", city);
+                bundle.putString("Zipcode", zipcode);
+
+                intent.putExtras(bundle);
 
                 startActivity(intent);
             }
