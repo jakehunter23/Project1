@@ -56,6 +56,7 @@ public class ClientActivity extends AppCompatActivity {
         setContentView(R.layout.client_glance);
         specName = getIntent().getExtras().getString("name");
 
+
         fetchClient();
 
         tabLayout = findViewById(R.id.client_activity_tab);

@@ -73,4 +73,7 @@
         <item>Task files</item>
     </string-array>
 
+    //for timer
+    <string name="timer">00:00:00</string>
+
 </resources>

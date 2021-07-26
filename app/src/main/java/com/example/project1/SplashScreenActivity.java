@@ -17,7 +17,15 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        name = getIntent().getExtras().getString("name");
+//        name = getIntent().getExtras().getString("name");
+        //to avoid NPE in splashScreen
+        Intent intentReceived = getIntent();
+        Bundle data = intentReceived.getExtras();
+        if(data != null){
+            name = data.getString("name");
+        }else{
+            name = "";
+        }
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -29,9 +37,9 @@ public class SplashScreenActivity extends AppCompatActivity {
                 Intent i=new Intent(SplashScreenActivity.this,
                         ClientActivity.class);
                 //Intent is used to switch from one activity to another.
-                Bundle bundle = new Bundle();
+               Bundle bundle = new Bundle();
                 bundle.putString("name", name);
-                i.putExtras(bundle);
+               i.putExtras(bundle);
                 startActivity(i);
                 //invoke the SecondActivity.
 

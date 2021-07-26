@@ -18,7 +18,7 @@
             android:background="@drawable/gradient">
 
             <ImageView
-                android:id="@+id/info_arrow"
+                android:id="@+id/recInfo_arrow"
                 android:layout_width="27.33dp"
                 android:layout_height="30.33dp"
                 android:layout_marginTop="30.33dp"
@@ -156,7 +156,7 @@
                         android:id="@+id/imageView2_forAC"
                         android:layout_width="65dp"
                         android:layout_height="65dp"
-                        android:src="@drawable/icon_2" />
+                        android:src="@drawable/logonew" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -387,8 +387,8 @@
             android:textStyle="bold"
             android:textSize="14dp"/>
 
-        <EditText
-            android:id="@+id/ststus"
+        <TextView
+            android:id="@+id/info_status"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -564,10 +564,11 @@
             android:textStyle="bold"
             android:textSize="14dp"/>
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
+            android:id="@+id/info_state"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
             android:layout_marginStart="26dp"
@@ -593,10 +594,11 @@
             android:textStyle="bold"
             android:textSize="14dp"/>
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
+            android:id="@+id/info_country"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
             android:layout_marginStart="26dp"
