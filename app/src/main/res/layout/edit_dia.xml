@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="16dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    android:elevation="0dp"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="29dp"
+            android:text="Add Title *"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:id="@+id/addTitle"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:hint="Add title here"
+            android:gravity="center_vertical"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/created_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/nunito"
+                android:text="Created Date *"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/created_dates"
+                android:layout_width="150dp"
+                android:layout_height="52dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_below="@id/created_date"
+                android:textStyle="bold"
+                android:hint="Add Date"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:id="@+id/modify_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="21dp"
+                android:fontFamily="@font/nunito"
+                android:text="Modify Date *"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/modify_dates"
+                android:layout_width="150dp"
+                android:layout_height="52dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="29dp"
+                android:layout_below="@id/created_date"
+                android:textStyle="bold"
+                android:hint="Add Date"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/nunito"
+            android:text="Add Note *"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <EditText
+
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:ems="10"
+            android:id="@+id/addnotes"
+            android:hint="Add Note here"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:gravity="clip_vertical"
+            android:paddingTop="18dp"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

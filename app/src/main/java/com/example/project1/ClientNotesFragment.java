@@ -1,7 +1,9 @@
 package com.example.project1;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,6 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,13 +47,22 @@ public class ClientNotesFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private String url = "https://demotic-recruit.000webhostapp.com/client_note_insert.php";
+    String title;
+    EditText Title;
+    String creteDate;
+    EditText CreatedDate;
+    String modifiDate;
+    EditText ModifidDate;
+    String notes;
+    EditText Notes;
+    private ClientNotesRecAdapter clientNotesRecAdapter;
+    RecyclerView NotesRecycler ;
+    private List<ClientNoteUser> userList;
+    private String urls = "https://demotic-recruit.000webhostapp.com/client_note_fetch.php";
 
-    String [] Name = {"Philip Martin","Philip Martin","Philip Martin"};
-    String [] Type = {"Resume evaluation","Resume evaluation","Resume evaluation"};
-    String [] Time = {"30 min","30 min","30 min"};
-    String [] last = {"05-05-2021","05-05-2021","05-05-2021"};
-    String [] timestamp = {"05-05-2021","05-05-2021","05-05-2021"};
-    String Note = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt t labore et dolore magna aliqua. Ut enim ad inim veniam, quis nostrud exercitation";
+
+
 
     public ClientNotesFragment() {
         // Required empty public constructor
@@ -69,10 +100,112 @@ public class ClientNotesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_client_notes,container,false);
-        RecyclerView NotesRecycler = view.findViewById(R.id.notecard);
+        NotesRecycler = view.findViewById(R.id.notecard);
         NotesRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
-        NotesRecycler.setAdapter(new ClientNotesRecAdapter(Name,Type,Time,last,timestamp,Note));
+        userList = new ArrayList<>();
+
+        LoadAllUsers();
+        AppCompatButton btn_add_notes = view.findViewById(R.id.act_add_notes);
+        btn_add_notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(view.getContext());
+                LayoutInflater factory = LayoutInflater.from(view.getContext());
+                final View views = factory.inflate(R.layout.act_note_dialogue, null);
+                alertDialog.setView(views);
+                Title = views.findViewById(R.id.addTitle);
+                CreatedDate = views.findViewById(R.id.created_dates);
+                ModifidDate = views.findViewById(R.id.modify_dates);
+                Notes = views.findViewById(R.id.addnotes);
+                AppCompatButton save = views.findViewById(R.id.note_button_save);
+
+                save.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        title = Title.getText().toString().trim();
+                        creteDate = CreatedDate.getText().toString().trim();
+                        modifiDate = ModifidDate.getText().toString().trim();
+                        notes = Notes.getText().toString().trim();
+                        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+
+                            @Override
+                            public void onResponse(String response) {
+                                Title.setText("");
+                                CreatedDate.setText("");
+                                ModifidDate.setText("");
+                                Notes.setText("");
+                                Toast.makeText(getContext(), response.toString(), Toast.LENGTH_SHORT).show();
+
+
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+
+
+                            }
+                        }) {
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String, String> param = new HashMap<String, String>();
+                                param.put("title", title);
+                                param.put("created_date", creteDate);
+                                param.put("edited_date", modifiDate);
+                                param.put("content", notes);
+
+                                return param;
+                            }
+                        };
+                        RequestQueue queue = Volley.newRequestQueue(getContext());
+                        queue.add(request);
+
+
+                    }
+                });
+                alertDialog.show();
+            }
+        });
+
 
         return view;
+    }
+    private void LoadAllUsers(){
+        JsonArrayRequest request = new JsonArrayRequest(urls, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                for (int i = 0; i < response.length(); i++){
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+                        String id = jsonObject.getString("id").trim();
+                        String titles = jsonObject.getString("title").trim();
+                        String created_date = jsonObject.getString("created_date").trim();
+                        String edit_date = jsonObject.getString("edited_date").trim();
+                        String context = jsonObject.getString("content").trim();
+                        ClientNoteUser users = new ClientNoteUser();
+                        users.setId(id);
+                        users.setTitle(titles);
+                        users.setCreated(created_date);
+                        users.setEdited(edit_date);
+                        users.setContent(context);
+                        userList.add(users);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    clientNotesRecAdapter=new ClientNotesRecAdapter(getContext(),userList);
+                    NotesRecycler.setAdapter(clientNotesRecAdapter);
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(),error.toString(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getContext());
+        requestQueue.add(request);
+
     }
 }

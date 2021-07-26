@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/usage_layout"
+    android:id="@+id/comment_layout"
     >
 
 
@@ -65,30 +65,29 @@
 
         </LinearLayout>
 
-
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/act_add_notes"
-            android:layout_width="146dp"
+            android:id="@+id/act_add_comment"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_marginStart="32dp"
+            android:paddingLeft="10dp"
             android:layout_marginTop="39dp"
-            android:text="Add Notes"
+            android:text="Add Comment"
             android:background="@drawable/background_solid"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:fontFamily="@font/nunito_semibold"
             android:textAllCaps="false"
             android:drawableRight="@drawable/add"
-            android:paddingRight="10dp"
+            android:paddingRight="15dp"
             android:textAlignment="textEnd"
-            android:drawablePadding="6dp"/>
+            android:drawablePadding="12dp"/>
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/act_textView7"
             android:layout_width="wrap_content"
             android:layout_height="22dp"
             android:layout_marginStart="32dp"
-            android:layout_marginBottom="20dp"
             android:layout_marginTop="39dp"
             android:fontFamily="@font/nunito_semibold"
             android:text="Recent"
@@ -99,9 +98,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:id="@+id/cand_note_card"
+            android:id="@+id/act_comment_card"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:nestedScrollingEnabled="false"/>
+            android:layout_marginTop="27dp" />
     </LinearLayout>
 </RelativeLayout>

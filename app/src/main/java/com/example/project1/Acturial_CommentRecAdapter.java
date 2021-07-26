@@ -6,12 +6,10 @@ import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatButton;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,8 +20,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.project1.ActurialUsers;
-import com.example.project1.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,102 +28,29 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ActurialNoteRecAdapter extends RecyclerView.Adapter<ActurialNoteRecAdapter.ActNoteView> {
+public class Acturial_CommentRecAdapter extends RecyclerView.Adapter<Acturial_CommentRecAdapter.ActPubView>{
     Context context;
-    List<ActurialUsers> userList;
-    private String urlEdit = "https://demotic-recruit.000webhostapp.com/applicant_note_edit.php";
-    private String urlDelete = "https://demotic-recruit.000webhostapp.com/applicant_note_delete.php";
+    List<Acturial_ComUser> userList;
+    private String urlDelete = "https://demotic-recruit.000webhostapp.com/applicant_comment_delete.php";
 
-    public ActurialNoteRecAdapter(Context context, List<ActurialUsers> userList) {
+    public Acturial_CommentRecAdapter(Context context, List<Acturial_ComUser> userList) {
         this.context = context;
         this.userList = userList;
     }
-
     @NonNull
     @Override
-    public ActNoteView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ActPubView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater =LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.acturial_notes_rec_item,parent,false);
-        return new ActNoteView(view);
+        View view = inflater.inflate(R.layout.acturial_com_rec_item,parent,false);
+        return new ActPubView(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ActNoteView holder, int position) {
-        ActurialUsers user = userList.get(position);
+    public void onBindViewHolder(@NonNull ActPubView holder, int position) {
+        Acturial_ComUser user = userList.get(position);
         holder.Title.setText(user.getTitle());
-        holder.Create_date.setText(user.getCreated());
         holder.Modified_Date.setText(user.getEdited());
         holder.Context.setText(user.getContent());
-        holder.Edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                View views = LayoutInflater.from(context).inflate(R.layout.edit_dia,null);
-                EditText Title = views.findViewById(R.id.addTitle);
-                EditText CreatedDate = views.findViewById(R.id.created_dates);
-                EditText ModifidDate = views.findViewById(R.id.modify_dates);
-                EditText Notes = views.findViewById(R.id.addnotes);
-                Title.setText(user.getTitle());
-                CreatedDate.setText(user.getCreated());
-                ModifidDate.setText(user.getEdited());
-                Notes.setText(user.getContent());
-                AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Edit "+user.getTitle());
-                builder.setView(views);
-                builder.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        String title = Title.getText().toString().trim();
-                        String creteDate = CreatedDate.getText().toString().trim();
-                        String modifiDate = ModifidDate.getText().toString().trim();
-                        String notes = Notes.getText().toString().trim();
-                        StringRequest stringRequest = new StringRequest(Request.Method.POST, urlEdit,
-                                new Response.Listener<String>() {
-                                    @Override
-                                    public void onResponse(String response) {
-                                        Toast.makeText(context, response.toString(), Toast.LENGTH_SHORT).show();
-
-                                    }
-                                }, new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
-
-                            }
-                        }){
-
-                            @Override
-                            protected Map<String, String> getParams() throws AuthFailureError {
-                                HashMap<String,String> params = new HashMap<>();
-                                params.put("title",title);
-                                params.put("created_date",creteDate);
-                                params.put("edited_date",modifiDate);
-                                params.put("content",notes);
-                                params.put("id", user.getId());
-                                return params;
-                            }
-                        };
-                        RequestQueue requestQueue = Volley.newRequestQueue(context);
-                        requestQueue.add(stringRequest);
-                        builder.show();
-
-
-
-                    }
-                });
-
-                builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-
-
-
-
-
-            }
-        });
         holder.Delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -187,31 +110,30 @@ public class ActurialNoteRecAdapter extends RecyclerView.Adapter<ActurialNoteRec
         });
 
 
+
+
     }
 
     @Override
     public int getItemCount() {
-
         return userList.size();
     }
 
-    class ActNoteView extends RecyclerView.ViewHolder {
-        TextView Title,Create_date,Modified_Date,Context;
-        CardView Edit,Delete;
+    class ActPubView extends RecyclerView.ViewHolder {
+        TextView Title,Modified_Date,Context;
+        CardView Delete;
 
-        public ActNoteView(@NonNull View itemView) {
+        public ActPubView(@NonNull View itemView) {
             super(itemView);
             Title=itemView.findViewById(R.id.title_note);
-            Create_date=itemView.findViewById(R.id.created_date);
             Modified_Date=itemView.findViewById(R.id.edited_date);
             Context=itemView.findViewById(R.id.context);
-            Edit=itemView.findViewById(R.id.con_edit_note_card);
             Delete=itemView.findViewById(R.id.con_del_note_card);
-
         }
     }
     public void Delete(int item){
         userList.remove(item);
         notifyItemRemoved(item);
     }
+
 }

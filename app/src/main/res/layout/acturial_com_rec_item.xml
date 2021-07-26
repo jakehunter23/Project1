@@ -27,21 +27,7 @@
             android:textColor="@color/black"
             android:fontFamily="@font/nunito"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/con_edit_note_card"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="37dp"
-            android:layout_marginEnd="16dp"
-            android:layout_toStartOf="@+id/con_del_note_card">
 
-            <ImageView
-                android:id="@+id/con_imageView24"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/create" />
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/con_del_note_card"
@@ -63,38 +49,15 @@
 
 
 
-        <TextView
-            android:id="@+id/con_last_updated"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_note"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="10dp"
-            android:text="Last updated"
-            android:textSize="16dp"
-            android:textColor="@color/grey"
-            android:fontFamily="@font/nunito"/>
 
-        <TextView
-            android:id="@+id/created_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/con_last_updated"
-            android:layout_marginStart="29dp"
-            android:layout_marginTop="3dp"
-            android:text="TextView"
-            android:textSize="16dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito"/>
 
         <TextView
             android:id="@+id/con_added_on"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title_note"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="88dp"
+            android:layout_marginStart="29dp"
             android:text="Added on"
             android:textSize="16dp"
             android:textColor="@color/grey"
@@ -105,9 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/con_added_on"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="3dp"
-            android:layout_marginEnd="88dp"
+            android:layout_marginStart="29dp"
             android:text="TextView"
             android:textSize="16dp"
             android:textColor="@color/black"
@@ -117,7 +79,7 @@
             android:id="@+id/context"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/created_date"
+            android:layout_below="@+id/edited_date"
             android:layout_marginStart="28dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="20dp"
