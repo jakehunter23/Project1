@@ -83,8 +83,7 @@
                 android:backgroundTint="#EBEDEE"
                 android:layout_marginLeft="27dp"
                 android:layout_marginTop="28dp"
-                app:cardCornerRadius="15dp"
-                >
+                app:cardCornerRadius="15dp">                >
 
                 <LinearLayout
                     android:layout_width="match_parent"

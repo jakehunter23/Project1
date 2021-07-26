@@ -317,7 +317,6 @@
             android:id="@+id/button29"
             android:layout_width="133dp"
             android:layout_height="48dp"
-            android:visibility="invisible"
             android:text="Next"
             android:layout_marginTop="6dp"
             android:layout_marginStart="42dp"
