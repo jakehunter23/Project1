@@ -68,9 +68,8 @@
                         android:layout_width="75dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="5dp"
                         android:text="Credits"
-
                         android:padding="5dp"
                         android:fontFamily="@font/nunito_semibold"
                         android:textColor="@color/black"

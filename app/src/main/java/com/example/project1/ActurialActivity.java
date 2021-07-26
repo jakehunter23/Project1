@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class ActurialActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
-    TabItem tab1, tab2, tab3, tab4, tab5, tab6;
+    TabItem tab1, tab2, tab3, tab4, tab5, tab6,tab7;
     FrameLayout frameLayout;
     FragmentManager fragmentManager;
     Fragment fragment =null;
@@ -35,6 +35,7 @@ public class ActurialActivity extends AppCompatActivity {
         tab4 = findViewById(R.id.act_file);
         tab5 = findViewById(R.id.act_note);
         tab6 = findViewById(R.id.act_publish);
+        tab7=findViewById(R.id.act_cmt_tab);
         frameLayout = findViewById(R.id.act_host_fragment);
         fragment = new ActurialGlanceFragment();
         fragmentManager =getSupportFragmentManager();
@@ -65,6 +66,8 @@ public class ActurialActivity extends AppCompatActivity {
                     case 5:
                         fragment = new ActurialPublishFragment();
                         break;
+                    case 6:
+                        fragment= new Acturial_Comment_Fragment();
 
                 }
                 FragmentManager fm = getSupportFragmentManager();

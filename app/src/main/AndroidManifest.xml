@@ -15,16 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project1">
         <activity android:name=".AddRecruiterPassword"></activity>
-        <activity android:name=".AddRecruiterProfessionalInfo"  android:exported="true"/>
-        <activity android:name=".AddRecruiterPersonalInfo"  android:exported="true"/>
-
+        <activity android:name=".AddRecruiterProfessionalInfo" />
+        <activity android:name=".CalendarSchedule" />
+        <activity android:name=".AfterSchedule" />
+        <activity android:name=".AddRecruiterPersonalInfo" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".MessageAcitvity" />
@@ -54,7 +54,7 @@
         <activity android:name=".CandidateActivity" />
         <activity android:name=".ClientActivity" />
         <activity android:name=".ContactActivity" />
-        <activity android:name=".ActurialActivity" android:exported="true" />
+        <activity android:name=".ActurialActivity" />
         <activity
             android:name=".JobListings"
             android:parentActivityName=".NavActivity" />
@@ -129,7 +129,6 @@
 
         <activity android:name=".EduUpdateActivity"
             android:exported="true"/>
-
 
         <meta-data
             android:name="preloaded_fonts"

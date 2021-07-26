@@ -92,8 +92,8 @@ public class AddCandidateSkillFragment extends Fragment {
        specialiation=view.findViewById(R.id.specialization);
 
         ArrayList<String> deg_List=new ArrayList<>();
-        deg_List.add("Bachelors (graduate)");
-        deg_List.add("Masters (post graduate");
+        deg_List.add("Bachelor (graduate)");
+        deg_List.add("Master (post graduate)");
         deg_List.add("Doctorate");
         deg_List.add("Diploma");
         deg_List.add("ITI");

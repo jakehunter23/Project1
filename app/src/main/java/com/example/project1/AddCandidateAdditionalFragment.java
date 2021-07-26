@@ -51,9 +51,9 @@ public class AddCandidateAdditionalFragment extends Fragment {
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     String strDate = dateFormat.format(date);
     EditText Comments;
-    EditText AvailabilityDate;
+    EditText AvailabilityDate,job;
 
-    Spinner job,accessibility;
+    Spinner accessibility;
 
     String date_selected_availablity;
 
@@ -99,9 +99,11 @@ public class AddCandidateAdditionalFragment extends Fragment {
         View view = inflater.inflate(R.layout.candidate_additional_info, container, false);
         Button toCandAct = view.findViewById(R.id.button12);
         Comments = view.findViewById(R.id.editTextTextPersonName5);
-        job=view.findViewById(R.id.jobSpinner);
+
+
         accessibility=view.findViewById(R.id.accessSpinner);
         AvailabilityDate = view.findViewById(R.id.availability_date);
+        job=view.findViewById(R.id.ejobEditText);
 
         ArrayList<String> job_List=new ArrayList<>();
         job_List.add("Student");
@@ -109,11 +111,6 @@ public class AddCandidateAdditionalFragment extends Fragment {
         job_List.add("Android Developer");
         job_List.add("Web Developer");
         job_List.add("Data Scientist");
-
-
-        ArrayAdapter jobAdapter= new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, job_List);
-        jobAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        job.setAdapter(jobAdapter);
 
         ArrayList<String> access_List=new ArrayList<>();
         access_List.add("Private");
@@ -226,8 +223,8 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 param.put("job", String.valueOf(0));
                 param.put("accessibility", String.valueOf(0));
                 param.put("created_date", strDate);
-                param.put("job",job.getSelectedItem().toString().trim());
                 param.put("accessibility",accessibility.getSelectedItem().toString());
+                param.put("job",job.getText().toString());
 
 
 

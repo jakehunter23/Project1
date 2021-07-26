@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -7,6 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,15 +26,15 @@
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:textColor="@color/black"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="47dp"
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="60dp"
                     android:layout_toEndOf="@+id/crp_icon"
+                    android:fontFamily="@font/nunito"
                     android:text="Payment Information"
-                    android:textSize="22dp"
-                    android:fontFamily="@font/nunito"/>
+                    android:textColor="@color/black"
+                    android:textSize="22dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/crp_icon"
@@ -59,18 +61,18 @@
                 android:id="@+id/textView72"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Package Currency"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Package Currency"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <Spinner
                 android:id="@+id/spinner17"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
                 android:foreground="@drawable/background" />
 
@@ -78,218 +80,232 @@
                 android:id="@+id/textView88"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Package type"
-                android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Package type"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <Spinner
                 android:id="@+id/spinner18"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
-                android:foreground="@drawable/background"/>
+                android:foreground="@drawable/background" />
 
             <TextView
                 android:id="@+id/textView89"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Package"
-                android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
-                android:textColor="@color/black"/>
+                android:layout_marginTop="34dp"
+                android:text="Package"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName26"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter only numerical values"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
-                android:textSize="17dp"
+                android:background="@drawable/background"
+                android:ems="10"
                 android:fontFamily="@font/nunito_semibold"
+                android:hint="Enter only numerical values"
+                android:inputType="textPersonName"
                 android:paddingLeft="29dp"
-                android:background="@drawable/background"/>
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/textView90"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bill rate"
-                android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Bill rate"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName27"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter only numerical values"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
+                android:background="@drawable/background"
+                android:ems="10"
                 android:fontFamily="@font/nunito_semibold"
-                android:textSize="17dp"
+                android:hint="Enter only numerical values"
+                android:inputType="textPersonName"
                 android:paddingLeft="29dp"
-                android:background="@drawable/background"/>
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/textView91"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Markup %"
-                android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Markup %"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName28"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter only numerical values"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
-                android:textSize="17dp"
-                android:fontFamily="@font/nunito_semibold"
                 android:background="@drawable/background"
-                android:paddingLeft="29dp"/>
+                android:ems="10"
+                android:fontFamily="@font/nunito_semibold"
+                android:hint="Enter only numerical values"
+                android:inputType="textPersonName"
+                android:paddingLeft="29dp"
+                android:textSize="17dp" />
 
             <TextView
                 android:id="@+id/textView92"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Client margin"
-                android:layout_marginTop="34dp"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Client margin"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName29"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Ex. 10 implies 10%"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
-                android:textSize="17dp"
-                android:fontFamily="@font/nunito_semibold"
                 android:background="@drawable/background"
-                android:paddingLeft="29dp"/>
+                android:ems="10"
+                android:fontFamily="@font/nunito_semibold"
+                android:hint="Ex. 10 implies 10%"
+                android:inputType="textPersonName"
+                android:paddingLeft="29dp"
+                android:textSize="17dp" />
 
-            <RelativeLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                android:layout_marginStart="27dp"
+                android:layout_marginEnd="27dp"
                 android:layout_height="160dp">
 
-                <TextView
-                    android:id="@+id/textView67"
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginStart="26dp"
-                    android:layout_marginTop="34dp"
-                    android:text="Days on"
-                    android:textSize="18dp"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nunito_semibold"/>
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
-                    android:id="@+id/editTextTime"
-                    android:layout_width="164dp"
-                    android:layout_height="62dp"
-                    android:layout_below="@+id/textView67"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginBottom="34dp"
-                    android:ems="10"
-                    android:inputType="time"
-                    android:hint="Enter days on"
-                    android:textSize="17dp"
-                    android:background="@drawable/background"
-                    android:paddingLeft="29dp"/>
+                    <TextView
+                        android:id="@+id/textView67"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="10dp"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Days on"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
 
-                <TextView
-                    android:id="@+id/textView66"
+                    <EditText
+                        android:id="@+id/editTextTime"
+                        android:layout_width="164dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="14dp"
+                        android:layout_height="62dp"
+                        android:paddingLeft="20dp"
+                        android:layout_below="@+id/textView67"
+                        android:background="@drawable/background"
+                        android:ems="10"
+                        android:hint="Enter days on"
+                        android:inputType="time"
+                        android:textSize="17dp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="34dp"
-                    android:layout_marginEnd="104dp"
-                    android:fontFamily="@font/nunito_semibold"
-                    android:text="Days off"
-                    android:textColor="@color/black"
-                    android:textSize="18dp" />
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
-                    android:id="@+id/editTextTime2"
-                    android:layout_width="164dp"
-                    android:layout_height="62dp"
-                    android:layout_below="@+id/textView66"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="34dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="28dp"
-                    android:layout_marginBottom="34dp"
-                    android:layout_toEndOf="@+id/editTextTime"
-                    android:ems="10"
-                    android:inputType="time"
-                    android:hint="Enter Days off"
-                    android:textSize="17dp"
-                    android:paddingLeft="29dp"
-                    android:background="@drawable/background"
-                    android:fontFamily="@font/nunito_semibold"/>
+                    <TextView
+                        android:id="@+id/textView66"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:text="Days off"
+                        android:paddingLeft="10dp"
+                         android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
 
-            </RelativeLayout>
+                    <EditText
+                        android:id="@+id/editTextTime2"
+                        android:layout_width="164dp"
+                        android:layout_height="62dp"
+                        android:layout_below="@+id/textView66"
+                        android:background="@drawable/background"
+                        android:ems="10"
+                        android:paddingLeft="20dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/nunito_semibold"
+                        android:hint="Enter Days off"
+                        android:inputType="time"
+                        android:textSize="17dp" />
+
+                </LinearLayout>
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/textView93"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Shift pattern"
                 android:layout_marginStart="26dp"
-                android:textSize="18dp"
+                android:fontFamily="@font/nunito_semibold"
+                android:text="Shift pattern"
                 android:textColor="@color/black"
-                android:fontFamily="@font/nunito_semibold"/>
+                android:textSize="18dp" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName30"
                 android:layout_width="match_parent"
                 android:layout_height="62dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Shift pattern (Ex. Daily)"
-                android:layout_marginTop="14dp"
                 android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginEnd="23dp"
-                android:textSize="17dp"
-                android:fontFamily="@font/nunito_semibold"
                 android:background="@drawable/background"
-                android:paddingLeft="29dp"/>
+                android:ems="10"
+                android:fontFamily="@font/nunito_semibold"
+                android:hint="Shift pattern (Ex. Daily)"
+                android:inputType="textPersonName"
+                android:paddingLeft="29dp"
+                android:textSize="17dp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -306,16 +322,16 @@
                     android:layout_marginTop="65dp"
                     android:layout_marginEnd="23dp"
                     android:layout_marginBottom="80dp"
-                    android:text="Save"
-                    android:textSize="19dp"
-                    android:fontFamily="@font/nunito_semibold"
                     android:background="@drawable/background_solid"
                     android:drawableRight="@drawable/save"
-                    android:textAlignment="textEnd"
                     android:drawablePadding="12dp"
+                    android:fontFamily="@font/nunito_semibold"
                     android:paddingRight="140dp"
+                    android:text="Save"
+                    android:textAlignment="textEnd"
+                    android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textAllCaps="false" />
+                    android:textSize="19dp" />
             </RelativeLayout>
 
 

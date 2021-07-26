@@ -128,10 +128,10 @@ public class DashboardFragment extends Fragment {
         CalInt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_INSERT);
-                intent.setData(CalendarContract.Events.CONTENT_URI);
+//                Intent intent = new Intent(Intent.ACTION_INSERT);
+//                intent.setData(CalendarContract.Events.CONTENT_URI);
 
-                startActivity(intent);
+                startActivity(new Intent(getContext(),CalendarSchedule.class));
             }
 
 
