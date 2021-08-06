@@ -1,9 +1,12 @@
 package com.example.project1;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -75,6 +78,7 @@ public class MyContactRecAdapter extends RecyclerView.Adapter<MyContactRecAdapte
         TextView email;
         TextView address;
         TextView date;
+        Button view;
 
 
         public MyConViewHolder(@NonNull View itemView) {
@@ -91,6 +95,7 @@ public class MyContactRecAdapter extends RecyclerView.Adapter<MyContactRecAdapte
             email = itemView.findViewById(R.id.textView412);
             address =itemView.findViewById(R.id.textView413);
             date =itemView.findViewById(R.id.textView415);
+            view= itemView.findViewById(R.id.button38);
 
 
 
@@ -118,6 +123,32 @@ public class MyContactRecAdapter extends RecyclerView.Adapter<MyContactRecAdapte
 
                 }
 
+            });
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ContactActivity.class);
+                    ContactModel spec_contact = contactModels.get(getAdapterPosition());
+                    String firstName = spec_contact.getFirstName();
+                    String lastName = spec_contact.getLastName();
+                    String middleName = spec_contact.getMiddleName();
+                    String phone = spec_contact.getContactNumber();
+                    String email = spec_contact.getEmail();
+                    String address = spec_contact.getAddress();
+                    String date = spec_contact.getLastContactDate();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("first_name", firstName);
+                    bundle.putString("last_name", lastName);
+                    bundle.putString("middle_name", middleName);
+                    bundle.putString("contact_number", phone);
+                    bundle.putString("email", email);
+                    bundle.putString("address", address);
+                    bundle.putString("last_contact_date", date);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+
+                }
             });
         }
     }

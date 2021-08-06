@@ -146,33 +146,6 @@
             android:foreground="@drawable/background_sharp"
             style="@style/Widget.App.Spinner"/>
 
-        <TextView
-            android:id="@+id/textView453"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Link to LinkedIn profile"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="23dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito_semibold"/>
-
-        <EditText
-            android:id="@+id/editTextTextPersonName83"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito"
-            android:hint="Profile URL"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:background="@drawable/background_sharp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button43"

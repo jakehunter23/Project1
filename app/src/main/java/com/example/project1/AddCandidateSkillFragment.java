@@ -1,12 +1,18 @@
 package com.example.project1;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.InputType;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,7 +27,12 @@ import android.widget.Toast;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -39,14 +50,17 @@ public class AddCandidateSkillFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName, skill, talent, degree;
-    int stateId, countryId, candidateType, preference, sourceId, ownerId;
+    String id, firstName, lastName, statusId, status, email, phoneNumber, address, city, zipcode, currentSalary, hourlyRateLow, desiredSalary, hourlyRateHigh, title, companyName, skill, talent, degree;
+    String stateId, countryId, candidateType, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility;
 
     EditText skillLine;
     ChipGroup chipGroup;
     EditText specialiation;
     EditText Talent;
     Spinner Degree;
+    Button resume;
+
+    String encodedPdf;
 
 
     public AddCandidateSkillFragment() {
@@ -89,7 +103,6 @@ public class AddCandidateSkillFragment extends Fragment {
         chipGroup =view.findViewById(R.id.chip_group_canskill);
         Talent = view.findViewById(R.id.editTextTextPersonName69);
        Degree = view.findViewById(R.id.degreeSpinner);
-       specialiation=view.findViewById(R.id.specialization);
 
         ArrayList<String> deg_List=new ArrayList<>();
         deg_List.add("Bachelor (graduate)");
@@ -105,26 +118,65 @@ public class AddCandidateSkillFragment extends Fragment {
         Degree.setAdapter(DegAdapter);
 
         Bundle bundle = this.getArguments();
-        firstName = bundle.getString("firstName");
-        lastName = bundle.getString("lastName");
-        statusItem = bundle.getString("status");
-        mainMail = bundle.getString("mainMail");
-        contactNumber = bundle.getString("contactNumber");
-        address = bundle.getString("address");
-        city = bundle.getString("city");
-        zipcode = bundle.getString("zipcode");
-        stateId = bundle.getInt("stateId");
-        countryId = bundle.getInt("countryId");
-        title =  bundle.getString("title");
-        companyName = bundle.getString("companyName");
-        candidateType = bundle.getInt("type");
-        preference = bundle.getInt("preference");
-        sourceId = bundle.getInt("sourceId");
-        ownerId = bundle.getInt("ownerId");
-        currentSalary = bundle.getString("currentSalary");
-        hourlyRatel = bundle.getString("hourlyRatel");
-        desiredSalary = bundle.getString("desiredSalary");
-        hourlyRateh = bundle.getString("hourlyRateh");
+        id = bundle.getString("id");
+
+            firstName = bundle.getString("firstName");
+            lastName = bundle.getString("lastName");
+            statusId = bundle.getString("status_id");
+            email = bundle.getString("mainMail");
+            phoneNumber = bundle.getString("contactNumber");
+            address = bundle.getString("address");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            stateId = bundle.getString("stateId");
+            countryId = bundle.getString("countryId");
+            status = bundle.getString("status");
+            title = bundle.getString("title");
+            companyName = bundle.getString("companyName");
+            type = bundle.getString("type");
+            preference = bundle.getString("preference");
+            ownerId = bundle.getString("ownerId");
+            sourceId = bundle.getString("sourceId");
+            currentSalary = bundle.getString("currentSalary");
+            desiredSalary = bundle.getString("desiredSalary");
+            hourlyRateHigh = bundle.getString("hourlyRateh");
+            hourlyRateLow = bundle.getString("hourlyRatel");
+            talent = bundle.getString("talent");
+            skill = bundle.getString("skill");
+            degree = bundle.getString("degree");
+            comments = bundle.getString("comments");
+            availabilityDate = bundle.getString("availability_date");
+            job = bundle.getString("job");
+            accessibility = bundle.getString("accessibility");
+            createdDate = bundle.getString("created_date");
+        if(id!=null) {
+
+            String [] tags = skill.split(" ");
+            LayoutInflater inflater1 = LayoutInflater.from(getContext());
+            for(String text : tags){
+                Chip chip = (Chip)inflater.inflate(R.layout.chip_item,null,false);
+                chip.setText(text);
+                chip.setOnCloseIconClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        chipGroup.removeView(view);
+                    }
+                });
+                chipGroup.addView(chip);
+            }
+            Talent.setText(talent);
+        }
+
+        resume = view.findViewById(R.id.button31);
+        resume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
+                chooseFile.setType("application/pdf");
+
+                startActivityForResult(Intent.createChooser(chooseFile, "select a file"), 101);
+            }
+        });
 
         toAdditional.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,7 +196,6 @@ public class AddCandidateSkillFragment extends Fragment {
 
                   skillLine = new EditText(getContext());
                  skillLine.setInputType(InputType.TYPE_CLASS_TEXT);
-
 
                  builder.setView(skillLine);
 
@@ -179,10 +230,29 @@ public class AddCandidateSkillFragment extends Fragment {
         });
         return view;
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,  Intent data) {
+        if(requestCode == 101 && requestCode == RESULT_OK && data!=null){
+            Uri path = data.getData();
+            try {
+                InputStream inputStream = getContext().getContentResolver().openInputStream(path);
+                byte[] fileByte = new byte[inputStream.available()];
+                inputStream.read(fileByte);
+                encodedPdf = android.util.Base64.encodeToString(fileByte, Base64.DEFAULT);
+
+                Toast.makeText(getContext(), encodedPdf,Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     private void userNext() {
         String talent = Talent.getText().toString().trim();
-        String special = specialiation.getText().toString().trim();
-        String skillinesss = skillLine.getText().toString().trim();
+        String skillinesss = skill;
 
         if(talent.isEmpty()){
             Toast.makeText(getContext(),"Please Enter Talent",Toast.LENGTH_LONG).show();
@@ -190,12 +260,7 @@ public class AddCandidateSkillFragment extends Fragment {
             Talent.requestFocus();
             return;
         }
-        if(special.isEmpty()){
-            Toast.makeText(getContext(),"Please Enter Specialiation",Toast.LENGTH_LONG).show();
-            specialiation.setError("Please Enter Specialiation");
-            specialiation.requestFocus();
-            return;
-        }
+
         if(skillinesss.isEmpty()){
             Toast.makeText(getContext(),"Please Add Skills",Toast.LENGTH_LONG).show();
             skillLine.setError("Please Add Skills");
@@ -203,30 +268,37 @@ public class AddCandidateSkillFragment extends Fragment {
             return;
         }
         Bundle bundle2 = new Bundle();
+        bundle2.putString("id", id);
         bundle2.putString("firstName",firstName);
         bundle2.putString("lastName", lastName);
-        bundle2.putString("status", statusItem);
-        bundle2.putString("mainMail" , mainMail);
-        bundle2.putString("contactNumber", contactNumber);
+        bundle2.putString("status", status);
+        bundle2.putString("status_id", statusId);
+        bundle2.putString("mainMail" , email);
+        bundle2.putString("contactNumber", phoneNumber);
         bundle2.putString("address" , address);
         bundle2.putString("city" , city);
         bundle2.putString("zipcode", zipcode);
-        bundle2.putInt("stateId" , stateId);
-        bundle2.putInt("countryId", countryId);
+        bundle2.putString("stateId" , stateId);
+        bundle2.putString("countryId", countryId);
         bundle2.putString("title" , title);
         bundle2.putString("companyName" , companyName);
-        bundle2.putInt("type", candidateType);
-        bundle2.putInt("preference" , preference);
-        bundle2.putInt("sourceId" , sourceId);
-        bundle2.putInt("ownerId" , ownerId);
+        bundle2.putString("type", String.valueOf(0));
+        bundle2.putString("preference" , String.valueOf(0));
+        bundle2.putString("sourceId" , sourceId);
+        bundle2.putString("ownerId" , ownerId);
         bundle2.putString("currentSalary" , currentSalary);
-        bundle2.putString("hourlyRatel" , hourlyRatel);
+        bundle2.putString("hourlyRatel" , hourlyRateLow);
         bundle2.putString("desiredSalary" , desiredSalary);
-        bundle2.putString("hourlyRateh" , hourlyRateh);
+        bundle2.putString("hourlyRateh" , hourlyRateHigh);
+        bundle2.putString("comments", comments);
+        bundle2.putString("availability_date", availabilityDate);
+        bundle2.putString("job", job);
+        bundle2.putString("accessibility", accessibility);
+        bundle2.putString("created_date", createdDate);
         bundle2.putString("talent", Talent.getText().toString().trim());
         bundle2.putString("skill", skill);
         bundle2.putString("degree", Degree.getSelectedItem().toString().trim());
-        bundle2.putString("specialiation",specialiation.getText().toString().trim());
+
 
 
         ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateAdditionalFragment(), bundle2);

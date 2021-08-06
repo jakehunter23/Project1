@@ -10,9 +10,12 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import org.jetbrains.annotations.NotNull;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class NavAdapter_JS extends RecyclerView.Adapter<com.example.project1.NavViewHolder> {
+public class NavAdapter_JS extends RecyclerView.Adapter<NavAdapter_JS.NavViewHolder> {
     private String[] navList;
     private int[] drawablesResId;
     public NavAdapter_JS(String[] navList, int[] drawablesResId){
@@ -22,14 +25,15 @@ public class NavAdapter_JS extends RecyclerView.Adapter<com.example.project1.Nav
     }
 
     @Override
-    public com.example.project1.NavViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public NavViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
         View view=inflater.inflate(R.layout.nav_view_js,parent,false);
-        return new com.example.project1.NavViewHolder(view);
+        return new NavViewHolder(view);
     }
 
+
     @Override
-    public void onBindViewHolder(com.example.project1.NavViewHolder holder, int position) {
+    public void onBindViewHolder(NavViewHolder holder, int position) {
         String title=navList[position];
         int Id=drawablesResId[position];
         holder.description.setText(title);

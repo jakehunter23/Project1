@@ -1,15 +1,22 @@
 package com.example.project1;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import retrofit2.http.Url;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -28,18 +36,31 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpRetryException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -68,12 +89,18 @@ public class  AddContactPersonalFragment extends Fragment {
     EditText FirstName;
     EditText LastName;
     EditText MiddleName;
-    EditText Title;
     EditText MainEmail;
     EditText ContactNumber;
     EditText Address;
     EditText City;
     EditText Zipcode;
+    Bitmap bitmap;
+    ImageView image;
+    String encodedImage;
+
+    String id, first_name, last_name, middle_name, status, email, contact_number, address, city, zipcode, stateId, countryId;
+    String title, companyName, contactTypeId, division, sourceId, reportToId, industryId, lastContactDate, lastVisitDate, visibility, validity, created_date, image_data;
+
 
 
     // TODO: Rename and change types of parameters
@@ -125,12 +152,14 @@ public class  AddContactPersonalFragment extends Fragment {
         FirstName=view.findViewById(R.id.editTextTextPersonName71);
         LastName=view.findViewById(R.id.editTextTextPersonName72);
         MiddleName=view.findViewById(R.id.editTextTextPersonName73);
-        Title=view.findViewById(R.id.editTextTextPersonName74);
         MainEmail=view.findViewById(R.id.editTextTextEmailAddress5);
         ContactNumber=view.findViewById(R.id.editTextPhone4);
         Address=view.findViewById(R.id.editTextTextPersonName75);
         City=view.findViewById(R.id.editTextTextPersonName76);
         Zipcode=view.findViewById(R.id.editTextTextPersonName77);
+        Button selectImage = view.findViewById(R.id.button41);
+        image = view.findViewById(R.id.imageView62);
+
 
 
         countryList = new ArrayList<>();
@@ -141,15 +170,87 @@ public class  AddContactPersonalFragment extends Fragment {
         loadState();
         loadStatus();
 
+        Bundle bundle = getArguments();
+        id = bundle.getString("id");
+        if(id!=null){
+            first_name = bundle.getString("first_name");
+            last_name = bundle.getString("last_name");
+            middle_name = bundle.getString("middle_name");
+            status = bundle.getString("status");
+            email = bundle.getString("email");
+            contact_number = bundle.getString("contact_number");
+            address = bundle.getString("address");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            stateId = bundle.getString("state_id");
+            countryId = bundle.getString("country_id");
+            title = bundle.getString("current_title");
+            companyName = bundle.getString("company_name");
+            contactTypeId = bundle.getString("contact_type_id");
+            division = bundle.getString("division");
+            sourceId = bundle.getString("source_id");
+            reportToId = bundle.getString("report_to_id");
+            industryId = bundle.getString("industry_id");
+            lastContactDate = bundle.getString("last_contact_date");
+            lastVisitDate = bundle.getString("last_visit_date");
+            visibility = bundle.getString("visibility");
+            validity = bundle.getString("validity");
+            created_date = bundle.getString("created_date");
+            image_data = bundle.getString("image_data");
+
+            String url = "https://demotic-recruit.000webhostapp.com/Images/"+image_data;
+
+
+            Glide.with(this).load(url).override(100, 200).fitCenter().into(image);
+
+
+            FirstName.setText(first_name);
+            LastName.setText(last_name);
+            MiddleName.setText(middle_name);
+            MainEmail.setText(email);
+            ContactNumber.setText(contact_number);
+            Address.setText(address);
+            City.setText(city);
+            Zipcode.setText(zipcode);
+
+            if(countryId!=null){
+                spinnerCountry.setSelection(Integer.parseInt(countryId));
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Position",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_item2", Integer.parseInt(countryId));
+                prefEditor.commit();
+            }
+
+            if(stateId!=null){
+                spinnerState.setSelection(Integer.parseInt(stateId));
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("State",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_state", Integer.parseInt(stateId));
+                prefEditor.commit();
+            }
+
+            if(status!=null){
+                spinnerStatus.setSelection(Integer.parseInt(status));
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Status",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_item3", Integer.parseInt(status));
+                prefEditor.commit();
+            }
+
+            if(image_data!=null){
+                encodedImage=image_data;
+            }
+        }
+
 
 
         spinnerCountry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedCountryPosition = spinnerCountry.getSelectedItemPosition();
+                countryId = String.valueOf(spinnerCountry.getSelectedItemPosition());
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("Position",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_item2",SelectedCountryPosition);
+                prefEditor.putInt("spinner_item2", Integer.parseInt(countryId));
                 prefEditor.commit();
 
             }
@@ -163,10 +264,10 @@ public class  AddContactPersonalFragment extends Fragment {
         spinnerState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedStatePosition = spinnerState.getSelectedItemPosition();
+                stateId = String.valueOf(spinnerState.getSelectedItemPosition());
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("State",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_state",SelectedStatePosition);
+                prefEditor.putInt("spinner_state", Integer.parseInt(stateId));
                 prefEditor.commit();
 
             }
@@ -180,10 +281,10 @@ public class  AddContactPersonalFragment extends Fragment {
         spinnerStatus.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedStatusPosition = spinnerStatus.getSelectedItemPosition();
+                status = String.valueOf(spinnerStatus.getSelectedItemPosition());
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("Status",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_item3",SelectedStatusPosition);
+                prefEditor.putInt("spinner_item3", Integer.parseInt(status));
                 prefEditor.commit();
 
             }
@@ -193,6 +294,34 @@ public class  AddContactPersonalFragment extends Fragment {
 
             }
         });
+
+        selectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dexter.withContext(getActivity())
+                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .withListener(new PermissionListener() {
+                            @Override
+                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                                Intent intent = new Intent(Intent.ACTION_PICK);
+                                intent.setType("image/*");
+                                startActivityForResult(Intent.createChooser(intent, "select Image"),1);
+                            }
+
+                            @Override
+                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                                permissionToken.continuePermissionRequest();
+                            }
+                        }).check();
+            }
+        });
+
+
 
 
         next.setOnClickListener(new View.OnClickListener() {
@@ -215,7 +344,6 @@ public class  AddContactPersonalFragment extends Fragment {
         String firstname = FirstName.getText().toString().trim();
         String lastname = LastName.getText().toString().trim();
         String middlename = MiddleName.getText().toString().trim();
-        String title = Title.getText().toString().trim();
         String emails = MainEmail.getText().toString().trim();
         String phoneNumbers = ContactNumber.getText().toString().trim();
         String addresss = Address.getText().toString().trim();
@@ -237,12 +365,6 @@ public class  AddContactPersonalFragment extends Fragment {
             Toast.makeText(getContext(),"Please Enter Middle Name",Toast.LENGTH_LONG).show();
             MiddleName.setError("Please Enter Middle Name");
             MiddleName.requestFocus();
-            return;
-        }
-        if(title.isEmpty()){
-            Toast.makeText(getContext(),"Please Enter Title",Toast.LENGTH_LONG).show();
-            Title.setError("Please Enter Title");
-            Title.requestFocus();
             return;
         }
         if(emails.isEmpty()){
@@ -281,7 +403,34 @@ public class  AddContactPersonalFragment extends Fragment {
             Zipcode.requestFocus();
             return;
         }
-        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactProfessionalFragment());
+        Bundle bundle = new Bundle();
+        bundle.putString("id", id);
+        bundle.putString("first_name", firstname);
+        bundle.putString("last_name", lastname);
+        bundle.putString("middle_name", middlename);
+        bundle.putString("status", status);
+        bundle.putString("email", emails);
+        bundle.putString("contact_number", phoneNumbers);
+        bundle.putString("address", addresss);
+        bundle.putString("city", citys);
+        bundle.putString("zipcode", zipcodes);
+        bundle.putString("state_id", stateId);
+        bundle.putString("country_id", countryId);
+        bundle.putString("current_title", title);
+        bundle.putString("company_name", companyName);
+        bundle.putString("contact_type_id", contactTypeId);
+        bundle.putString("division", division);
+        bundle.putString("source_id", sourceId);
+        bundle.putString("report_to_id", reportToId);
+        bundle.putString("industry_id", industryId);
+        bundle.putString("last_contact_date", lastContactDate);
+        bundle.putString("last_visit_date", lastVisitDate);
+        bundle.putString("visibility", visibility);
+        bundle.putString("validity", validity);
+        bundle.putString("created_date", created_date);
+        bundle.putString("image_data", encodedImage);
+
+        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactProfessionalFragment(), bundle);
         ((AddContactActivity)getActivity()).changeViewForProfessional();
     }
 
@@ -408,6 +557,36 @@ public class  AddContactPersonalFragment extends Fragment {
         Volley.newRequestQueue(getContext()).add(stateRequest);
 
     }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        if(requestCode==1 && resultCode == RESULT_OK && data!=null){
+            Uri filePath = data.getData();
+
+            try {
+                InputStream inputStream = getContext().getContentResolver().openInputStream(filePath);
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                image.setImageBitmap(bitmap);
+                
+                imageStore(bitmap);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void imageStore(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,10,stream);
+
+        byte[] imageByte = stream.toByteArray();
+        encodedImage = android.util.Base64.encodeToString(imageByte, Base64.DEFAULT);
+
+    }
+
 
     @Override
     public void onResume() {

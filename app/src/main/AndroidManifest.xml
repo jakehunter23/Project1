@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
 
     <application
         android:name=".OneSignalApplication"
@@ -13,12 +15,8 @@
         android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Project1">
-        <activity android:name=".AddRecruiterPassword"></activity>
-        <activity android:name=".AddRecruiterProfessionalInfo" />
-        <activity android:name=".CalendarSchedule" />
-        <activity android:name=".AfterSchedule" />
-        <activity android:name=".AddRecruiterPersonalInfo" />
+        android:theme="@style/Theme.Project1"
+        android:usesCleartextTraffic="true">
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +27,9 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".MessageAcitvity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity">
+
+        </activity>
         <activity
             android:name=".NavActivity"
             android:parentActivityName=".DashBoardActivity" />
@@ -64,7 +64,9 @@
         <activity android:name=".AddCandidateResumate" />
         <activity android:name=".AddContactActivity" />
         <activity android:name=".AddRecruitmentActivity" />
-        <activity android:name=".DashBoardActivity" />
+        <activity android:name=".DashBoardActivity">
+
+        </activity>
         <activity android:name=".TaskSelectedActivity" />
         <activity android:name=".myFiles_3" />
         <activity android:name=".MainActivity_JS" />
@@ -80,27 +82,19 @@
         <activity android:name=".mytask" />
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
-        <activity android:name=".dashboard">
+        <activity android:name=".dashboard"></activity>
 
-        </activity>
+        <activity android:name=".JobLoginActivity"/>
+        <activity android:name=".JSCareerInfo" />
         <activity
-            android:name=".JobLoginActivity"
-            android:exported="true" />
+            android:name=".JSPassword"  android:exported="true" />
         <activity
-            android:name=".JSCareerInfo"
-            android:exported="true" />
+            android:name=".JSDetails"  android:exported="true" />
         <activity
-            android:name=".JSPassword"
-            android:exported="true" />
-        <activity
-            android:name=".JSDetails"
-            android:exported="true" />
-        <activity
-            android:name=".JSPersonalInfo"
-            android:exported="true" />
-        <activity
-            android:name=".UpdateActivity"
-            android:exported="true" />
+            android:name=".JSPersonalInfo"   android:exported="true" />
+
+        <activity android:name=".UpdateActivity" android:exported="true"/>
+
         <activity
             android:name=".CandidateComplete"
             android:exported="true" />
@@ -110,9 +104,11 @@
         <activity
             android:name=".CandidateEducation"
             android:exported="true" />
-        <activity
-            android:name=".RecyclerView"
-            android:parentActivityName=".CandidateEducation" />
+
+        <activity android:name=".RecyclerView"
+            android:parentActivityName=".CandidateEducation"/>
+
+
         <activity
             android:name=".CandidateCertificates"
             android:exported="true" />
@@ -134,9 +130,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".SplashScreenActivity" >
-
-        </activity>
+        <activity android:name=".SplashScreenActivity" />
         <activity android:name=".CandidateSplashScreen" />
         <activity android:name=".ContactSplashScreenActivity" />
         <activity android:name=".RecruitmentSplashScreenActivity" />

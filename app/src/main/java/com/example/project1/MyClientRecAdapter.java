@@ -2,6 +2,7 @@ package com.example.project1;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,12 +58,12 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
         CreatorModel creator_item = creator.get(creator_id);
         String creator_name = creator_item.getFirst_name().toString();
         String creator_last = creator_item.getLast_name().toString();
-        holder.creatorName.setText(creator_name + " " + creator_last);
+        String name = client_item.getName().toString();
         holder.hiddenView.setVisibility(View.GONE);
-        holder.companyName.setText(client_item.getName());
-        holder.phoneNumber.setText(client_item.getPhone_number());
-        holder.email.setText(client_item.getEmail());
-        holder.address.setText(client_item.getAddress());
+        holder.phoneNumber.setText(client_item.getPhone_number().toString());
+        holder.companyName.setText(name);
+        holder.email.setText(client_item.getEmail().toString());
+        holder.address.setText(client_item.getAddress().toString());
         holder.date.setText(client_item.getDateCreated().toString());
 
 
@@ -75,13 +76,11 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
 
     class MyClientViewHolder extends RecyclerView.ViewHolder {
 
-        String fetchSpecificClient = "";
 
         ImageView arrow;
         LinearLayout hiddenView;
         CardView cardView;
         CardView ClickBait;
-        TextView creatorName;
         TextView companyName;
         TextView phoneNumber;
         TextView email;
@@ -96,8 +95,7 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
             hiddenView = itemView.findViewById(R.id.ghost_layout);
             cardView = itemView.findViewById(R.id.cli_card_lay);
             ClickBait =itemView.findViewById(R.id.clickMe_card);
-            creatorName=itemView.findViewById(R.id.textView405);
-            companyName=itemView.findViewById(R.id.textView406);
+            companyName=itemView.findViewById(R.id.textView405);
             phoneNumber = itemView.findViewById(R.id.textView409);
             email =itemView.findViewById(R.id.textView412);
             address =itemView.findViewById(R.id.textView413);
@@ -133,6 +131,9 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(context, ClientActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name",clientList.get(getAdapterPosition()).getName());
+                    intent.putExtras(bundle);
                     context.startActivity(intent);
 
                 }

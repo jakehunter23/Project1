@@ -131,33 +131,6 @@
             android:paddingLeft="10dp"
             android:background="@drawable/background_sharp"/>
 
-        <TextView
-            android:id="@+id/textView432"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Title"
-            android:layout_marginStart="26dp"
-            android:layout_marginTop="23dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito_semibold"/>
-
-        <EditText
-            android:id="@+id/editTextTextPersonName74"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:ems="10"
-            android:paddingRight="10dp"
-            android:inputType="textPersonName"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:textSize="18dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/nunito"
-            android:hint="India"
-            android:paddingLeft="10dp"
-            android:background="@drawable/background_sharp"/>
 
         <TextView
             android:id="@+id/textView433"

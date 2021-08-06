@@ -31,7 +31,7 @@ Button btn_submit;
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),dashboard.class);
+                Intent intent = new Intent(getBaseContext(),dashboard.class);
                 startActivity(intent);
             }
         });
@@ -42,9 +42,9 @@ Button btn_submit;
         back_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-              //  intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-              //  startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(),SplashScreen.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
                 finish();
             }
         });

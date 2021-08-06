@@ -135,6 +135,7 @@ public class MyClients extends AppCompatActivity {
                         client.setAddress(address);
                         client.setDateCreated(date);
 
+
                         clientModels.add(client);
 
                     }

@@ -124,46 +124,48 @@ public class AddContactAAdditionalFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         id = bundle.getString("id");
-        firstName = bundle.getString("first_name");
-        lastName = bundle.getString("last_name");
-        middleName = bundle.getString("middle_name");
-        statusId = bundle.getString("status");
-        email = bundle.getString("email");
-        phoneNumber = bundle.getString("contact_number");
-        address = bundle.getString("address");
-        city = bundle.getString("city");
-        zipcode = bundle.getString("zipcode");
-        sourceId = bundle.getString("source_id");
-        stateId = bundle.getString("state_id");
-        countryId = bundle.getString("country_id");
-        title = bundle.getString("current_title");
-        companyId = bundle.getString("company_name");
-        contactTypeId = bundle.getString("contact_type_id");
-        division = bundle.getString("division");
-        reportsToId = bundle.getString("report_to_id");
-        industryId = bundle.getString("industry_id");
-        lastContactDate = bundle.getString("last_contact_date");
-        lastVisitDate = bundle.getString("last_visit_date");
-        visibility = bundle.getString("visibility");
-        validity = bundle.getString("validity");
-        createdDate = bundle.getString("created_date");
-        photo = bundle.getString("photo");
 
-        if(id!=null){
+            firstName = bundle.getString("first_name");
+            lastName = bundle.getString("last_name");
+            middleName = bundle.getString("middle_name");
+            statusId = bundle.getString("status");
+            email = bundle.getString("email");
+            phoneNumber = bundle.getString("contact_number");
+            address = bundle.getString("address");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            sourceId = bundle.getString("source_id");
+            stateId = bundle.getString("state_id");
+            countryId = bundle.getString("country_id");
+            title = bundle.getString("current_title");
+            companyId = bundle.getString("company_name");
+            contactTypeId = bundle.getString("contact_type_id");
+            division = bundle.getString("division");
+            reportsToId = bundle.getString("report_to_id");
+            industryId = bundle.getString("industry_id");
+            lastContactDate = bundle.getString("last_contact_date");
+            lastVisitDate = bundle.getString("last_visit_date");
+            visibility = bundle.getString("visibility");
+            validity = bundle.getString("validity");
+            createdDate = bundle.getString("created_date");
+            photo = bundle.getString("image_data");
+
+        if(id!=null) {
             LastContactDate.setText(bundle.getString("last_contact_date"));
             LastVisitDate.setText(bundle.getString("last_visit_date"));
 
-            if(visibility!=null){
+
+            if (visibility != null) {
                 Visibilty.setSelection(Integer.parseInt(visibility));
-                SharedPreferences sharedPref = getActivity().getSharedPreferences("Visibility",0);
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Visibility", 0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
                 prefEditor.putInt("spinner_item", Integer.parseInt(visibility));
                 prefEditor.commit();
             }
 
-            if(validity!=null){
+            if (validity != null) {
                 Validity.setSelection(Integer.parseInt(validity));
-                SharedPreferences sharedPref = getActivity().getSharedPreferences("Validity",0);
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("Validity", 0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
                 prefEditor.putInt("spinner_item2", Integer.parseInt(validity));
                 prefEditor.commit();
@@ -335,7 +337,7 @@ public class AddContactAAdditionalFragment extends Fragment {
                 param.put("state_id", stateId);
                 param.put("country_id", countryId);
                 param.put("current_title", title);
-                param.put("company_name", companyId);
+                param.put("company_id", companyId);
                 param.put("contact_type_id", contactTypeId);
                 param.put("division", division);
                 param.put("report_to_id", reportsToId);

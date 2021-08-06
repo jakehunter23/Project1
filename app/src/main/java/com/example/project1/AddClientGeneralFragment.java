@@ -50,10 +50,10 @@ public class AddClientGeneralFragment extends Fragment{
     String fetchSource = "https://demotic-recruit.000webhostapp.com/source_fetch.php";
 
     String statusItem;
-    int ownershipId, indutryId, sourceId;
 
 
-    Spinner status, ownership, industry, source;
+
+    Spinner Status, ownership, industry, source, active, parent;
     ArrayList<String> statusList;
     ArrayList<String> ownershipList;
     ArrayList<String> industryList;
@@ -63,10 +63,15 @@ public class AddClientGeneralFragment extends Fragment{
     ArrayAdapter ownershipAdapter;
     ArrayAdapter industryAdapter;
     ArrayAdapter sourceAdapter;
+    ArrayAdapter contactAdapter;
+    ArrayAdapter parentAdapter;
 
     EditText companyText;
     EditText companyUrlText;
     EditText companyDescriptionText;
+
+    String id, name, activeId,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName;
+    private String bankId, bankAccountNumber, IBAN, VAT;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -112,15 +117,17 @@ public class AddClientGeneralFragment extends Fragment{
         companyText = view.findViewById(R.id.editTextTextPersonName43);
         companyUrlText = view.findViewById(R.id.editTextTextPersonName44);
         companyDescriptionText = view.findViewById(R.id.editTextTextPersonName45);
-        Spinner parent=view.findViewById(R.id.parent_cmny);
-        Spinner active=view.findViewById(R.id.active_cntact);
+        parent=view.findViewById(R.id.parent_cmny);
+        active=view.findViewById(R.id.active_cntact);
+
+
 
         ArrayList<String> con_List=new ArrayList<>();
         con_List.add("Active contact1");
         con_List.add("Active contact2");
         con_List.add("ActiveContact3");
         con_List.add("All");
-        ArrayAdapter contactAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,con_List);
+        contactAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,con_List);
         contactAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         active.setAdapter(contactAdapter);
 
@@ -130,12 +137,12 @@ public class AddClientGeneralFragment extends Fragment{
         parent_list.add("Microsoft");
         parent_list.add("Amazon");
         parent_list.add("Analysed");
-        ArrayAdapter parentAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,parent_list);
+        parentAdapter=new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_dropdown_item,parent_list);
         parentAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         parent.setAdapter(parentAdapter);
 
         Button next = view.findViewById(R.id.client_to_contact_button);
-        status =view.findViewById(R.id.spinner45);
+        Status =view.findViewById(R.id.spinner45);
         ownership=view.findViewById(R.id.spinner46);
         industry=view.findViewById(R.id.spinner47);
         source=view.findViewById(R.id.spinner48);
@@ -149,14 +156,93 @@ public class AddClientGeneralFragment extends Fragment{
         loadIndustry();
         loadSource();
 
-        status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedIndustryPosition = status.getSelectedItemPosition();
-                statusItem = statusList.get(SelectedIndustryPosition);
+        Bundle bundle = getArguments();
+        id = bundle.getString("id");
+        if(id!=null) {
+            parentId = bundle.getString("parent_id");
+            creatorId = bundle.getString("creator_id");
+            activeContactId = bundle.getString("active_contact_id");
+            sourceId = bundle.getString("source_id");
+            ownershipId = bundle.getString("ownership_id");
+            industryId = bundle.getString("industry_id");
+            status = bundle.getString("status");
+            phoneNumber = bundle.getString("phone_number");
+            createdDate = bundle.getString("created_date");
+            url = bundle.getString("url");
+            description = bundle.getString("description");
+            stateId = bundle.getString("state_id");
+            countryId = bundle.getString("country_id");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            bankName = bundle.getString("bank_name");
+            bankId = bundle.getString("bank_id");
+            bankAccountNumber = bundle.getString("bank_account_number");
+            IBAN = bundle.getString("IBAN");
+            VAT = bundle.getString("VAT");
+            name = bundle.getString("name");
+            email = bundle.getString("email");
+            address = bundle.getString("address");
+
+            companyText.setText(name);
+            companyUrlText.setText(url);
+            companyDescriptionText.setText(description);
+
+            if(status!=null){
+                Status.setSelection(Integer.parseInt(status));
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Status",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item5",SelectedIndustryPosition);
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(status));
+                prefEditor2.commit();
+            }
+
+            if(ownershipId!=null){
+                ownership.setSelection(Integer.parseInt(ownershipId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Ownership",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item", Integer.parseInt(ownershipId));
+                prefEditor2.commit();
+            }
+
+            if(industryId!=null){
+                industry.setSelection(Integer.parseInt(industryId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Industry",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item2", Integer.parseInt(industryId));
+                prefEditor2.commit();
+            }
+
+            if(sourceId!=null){
+                source.setSelection(Integer.parseInt(sourceId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
+                prefEditor2.commit();
+            }
+
+            if(activeContactId!=null){
+                active.setSelection(Integer.parseInt(activeContactId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Active",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item4", Integer.parseInt(activeContactId));
+                prefEditor2.commit();
+            }
+
+            if(parentId!=null){
+                parent.setSelection(Integer.parseInt(parentId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Parent",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item6", Integer.parseInt(parentId));
+                prefEditor2.commit();
+            }
+        }
+
+        Status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                status = String.valueOf(Status.getSelectedItemPosition());
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Status",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(status));
                 prefEditor2.commit();
             }
 
@@ -169,10 +255,10 @@ public class AddClientGeneralFragment extends Fragment{
         ownership.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ownershipId = ownership.getSelectedItemPosition();
+                ownershipId = String.valueOf(ownership.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Ownership",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item",ownershipId);
+                prefEditor2.putInt("spinner_item", Integer.parseInt(ownershipId));
                 prefEditor2.commit();
             }
 
@@ -185,10 +271,10 @@ public class AddClientGeneralFragment extends Fragment{
         industry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                indutryId = industry.getSelectedItemPosition();
+                industryId = String.valueOf(industry.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Industry",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item2",indutryId);
+                prefEditor2.putInt("spinner_item2", Integer.parseInt(industryId));
                 prefEditor2.commit();
             }
 
@@ -201,10 +287,42 @@ public class AddClientGeneralFragment extends Fragment{
         source.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                sourceId = source.getSelectedItemPosition();
+                sourceId = String.valueOf(source.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item3",sourceId);
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
+                prefEditor2.commit();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        active.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                activeContactId = String.valueOf(active.getSelectedItemPosition());
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Active",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item4", Integer.parseInt(activeContactId));
+                prefEditor2.commit();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        parent.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                parentId = String.valueOf(parent.getSelectedItemPosition());
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Parent",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item6", Integer.parseInt(parentId));
                 prefEditor2.commit();
             }
 
@@ -218,11 +336,6 @@ public class AddClientGeneralFragment extends Fragment{
             @Override
             public void onClick(View view) {
                 userLogin();
-
-
-
-
-
 
             }
         });
@@ -254,15 +367,30 @@ public class AddClientGeneralFragment extends Fragment{
         }
 
         Bundle bundle = new Bundle();
-        bundle.putString("companyName",companyText.getText().toString().trim());
-        bundle.putString("companyUrl",companyUrlText.getText().toString().trim());
-        bundle.putInt("activeContactId",-1);
-        bundle.putInt("parentId", -1);
+        bundle.putString("id", id);
+        bundle.putString("name",companyText.getText().toString().trim());
+        bundle.putString("url",companyUrlText.getText().toString().trim());
+        bundle.putString("active_contact_id", activeContactId);
+        bundle.putString("parent_id",parentId);
         bundle.putString("status",statusItem);
-        bundle.putInt("ownershipId", ownershipId+1);
-        bundle.putInt("industryId",indutryId+1);
-        bundle.putInt("sourceId",sourceId+1);
-        bundle.putString("companyDescription", companyDescriptionText.getText().toString().trim());
+        bundle.putString("ownership_id", ownershipId);
+        bundle.putString("industry_id", industryId);
+        bundle.putString("source_id", sourceId);
+        bundle.putString("description", companyDescriptionText.getText().toString().trim());
+        bundle.putString("creator_id", creatorId);
+        bundle.putString("phone_number", phoneNumber);
+        bundle.putString("created_date", createdDate);
+        bundle.putString("state_id", stateId);
+        bundle.putString("country_id", countryId);
+        bundle.putString("city", city);
+        bundle.putString("zipcode", zipcode);
+        bundle.putString("bank_name", bankName);
+        bundle.putString("bank_id", bankId);
+        bundle.putString("bank_account_number", bankAccountNumber);
+        bundle.putString("IBAN", IBAN);
+        bundle.putString("VAT", VAT);
+        bundle.putString("email", email);
+        bundle.putString("address", address);
         ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientContactFragment(),bundle);
         ((Add_client_activity)getActivity()).changeViewForContact();
 
@@ -400,13 +528,13 @@ public class AddClientGeneralFragment extends Fragment{
 
                     statusAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,statusList);
                     statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    status.setAdapter(statusAdapter);
+                    Status.setAdapter(statusAdapter);
 
                     SharedPreferences sharedPref = getActivity().getSharedPreferences("Status", Context.MODE_PRIVATE);
                     int spinnerValue = sharedPref.getInt("spinner_item5",-1);
                     if(spinnerValue != -1) {
                         // set the value of the spinner
-                        status.setSelection(spinnerValue,true);
+                        Status.setSelection(spinnerValue,true);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -444,6 +572,16 @@ public class AddClientGeneralFragment extends Fragment{
         SharedPreferences.Editor prefEditor3 = sharedPref3.edit();
         prefEditor3.putInt("spinner_item3",0);
         prefEditor3.commit();
+
+        SharedPreferences sharedPref4 = getActivity().getSharedPreferences("Active",0);
+        SharedPreferences.Editor prefEditor4 = sharedPref4.edit();
+        prefEditor4.putInt("spinner_item4",0);
+        prefEditor4.commit();
+
+        SharedPreferences sharedPref6 = getActivity().getSharedPreferences("Parent",0);
+        SharedPreferences.Editor prefEditor6 = sharedPref6.edit();
+        prefEditor6.putInt("spinner_item6",0);
+        prefEditor6.commit();
 
     }
 }

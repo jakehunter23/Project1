@@ -22,7 +22,7 @@ public class SplashScreen extends AppCompatActivity {
         recruiter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                Intent intent = new Intent(SplashScreen.this,LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -30,7 +30,7 @@ public class SplashScreen extends AppCompatActivity {
         jobseeker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),JobLoginActivity.class);
+                Intent intent = new Intent(SplashScreen.this,JobLoginActivity.class);
                 startActivity(intent);
             }
         });

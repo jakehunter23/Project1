@@ -21,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.core.Repo;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,7 +47,7 @@ public class AddContactProfessionalFragment extends Fragment {
     String fetchReports="https://demotic-recruit.000webhostapp.com/user_fetch.php";
     String fetchIndustry="https://demotic-recruit.000webhostapp.com/industry_fetch.php";
 
-    Spinner contactType, division, source, ReportsTo, industry;
+    Spinner contactType, Division, source, ReportsTo, industry;
     ArrayList<String> contactTypeList;
     ArrayList<String> divisionList;
     ArrayList<String> sourceList;
@@ -61,6 +62,10 @@ public class AddContactProfessionalFragment extends Fragment {
     EditText CurrentTitle;
     EditText CompanyName;
     EditText RequierdSkill;
+
+    String id, first_name, last_name, middle_name, status, email, contact_number, address, city, zipcode, stateId, countryId;
+    String title, companyName, contactTypeId, division, sourceId, reportToId, industryId, lastContactDate, lastVisitDate, visibility, validity, created_date, image_data;
+
 
 
     // TODO: Rename and change types of parameters
@@ -105,7 +110,7 @@ public class AddContactProfessionalFragment extends Fragment {
         View view = inflater.inflate(R.layout.add_contact_professional, container, false);
         Button next = view.findViewById(R.id.button42);
         contactType =view.findViewById(R.id.spinner62);
-        division =view.findViewById(R.id.spinner63);
+        Division =view.findViewById(R.id.spinner63);
         source=view.findViewById(R.id.spinner64);
         ReportsTo=view.findViewById(R.id.spinner65);
         industry=view.findViewById(R.id.spinner66);
@@ -116,7 +121,6 @@ public class AddContactProfessionalFragment extends Fragment {
         industryList=new ArrayList<>();
         CurrentTitle=view.findViewById(R.id.editTextTextPersonName78);
         CompanyName=view.findViewById(R.id.editTextTextPersonName79);
-        RequierdSkill=view.findViewById(R.id.editTextTextPersonName80);
 
         loadContactType();
         loadDivision();
@@ -124,13 +128,87 @@ public class AddContactProfessionalFragment extends Fragment {
         loadReportsTo();
         loadIndustry();
 
+        Bundle bundle = getArguments();
+        id = bundle.getString("id");
+
+            first_name = bundle.getString("first_name");
+            last_name = bundle.getString("last_name");
+            middle_name = bundle.getString("middle_name");
+            status = bundle.getString("status");
+            email = bundle.getString("email");
+            contact_number = bundle.getString("contact_number");
+            address = bundle.getString("address");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            stateId = bundle.getString("state_id");
+            countryId = bundle.getString("country_id");
+            title = bundle.getString("current_title");
+            companyName = bundle.getString("company_name");
+            contactTypeId = bundle.getString("contact_type_id");
+            division = bundle.getString("division");
+            sourceId = bundle.getString("source_id");
+            reportToId = bundle.getString("report_to_id");
+            industryId = bundle.getString("industry_id");
+            lastContactDate = bundle.getString("last_contact_date");
+            lastVisitDate = bundle.getString("last_visit_date");
+            visibility = bundle.getString("visibility");
+            validity = bundle.getString("validity");
+            created_date = bundle.getString("created_date");
+            image_data = bundle.getString("image_data");
+
+
+        if(id!=null) {
+            CurrentTitle.setText(title);
+            CompanyName.setText(companyName);
+
+            if(contactTypeId!=null){
+                contactType.setSelection(Integer.parseInt(contactTypeId));
+                SharedPreferences sharedPref = getActivity().getSharedPreferences("ContactType",0);
+                SharedPreferences.Editor prefEditor = sharedPref.edit();
+                prefEditor.putInt("spinner_item1", Integer.parseInt(contactTypeId));
+                prefEditor.commit();
+            }
+
+            if(division!=null){
+                Division.setSelection(Integer.parseInt(division));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Division",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item2", Integer.parseInt(division));
+                prefEditor2.commit();
+            }
+
+            if(sourceId!=null){
+                source.setSelection(Integer.parseInt(sourceId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
+                prefEditor2.commit();
+            }
+
+            if(reportToId!=null){
+                ReportsTo.setSelection(Integer.parseInt(reportToId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("ReportsTo",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item4", Integer.parseInt(reportToId));
+                prefEditor2.commit();
+            }
+
+            if(industryId!=null){
+                industry.setSelection(Integer.parseInt(industryId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Industry",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(industryId));
+                prefEditor2.commit();
+            }
+        }
+
         contactType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedContactPosition = contactType.getSelectedItemPosition();
+                contactTypeId = String.valueOf(contactType.getSelectedItemPosition());
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("ContactType",0);
                 SharedPreferences.Editor prefEditor = sharedPref.edit();
-                prefEditor.putInt("spinner_item1",SelectedContactPosition);
+                prefEditor.putInt("spinner_item1", Integer.parseInt(contactTypeId));
                 prefEditor.commit();
             }
 
@@ -140,13 +218,13 @@ public class AddContactProfessionalFragment extends Fragment {
             }
         });
 
-        division.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        Division.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedDivisionPosition = division.getSelectedItemPosition();
+                division = String.valueOf(Division.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Division",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item2",SelectedDivisionPosition);
+                prefEditor2.putInt("spinner_item2", Integer.parseInt(division));
                 prefEditor2.commit();
             }
 
@@ -159,10 +237,10 @@ public class AddContactProfessionalFragment extends Fragment {
         source.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedSourcePosition = source.getSelectedItemPosition();
+                sourceId = String.valueOf(source.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item3",SelectedSourcePosition);
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
                 prefEditor2.commit();
             }
 
@@ -175,10 +253,10 @@ public class AddContactProfessionalFragment extends Fragment {
         ReportsTo.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedReportsPosition = ReportsTo.getSelectedItemPosition();
+                reportToId = String.valueOf(ReportsTo.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("ReportsTo",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item4",SelectedReportsPosition);
+                prefEditor2.putInt("spinner_item4", Integer.parseInt(reportToId));
                 prefEditor2.commit();
             }
 
@@ -191,10 +269,10 @@ public class AddContactProfessionalFragment extends Fragment {
         industry.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedIndustryPosition = industry.getSelectedItemPosition();
+                industryId = String.valueOf(industry.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Industry",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item5",SelectedIndustryPosition);
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(industryId));
                 prefEditor2.commit();
             }
 
@@ -216,7 +294,6 @@ public class AddContactProfessionalFragment extends Fragment {
     private void userNext() {
         String currentTitle = CurrentTitle.getText().toString().trim();
         String companyname = CompanyName.getText().toString().trim();
-        String requierdskill = RequierdSkill.getText().toString().trim();
 
 
 
@@ -232,13 +309,34 @@ public class AddContactProfessionalFragment extends Fragment {
             CompanyName.requestFocus();
             return;
         }
-        if(requierdskill.isEmpty()){
-            Toast.makeText(getContext(),"Please Enter Required Skill",Toast.LENGTH_LONG).show();
-            RequierdSkill.setError("Please Enter Required Skill");
-            RequierdSkill.requestFocus();
-            return;
-        }
-        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactAAdditionalFragment());
+
+        Bundle bundle = new Bundle();
+        bundle.putString("id", id);
+        bundle.putString("first_name", first_name);
+        bundle.putString("last_name", last_name);
+        bundle.putString("middle_name", middle_name);
+        bundle.putString("status", status);
+        bundle.putString("email", email);
+        bundle.putString("contact_number", contact_number);
+        bundle.putString("address", address);
+        bundle.putString("city", city);
+        bundle.putString("zipcode", zipcode);
+        bundle.putString("state_id", stateId);
+        bundle.putString("country_id", countryId);
+        bundle.putString("current_title", CurrentTitle.getText().toString().trim());
+        bundle.putString("company_name", CompanyName.getText().toString().trim());
+        bundle.putString("contact_type_id", contactTypeId);
+        bundle.putString("division", division);
+        bundle.putString("source_id", sourceId);
+        bundle.putString("report_to_id", reportToId);
+        bundle.putString("industry_id", industryId);
+        bundle.putString("last_contact_date", lastContactDate);
+        bundle.putString("last_visit_date", lastVisitDate);
+        bundle.putString("visibility", visibility);
+        bundle.putString("validity", validity);
+        bundle.putString("created_date", created_date);
+        bundle.putString("image_data", image_data);
+        ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactAAdditionalFragment(), bundle);
         ((AddContactActivity)getActivity()).changeViewForAdditional();
     }
 
@@ -373,7 +471,7 @@ public class AddContactProfessionalFragment extends Fragment {
 
                     divisionAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,divisionList);
                     divisionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    division.setAdapter(divisionAdapter);
+                    Division.setAdapter(divisionAdapter);
 
                     SharedPreferences sharedPref = getActivity().getSharedPreferences("Division", Context.MODE_PRIVATE);
                     int spinnerValue = sharedPref.getInt("spinner_item2",-1);

@@ -1,7 +1,9 @@
 package com.example.project1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.display.VirtualDisplay;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,6 +82,7 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
         TextView recruiterName;
         TextView recruiterEmail,information;
         ImageView arrow;
+        ImageView view;
 
         public JobRecViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,6 +97,7 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
             hidden=itemView.findViewById(R.id.hidden_info);
             arrow=itemView.findViewById(R.id.downarrow);
             information=itemView.findViewById(R.id.more);
+            view = itemView.findViewById(R.id.clihire_priority_dot);
 
             click.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -114,6 +118,28 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
                         arrow.setImageResource(R.drawable.expand_less);
                         information.setText(R.string.show_less);
                     }
+                }
+            });
+
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ClientModel client = clientList.get(getAdapterPosition());
+                    JobModel job = jobList.get(getAdapterPosition());
+                    String companyName = client.getName();
+                    String address = client.getAddress();
+                    String opening = String.valueOf(job.getOpenings());
+                    String createdDate = job.getCreatedDate();
+
+                    Intent intent = new Intent(context, ActurialActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("company_name", companyName);
+                    bundle.putString("address", address);
+                    bundle.putString("openings", opening);
+                    bundle.putString("created_date", createdDate);
+                    intent.putExtras(bundle);
+                    context.startActivity(intent);
+
                 }
             });
         }

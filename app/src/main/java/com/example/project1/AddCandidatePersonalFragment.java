@@ -47,9 +47,10 @@ public class AddCandidatePersonalFragment extends Fragment {
     String fetchCountry = "https://demotic-recruit.000webhostapp.com/spinner.php";
 
     String statusItem;
-    int stateId, countryId;
+    String id, firstName, lastName, status, statusId, email, phoneNumber, address, city, zipcode, type, preference, sourceId, ownerId, currentSalary, desiredSalary, stateId, countryId, title, companyName, hourlyRateLow, hourlyRateHigh, talent, skill, degree, comments, availabilityDate, job, accessibility, createdDate;
 
-    Spinner status, state, country;
+
+    Spinner Status, state, country;
     ArrayList<String> statusList;
     ArrayList<String> stateList;
     ArrayList<String> countryList;
@@ -108,7 +109,7 @@ public class AddCandidatePersonalFragment extends Fragment {
         View view = inflater.inflate(R.layout.candidate_personalinfo, container, false);
         Button toPro = view.findViewById(R.id.button11);
         scroll = view.findViewById(R.id.con_per_scroll);
-        status=view.findViewById(R.id.spinner19);
+        Status=view.findViewById(R.id.spinner19);
         state=view.findViewById(R.id.spinner20);
         country=view.findViewById(R.id.spinner21);
         statusList = new ArrayList<>();
@@ -127,14 +128,82 @@ public class AddCandidatePersonalFragment extends Fragment {
         loadState();
         loadCountry();
 
-        status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                int SelectedIndustryPosition = status.getSelectedItemPosition();
-                statusItem = statusList.get(SelectedIndustryPosition);
+        Bundle bundle1 = getArguments();
+        id = bundle1.getString("id");
+        if(id!=null) {
+            firstName = bundle1.getString("first_name");
+            lastName = bundle1.getString("last_name");
+            statusId = bundle1.getString("status_id");
+            status = bundle1.getString("status");
+            email = bundle1.getString("email");
+            phoneNumber = bundle1.getString("contact_number");
+            address = bundle1.getString("address");
+            city = bundle1.getString("city");
+            zipcode = bundle1.getString("zipcode");
+            stateId = bundle1.getString("state_id");
+            countryId = bundle1.getString("country_id");
+            title = bundle1.getString("current_title");
+            companyName = bundle1.getString("company_name");
+            type = bundle1.getString("type");
+            preference = bundle1.getString("preference");
+            ownerId = bundle1.getString("owner_id");
+            sourceId = bundle1.getString("source_id");
+            currentSalary = bundle1.getString("current_salary");
+            desiredSalary = bundle1.getString("desired_salary");
+            hourlyRateHigh = bundle1.getString("hourly_rate_high");
+            hourlyRateLow = bundle1.getString("hourly_rate_low");
+            talent = bundle1.getString("talent");
+            skill = bundle1.getString("skill");
+            degree = bundle1.getString("degree");
+            comments = bundle1.getString("comments");
+            availabilityDate = bundle1.getString("availability_date");
+            job = bundle1.getString("job");
+            accessibility = bundle1.getString("accessibility");
+            createdDate = bundle1.getString("created_date");
+
+            FirstName.setText(firstName);
+            LastName.setText(lastName);
+            MainMail.setText(email);
+            ContactNumber.setText(phoneNumber);
+            Address.setText(address);
+            City.setText(city);
+            Zipcode.setText(zipcode);
+
+            if(statusId!=null){
+                Status.setSelection(Integer.parseInt(statusId));
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Status",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item5",SelectedIndustryPosition);
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(statusId));
+                prefEditor2.commit();
+            }
+
+            if(stateId!=null){
+                state.setSelection(Integer.parseInt(stateId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("State",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item9", Integer.parseInt(stateId));
+                prefEditor2.commit();
+            }
+
+            if(countryId!=null){
+                country.setSelection(Integer.parseInt(countryId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Country",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item10", Integer.parseInt(countryId));
+                prefEditor2.commit();
+            }
+
+
+        }
+
+        Status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                statusId = String.valueOf(Status.getSelectedItemPosition());
+                status = statusList.get(Integer.parseInt(statusId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Status",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item5", Integer.parseInt(statusId));
                 prefEditor2.commit();
             }
 
@@ -147,10 +216,10 @@ public class AddCandidatePersonalFragment extends Fragment {
         state.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-               stateId = state.getSelectedItemPosition();
+               stateId = String.valueOf(state.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("State",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item9",stateId);
+                prefEditor2.putInt("spinner_item9", Integer.parseInt(stateId));
                 prefEditor2.commit();
             }
 
@@ -163,10 +232,10 @@ public class AddCandidatePersonalFragment extends Fragment {
         country.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                countryId = country.getSelectedItemPosition();
+                countryId = String.valueOf(country.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Country",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item10",countryId);
+                prefEditor2.putInt("spinner_item10", Integer.parseInt(countryId));
                 prefEditor2.commit();
             }
 
@@ -237,16 +306,36 @@ public class AddCandidatePersonalFragment extends Fragment {
             return;
         }
         Bundle bundle = new Bundle();
+        bundle.putString("id", id);
         bundle.putString("firstName",FirstName.getText().toString().trim());
         bundle.putString("lastName", LastName.getText().toString().trim());
-        bundle.putString("status", statusItem);
+        bundle.putString("statusId", statusId);
         bundle.putString("mainMail" , MainMail.getText().toString().trim());
         bundle.putString("contactNumber", ContactNumber.getText().toString().trim());
         bundle.putString("address" , Address.getText().toString().trim());
         bundle.putString("city" , City.getText().toString().trim());
         bundle.putString("zipcode", Zipcode.getText().toString().trim());
-        bundle.putInt("stateId" , stateId+1);
-        bundle.putInt("countryId", countryId+1);
+        bundle.putString("stateId" , stateId);
+        bundle.putString("countryId", countryId);
+        bundle.putString("status", status);
+        bundle.putString("current_title", title);
+        bundle.putString("company_name", companyName);
+        bundle.putString("type", type);
+        bundle.putString("preference", preference);
+        bundle.putString("contact_type_id", ownerId);
+        bundle.putString("source_id", sourceId);
+        bundle.putString("current_salary", currentSalary);
+        bundle.putString("desired_salary", desiredSalary);
+        bundle.putString("hourly_rate_high", hourlyRateHigh);
+        bundle.putString("hourly_rate_low", hourlyRateLow);
+        bundle.putString("talent", talent);
+        bundle.putString("skill", skill);
+        bundle.putString("degree", degree);
+        bundle.putString("comments", comments);
+        bundle.putString("availability_date", availabilityDate);
+        bundle.putString("job", job);
+        bundle.putString("accessibility", accessibility);
+        bundle.putString("created_date", createdDate);
 
         ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateProfessionalFragment(),bundle);
         ((AddCandidateActivity)getActivity()).changeViewForProfessional();
@@ -346,13 +435,13 @@ public class AddCandidatePersonalFragment extends Fragment {
 
                     statusAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,statusList);
                     statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    status.setAdapter(statusAdapter);
+                    Status.setAdapter(statusAdapter);
 
                     SharedPreferences sharedPref = getActivity().getSharedPreferences("Status", Context.MODE_PRIVATE);
                     int spinnerValue = sharedPref.getInt("spinner_item5",-1);
                     if(spinnerValue != -1) {
                         // set the value of the spinner
-                        status.setSelection(spinnerValue,true);
+                        Status.setSelection(spinnerValue,true);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

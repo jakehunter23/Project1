@@ -43,8 +43,7 @@ public class AddCandidateProfessionalFragment extends Fragment {
     String fetchSource = "https://demotic-recruit.000webhostapp.com/source_fetch.php";
     String fetchOwnership = "https://demotic-recruit.000webhostapp.com/ownership_fetch.php";
 
-    String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName;
-    int stateId, countryId,  sourceId, ownerId;
+
 
     Spinner ownership, source;
     ArrayList<String> ownershipList;
@@ -58,6 +57,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
     EditText HourlyRateLow ;
     EditText DesiredSalary;
     EditText HourlyRateHigh;
+    String id, firstName, lastName, status, statusId, email, phoneNumber, address, city, zipcode, type, preference, sourceId, ownerId, currentSalary, desiredSalary, stateId, countryId, title, companyName, hourlyRateLow, hourlyRateHigh, talent, skill, degree, comments, availabilityDate, job, accessibility, createdDate;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -116,21 +117,69 @@ public class AddCandidateProfessionalFragment extends Fragment {
         Spinner cand=view.findViewById(R.id.spinner22);
         Spinner emp=view.findViewById(R.id.spinner23);
 
-        Bundle bundle = this.getArguments();
-        firstName = bundle.getString("firstName");
-        lastName = bundle.getString("lastName");
-        statusItem = bundle.getString("status");
-        mainMail = bundle.getString("mainMail");
-        contactNumber = bundle.getString("contactNumber");
-        address = bundle.getString("address");
-        city = bundle.getString("city");
-        zipcode = bundle.getString("zipcode");
-        stateId = bundle.getInt("stateId");
-        countryId = bundle.getInt("countryId");
+        Bundle bundle = getArguments();
+        id = bundle.getString("id");
+            firstName = bundle.getString("firstName");
+            lastName = bundle.getString("lastName");
+            statusId = bundle.getString("statusId");
+            email = bundle.getString("mainMail");
+            phoneNumber = bundle.getString("contactNumber");
+            address = bundle.getString("address");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            stateId = bundle.getString("stateId");
+            countryId = bundle.getString("countryId");
+            status = bundle.getString("status");
+            title = bundle.getString("current_title");
+            companyName = bundle.getString("company_name");
+            type = bundle.getString("type");
+            preference = bundle.getString("preference");
+            ownerId = bundle.getString("contact_type_id");
+            sourceId = bundle.getString("source_id");
+            currentSalary = bundle.getString("current_salary");
+            desiredSalary = bundle.getString("desired_salary");
+            hourlyRateHigh = bundle.getString("hourly_rate_high");
+            hourlyRateLow = bundle.getString("hourly_rate_low");
+            talent = bundle.getString("talent");
+            skill = bundle.getString("skill");
+            degree = bundle.getString("degree");
+            comments = bundle.getString("comments");
+            availabilityDate = bundle.getString("availability_date");
+            job = bundle.getString("job");
+            accessibility = bundle.getString("accessibility");
+            createdDate = bundle.getString("created_date");
+
+        if(id!=null) {
+
+            CurrentTitle.setText(title);
+            CompanyName.setText(companyName);
+            CurrentSalary.setText(currentSalary);
+            HourlyRateLow.setText(hourlyRateLow);
+            DesiredSalary.setText(desiredSalary);
+            HourlyRateHigh.setText(hourlyRateHigh);
+
+            if(ownerId!=null){
+                ownership.setSelection(Integer.parseInt(ownerId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Ownership",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item", Integer.parseInt(ownerId));
+                prefEditor2.commit();
+            }
+
+            if(sourceId!=null){
+                source.setSelection(Integer.parseInt(sourceId));
+                SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
+                SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
+                prefEditor2.commit();
+            }
+        }
 
 
 
-        ArrayList<String> can_List=new ArrayList<>();
+
+
+            ArrayList<String> can_List=new ArrayList<>();
         can_List.add("CandidateType1");
         can_List.add("CandidateTpye2");
         can_List.add("CandidateType3");
@@ -154,13 +203,15 @@ public class AddCandidateProfessionalFragment extends Fragment {
         loadOwnership();
         loadSource();
 
+
+
         ownership.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                ownerId = ownership.getSelectedItemPosition();
+                ownerId = String.valueOf(ownership.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Ownership",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item",ownerId);
+                prefEditor2.putInt("spinner_item", Integer.parseInt(ownerId));
                 prefEditor2.commit();
             }
 
@@ -173,10 +224,10 @@ public class AddCandidateProfessionalFragment extends Fragment {
         source.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                sourceId = source.getSelectedItemPosition();
+                sourceId = String.valueOf(source.getSelectedItemPosition());
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("Source",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item3",sourceId);
+                prefEditor2.putInt("spinner_item3", Integer.parseInt(sourceId));
                 prefEditor2.commit();
             }
 
@@ -185,6 +236,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
 
             }
         });
+
+
 
         toSkill.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -241,26 +294,36 @@ public class AddCandidateProfessionalFragment extends Fragment {
             return;
         }
         Bundle bundle1 = new Bundle();
+        bundle1.putString("id", id);
         bundle1.putString("firstName",firstName);
         bundle1.putString("lastName", lastName);
-        bundle1.putString("status", statusItem);
-        bundle1.putString("mainMail" , mainMail);
-        bundle1.putString("contactNumber", contactNumber);
+        bundle1.putString("status", status);
+        bundle1.putString("status_id", statusId);
+        bundle1.putString("mainMail" , email);
+        bundle1.putString("contactNumber", phoneNumber);
         bundle1.putString("address" , address);
         bundle1.putString("city" , city);
         bundle1.putString("zipcode", zipcode);
-        bundle1.putInt("stateId" , stateId);
-        bundle1.putInt("countryId", countryId);
+        bundle1.putString("stateId" , stateId);
+        bundle1.putString("countryId", countryId);
         bundle1.putString("title" , CurrentTitle.getText().toString().trim());
         bundle1.putString("companyName" , CompanyName.getText().toString().trim());
-        bundle1.putInt("type", 0);
-        bundle1.putInt("preference" , 0);
-        bundle1.putInt("sourceId" , sourceId);
-        bundle1.putInt("ownerId" , ownerId);
+        bundle1.putString("type", String.valueOf(0));
+        bundle1.putString("preference" , String.valueOf(0));
+        bundle1.putString("sourceId" , sourceId);
+        bundle1.putString("ownerId" , ownerId);
         bundle1.putString("currentSalary" , CurrentSalary.getText().toString().trim());
         bundle1.putString("hourlyRatel" , HourlyRateLow.getText().toString().trim());
         bundle1.putString("desiredSalary" , DesiredSalary.getText().toString().trim());
         bundle1.putString("hourlyRateh" , HourlyRateHigh.getText().toString().trim());
+        bundle1.putString("talent", talent);
+        bundle1.putString("skill", skill);
+        bundle1.putString("degree", degree);
+        bundle1.putString("comments", comments);
+        bundle1.putString("availability_date", availabilityDate);
+        bundle1.putString("job", job);
+        bundle1.putString("accessibility", accessibility);
+        bundle1.putString("created_date", createdDate);
 
         ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateSkillFragment(), bundle1);
         ((AddCandidateActivity)getActivity()).changeViewForSkill();

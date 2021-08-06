@@ -44,16 +44,18 @@ public class AddCandidateAdditionalFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     String insertCandidate = "https://demotic-recruit.000webhostapp.com/candidate_insert.php";
+    String updateCandidate = "https://demotic-recruit.000webhostapp.com/candidate_update.php";
 
-    String firstName, lastName, statusItem, mainMail, contactNumber, address, city, zipcode, currentSalary, hourlyRatel, desiredSalary, hourlyRateh, title, companyName, skill,specialization, talent, degree, comments, availabilityDate;
-    int stateId, countryId, candidateType, preference, sourceId, ownerId;
+    String id, firstName, lastName, statusId, status, email, phoneNumber, address, city, zipcode, currentSalary, hourlyRateLow, desiredSalary, hourlyRateHigh, title, companyName, skill, talent, degree;
+    String stateId, countryId, pdf, candidateType, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility;
+
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     String strDate = dateFormat.format(date);
-    EditText Comments;
-    EditText AvailabilityDate,job;
+    EditText Comments, Job;
+    EditText AvailabilityDate;
 
-    Spinner accessibility;
+    Spinner Accessibility;
 
     String date_selected_availablity;
 
@@ -99,18 +101,11 @@ public class AddCandidateAdditionalFragment extends Fragment {
         View view = inflater.inflate(R.layout.candidate_additional_info, container, false);
         Button toCandAct = view.findViewById(R.id.button12);
         Comments = view.findViewById(R.id.editTextTextPersonName5);
-
-
-        accessibility=view.findViewById(R.id.accessSpinner);
+        Job=view.findViewById(R.id.ejobEditText);
+        Accessibility=view.findViewById(R.id.accessSpinner);
         AvailabilityDate = view.findViewById(R.id.availability_date);
-        job=view.findViewById(R.id.ejobEditText);
 
-        ArrayList<String> job_List=new ArrayList<>();
-        job_List.add("Student");
-        job_List.add("Software Engineer");
-        job_List.add("Android Developer");
-        job_List.add("Web Developer");
-        job_List.add("Data Scientist");
+
 
         ArrayList<String> access_List=new ArrayList<>();
         access_List.add("Private");
@@ -120,7 +115,7 @@ public class AddCandidateAdditionalFragment extends Fragment {
 
         ArrayAdapter accessAdapter= new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, access_List);
         accessAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        accessibility.setAdapter(accessAdapter);
+        Accessibility.setAdapter(accessAdapter);
 
         view.findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,42 +127,141 @@ public class AddCandidateAdditionalFragment extends Fragment {
 
 
         Bundle bundle = this.getArguments();
-        firstName = bundle.getString("firstName");
-        lastName = bundle.getString("lastName");
-        statusItem = bundle.getString("status");
-        mainMail = bundle.getString("mainMail");
-        contactNumber = bundle.getString("contactNumber");
-        address = bundle.getString("address");
-        city = bundle.getString("city");
-        zipcode = bundle.getString("zipcode");
-        stateId = bundle.getInt("stateId");
-        countryId = bundle.getInt("countryId");
-        title =  bundle.getString("title");
-        companyName = bundle.getString("companyName");
-        candidateType = bundle.getInt("type");
-        preference = bundle.getInt("preference");
-        sourceId = bundle.getInt("sourceId");
-        ownerId = bundle.getInt("ownerId");
-        currentSalary = bundle.getString("currentSalary");
-        hourlyRatel = bundle.getString("hourlyRatel");
-        desiredSalary = bundle.getString("desiredSalary");
-        hourlyRateh = bundle.getString("hourlyRateh");
-        talent = bundle.getString("talent");
-        degree = bundle.getString("degree");
-        specialization=bundle.getString("specialization");
-        skill = bundle.getString("skill");
+        id = bundle.getString("id");
+
+                firstName = bundle.getString("firstName");
+                lastName = bundle.getString("lastName");
+                status = bundle.getString("status");
+                statusId = bundle.getString("status_id");
+                email = bundle.getString("mainMail");
+                phoneNumber = bundle.getString("contactNumber");
+                address = bundle.getString("address");
+                city = bundle.getString("city");
+                zipcode = bundle.getString("zipcode");
+                stateId = bundle.getString("stateId");
+                countryId = bundle.getString("countryId");
+                title = bundle.getString("title");
+                companyName = bundle.getString("companyName");
+                type = bundle.getString("type");
+                preference = bundle.getString("preference");
+                sourceId = bundle.getString("sourceId");
+                ownerId = bundle.getString("ownerId");
+                currentSalary = bundle.getString("currentSalary");
+                hourlyRateLow = bundle.getString("hourlyRatel");
+                desiredSalary = bundle.getString("desiredSalary");
+                hourlyRateHigh = bundle.getString("hourlyRateh");
+                comments = bundle.getString("comments");
+                availabilityDate = bundle.getString("availability_date");
+                job = bundle.getString("job");
+                accessibility = bundle.getString("accessibility");
+                createdDate = bundle.getString("created_date");
+                talent = bundle.getString("talent");
+                skill = bundle.getString("skill");
+                degree = bundle.getString("degree");
+
+        if(id!=null) {
+
+                Comments.setText(comments);
+                Job.setText(job);
+                AvailabilityDate.setText(availabilityDate);
+            }
+
         toCandAct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                insertData();
+                if(id!=null){
+                    updateData();
+                }
+                else {
+                    insertData();
+                }
 
             }
         });
         return view;
     }
 
+    private void updateData() {
+        String comm = Comments.getText().toString().trim();
+        job =Job.getText().toString().trim();
+        availabilityDate= AvailabilityDate.getText().toString().trim();
+        if (comm.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Comments",Toast.LENGTH_LONG).show();
+            Comments.setError("Please Enter Comments");
+            Comments.requestFocus();
+            return;
+        }
+
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, updateCandidate, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Intent intent = new Intent(getContext(),CandidateSplashScreen.class);
+                Bundle bundle =  new Bundle();
+                bundle.putString("first_name", firstName);
+                bundle.putString("last_name", lastName);
+                bundle.putString("email", email);
+                bundle.putString("created_date", createdDate);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("id", id);
+                param.put("first_name", firstName);
+                param.put("last_name", lastName);
+                param.put("status", status);
+                param.put("status_id", statusId);
+                param.put("email", email);
+                param.put("phone_number", phoneNumber);
+                param.put("address", address);
+                param.put("city", city);
+                param.put("zipcode", zipcode);
+                param.put("type", String.valueOf(type));
+                param.put("preference", String.valueOf(preference));
+                param.put("source_id", String.valueOf(sourceId));
+                param.put("owner_id", String.valueOf(ownerId));
+                param.put("current_salary", currentSalary);
+                param.put("desired_salary", desiredSalary);
+                param.put("state_id", String.valueOf(stateId));
+                param.put("country_id", String.valueOf(countryId));
+                param.put("title",title);
+                param.put("company_name", companyName);
+                param.put("hourly_rate_low", hourlyRateLow);
+                param.put("hourly_rate_high", hourlyRateHigh);
+                param.put("talent", talent);
+                param.put("skill", skill);
+                param.put("degree", degree);
+                param.put("comments",comm);
+                param.put("availability_date", availabilityDate);
+                param.put("created_date", createdDate);
+                param.put("job", job);
+                param.put("accessibility", String.valueOf(Accessibility.getSelectedItemPosition()));
+
+
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getContext()).add(insertRequest);
+    }
+
     private void insertData() {
         comments = Comments.getText().toString().trim();
+        job = Job.getText().toString().trim();
         availabilityDate= AvailabilityDate.getText().toString().trim();
         if (comments.isEmpty()){
             Toast.makeText(getContext(),"Please Enter Comments",Toast.LENGTH_LONG).show();
@@ -181,6 +275,12 @@ public class AddCandidateAdditionalFragment extends Fragment {
             public void onResponse(String response) {
 
                 Intent intent = new Intent(getContext(),CandidateSplashScreen.class);
+                Bundle bundle =  new Bundle();
+                bundle.putString("first_name", firstName);
+                bundle.putString("last_name", lastName);
+                bundle.putString("email", email);
+                bundle.putString("created_date", strDate);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         }, new Response.ErrorListener() {
@@ -196,13 +296,14 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 Map<String, String> param = new HashMap<String, String>();
                 param.put("first_name", firstName);
                 param.put("last_name", lastName);
-                param.put("status", statusItem);
-                param.put("email", mainMail);
-                param.put("phone_number", contactNumber);
+                param.put("status", status);
+                param.put("status_id", statusId);
+                param.put("email", email);
+                param.put("phone_number", phoneNumber);
                 param.put("address", address);
                 param.put("city", city);
                 param.put("zipcode", zipcode);
-                param.put("type", String.valueOf(candidateType));
+                param.put("type", String.valueOf(type));
                 param.put("preference", String.valueOf(preference));
                 param.put("source_id", String.valueOf(sourceId));
                 param.put("owner_id", String.valueOf(ownerId));
@@ -210,21 +311,19 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 param.put("desired_salary", desiredSalary);
                 param.put("state_id", String.valueOf(stateId));
                 param.put("country_id", String.valueOf(countryId));
-                param.put("talent", talent);
+                param.put("title",title);
                 param.put("company_name", companyName);
-                param.put("hourly_rate_low", hourlyRatel);
-                param.put("hourly_rate_high", hourlyRateh);
+                param.put("hourly_rate_low", hourlyRateLow);
+                param.put("hourly_rate_high", hourlyRateHigh);
                 param.put("talent", talent);
                 param.put("skill", skill);
                 param.put("degree", degree);
-                param.put("specialization",specialization);
                 param.put("comments",comments);
                 param.put("availability_date", availabilityDate);
-                param.put("job", String.valueOf(0));
-                param.put("accessibility", String.valueOf(0));
                 param.put("created_date", strDate);
-                param.put("accessibility",accessibility.getSelectedItem().toString());
-                param.put("job",job.getText().toString());
+                param.put("job", job);
+                param.put("accessibility", String.valueOf(Accessibility.getSelectedItemPosition()));
+
 
 
 

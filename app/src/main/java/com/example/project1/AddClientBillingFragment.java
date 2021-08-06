@@ -38,14 +38,15 @@ public class AddClientBillingFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
      String insertClient = "https://demotic-recruit.000webhostapp.com/client_insert.php";
+     String updateClient = "https://demotic-recruit.000webhostapp.com/client_update.php";
 
     String statusItem;
-    int ownershipId, indutryId, sourceId, activeContactId, parentCompanyId, stateId, countryId;
-    float vat;
+
     Date date = Calendar.getInstance().getTime();
-    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     String strDate = dateFormat.format(date);
-    String companyName, companyUrl, description, email, phoneNumber, address, city, zipcode, bankName, bankId, bankAccountNumber, iban;
+    String id, name,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName;
+    private String bankId, bankAccountNumber, iban, vat;
 
     EditText BankName;
     EditText BankId;
@@ -96,22 +97,33 @@ public class AddClientBillingFragment extends Fragment {
 
 
         Bundle bundle = this.getArguments();
-        companyName = bundle.getString("companyName");
-        companyUrl = bundle.getString("companyUrl");
-        activeContactId=bundle.getInt("activeContactId");
-        parentCompanyId=bundle.getInt("parentId");
-        statusItem=bundle.getString("status");
-        ownershipId=bundle.getInt("ownershipId");
-        sourceId=bundle.getInt("sourceId");
-        indutryId=bundle.getInt("industryId");
-        description=bundle.getString("companyDescription");
-        email=bundle.getString("email");
-        phoneNumber=bundle.getString("contactNumber");
-        address=bundle.getString("address");
-        city=bundle.getString("city");
-        zipcode=bundle.getString("zipcode");
-        stateId=bundle.getInt("stateId");
-        countryId=bundle.getInt("countryId");
+        id = bundle.getString("id");
+        if(id!=null) {
+            parentId = bundle.getString("parent_id");
+            creatorId = bundle.getString("creator_id");
+            activeContactId = bundle.getString("active_contact_id");
+            sourceId = bundle.getString("source_id");
+            ownershipId = bundle.getString("ownership_id");
+            industryId = bundle.getString("industry_id");
+            status = bundle.getString("status");
+            phoneNumber = bundle.getString("phone_number");
+            createdDate = bundle.getString("created_date");
+            url = bundle.getString("url");
+            description = bundle.getString("description");
+            stateId = bundle.getString("state_id");
+            countryId = bundle.getString("country_id");
+            city = bundle.getString("city");
+            zipcode = bundle.getString("zipcode");
+            bankName = bundle.getString("bank_name");
+            bankId = bundle.getString("bank_id");
+            bankAccountNumber = bundle.getString("bank_account_number");
+            iban = bundle.getString("IBAN");
+            vat = bundle.getString("VAT");
+            name = bundle.getString("name");
+            email = bundle.getString("email");
+            address = bundle.getString("address");
+        }
+
 
         BankName = view.findViewById(R.id.editTextTextPersonName50);
         BankId = view.findViewById(R.id.editTextTextPersonName51);
@@ -124,32 +136,26 @@ public class AddClientBillingFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                insertData();
+                if(id!=null){
+                    updateData();
+                }
+                else {
+                    insertData();
+                }
 
             }
         });
 
         return view;
     }
-    float ParseFloat(String string) {
-        if (string != null && string.length() > 0) {
-            try {
-                return Float.parseFloat(string);
-            } catch(Exception e) {
-                return 0;   // or some value to mark this field is wrong. or make a function validates field first ...
-            }
-        }
-        else return 0;
-    }
 
-    private void insertData() {
-
+    private void updateData() {
         bankName = BankName.getText().toString().trim();
         bankId = BankId.getText().toString().trim();
         bankAccountNumber = BankAccNo.getText().toString().trim();
         iban = IBAN.getText().toString().trim();
-        String vatString = VAT.getText().toString().trim();
-        vat = ParseFloat(vatString);
+        vat = VAT.getText().toString().trim();
+
 
         if(bankName.isEmpty()){
             Toast.makeText(getContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
@@ -175,7 +181,103 @@ public class AddClientBillingFragment extends Fragment {
             IBAN.requestFocus();
             return;
         }
-        if(vatString.isEmpty()){
+        if(vat.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            VAT.setError("Please Enter Description");
+            VAT.requestFocus();
+            return;
+        }
+
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, updateClient, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Intent toClientGlance = new Intent(getContext(),SplashScreenActivity.class);
+                startActivity(toClientGlance);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("id", id);
+                param.put("parent_id", String.valueOf(parentId));
+                param.put("creator_id", String.valueOf(1));
+                param.put("active_contact_id", String.valueOf(activeContactId));
+                param.put("source_id", String.valueOf(sourceId));
+                param.put("ownership_id", String.valueOf(ownershipId));
+                param.put("industry_id", String.valueOf(industryId));
+                param.put("name", name);
+                param.put("status",status);
+                param.put("email",email);
+                param.put("phone_number",phoneNumber);
+                param.put("created_date", strDate);
+                param.put("url",url);
+                param.put("description",description);
+                param.put("address",address);
+                param.put("state_id", String.valueOf(stateId));
+                param.put("country_id", String.valueOf(countryId));
+                param.put("city",city);
+                param.put("zipcode",zipcode);
+                param.put("bank_name",bankName);
+                param.put("bank_id",bankId);
+                param.put("bank_account_number",bankAccountNumber);
+                param.put("IBAN",iban);
+                param.put("VAT", String.valueOf(vat));
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getContext()).add(insertRequest);
+
+    }
+
+
+
+    private void insertData() {
+
+        bankName = BankName.getText().toString().trim();
+        bankId = BankId.getText().toString().trim();
+        bankAccountNumber = BankAccNo.getText().toString().trim();
+        iban = IBAN.getText().toString().trim();
+        vat = VAT.getText().toString().trim();
+
+
+        if(bankName.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
+            BankName.setError("Please Enter Company Name");
+            BankName.requestFocus();
+            return;
+        }
+        if(bankId.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Company URL",Toast.LENGTH_LONG).show();
+            BankId.setError("Please Enter Company URL");
+            BankId.requestFocus();
+            return;
+        }
+        if(bankAccountNumber.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            BankAccNo.setError("Please Enter Description");
+            BankAccNo.requestFocus();
+            return;
+        }
+        if(iban.isEmpty()){
+            Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
+            IBAN.setError("Please Enter Description");
+            IBAN.requestFocus();
+            return;
+        }
+        if(vat.isEmpty()){
             Toast.makeText(getContext(),"Please Enter Description",Toast.LENGTH_LONG).show();
             VAT.setError("Please Enter Description");
             VAT.requestFocus();
@@ -200,18 +302,18 @@ public class AddClientBillingFragment extends Fragment {
 
 
                 Map<String, String> param = new HashMap<String, String>();
-                param.put("parent_id", String.valueOf(parentCompanyId));
+                param.put("parent_id", String.valueOf(parentId));
                 param.put("creator_id", String.valueOf(1));
                 param.put("active_contact_id", String.valueOf(activeContactId));
                 param.put("source_id", String.valueOf(sourceId));
                 param.put("ownership_id", String.valueOf(ownershipId));
-                param.put("industry_id", String.valueOf(indutryId));
-                param.put("name", companyName);
-                param.put("status",statusItem);
+                param.put("industry_id", String.valueOf(industryId));
+                param.put("name", name);
+                param.put("status",status);
                 param.put("email",email);
                 param.put("phone_number",phoneNumber);
                 param.put("created_date", strDate);
-                param.put("url",companyUrl);
+                param.put("url",url);
                 param.put("description",description);
                 param.put("address",address);
                 param.put("state_id", String.valueOf(stateId));
