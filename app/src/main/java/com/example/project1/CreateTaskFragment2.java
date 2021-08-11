@@ -48,7 +48,7 @@ public class CreateTaskFragment2 extends Fragment{
     Button next;
     int jobTypeId, jobId, res1=1, res2, res3, res4;
     String  restrictionNumber, designation, createdDate;
-    int companyId;
+    String companyId;
 
     List<JobModel> jobList = new ArrayList<>();
 
@@ -193,7 +193,7 @@ public class CreateTaskFragment2 extends Fragment{
                 Bundle bundle = new Bundle();
                 bundle.putInt("jobTypeId", jobTypeId);
                 bundle.putInt("jobId", jobId );
-                bundle.putInt("companyId", companyId);
+                bundle.putString("companyId", companyId);
                 bundle.putString("restrictionNumber", restrictionNumber);
                 ((CreateTask)getActivity()).addFragmentOnTop(new CreateTaskFragment3(), bundle);
             }
@@ -213,7 +213,7 @@ public class CreateTaskFragment2 extends Fragment{
                         JSONObject jobObject = contactArray.getJSONObject(i);
 
                         jobId = jobObject.getInt("id");
-                        companyId = jobObject.getInt("company_id");
+                        companyId = jobObject.getString("company_id");
                         JobModel job = new JobModel();
                         job.setId(jobId);
                         job.setCompany_id(companyId);

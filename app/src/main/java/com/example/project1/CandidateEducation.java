@@ -18,6 +18,7 @@ public class CandidateEducation extends AppCompatActivity {
     ImageView back_btn_edu;
     TextView tv_showHistory1,tv_showHistory2, tv_showHistory3;
     RelativeLayout relativeLayout,edu_relativeLayout;
+    String firstname, lastname, email, phone, city, address, country, zipcode, company_id;
 
     // declaring variables
     EditText new_Title,new_Name,new_dateFrom,new_dateTo;
@@ -29,6 +30,16 @@ public class CandidateEducation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_candidate_education);
+
+        firstname = getIntent().getExtras().getString("first_name");
+        lastname = getIntent().getExtras().getString("last_name");
+        email = getIntent().getExtras().getString("email");
+        phone = getIntent().getExtras().getString("phone_number");
+        address = getIntent().getExtras().getString("address");
+        city = getIntent().getExtras().getString("city");
+        country = getIntent().getExtras().getString("country");
+        zipcode = getIntent().getExtras().getString("zipcode");
+        company_id = getIntent().getExtras().getString("company_id");
 
 
         back_btn_edu = findViewById(R.id.back_arrow_edu);
@@ -67,6 +78,17 @@ public class CandidateEducation extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), CandidateReview.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("first_name", firstname);
+                bundle.putString("last_name", lastname);
+                bundle.putString("email",email);
+                bundle.putString("phone_number", phone);
+                bundle.putString("address", address);
+                bundle.putString("city", city);
+                bundle.putString("country", country);
+                bundle.putString("zipcode", zipcode);
+                bundle.putString("company_id", company_id);
+                intent.putExtras(bundle);
                  startActivity(intent);
             }
         });

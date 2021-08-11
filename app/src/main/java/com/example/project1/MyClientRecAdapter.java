@@ -1,6 +1,8 @@
 package com.example.project1;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,7 +25,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -87,6 +92,9 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
         TextView address;
         TextView date;
         Button view;
+        Button delete;
+
+        String deleteClient = "https://demotic-recruit.000webhostapp.com/client_delete.php";
 
         public MyClientViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -101,6 +109,7 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
             address =itemView.findViewById(R.id.textView413);
             date = itemView.findViewById(R.id.textView415);
             view = itemView.findViewById(R.id.button38);
+            delete = itemView.findViewById(R.id.button39);
 
             ClickBait.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -136,6 +145,56 @@ public class MyClientRecAdapter extends RecyclerView.Adapter<MyClientRecAdapter.
                     intent.putExtras(bundle);
                     context.startActivity(intent);
 
+                }
+            });
+
+            delete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ClientModel specific_cli_item = clientList.get(getAdapterPosition());
+                    String id = specific_cli_item.getId();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                    builder.setMessage("Do you really want to delete?");
+                    builder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+                    builder.setPositiveButton("DELETE", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            StringRequest deleteRequest = new StringRequest(Request.Method.POST, deleteClient, new Response.Listener<String>() {
+                                @Override
+                                public void onResponse(String response) {
+                                    Intent intent = new Intent(context, MyClients.class);
+                                    context.startActivity(intent);
+
+
+                                }
+                            }, new Response.ErrorListener() {
+                                @Override
+                                public void onErrorResponse(VolleyError error) {
+
+                                }
+                            }){
+                                @Override
+                                protected Map<String, String> getParams() throws AuthFailureError {
+                                    HashMap<String, String> param = new HashMap<>();
+                                    param.put("id",id);
+
+
+                                    return param;
+                                }
+                            };
+
+                            Volley.newRequestQueue(context).add(deleteRequest);
+
+                        }
+                    });
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
                 }
             });
         }

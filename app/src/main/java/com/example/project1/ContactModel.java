@@ -1,14 +1,14 @@
 package com.example.project1;
 
 public class ContactModel {
-    private int id;
+    String id;
     private int zipcode;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

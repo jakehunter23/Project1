@@ -25,11 +25,11 @@ public class JobModel {
         this.industry_id = industry_id;
     }
 
-    public int getCompany_id() {
+    public String getCompany_id() {
         return company_id;
     }
 
-    public void setCompany_id(int company_id) {
+    public void setCompany_id(String company_id) {
         this.company_id = company_id;
     }
 
@@ -297,7 +297,7 @@ public class JobModel {
         this.shiftPattern = shiftPattern;
     }
 
-    private int id, position_id, industry_id, company_id, contact_id, businessManager_id, recruiter_id, openings, packages, billRate, markupPercentage, clientMargin;
+    private int id, position_id, industry_id, contact_id, businessManager_id, recruiter_id, openings, packages, billRate, markupPercentage, clientMargin;
     private String jobType;
     private String status;
     private String priority;
@@ -323,6 +323,7 @@ public class JobModel {
     private String daysOn;
     private String daysOff;
     private String shiftPattern;
+    private String company_id;
 
     public String getCreatedDate() {
         return createdDate;

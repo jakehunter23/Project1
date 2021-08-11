@@ -43,9 +43,9 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
     @Override
     public void onBindViewHolder(@NonNull JobRecViewHolder holder, int position) {
        JobModel job_item = jobList.get(position);
-        int company_id = job_item.getCompany_id();
+        String company_id = job_item.getCompany_id();
         int creator_id = job_item.getRecruiter_id();
-        ClientModel client_item = clientList.get(company_id);
+        ClientModel client_item = clientList.get(Integer.parseInt(company_id)-1);
         CreatorModel creator_item = creatorList.get(creator_id);
         String companyName = client_item.getName();
         String companyAddress = client_item.getAddress();
@@ -126,15 +126,13 @@ public class JobListRecAdapter extends RecyclerView.Adapter<JobListRecAdapter.Jo
                 public void onClick(View view) {
                     ClientModel client = clientList.get(getAdapterPosition());
                     JobModel job = jobList.get(getAdapterPosition());
-                    String companyName = client.getName();
-                    String address = client.getAddress();
+                    String companyId=job.getCompany_id();
                     String opening = String.valueOf(job.getOpenings());
                     String createdDate = job.getCreatedDate();
 
                     Intent intent = new Intent(context, ActurialActivity.class);
                     Bundle bundle = new Bundle();
-                    bundle.putString("company_name", companyName);
-                    bundle.putString("address", address);
+                    bundle.putString("company_id", companyId);
                     bundle.putString("openings", opening);
                     bundle.putString("created_date", createdDate);
                     intent.putExtras(bundle);

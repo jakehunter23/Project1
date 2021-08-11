@@ -94,11 +94,16 @@ public class AddClientBillingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.add_client_billing, container, false);
+        BankName = view.findViewById(R.id.editTextTextPersonName50);
+        BankId = view.findViewById(R.id.editTextTextPersonName51);
+        BankAccNo = view.findViewById(R.id.editTextTextPersonName52);
+        IBAN=view.findViewById(R.id.editTextTextPersonName53);
+        VAT = view.findViewById(R.id.editTextTextPersonName54);
 
 
         Bundle bundle = this.getArguments();
         id = bundle.getString("id");
-        if(id!=null) {
+
             parentId = bundle.getString("parent_id");
             creatorId = bundle.getString("creator_id");
             activeContactId = bundle.getString("active_contact_id");
@@ -122,14 +127,17 @@ public class AddClientBillingFragment extends Fragment {
             name = bundle.getString("name");
             email = bundle.getString("email");
             address = bundle.getString("address");
+        if(id!=null) {
+
+            BankName.setText(bankName);
+            BankId.setText(bankId);
+            BankAccNo.setText(bankAccountNumber);
+            IBAN.setText(iban);
+            VAT.setText(vat);
         }
 
 
-        BankName = view.findViewById(R.id.editTextTextPersonName50);
-        BankId = view.findViewById(R.id.editTextTextPersonName51);
-        BankAccNo = view.findViewById(R.id.editTextTextPersonName52);
-        IBAN=view.findViewById(R.id.editTextTextPersonName53);
-        VAT = view.findViewById(R.id.editTextTextPersonName54);
+
 
         Button save = view.findViewById(R.id.ac_billing_save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -193,6 +201,9 @@ public class AddClientBillingFragment extends Fragment {
             public void onResponse(String response) {
 
                 Intent toClientGlance = new Intent(getContext(),SplashScreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                toClientGlance.putExtras(bundle);
                 startActivity(toClientGlance);
             }
         }, new Response.ErrorListener() {
@@ -289,6 +300,9 @@ public class AddClientBillingFragment extends Fragment {
             public void onResponse(String response) {
 
                 Intent toClientGlance = new Intent(getContext(),SplashScreenActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                toClientGlance.putExtras(bundle);
                 startActivity(toClientGlance);
             }
         }, new Response.ErrorListener() {

@@ -1,7 +1,5 @@
 package com.example.project1;
 
-import java.sql.Date;
-
 public class ClientModel {
 
 
@@ -14,11 +12,11 @@ public class ClientModel {
     }
 
     private String dateCreated;
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -198,6 +196,6 @@ public class ClientModel {
         this.iban = iban;
     }
 
-    private int id, parent_id, creator_id, active_contact_id, source_id, ownership_id, industry_id, state_id, country_id, zipcode, vat;
-    private String name, status, email, phone_number, url, description, address, city, bank_name, bank_id, bank_account_number, iban;
+    private int parent_id, creator_id, active_contact_id, source_id, ownership_id, industry_id, state_id, country_id, zipcode, vat;
+    private String id, name, status, email, phone_number, url, description, address, city, bank_name, bank_id, bank_account_number, iban;
 }

@@ -35,6 +35,7 @@ public class CandidateComplete extends AppCompatActivity {
           public void onClick(View v) {
               Intent intent = new Intent(CandidateComplete.this, dashboard.class);
               startActivity(intent);
+              finish();
           }
       });
 

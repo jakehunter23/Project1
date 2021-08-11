@@ -128,12 +128,14 @@ public class MyClients extends AppCompatActivity {
                         String email = countryObject.getString("email");
                         String address = countryObject.getString("address");
                         String date = countryObject.getString("created_date");
+                        String id = countryObject.getString("id");
                         ClientModel client = new ClientModel();
                         client.setName(countryName);
                         client.setPhone_number(phone);
                         client.setEmail(email);
                         client.setAddress(address);
                         client.setDateCreated(date);
+                        client.setId(id);
 
 
                         clientModels.add(client);

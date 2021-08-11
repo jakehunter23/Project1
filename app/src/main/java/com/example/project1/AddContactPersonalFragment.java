@@ -97,6 +97,7 @@ public class  AddContactPersonalFragment extends Fragment {
     Bitmap bitmap;
     ImageView image;
     String encodedImage;
+    int flag=0;
 
     String id, first_name, last_name, middle_name, status, email, contact_number, address, city, zipcode, stateId, countryId;
     String title, companyName, contactTypeId, division, sourceId, reportToId, industryId, lastContactDate, lastVisitDate, visibility, validity, created_date, image_data;
@@ -429,6 +430,7 @@ public class  AddContactPersonalFragment extends Fragment {
         bundle.putString("validity", validity);
         bundle.putString("created_date", created_date);
         bundle.putString("image_data", encodedImage);
+        bundle.putString("flag", String.valueOf(flag));
 
         ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactProfessionalFragment(), bundle);
         ((AddContactActivity)getActivity()).changeViewForProfessional();
@@ -562,6 +564,7 @@ public class  AddContactPersonalFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         if(requestCode==1 && resultCode == RESULT_OK && data!=null){
             Uri filePath = data.getData();
+            flag=1;
 
             try {
                 InputStream inputStream = getContext().getContentResolver().openInputStream(filePath);

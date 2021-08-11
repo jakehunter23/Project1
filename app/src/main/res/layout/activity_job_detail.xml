@@ -137,7 +137,7 @@
                         android:orientation="horizontal"
                         android:layout_marginTop="43.23dp">
                         <TextView
-                            android:layout_width="68dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="33dp"
                             android:text="Salary"
@@ -147,7 +147,7 @@
                             android:textSize="14sp"
                             android:gravity="left"/>
                         <TextView
-                            android:layout_width="68dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="48dp"
                             android:text="Applicants"
@@ -159,15 +159,15 @@
                             android:gravity="left"/>
 
                         <TextView
-                            android:layout_width="75dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="48dp"
-                            android:text="Expiry Date"
-                            android:textColor="#707070"
-                            android:textAllCaps="false"
                             android:fontFamily="@font/nunito"
-                            android:textSize="14sp"
-                            android:gravity="left"/>
+                            android:gravity="left"
+                            android:text="Expiry Date"
+                            android:textAllCaps="false"
+                            android:textColor="#707070"
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -177,7 +177,7 @@
                         android:orientation="horizontal"
                         android:layout_marginTop="2dp">
                         <TextView
-                            android:layout_width="58dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="33dp"
                             android:layout_marginTop="2dp"
@@ -190,7 +190,7 @@
                             android:gravity="left"/>
 
                         <TextView
-                            android:layout_width="25dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="68dp"
                             android:text="130"
@@ -202,7 +202,7 @@
                             android:textSize="14sp"
                             android:gravity="left"/>
                         <TextView
-                            android:layout_width="95dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="91dp"
                             android:text="1 April 2021"

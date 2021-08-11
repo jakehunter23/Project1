@@ -172,9 +172,11 @@ public class JobListings extends AppCompatActivity {
 
                         int openings = countryObject.getInt("openings");
                         String createdDate = countryObject.getString("created_date");
+                        String companyId = countryObject.getString("company_id");
                         JobModel job = new JobModel();
                         job.setOpenings(openings);
                         job.setCreatedDate(createdDate);
+                        job.setCompany_id(companyId);
                         jobModelList.add(job);
 
                     }

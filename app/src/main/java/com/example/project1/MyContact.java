@@ -130,6 +130,7 @@ public class MyContact extends AppCompatActivity {
                         String email = countryObject.getString("email");
                         String address = countryObject.getString("address");
                         String date = countryObject.getString("last_contact_date");
+                        String id = countryObject.getString("id");
 
                         ContactModel contactModel = new ContactModel();
                         contactModel.setFirstName(firstName);
@@ -139,6 +140,7 @@ public class MyContact extends AppCompatActivity {
                         contactModel.setEmail(email);
                         contactModel.setAddress(address);
                         contactModel.setLastContactDate(date);
+                        contactModel.setId(id);
 
                         contactModelList.add(contactModel);
                         

@@ -28,9 +28,6 @@ public class jobSuggestion extends AppCompatActivity {
         ReferRecyclerViews=findViewById(R.id.RecyclerViews);
         ImageView bakbutton=findViewById(R.id.backbutton);
 
-        ReferRecyclerViews.setLayoutManager(new LinearLayoutManager(this));
-        String [] name={"AirBnB","Netflix Inc","AirBnB"};
-        ReferRecyclerViews.setAdapter(new JobsuggestRecycleAdoptar(name,this));
         filter=(CardView)findViewById(R.id.fliter);
         filter.setOnClickListener(new View.OnClickListener() {
             @Override

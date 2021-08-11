@@ -47,7 +47,7 @@ public class AddRecruitFragment extends Fragment {
     String fetchPosition = "https://demotic-recruit.000webhostapp.com/position_fetch.php";
     String fetchIndustry = "https://demotic-recruit.000webhostapp.com/industry_fetch.php";
     String fetchJobType = "https://demotic-recruit.000webhostapp.com/job_type_fetch.php";
-    String fetchClientCompany = "https://demotic-recruit.000webhostapp.com/client_company_fetch.php";
+    String fetchClientCompany = "https://demotic-recruit.000webhostapp.com/job_fetch.php";
     String fetchStatus = "https://demotic-recruit.000webhostapp.com/status_spinner.php";
     String fetchPriority = "https://demotic-recruit.000webhostapp.com/priority_fetch.php";
     String fetchRecruiter = "https://demotic-recruit.000webhostapp.com/user_fetch.php";
@@ -78,8 +78,8 @@ public class AddRecruitFragment extends Fragment {
     ArrayAdapter stateAdapter;
     ArrayAdapter countryAdapter;
 
-    String jobTypeItem, statusItem, priorityItem;
-    int positionId, industryId, companyId, recruiterId, countryId, stateId, cityId;
+    String jobTypeItem, statusItem, priorityItem, companyId;
+    int positionId, industryId, recruiterId, countryId, stateId, cityId;
 
 
     EditText StartDate ;
@@ -235,10 +235,11 @@ public class AddRecruitFragment extends Fragment {
         clientCompany.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                companyId = clientCompany.getSelectedItemPosition();
+                int id = clientCompany.getSelectedItemPosition();
+                companyId = clientCompanyList.get(id);
                 SharedPreferences sharedPref2 = getActivity().getSharedPreferences("ClientCompany",0);
                 SharedPreferences.Editor prefEditor2 = sharedPref2.edit();
-                prefEditor2.putInt("spinner_item4",companyId);
+                prefEditor2.putInt("spinner_item4", Integer.parseInt(companyId));
                 prefEditor2.commit();
             }
 
@@ -368,7 +369,7 @@ public class AddRecruitFragment extends Fragment {
                 bundle.putInt("positionId", positionId+1);
                 bundle.putInt("industryId", industryId+1);
                 bundle.putString("jobType", jobTypeItem);
-                bundle.putInt("companyId", companyId+1);
+                bundle.putString("companyId", companyId);
                 bundle.putInt("contactId", 0);
                 bundle.putString("status", statusItem);
                 bundle.putString("priority", priorityItem);
@@ -673,7 +674,9 @@ public class AddRecruitFragment extends Fragment {
                         JSONObject countryObject = contactArray.getJSONObject(i);
 
                         String countryName = countryObject.getString("name");
+                        String id = countryObject.getString("id");
                         clientCompanyList.add(countryName);
+                        clientCompanyList.add(id);
                     }
 
                     clientCompanyAdapter=new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,clientCompanyList);

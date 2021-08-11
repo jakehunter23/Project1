@@ -8,9 +8,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -18,6 +33,8 @@ public class JobLoginActivity extends AppCompatActivity {
 TextView tv_signup;
 ImageView back_login;
 Button btn_submit;
+String login = "https://demotic-recruit.000webhostapp.com/js_login.php";
+EditText Username, Email;
 
 
     @Override
@@ -27,12 +44,14 @@ Button btn_submit;
 
 
         btn_submit = findViewById(R.id.buttonsubmit);
+        Username = findViewById(R.id.js_user);
+        Email = findViewById(R.id.js_pass);
         //setting listener for submit button
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(),dashboard.class);
-                startActivity(intent);
+                jsLogin();
+
             }
         });
 
@@ -59,8 +78,7 @@ Button btn_submit;
         tv_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),JSPersonalInfo.class);
-                startActivity(intent);
+
             }
         });
 
@@ -101,5 +119,55 @@ Button btn_submit;
             }
         });
 
+    }
+
+    private void jsLogin() {
+        String username = Username.getText().toString().trim();
+        String pass = Email.getText().toString().trim();
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, login, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONArray contactArray = null;
+                try {
+                    contactArray = new JSONArray(response);
+
+                    for(int i=0;i<contactArray.length();i++) {
+                        JSONObject countryObject = contactArray.getJSONObject(i);
+
+                        Constants.JS_USERNAME = countryObject.getString("username");
+                        Constants.JS_PASS = countryObject.getString("password");
+                        Constants.JS_ID = countryObject.getString("id");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+                Intent intent = new Intent(getBaseContext(),dashboard.class);
+                startActivity(intent);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("username", username);
+                param.put("password", pass);
+
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getBaseContext()).add(insertRequest);
     }
 }

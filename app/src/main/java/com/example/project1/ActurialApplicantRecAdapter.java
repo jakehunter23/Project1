@@ -1,5 +1,7 @@
 package com.example.project1;
 
+import android.content.Context;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import java.util.List;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -16,7 +20,12 @@ import androidx.transition.TransitionManager;
 
 public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialApplicantRecAdapter.ActAptView> {
     @NonNull
-    @Override
+    Context context;
+    List<JobRequestModel> requestModelList;
+    public ActurialApplicantRecAdapter(Context context, List<JobRequestModel> requestModelList){
+       this.context=context;
+       this.requestModelList=requestModelList;
+    }
     public ActAptView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.acturial_applicant_rec_item,parent,false);
@@ -25,6 +34,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
 
     @Override
     public void onBindViewHolder(@NonNull ActAptView holder, int position) {
+        JobRequestModel item = requestModelList.get(position);
         holder.information.setText("Show More");
         holder.hiddenView.setVisibility(View.GONE);
     }
@@ -41,6 +51,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
         RelativeLayout ClickBait;
         CardView cardView;
         TextView information;
+        RelativeLayout notify;
 
         public ActAptView(@NonNull View itemView) {
             super(itemView);
@@ -49,6 +60,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
             ClickBait = itemView.findViewById(R.id.click_me);
             cardView =itemView.findViewById(R.id.card_for_actapt);
             information = itemView.findViewById(R.id.textView211);
+            notify = itemView.findViewById(R.id.touch_notification);
 
             ClickBait.setOnClickListener(new View.OnClickListener() {
                 @Override

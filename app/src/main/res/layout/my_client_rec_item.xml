@@ -30,7 +30,7 @@
                     android:layout_marginStart="26dp"
                     app:cardCornerRadius="250dp"
                     android:id="@+id/mycon_list_dp"
-                    android:layout_marginBottom="2dp">
+                    android:layout_marginBottom="20dp">
 
                     <ImageView
                         android:id="@+id/imageView58"

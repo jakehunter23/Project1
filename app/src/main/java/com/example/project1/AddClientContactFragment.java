@@ -111,7 +111,7 @@ public class AddClientContactFragment extends Fragment {
 
         Bundle bundle = this.getArguments();
         id = bundle.getString("id");
-        if(id!=null) {
+
             parentId = bundle.getString("parent_id");
             creatorId = bundle.getString("creator_id");
             activeContactId = bundle.getString("active_contact_id");
@@ -135,6 +135,7 @@ public class AddClientContactFragment extends Fragment {
             name = bundle.getString("name");
             email = bundle.getString("email");
             address = bundle.getString("address");
+        if(id!=null) {
 
             Email.setText(email);
             PhoneNumber.setText(phoneNumber);

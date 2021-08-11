@@ -372,7 +372,7 @@ public class AddClientGeneralFragment extends Fragment{
         bundle.putString("url",companyUrlText.getText().toString().trim());
         bundle.putString("active_contact_id", activeContactId);
         bundle.putString("parent_id",parentId);
-        bundle.putString("status",statusItem);
+        bundle.putString("status",status);
         bundle.putString("ownership_id", ownershipId);
         bundle.putString("industry_id", industryId);
         bundle.putString("source_id", sourceId);

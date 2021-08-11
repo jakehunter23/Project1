@@ -68,7 +68,7 @@ public class AddContactAAdditionalFragment extends Fragment {
     String strDate = dateFormat.format(date);
 
     String id, firstName, lastName, middleName, title, email, phoneNumber, address, city, zipcode, division, reportsToId, visibility, validity;
-    String photo, contactTypeId, industryId, sourceId, statusId, lastContactDate, companyId, stateId, countryId, createdDate, lastVisitDate;
+    String photo, flag, contactTypeId, industryId, sourceId, statusId, lastContactDate, companyId, stateId, countryId, createdDate, lastVisitDate;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -149,6 +149,7 @@ public class AddContactAAdditionalFragment extends Fragment {
             validity = bundle.getString("validity");
             createdDate = bundle.getString("created_date");
             photo = bundle.getString("image_data");
+            flag = bundle.getString("flag");
 
         if(id!=null) {
             LastContactDate.setText(bundle.getString("last_contact_date"));
@@ -281,6 +282,7 @@ public class AddContactAAdditionalFragment extends Fragment {
                 param.put("validity", validity);
                 param.put("created_date", createdDate);
                 param.put("photo", photo);
+                param.put("flag",flag);
 
                 return param;
             }

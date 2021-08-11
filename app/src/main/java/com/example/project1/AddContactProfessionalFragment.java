@@ -64,7 +64,7 @@ public class AddContactProfessionalFragment extends Fragment {
     EditText RequierdSkill;
 
     String id, first_name, last_name, middle_name, status, email, contact_number, address, city, zipcode, stateId, countryId;
-    String title, companyName, contactTypeId, division, sourceId, reportToId, industryId, lastContactDate, lastVisitDate, visibility, validity, created_date, image_data;
+    String title,flag, companyName, contactTypeId, division, sourceId, reportToId, industryId, lastContactDate, lastVisitDate, visibility, validity, created_date, image_data;
 
 
 
@@ -155,6 +155,7 @@ public class AddContactProfessionalFragment extends Fragment {
             validity = bundle.getString("validity");
             created_date = bundle.getString("created_date");
             image_data = bundle.getString("image_data");
+            flag = bundle.getString("flag");
 
 
         if(id!=null) {
@@ -336,6 +337,7 @@ public class AddContactProfessionalFragment extends Fragment {
         bundle.putString("validity", validity);
         bundle.putString("created_date", created_date);
         bundle.putString("image_data", image_data);
+        bundle.putString("flag",flag);
         ((AddContactActivity)getActivity()).addFragmentOnTop(new AddContactAAdditionalFragment(), bundle);
         ((AddContactActivity)getActivity()).changeViewForAdditional();
     }
