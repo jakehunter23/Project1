@@ -1,6 +1,8 @@
 package com.example.project1;
 
 import android.content.Context;
+import android.os.AsyncTask;
+import android.os.StrictMode;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +12,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
+import java.util.Scanner;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -37,11 +43,14 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
         JobRequestModel item = requestModelList.get(position);
         holder.information.setText("Show More");
         holder.hiddenView.setVisibility(View.GONE);
+        String firstname = item.getFirstName();
+        String lastname = item.getLastName();
+        holder.name.setText(firstname +" "+ lastname );
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return requestModelList.size();
     }
 
     class ActAptView extends RecyclerView.ViewHolder {
@@ -52,6 +61,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
         CardView cardView;
         TextView information;
         RelativeLayout notify;
+        TextView name;
 
         public ActAptView(@NonNull View itemView) {
             super(itemView);
@@ -61,6 +71,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
             cardView =itemView.findViewById(R.id.card_for_actapt);
             information = itemView.findViewById(R.id.textView211);
             notify = itemView.findViewById(R.id.touch_notification);
+            name = itemView.findViewById(R.id.textView405);
 
             ClickBait.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -86,6 +97,86 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
                 }
 
             });
+
+            notify.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    sendNotification();
+                }
+            });
         }
     }
-}
+
+    private void sendNotification() {
+        AsyncTask.execute(new Runnable() {
+            @Override
+            public void run() {
+                int SDK_INT = android.os.Build.VERSION.SDK_INT;
+                if (SDK_INT > 8) {
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                            .permitAll().build();
+                    StrictMode.setThreadPolicy(policy);
+                    String send_email;
+
+                    //This is a Simple Logic to Send Notification different Device Programmatically....
+                   // if (LoginFragment.logged_user.equals("ethicalsoulja@gmail.com")) {
+                        send_email = "ethicalsoulja@gmail.com";
+                   // } else {
+                        send_email = "somemail@gmail.com";
+                    //}
+
+                    try {
+                        String jsonResponse;
+
+                        URL url = new URL("https://onesignal.com/api/v1/notifications");
+                        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+                        con.setUseCaches(false);
+                        con.setDoOutput(true);
+                        con.setDoInput(true);
+
+                        con.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+                        con.setRequestProperty("Authorization", "Basic M2RiYTk3MzYtZjkzMy00ZTIwLTgzOWItZjZkZjI4MDc2Y2Zh");
+                        con.setRequestMethod("POST");
+
+                        String strJsonBody = "{"
+                                + "\"app_id\": \"c8937fe5-9250-4c14-8fe4-870629ec49ff\","
+
+                                + "\"filters\": [{\"field\": \"tag\", \"key\": \" \", \"user_ID\": \"=\", \"value\": \"" + send_email + "\"}],"
+
+                                + "\"data\": {\"foo\": \"bar\"},"
+                                + "\"contents\": {\"en\": \"English Message\"}"
+                                + "}";
+
+
+                        System.out.println("strJsonBody:\n" + strJsonBody);
+
+                        byte[] sendBytes = strJsonBody.getBytes("UTF-8");
+                        con.setFixedLengthStreamingMode(sendBytes.length);
+
+                        OutputStream outputStream = con.getOutputStream();
+                        outputStream.write(sendBytes);
+
+                        int httpResponse = con.getResponseCode();
+                        System.out.println("httpResponse: " + httpResponse);
+
+                        if (httpResponse >= HttpURLConnection.HTTP_OK
+                                && httpResponse < HttpURLConnection.HTTP_BAD_REQUEST) {
+                            Scanner scanner = new Scanner(con.getInputStream(), "UTF-8");
+                            jsonResponse = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
+                            scanner.close();
+                        } else {
+                            Scanner scanner = new Scanner(con.getErrorStream(), "UTF-8");
+                            jsonResponse = scanner.useDelimiter("\\A").hasNext() ? scanner.next() : "";
+                            scanner.close();
+                        }
+                        System.out.println("jsonResponse:\n" + jsonResponse);
+
+                    } catch (Throwable t) {
+                        t.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+    }
+

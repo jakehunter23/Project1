@@ -27,6 +27,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -54,6 +55,9 @@ public class LoginFragment extends Fragment {
     String mail;
     String pass;
     private FirebaseAuth mAuth;
+    EditText loginEmail;
+    EditText loginPass;
+    FirebaseUser firebaseUser;
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -91,12 +95,14 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
         View view = inflater.inflate(R.layout.fragment_login, container, false);
-        EditText loginEmail =view.findViewById(R.id.Login_email);
-        mail = loginEmail.getText().toString().trim();
-        EditText loginPass = view.findViewById(R.id.login_password);
-        pass = loginPass.getText().toString().trim();
+        loginEmail =view.findViewById(R.id.Login_email);
+
+        loginPass = view.findViewById(R.id.login_password);
+
         Button login = view.findViewById(R.id.button36);
         CheckBox rememberMe = view.findViewById(R.id.remember_me);
+
+
 
         //creating shared preference object
         SharedPreferences preferences = getActivity().getSharedPreferences("checkbox",MODE_PRIVATE);
@@ -184,7 +190,8 @@ public class LoginFragment extends Fragment {
     }
 
     private void login() {
-
+        mail = loginEmail.getText().toString().trim();
+        pass = loginPass.getText().toString().trim();
         final ProgressDialog progressDialog = new ProgressDialog(getContext());
         progressDialog.setTitle("Please wait");
         progressDialog.setMessage("Logging in...");

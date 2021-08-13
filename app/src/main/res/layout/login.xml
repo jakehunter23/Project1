@@ -33,6 +33,9 @@
 
 
     </com.google.android.material.tabs.TabLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -40,5 +43,6 @@
         android:id="@+id/login_frame">
 
     </FrameLayout>
+    </ScrollView>
 
 </LinearLayout>

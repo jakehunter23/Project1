@@ -20,8 +20,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.onesignal.OneSignal;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -36,7 +38,7 @@ import java.util.HashMap;
  * Use the {@link SignupFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SignupFragment extends Fragment {
+public class  SignupFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,6 +49,8 @@ public class SignupFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private FirebaseAuth mAuth;
+    FirebaseUser firebaseUser;
+    public static String User;
 
     private DatabaseReference databaseReference;
     private String eemail, eeusername;
@@ -99,6 +103,10 @@ public class SignupFragment extends Fragment {
 
         //Firebase
         mAuth=FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+        String logged_user = firebaseUser.getEmail();
+
+        OneSignal.sendTag("user_ID",logged_user);
 
 
 
@@ -130,6 +138,8 @@ public class SignupFragment extends Fragment {
 
                     registerUsingFirebase(email.getText().toString(),pass.getText().toString());
                     register(params);
+
+
 
                 }
 

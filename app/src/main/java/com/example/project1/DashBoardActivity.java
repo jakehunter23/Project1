@@ -13,10 +13,22 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.onesignal.OneSignal;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 import androidx.annotation.NonNull;
@@ -31,31 +43,33 @@ import androidx.recyclerview.widget.RecyclerView;
 public class  DashBoardActivity extends AppCompatActivity {
 
     private MeowBottomNavigation bottomNavigationView;
+    public static String username;
+    String fetchString = "https://demotic-recruit.000webhostapp.com/fetch_spec_signup.php";
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
 
-        bottomNavigationView =findViewById(R.id.Dash_nav);
-        bottomNavigationView.add(new MeowBottomNavigation.Model(1,R.drawable.home_icon));
-        bottomNavigationView.add(new MeowBottomNavigation.Model(2,R.drawable.call));
-        bottomNavigationView.add(new MeowBottomNavigation.Model( 3, R.drawable.add_icon));
-        bottomNavigationView.add(new MeowBottomNavigation.Model(4,R.drawable.person_outline));
+        bottomNavigationView = findViewById(R.id.Dash_nav);
+        bottomNavigationView.add(new MeowBottomNavigation.Model(1, R.drawable.home_icon));
+        bottomNavigationView.add(new MeowBottomNavigation.Model(2, R.drawable.call));
+        bottomNavigationView.add(new MeowBottomNavigation.Model(3, R.drawable.add_icon));
+        bottomNavigationView.add(new MeowBottomNavigation.Model(4, R.drawable.person_outline));
 
         bottomNavigationView.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
                 Fragment fragment = null;
 
-                switch (item.getId()){
+                switch (item.getId()) {
                     case 1:
                         fragment = new DashboardFragment();
                         break;
                     case 2:
-                        fragment =new CallingFragment();
+                        fragment = new CallingFragment();
                         break;
                     case 3:
-                        fragment =new AddingFragment();
+                        fragment = new AddingFragment();
                         break;
                     case 4:
                         fragment = new MessageFragment();
@@ -64,7 +78,7 @@ public class  DashBoardActivity extends AppCompatActivity {
 
             }
         });
-        bottomNavigationView.show(1,true);
+        bottomNavigationView.show(1, true);
         bottomNavigationView.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
@@ -79,7 +93,13 @@ public class  DashBoardActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
     }
+
+
 
     private void loadFragment(Fragment fragment) {
 

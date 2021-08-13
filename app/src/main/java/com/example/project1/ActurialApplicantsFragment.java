@@ -152,7 +152,7 @@ public class ActurialApplicantsFragment extends Fragment {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> param = new HashMap<String, String>();
-                param.put("company_id",ActurialActivity.id);
+                param.put("company_id", String.valueOf(1));
                 return  param;
             }
         };
