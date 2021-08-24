@@ -2,6 +2,7 @@ package com.example.project1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,16 +15,35 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class JSPassword extends AppCompatActivity {
 EditText et_pass,et_confirm_pass, Email, Username;
 Button btn_send;
 ImageView pass_arrow;
+private FirebaseAuth mAuth;
+FirebaseUser firebaseUser;
+private DatabaseReference databaseReference;
+    String confirm_pass;
+    String username;
+    String email;
+
 String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +56,8 @@ String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
         Email = findViewById(R.id.email_signjs);
         btn_send = findViewById(R.id.pass_save);
         pass_arrow = findViewById(R.id.pass_arrow);
+
+
 
 
         //listener for back arrow
@@ -63,9 +85,9 @@ String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
 
     private void jsSingup() {
         String pass= et_pass.getText().toString().trim();
-        String confirm_pass = et_confirm_pass.getText().toString().trim();
-        String username = Username.getText().toString().trim();
-        String email = Email.getText().toString().trim();
+        confirm_pass = et_confirm_pass.getText().toString().trim();
+        username = Username.getText().toString().trim();
+        email = Email.getText().toString().trim();
 
         if(pass.isEmpty()){
             Toast.makeText(getBaseContext(),"Please Enter Company Name",Toast.LENGTH_LONG).show();
@@ -98,13 +120,25 @@ String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
             et_confirm_pass.requestFocus();
             return;
         }
+        else {
+            register();
 
+
+        }
+
+    }
+
+    private void register() {
 
         StringRequest insertRequest = new StringRequest(Request.Method.POST, signup, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                Intent intent = new Intent(getApplicationContext(),JSDetails.class);
+                Intent intent = new Intent(getApplicationContext(), JSPersonalInfo.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("username", username);
+                bundle.putString("email", email);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         }, new Response.ErrorListener() {
@@ -112,7 +146,7 @@ String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
             public void onErrorResponse(VolleyError error) {
 
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
@@ -128,9 +162,7 @@ String signup = "https://demotic-recruit.000webhostapp.com/js_signup.php";
         };
 
 
-
-
         Volley.newRequestQueue(getBaseContext()).add(insertRequest);
-
     }
+
 }

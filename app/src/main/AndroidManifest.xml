@@ -35,7 +35,8 @@
         </activity>
         <activity
             android:name=".NavActivity"
-            android:parentActivityName=".DashBoardActivity" />
+            android:parentActivityName=".DashBoardActivity">
+        </activity>
         <activity android:name=".Contact" />
         <activity android:name=".SettingActivity" />
         <activity android:name=".MyMail" />
@@ -68,7 +69,6 @@
         <activity android:name=".AddContactActivity" />
         <activity android:name=".AddRecruitmentActivity" />
         <activity android:name=".DashBoardActivity">
-
         </activity>
         <activity android:name=".TaskSelectedActivity" />
         <activity android:name=".myFiles_3" />
@@ -85,18 +85,19 @@
         <activity android:name=".mytask" />
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
-        <activity android:name=".dashboard"></activity>
+        <activity android:name=".dashboard">
+        </activity>
 
         <activity android:name=".JobLoginActivity"/>
         <activity android:name=".JSCareerInfo" />
         <activity
-            android:name=".JSPassword"  android:exported="true" />
+            android:name=".JSPassword"></activity>
         <activity
-            android:name=".JSDetails"  android:exported="true" />
+            android:name=".JSDetails"></activity>
         <activity
-            android:name=".JSPersonalInfo"   android:exported="true" />
+            android:name=".JSPersonalInfo"></activity>
 
-        <activity android:name=".UpdateActivity" android:exported="true"/>
+        <activity android:name=".UpdateActivity"></activity>
 
         <activity
             android:name=".CandidateComplete"
@@ -137,6 +138,15 @@
         <activity android:name=".CandidateSplashScreen" />
         <activity android:name=".ContactSplashScreenActivity" />
         <activity android:name=".RecruitmentSplashScreenActivity" />
+
+        <service
+            android:name=".FirebaseMessagingService"
+            android:permission="TODO"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

@@ -41,6 +41,7 @@ public class ActurialApplicantsFragment extends Fragment {
     RecyclerView ActAptRec;
     List<JobRequestModel> requestList;
     String fetchJr = "https://demotic-recruit.000webhostapp.com/specific_jr_fetch.php";
+    String token;
     String id, candidate_id, zipcode, company_id, created_date, first_name, last_name, email, address, city, country, phone_number;
 
     // TODO: Rename and change types of parameters
@@ -116,6 +117,7 @@ public class ActurialApplicantsFragment extends Fragment {
                         country = countryObject.getString("country");
                         zipcode = countryObject.getString("zipcode");
                         created_date = countryObject.getString("created_date");
+                        token = countryObject.getString("token");
 
                         JobRequestModel jobRequestItem = new JobRequestModel();
                         jobRequestItem.setId(id);
@@ -130,6 +132,7 @@ public class ActurialApplicantsFragment extends Fragment {
                         jobRequestItem.setCountry(country);
                         jobRequestItem.setZipcode(zipcode);
                         jobRequestItem.setCreatedDate(created_date);
+                        jobRequestItem.setToken(token);
 
                         requestList.add(jobRequestItem);
 

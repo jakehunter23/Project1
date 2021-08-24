@@ -333,6 +333,7 @@
             android:textSize="14dp"/>
 
         <EditText
+            android:id="@+id/js_fname"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
@@ -361,6 +362,7 @@
 
         <EditText
             android:layout_width="match_parent"
+            android:id="@+id/js_lname"
             android:layout_height="50dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -387,6 +389,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_mail"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -412,6 +415,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_contact"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -451,6 +455,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_address"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -475,6 +480,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_city"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -500,6 +506,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_zipcode"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -524,6 +531,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_state"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -531,7 +539,6 @@
             android:layout_marginEnd="24dp"
             android:gravity="center_vertical"
             android:hint="Andhra Pradesh"
-            android:drawableEnd="@drawable/ic_arrow_down"
             android:paddingEnd="30dp"
             android:textColorHint="#3CA6DA"
             android:textStyle="bold"
@@ -553,6 +560,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:id="@+id/js_country"
             android:ems="10"
             android:inputType="textPersonName"
             android:layout_marginTop="10dp"
@@ -560,7 +568,6 @@
             android:layout_marginEnd="24dp"
             android:gravity="center_vertical"
             android:hint="India"
-            android:drawableEnd="@drawable/ic_arrow_down"
             android:paddingEnd="30dp"
             android:textColorHint="#3CA6DA"
             android:textStyle="bold"

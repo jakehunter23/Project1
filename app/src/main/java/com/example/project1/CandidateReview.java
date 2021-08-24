@@ -29,7 +29,7 @@ public class CandidateReview extends AppCompatActivity {
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
     String strDate = dateFormat.format(date);
-    String firstname, lastname, email, phone, city, address, country, zipcode, candidateId, company_id;
+    String firstname, lastname, email, phone, city, address, country, zipcode, candidateId, company_id, token;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +45,7 @@ public class CandidateReview extends AppCompatActivity {
         zipcode = getIntent().getExtras().getString("zipcode");
         company_id = getIntent().getExtras().getString("company_id");
         candidateId = Constants.JS_ID;
+        token = Constants.JS_TOKEN;
 
 
         btn_review_submit = findViewById(R.id.review_submit);
@@ -103,6 +104,7 @@ public class CandidateReview extends AppCompatActivity {
                 param.put("company_id", company_id);
                 param.put("candidate_id", candidateId);
                 param.put("created_date", strDate);
+                param.put("token", token);
 
 
                 return param;

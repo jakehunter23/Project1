@@ -35,6 +35,7 @@ ImageView back_login;
 Button btn_submit;
 String login = "https://demotic-recruit.000webhostapp.com/js_login.php";
 EditText Username, Email;
+String fetchSpecToken = "https://demotic-recruit.000webhostapp.com/jobseeker_info_fetch.php";
 
 
     @Override
@@ -51,6 +52,7 @@ EditText Username, Email;
             @Override
             public void onClick(View v) {
                 jsLogin();
+                btn_submit.setEnabled(false);
 
             }
         });
@@ -78,7 +80,8 @@ EditText Username, Email;
         tv_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(getBaseContext(),JSPassword.class);
+                startActivity(i);
             }
         });
 
@@ -142,6 +145,8 @@ EditText Username, Email;
                     e.printStackTrace();
                 }
 
+                fetchToken();
+
 
                 Intent intent = new Intent(getBaseContext(),dashboard.class);
                 startActivity(intent);
@@ -161,6 +166,8 @@ EditText Username, Email;
                 param.put("password", pass);
 
 
+
+
                 return param;
             }
         };
@@ -169,5 +176,53 @@ EditText Username, Email;
 
 
         Volley.newRequestQueue(getBaseContext()).add(insertRequest);
+    }
+
+    private void fetchToken() {
+        StringRequest insertRequest = new StringRequest(Request.Method.POST, fetchSpecToken, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                JSONArray contactArray = null;
+                try {
+                    contactArray = new JSONArray(response);
+
+                    for(int i=0;i<contactArray.length();i++) {
+                        JSONObject countryObject = contactArray.getJSONObject(i);
+
+                        Constants.JS_TOKEN = countryObject.getString("token");
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("id", Constants.JS_ID);
+
+
+                return param;
+            }
+        };
+
+
+
+
+        Volley.newRequestQueue(getBaseContext()).add(insertRequest);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+
+        btn_submit.setEnabled(true);
     }
 }

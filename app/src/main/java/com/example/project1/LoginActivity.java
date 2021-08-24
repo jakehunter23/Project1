@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     Fragment fragment =null;
     FragmentTransaction fragmentTransaction;
+    private static final String ONESIGNAL_APP_ID = "c8937fe5-9250-4c14-8fe4-870629ec49ff";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

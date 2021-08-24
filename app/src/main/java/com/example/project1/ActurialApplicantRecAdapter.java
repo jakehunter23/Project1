@@ -3,19 +3,27 @@ package com.example.project1;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 import androidx.annotation.NonNull;
@@ -46,6 +54,35 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
         String firstname = item.getFirstName();
         String lastname = item.getLastName();
         holder.name.setText(firstname +" "+ lastname );
+        String token = item.getToken();
+        holder.options.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu menu=new PopupMenu(context,holder.options);
+                menu.inflate(R.menu.mainoptionmenu);
+
+                menu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        switch (menuItem.getItemId()) {
+                            case R.id.menu1:
+                                FcmNotificationsSender notificationsSender = new FcmNotificationsSender(token, context.getString(R.string.noti_title1), context.getString(R.string.noti_body1),context,context.getApplicationContext(),1 );
+                                notificationsSender.SendNotifications();
+                                break;
+                            case R.id.menu2:
+                                //handle menu2 click
+                                break;
+                            case R.id.menu3:
+                                //handle menu3 click
+                                break;
+                        }
+                        return false;
+
+                    }
+                });
+                menu.show();
+            }
+        });
     }
 
     @Override
@@ -62,6 +99,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
         TextView information;
         RelativeLayout notify;
         TextView name;
+        TextView options;
 
         public ActAptView(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +110,7 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
             information = itemView.findViewById(R.id.textView211);
             notify = itemView.findViewById(R.id.touch_notification);
             name = itemView.findViewById(R.id.textView405);
+            options = itemView.findViewById(R.id.textViewOptions);
 
             ClickBait.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -98,6 +137,8 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
 
             });
 
+
+
             notify.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -119,11 +160,10 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
                     String send_email;
 
                     //This is a Simple Logic to Send Notification different Device Programmatically....
-                   // if (LoginFragment.logged_user.equals("ethicalsoulja@gmail.com")) {
+                    if (LoginFragment.User.equals("ethicalsoulja@gmail.com")) {
                         send_email = "ethicalsoulja@gmail.com";
-                   // } else {
-                        send_email = "somemail@gmail.com";
-                    //}
+                   } else {
+                        send_email = "somemail@gmail.com"; }
 
                     try {
                         String jsonResponse;

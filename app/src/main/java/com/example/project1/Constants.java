@@ -10,4 +10,5 @@ public class Constants {
     public static String JS_USERNAME = "";
     public static String JS_PASS = "";
     public static String JS_ID = "";
+    public static String JS_TOKEN = "";
 }

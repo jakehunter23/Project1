@@ -57,7 +57,9 @@ public class LoginFragment extends Fragment {
     private FirebaseAuth mAuth;
     EditText loginEmail;
     EditText loginPass;
+    Button login;
     FirebaseUser firebaseUser;
+    public  static String User="";
     public LoginFragment() {
         // Required empty public constructor
     }
@@ -94,12 +96,17 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
+        firebaseUser = mAuth.getCurrentUser();
+        User=firebaseUser.getEmail();
+
+
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         loginEmail =view.findViewById(R.id.Login_email);
 
         loginPass = view.findViewById(R.id.login_password);
 
-        Button login = view.findViewById(R.id.button36);
+         login = view.findViewById(R.id.button36);
+
         CheckBox rememberMe = view.findViewById(R.id.remember_me);
 
 
@@ -151,6 +158,7 @@ public class LoginFragment extends Fragment {
                 } else {
                     loginusingFirebase(loginEmail.getText().toString(),loginPass.getText().toString());
                     login();
+                    login.setEnabled(false);
                 }
 
             }
@@ -217,6 +225,7 @@ public class LoginFragment extends Fragment {
                         Intent i = new Intent(getContext(),DashBoardActivity.class);
                         startActivity(i);
 
+
                     } else {
                         Log.e("Success","1 ");
                         Toast.makeText(getContext(), responseBody.getMessage(), Toast.LENGTH_SHORT).show();
@@ -241,5 +250,12 @@ public class LoginFragment extends Fragment {
         matcher = pattern.matcher(email);
         return matcher.matches();
 
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        login.setEnabled(true);
     }
 }
