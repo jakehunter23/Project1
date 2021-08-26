@@ -47,7 +47,7 @@ public class AddCandidateAdditionalFragment extends Fragment {
     String updateCandidate = "https://demotic-recruit.000webhostapp.com/candidate_update.php";
 
     String id, firstName, lastName, statusId, status, email, phoneNumber, address, city, zipcode, currentSalary, hourlyRateLow, desiredSalary, hourlyRateHigh, title, companyName, skill, talent, degree;
-    String stateId, countryId, pdf, candidateType, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility;
+    String stateId, countryId,encodedPdf, flag1, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility,photo,flag;
 
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -158,6 +158,11 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 talent = bundle.getString("talent");
                 skill = bundle.getString("skill");
                 degree = bundle.getString("degree");
+        photo = bundle.getString("image_data");
+        flag = bundle.getString("flag");
+        encodedPdf = bundle.getString("PDF");
+        flag1 = bundle.getString("flag1");
+
 
         if(id!=null) {
 
@@ -246,6 +251,10 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 param.put("created_date", createdDate);
                 param.put("job", job);
                 param.put("accessibility", String.valueOf(Accessibility.getSelectedItemPosition()));
+                param.put("photo", photo);
+                param.put("PDF",encodedPdf);
+                param.put("flag",flag);
+                param.put("flag1",flag1);
 
 
 
@@ -323,6 +332,10 @@ public class AddCandidateAdditionalFragment extends Fragment {
                 param.put("created_date", strDate);
                 param.put("job", job);
                 param.put("accessibility", String.valueOf(Accessibility.getSelectedItemPosition()));
+                param.put("photo", photo);
+                param.put("flag",flag);
+                param.put("PDF", encodedPdf);
+                param.put("flag1",flag1);
 
 
 

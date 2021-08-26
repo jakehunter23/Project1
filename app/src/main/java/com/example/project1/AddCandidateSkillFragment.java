@@ -1,5 +1,6 @@
 package com.example.project1;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +13,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.InputType;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +26,19 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Base64;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -50,8 +58,11 @@ public class AddCandidateSkillFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private int PICK_PDF_REQUEST = 1;
+
+
     String id, firstName, lastName, statusId, status, email, phoneNumber, address, city, zipcode, currentSalary, hourlyRateLow, desiredSalary, hourlyRateHigh, title, companyName, skill, talent, degree;
-    String stateId, countryId, candidateType, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility;
+    String stateId, countryId, candidateType, preference, sourceId, ownerId, type, comments, availabilityDate, job, createdDate, accessibility, image_data, flag;
 
     EditText skillLine;
     ChipGroup chipGroup;
@@ -59,6 +70,7 @@ public class AddCandidateSkillFragment extends Fragment {
     EditText Talent;
     Spinner Degree;
     Button resume;
+    int flag1=0;
 
     String encodedPdf;
 
@@ -149,6 +161,8 @@ public class AddCandidateSkillFragment extends Fragment {
             job = bundle.getString("job");
             accessibility = bundle.getString("accessibility");
             createdDate = bundle.getString("created_date");
+        image_data = bundle.getString("image_data");
+        flag = bundle.getString("flag");
         if(id!=null) {
 
             String [] tags = skill.split(" ");
@@ -171,10 +185,7 @@ public class AddCandidateSkillFragment extends Fragment {
         resume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent chooseFile = new Intent(Intent.ACTION_GET_CONTENT);
-                chooseFile.setType("application/pdf");
-
-                startActivityForResult(Intent.createChooser(chooseFile, "select a file"), 101);
+             selectFile();
             }
         });
 
@@ -231,23 +242,61 @@ public class AddCandidateSkillFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode,  Intent data) {
-        if(requestCode == 101 && requestCode == RESULT_OK && data!=null){
-            Uri path = data.getData();
-            try {
-                InputStream inputStream = getContext().getContentResolver().openInputStream(path);
-                byte[] fileByte = new byte[inputStream.available()];
-                inputStream.read(fileByte);
-                encodedPdf = android.util.Base64.encodeToString(fileByte, Base64.DEFAULT);
+    private void selectFile() {
+        Dexter.withActivity(getActivity())
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        //providing implict intent
+                        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+                        intent.setType("*/*");
+                        startActivityForResult(Intent.createChooser(intent,"select a file"),PICK_PDF_REQUEST);
+                    }
 
-                Toast.makeText(getContext(), encodedPdf,Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                        token.continuePermissionRequest();
+                    }
+                }).check();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if(requestCode == PICK_PDF_REQUEST && resultCode == RESULT_OK)
+        flag1=1;
+        {
+            //code for setting uri in toast
+            String filepath = data.getData().getPath();
+            Toast.makeText(getContext(), ""+filepath,
+                    Toast.LENGTH_LONG).show();
+
+            //code for setting filename in textview
+            Uri uri= data.getData();
+            File file= new File(uri.getPath());
+            String filename=  file.getName();
+
+            try {
+                InputStream stream = getActivity().getContentResolver()
+                        .openInputStream(uri);
+                byte [] fileByte = new byte[stream.available()];
+                stream.read(fileByte);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    encodedPdf = Base64.getEncoder().encodeToString(fileByte);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
 
-        super.onActivityResult(requestCode, resultCode, data);
+
+        }
     }
 
     private void userNext() {
@@ -298,6 +347,10 @@ public class AddCandidateSkillFragment extends Fragment {
         bundle2.putString("talent", Talent.getText().toString().trim());
         bundle2.putString("skill", skill);
         bundle2.putString("degree", Degree.getSelectedItem().toString().trim());
+        bundle2.putString("image_data", image_data);
+        bundle2.putString("flag",flag);
+        bundle2.putString("PDF", encodedPdf);
+        bundle2.putString("flag1", String.valueOf(flag1));
 
 
 

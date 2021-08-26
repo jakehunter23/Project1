@@ -57,7 +57,7 @@ public class AddCandidateProfessionalFragment extends Fragment {
     EditText HourlyRateLow ;
     EditText DesiredSalary;
     EditText HourlyRateHigh;
-    String id, firstName, lastName, status, statusId, email, phoneNumber, address, city, zipcode, type, preference, sourceId, ownerId, currentSalary, desiredSalary, stateId, countryId, title, companyName, hourlyRateLow, hourlyRateHigh, talent, skill, degree, comments, availabilityDate, job, accessibility, createdDate;
+    String id, firstName, lastName, status, statusId, email, phoneNumber, address, city, zipcode, type, preference, sourceId, ownerId, currentSalary, desiredSalary, stateId, countryId, title, companyName, hourlyRateLow, hourlyRateHigh, talent, skill, degree, comments, availabilityDate, job, accessibility, createdDate, image_data, flag;
 
 
     // TODO: Rename and change types of parameters
@@ -148,6 +148,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
             job = bundle.getString("job");
             accessibility = bundle.getString("accessibility");
             createdDate = bundle.getString("created_date");
+        image_data = bundle.getString("image_data");
+        flag = bundle.getString("flag");
 
         if(id!=null) {
 
@@ -324,6 +326,8 @@ public class AddCandidateProfessionalFragment extends Fragment {
         bundle1.putString("job", job);
         bundle1.putString("accessibility", accessibility);
         bundle1.putString("created_date", createdDate);
+        bundle1.putString("image_data", image_data);
+        bundle1.putString("flag",flag);
 
         ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateSkillFragment(), bundle1);
         ((AddCandidateActivity)getActivity()).changeViewForSkill();

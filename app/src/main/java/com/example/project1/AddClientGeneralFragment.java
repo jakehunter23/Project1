@@ -1,13 +1,20 @@
 package com.example.project1;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,12 +33,23 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,7 +89,13 @@ public class AddClientGeneralFragment extends Fragment{
     EditText companyUrlText;
     EditText companyDescriptionText;
 
-    String id, name, activeId,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName;
+    Bitmap bitmap;
+    ImageView image;
+    String encodedImage;
+    int flag=0;
+
+
+    String id, name, activeId,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName, image_data;
     private String bankId, bankAccountNumber, IBAN, VAT;
 
     // TODO: Rename and change types of parameters
@@ -117,6 +142,8 @@ public class AddClientGeneralFragment extends Fragment{
         companyText = view.findViewById(R.id.editTextTextPersonName43);
         companyUrlText = view.findViewById(R.id.editTextTextPersonName44);
         companyDescriptionText = view.findViewById(R.id.editTextTextPersonName45);
+        image = view.findViewById(R.id.imageView18);
+        Button selectImage = view.findViewById(R.id.button10);
         parent=view.findViewById(R.id.parent_cmny);
         active=view.findViewById(R.id.active_cntact);
 
@@ -182,6 +209,7 @@ public class AddClientGeneralFragment extends Fragment{
             name = bundle.getString("name");
             email = bundle.getString("email");
             address = bundle.getString("address");
+            image_data = bundle.getString("image_data");
 
             companyText.setText(name);
             companyUrlText.setText(url);
@@ -332,6 +360,32 @@ public class AddClientGeneralFragment extends Fragment{
             }
         });
 
+        selectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dexter.withContext(getActivity())
+                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .withListener(new PermissionListener() {
+                            @Override
+                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                                Intent intent = new Intent(Intent.ACTION_PICK);
+                                intent.setType("image/*");
+                                startActivityForResult(Intent.createChooser(intent, "select Image"),1);
+                            }
+
+                            @Override
+                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                                permissionToken.continuePermissionRequest();
+                            }
+                        }).check();
+            }
+        });
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -391,6 +445,8 @@ public class AddClientGeneralFragment extends Fragment{
         bundle.putString("VAT", VAT);
         bundle.putString("email", email);
         bundle.putString("address", address);
+        bundle.putString("image_data", encodedImage);
+        bundle.putString("flag", String.valueOf(flag));
         ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientContactFragment(),bundle);
         ((Add_client_activity)getActivity()).changeViewForContact();
 
@@ -548,6 +604,36 @@ public class AddClientGeneralFragment extends Fragment{
             }
         });
         Volley.newRequestQueue(getContext()).add(statusRequest);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        if(requestCode==1 && resultCode == RESULT_OK && data!=null){
+            Uri filePath = data.getData();
+            flag=1;
+
+            try {
+                InputStream inputStream = getContext().getContentResolver().openInputStream(filePath);
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                image.setImageBitmap(bitmap);
+
+                imageStore(bitmap);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void imageStore(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,10,stream);
+
+        byte[] imageByte = stream.toByteArray();
+        encodedImage = android.util.Base64.encodeToString(imageByte, Base64.DEFAULT);
+
     }
 
     @Override

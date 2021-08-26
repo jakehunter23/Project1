@@ -1,11 +1,19 @@
 package com.example.project1;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.Image;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +21,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -22,12 +31,23 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.ArrayList;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,7 +66,7 @@ public class AddCandidatePersonalFragment extends Fragment {
     String fetchState = "https://demotic-recruit.000webhostapp.com/state_spinner.php";
     String fetchCountry = "https://demotic-recruit.000webhostapp.com/spinner.php";
 
-    String statusItem;
+    String statusItem, image_data;
     String id, firstName, lastName, status, statusId, email, phoneNumber, address, city, zipcode, type, preference, sourceId, ownerId, currentSalary, desiredSalary, stateId, countryId, title, companyName, hourlyRateLow, hourlyRateHigh, talent, skill, degree, comments, availabilityDate, job, accessibility, createdDate;
 
 
@@ -66,6 +86,11 @@ public class AddCandidatePersonalFragment extends Fragment {
     EditText Address;
     EditText City;
     EditText Zipcode;
+    Bitmap bitmap;
+    ImageView image;
+    String encodedImage;
+    int flag=0;
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -123,6 +148,8 @@ public class AddCandidatePersonalFragment extends Fragment {
         Address = view.findViewById(R.id.editTextTextPersonName33);
         City = view.findViewById(R.id.editTextTextPersonName34);
         Zipcode = view.findViewById(R.id.editTextTextPersonName35);
+        Button selectImage = view.findViewById(R.id.button10);
+        image = view.findViewById(R.id.imageView18);
 
         loadStatus();
         loadState();
@@ -160,6 +187,7 @@ public class AddCandidatePersonalFragment extends Fragment {
             job = bundle1.getString("job");
             accessibility = bundle1.getString("accessibility");
             createdDate = bundle1.getString("created_date");
+            image_data = bundle1.getString("image_data");
 
             FirstName.setText(firstName);
             LastName.setText(lastName);
@@ -242,6 +270,32 @@ public class AddCandidatePersonalFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
 
+            }
+        });
+
+        selectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Dexter.withContext(getActivity())
+                        .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                        .withListener(new PermissionListener() {
+                            @Override
+                            public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+                                Intent intent = new Intent(Intent.ACTION_PICK);
+                                intent.setType("image/*");
+                                startActivityForResult(Intent.createChooser(intent, "select Image"),1);
+                            }
+
+                            @Override
+                            public void onPermissionDenied(PermissionDeniedResponse permissionDeniedResponse) {
+
+                            }
+
+                            @Override
+                            public void onPermissionRationaleShouldBeShown(PermissionRequest permissionRequest, PermissionToken permissionToken) {
+                                permissionToken.continuePermissionRequest();
+                            }
+                        }).check();
             }
         });
 
@@ -336,6 +390,8 @@ public class AddCandidatePersonalFragment extends Fragment {
         bundle.putString("job", job);
         bundle.putString("accessibility", accessibility);
         bundle.putString("created_date", createdDate);
+        bundle.putString("image_data", encodedImage);
+        bundle.putString("flag", String.valueOf(flag));
 
         ((AddCandidateActivity)getActivity()).addFragmentOnTop(new AddCandidateProfessionalFragment(),bundle);
         ((AddCandidateActivity)getActivity()).changeViewForProfessional();
@@ -455,6 +511,36 @@ public class AddCandidatePersonalFragment extends Fragment {
             }
         });
         Volley.newRequestQueue(getContext()).add(statusRequest);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        if(requestCode==1 && resultCode == RESULT_OK && data!=null){
+            Uri filePath = data.getData();
+            flag=1;
+
+            try {
+                InputStream inputStream = getContext().getContentResolver().openInputStream(filePath);
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                image.setImageBitmap(bitmap);
+
+                imageStore(bitmap);
+
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void imageStore(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG,10,stream);
+
+        byte[] imageByte = stream.toByteArray();
+        encodedImage = android.util.Base64.encodeToString(imageByte, Base64.DEFAULT);
+
     }
 
     @Override

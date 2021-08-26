@@ -45,7 +45,7 @@ public class AddClientBillingFragment extends Fragment {
     Date date = Calendar.getInstance().getTime();
     DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
     String strDate = dateFormat.format(date);
-    String id, name,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName;
+    String id, name,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName, photo, flag;
     private String bankId, bankAccountNumber, iban, vat;
 
     EditText BankName;
@@ -127,6 +127,8 @@ public class AddClientBillingFragment extends Fragment {
             name = bundle.getString("name");
             email = bundle.getString("email");
             address = bundle.getString("address");
+        photo = bundle.getString("image_data");
+        flag = bundle.getString("flag");
         if(id!=null) {
 
             BankName.setText(bankName);
@@ -241,6 +243,8 @@ public class AddClientBillingFragment extends Fragment {
                 param.put("bank_account_number",bankAccountNumber);
                 param.put("IBAN",iban);
                 param.put("VAT", String.valueOf(vat));
+                param.put("photo", photo);
+                param.put("flag",flag);
 
                 return param;
             }
@@ -339,6 +343,8 @@ public class AddClientBillingFragment extends Fragment {
                 param.put("bank_account_number",bankAccountNumber);
                 param.put("IBAN",iban);
                 param.put("VAT", String.valueOf(vat));
+                param.put("photo", photo);
+                param.put("flag",flag);
 
                 return param;
             }

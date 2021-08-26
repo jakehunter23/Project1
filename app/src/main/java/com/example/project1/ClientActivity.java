@@ -59,8 +59,7 @@ public class ClientActivity extends AppCompatActivity {
 
         fetchClient();
 
-        companyName.setText(name);
-        companyAddress.setText(address);
+
 
         tabLayout = findViewById(R.id.client_activity_tab);
         tab1 = findViewById(R.id.client_at_a_glance);
@@ -82,6 +81,9 @@ public class ClientActivity extends AppCompatActivity {
 
         companyName = findViewById(R.id.textView);
         companyAddress = findViewById(R.id.textView4);
+
+        companyName.setText(name);
+        companyAddress.setText(address);
 
         Button editClient = findViewById(R.id.button);
         editClient.setOnClickListener(new View.OnClickListener() {
@@ -205,6 +207,8 @@ public class ClientActivity extends AppCompatActivity {
                         name = countryObject.getString("name");
                         email = countryObject.getString("email");
                         address=countryObject.getString("address");
+
+
 
 
                     }

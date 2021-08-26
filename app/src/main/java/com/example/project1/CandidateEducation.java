@@ -18,7 +18,7 @@ public class CandidateEducation extends AppCompatActivity {
     ImageView back_btn_edu;
     TextView tv_showHistory1,tv_showHistory2, tv_showHistory3;
     RelativeLayout relativeLayout,edu_relativeLayout;
-    String firstname, lastname, email, phone, city, address, country, zipcode, company_id;
+    String firstname, lastname, email, phone, city, address, country, zipcode, company_id, resume, certificate, attach;
 
     // declaring variables
     EditText new_Title,new_Name,new_dateFrom,new_dateTo;
@@ -40,6 +40,9 @@ public class CandidateEducation extends AppCompatActivity {
         country = getIntent().getExtras().getString("country");
         zipcode = getIntent().getExtras().getString("zipcode");
         company_id = getIntent().getExtras().getString("company_id");
+        resume = getIntent().getExtras().getString("resume");
+        certificate = getIntent().getExtras().getString("certificates");
+
 
 
         back_btn_edu = findViewById(R.id.back_arrow_edu);
@@ -88,6 +91,9 @@ public class CandidateEducation extends AppCompatActivity {
                 bundle.putString("country", country);
                 bundle.putString("zipcode", zipcode);
                 bundle.putString("company_id", company_id);
+                bundle.putString("resume", resume);
+                bundle.putString("certificates", certificate);
+
                 intent.putExtras(bundle);
                  startActivity(intent);
             }

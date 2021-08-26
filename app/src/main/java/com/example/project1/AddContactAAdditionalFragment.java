@@ -349,6 +349,8 @@ public class AddContactAAdditionalFragment extends Fragment {
                 param.put("visibility", visibility);
                 param.put("validity", validity);
                 param.put("created_date", strDate);
+                param.put("photo", photo);
+                param.put("flag",flag);
 
 
 

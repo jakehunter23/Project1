@@ -43,7 +43,7 @@ public class AddClientContactFragment extends Fragment {
     String fetchState = "https://demotic-recruit.000webhostapp.com/state_spinner.php";
     String fetchCountry = "https://demotic-recruit.000webhostapp.com/spinner.php";
 
-    String id, name,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName;
+    String id, name,  phoneNumber, address,  email, createdDate, parentId, creatorId, activeContactId, sourceId, ownershipId, industryId, status, url, description, stateId, countryId, city, zipcode, bankName, image_data, flag;
     private String bankId, bankAccountNumber, IBAN, VAT;
 
     Spinner state, country;
@@ -135,6 +135,8 @@ public class AddClientContactFragment extends Fragment {
             name = bundle.getString("name");
             email = bundle.getString("email");
             address = bundle.getString("address");
+        image_data = bundle.getString("image_data");
+        flag = bundle.getString("flag");
         if(id!=null) {
 
             Email.setText(email);
@@ -276,6 +278,8 @@ public class AddClientContactFragment extends Fragment {
         bundle2.putString("IBAN", IBAN);
         bundle2.putString("VAT", VAT);
         bundle2.putString("created_date", createdDate);
+        bundle2.putString("image_data", image_data);
+        bundle2.putString("flag",flag);
         ((Add_client_activity)getActivity()).addFragmentOnTop(new AddClientBillingFragment(), bundle2);
         ((Add_client_activity)getActivity()).changeViewForBilling();
     }

@@ -101,34 +101,34 @@
 
         <activity
             android:name=".CandidateComplete"
-            android:exported="true" />
+             />
         <activity
             android:name=".CandidateReview"
-            android:exported="true" />
+             />
         <activity
             android:name=".CandidateEducation"
-            android:exported="true" />
+             />
 
         <activity android:name=".RecyclerView"
-            android:parentActivityName=".CandidateEducation"/>
+            />
 
 
         <activity
             android:name=".CandidateCertificates"
-            android:exported="true" />
+             />
         <activity
             android:name=".CandidateGenInfo"
-            android:exported="true" />
+            />
         <activity
             android:name=".JobDetail"
-            android:exported="true" />
+            />
 
         <activity android:name=".EduRecyclerView"
-            android:exported="true"
+
             android:parentActivityName=".CandidateEducation"/>
 
         <activity android:name=".EduUpdateActivity"
-            android:exported="true"/>
+            />
 
         <meta-data
             android:name="preloaded_fonts"

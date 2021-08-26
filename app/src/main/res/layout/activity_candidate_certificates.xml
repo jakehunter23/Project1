@@ -57,7 +57,7 @@
         android:layout_marginTop="270dp">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/buttonsubmit"
+                android:id="@+id/button_resume"
                 android:layout_width="171dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="24dp"
@@ -90,6 +90,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
+            android:id="@+id/button_certificate"
             android:text="Add File"
             android:textSize="14dp"
             android:drawableLeft="@drawable/ic_baseline_add_circle"
@@ -101,43 +102,7 @@
             android:textAllCaps="false"
             android:gravity="center_vertical"
             />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="47dp"
-            android:fontFamily="@font/nunito"
-            android:textStyle="bold"
-            android:textColor="@color/text_blue"
-            android:text="Attachments"
-            android:textSize="20dp" />
-        <TextView
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="28dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/nunito"
-            android:textColor="#BDBDBD"
-            android:text="Upload your resume if you have not already done so."
-            android:textSize="14dp" />
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="171dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
-            android:text="Add File"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_baseline_add_circle"
-            android:fontFamily="@font/nunito"
-            android:drawablePadding="12dp"
-            android:paddingLeft="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/background_solid"
-            android:textAllCaps="false"
-            android:gravity="center_vertical"
-            />
         <androidx.appcompat.widget.AppCompatButton
 
             android:layout_width="match_parent"
