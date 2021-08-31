@@ -41,8 +41,9 @@ public class ActurialApplicantsFragment extends Fragment {
     RecyclerView ActAptRec;
     List<JobRequestModel> requestList;
     String fetchJr = "https://demotic-recruit.000webhostapp.com/specific_jr_fetch.php";
+    String fetch_task ="https://demotic-recruit.000webhostapp.com/task_id_fetch.php";
     String token;
-    String id, candidate_id, zipcode, company_id, created_date, first_name, last_name, email, address, city, country, phone_number;
+    String id,task_id, candidate_id, zipcode, company_id, created_date, first_name, last_name, email, address, city, country, phone_number;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -88,9 +89,51 @@ public class ActurialApplicantsFragment extends Fragment {
         ActAptRec.setLayoutManager(new LinearLayoutManager(getContext()));
         requestList = new ArrayList<>();
 
+        fetchTask();
         fetch_jr();
 
         return view;
+    }
+
+    private void fetchTask() {
+        StringRequest creatorRequest = new StringRequest(Request.Method.POST, fetchJr , new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray contactArray = new JSONArray(response);
+                    int j= contactArray.length();
+                    for(int i=0;i<contactArray.length();i++){
+                        JSONObject countryObject = contactArray.getJSONObject(i);
+
+                        task_id = countryObject.getString("id");
+
+
+
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("tid", ActurialActivity.id);
+                return  param;
+            }
+        };
+        Volley.newRequestQueue(getContext()).add(creatorRequest);
     }
 
     private void fetch_jr() {
@@ -142,7 +185,7 @@ public class ActurialApplicantsFragment extends Fragment {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                acturialApplicantRecAdapter = new ActurialApplicantRecAdapter(getContext(),requestList);
+                acturialApplicantRecAdapter = new ActurialApplicantRecAdapter(getContext(),requestList, task_id);
                 ActAptRec.setAdapter(acturialApplicantRecAdapter);
 
             }

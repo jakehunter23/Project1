@@ -33,6 +33,8 @@ public class CandidateComplete extends AppCompatActivity {
       btn_comp_done.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
+              FcmNotificationsSender notificationsSender = new FcmNotificationsSender(Constants.JS_TOKEN, getBaseContext().getString(R.string.noti_title3), getApplicationContext().getString(R.string.noti_body3),getApplicationContext(),getApplicationContext(),1 );
+              notificationsSender.SendNotifications();
               Intent intent = new Intent(CandidateComplete.this, dashboard.class);
               startActivity(intent);
               finish();

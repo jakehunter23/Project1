@@ -45,9 +45,16 @@
 
     <string name="noti_title1">notify</string>
     <string name="noti_title2">notigy</string>
+    <string name="noti_title3">apply complete</string>
+    <string name="noti_title4">Application seen</string>
+    <string name="noti_title5">Interview</string>
+    <string name="noti_title6">Onboarding Begins!</string>
     <string name="noti_body1">x</string>
     <string name="noti_body2">y</string>
-
+    <string name="noti_body3">Congratulations you have applied for the job!</string>
+    <string name="noti_body5">You are selected for interview</string>
+    <string name="noti_body4">Recruiter has seen your application</string>
+    <string name="noti_body6">Congratulations! you have made it. Just a few more steps and then you can party hard for your new job!</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string-array name="tickettype">

@@ -58,6 +58,18 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         if(s.equals("notify")){
             ct=1;
         }
+        else if(s.equals("apply complete")){
+            ct=3;
+        }
+        else if(s.equals("Application seen")){
+            ct=4;
+        }
+        else if(s.equals("Interview")){
+            ct=5;
+        }
+        else if(s.equals("Onboarding Begins!")){
+            ct=6;
+        }
         else{
             ct=2;
         }
@@ -66,6 +78,14 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             case 1:  resultIntent = new Intent(this, mytask.class);
             break;
             case 2: resultIntent = new Intent(this, DashBoardActivity.class);
+            break;
+            case 3: resultIntent = new Intent(this, dashboard.class);
+            break;
+            case 4: resultIntent = new Intent(this, dashboard.class);
+            break;
+            case 5: resultIntent = new Intent(this, dashboard.class);
+            break;
+            case 6: resultIntent = new Intent(this,dashboard.class);
             break;
         }
 

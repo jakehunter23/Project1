@@ -75,14 +75,17 @@
         <activity android:name=".MainActivity_JS" />
         <activity android:name=".profile" />
         <activity android:name=".jobSuggestion_1" />
-        <activity android:name=".navigation" />
+        <activity android:name=".navigation"
+            android:parentActivityName=".dashboard"/>
         <activity android:name=".faq" />
         <activity android:name=".mySchedule" />
         <activity android:name=".myfiles" />
         <activity android:name=".storage" />
         <activity android:name=".Referal" />
         <activity android:name=".CreateTicketJobSeeker" />
-        <activity android:name=".mytask" />
+        <activity android:name=".mytask">
+
+        </activity>
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
         <activity android:name=".dashboard">

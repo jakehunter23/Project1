@@ -15,14 +15,26 @@ import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -36,9 +48,15 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
     @NonNull
     Context context;
     List<JobRequestModel> requestModelList;
-    public ActurialApplicantRecAdapter(Context context, List<JobRequestModel> requestModelList){
+    String taskId;
+    String company_id, candidate_id;
+    String task_id;
+    String fetch_task = "https://demotic-recruit.000webhostapp.com/task_id_fetch.php";
+    String insert_setTask = "https://demotic-recruit.000webhostapp.com/set_task_insert.php";
+    public ActurialApplicantRecAdapter(Context context, List<JobRequestModel> requestModelList, String taskId){
        this.context=context;
        this.requestModelList=requestModelList;
+       this.taskId=taskId;
     }
     public ActAptView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -49,6 +67,8 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
     @Override
     public void onBindViewHolder(@NonNull ActAptView holder, int position) {
         JobRequestModel item = requestModelList.get(position);
+        company_id = item.getCompany_id();
+        candidate_id = item.getCandidate_id();
         holder.information.setText("Show More");
         holder.hiddenView.setVisibility(View.GONE);
         String firstname = item.getFirstName();
@@ -65,15 +85,22 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
                     @Override
                     public boolean onMenuItemClick(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
+
                             case R.id.menu1:
-                                FcmNotificationsSender notificationsSender = new FcmNotificationsSender(token, context.getString(R.string.noti_title1), context.getString(R.string.noti_body1),context,context.getApplicationContext(),1 );
-                                notificationsSender.SendNotifications();
+                                FcmNotificationsSender notificationsSender1 = new FcmNotificationsSender(token, context.getString(R.string.noti_title4), context.getString(R.string.noti_body4),context,context.getApplicationContext(),1 );
+                                notificationsSender1.SendNotifications();
                                 break;
                             case R.id.menu2:
-                                //handle menu2 click
+                                FcmNotificationsSender notificationsSender2 = new FcmNotificationsSender(token, context.getString(R.string.noti_title1), context.getString(R.string.noti_body1),context,context.getApplicationContext(),1 );
+                                notificationsSender2.SendNotifications();
                                 break;
                             case R.id.menu3:
-                                //handle menu3 click
+                                FcmNotificationsSender notificationsSender3 = new FcmNotificationsSender(token, context.getString(R.string.noti_title5), context.getString(R.string.noti_body5),context,context.getApplicationContext(),1 );
+                                notificationsSender3.SendNotifications();
+                                break;
+                            case R.id.menu4:
+                                FcmNotificationsSender notificationsSender4 = new FcmNotificationsSender(token, context.getString(R.string.noti_title6), context.getString(R.string.noti_body6),context,context.getApplicationContext(),1 );
+                                notificationsSender4.SendNotifications();
                                 break;
                         }
                         return false;
@@ -83,6 +110,69 @@ public class ActurialApplicantRecAdapter extends RecyclerView.Adapter<ActurialAp
                 menu.show();
             }
         });
+    }
+
+    private void insertSetTask() {
+        fetchTask();
+        StringRequest creatorRequest = new StringRequest(Request.Method.POST, insert_setTask , new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("task_id", task_id);
+                param.put("candidate_id",candidate_id);
+                return  param;
+            }
+        };
+        Volley.newRequestQueue(context).add(creatorRequest);
+    }
+
+    private void fetchTask() {
+        StringRequest creatorRequest = new StringRequest(Request.Method.POST, fetch_task , new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray contactArray = new JSONArray(response);
+                    int j= contactArray.length();
+                    for(int i=0;i<contactArray.length();i++){
+                        JSONObject countryObject = contactArray.getJSONObject(i);
+
+                        task_id = countryObject.getString("id");
+
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("tid", company_id);
+                return  param;
+            }
+        };
+        Volley.newRequestQueue(context).add(creatorRequest);
     }
 
     @Override
