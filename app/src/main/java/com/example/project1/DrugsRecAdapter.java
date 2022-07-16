@@ -18,6 +18,12 @@ public class DrugsRecAdapter extends RecyclerView.Adapter<DrugsRecAdapter.DrugsV
     List<DrugModel> drugsList;
     Context context;
 
+    public void setFilteredList( List<DrugModel> drugsList){
+        this.drugsList = drugsList;
+        notifyDataSetChanged();
+    }
+
+
     public DrugsRecAdapter(Context context, List<DrugModel> drugsList){
         this.drugsList = drugsList;
         this.context = context;

@@ -24,11 +24,6 @@
         android:theme="@style/Theme.Project1"
         android:usesCleartextTraffic="true">
         <activity android:name=".SplashScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
         </activity>
         <activity android:name=".SearchActivity" />
@@ -145,11 +140,21 @@
         <activity android:name=".CandidateSplashScreen" />
         <activity android:name=".ContactSplashScreenActivity" />
         <activity android:name=".RecruitmentSplashScreenActivity" />
+        <activity android:name=".DoctorViewDrugs"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DrugDetails"></activity>
 
         <service
             android:name=".FirebaseMessagingService"
             android:permission="TODO"
-            tools:ignore="ExportedService">
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

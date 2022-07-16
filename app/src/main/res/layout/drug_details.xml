@@ -24,7 +24,7 @@
 
 
             <TextView
-                android:id="@+id/textView455"
+                android:id="@+id/textView955"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Freestyle"
@@ -34,7 +34,7 @@
                 android:textColor="@color/black"
                 android:fontFamily="@font/nunito_semibold"/>
             <TextView
-                android:id="@+id/textView457"
+                android:id="@+id/textView957"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Freestyle"
@@ -45,7 +45,7 @@
                 android:fontFamily="@font/nunito_semibold"/>
 
             <TextView
-                android:id="@+id/textView456"
+                android:id="@+id/textView956"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"

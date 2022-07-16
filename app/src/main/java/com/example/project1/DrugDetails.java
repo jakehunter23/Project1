@@ -27,9 +27,9 @@ public class DrugDetails extends AppCompatActivity {
         manufacturer = getIntent().getExtras().getString("manufacturer");
         composition = getIntent().getExtras().getString("composition");
 
-        Name = findViewById(R.id.textView455);
-        Manu = findViewById(R.id.textView457);
-        comp = findViewById(R.id.textView456);
+        Name = findViewById(R.id.textView955);
+        Manu = findViewById(R.id.textView957);
+        comp = findViewById(R.id.textView956);
 
         Name.setText(name);
         Manu.setText(manufacturer);
