@@ -97,7 +97,9 @@ public class LoginFragment extends Fragment {
         // Inflate the layout for this fragment
         mAuth = FirebaseAuth.getInstance();
         firebaseUser = mAuth.getCurrentUser();
-        User=firebaseUser.getEmail();
+        if(firebaseUser!=null) {
+            User = firebaseUser.getEmail();
+        }
 
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);

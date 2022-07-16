@@ -26,11 +26,13 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".SearchActivity" />
         <activity android:name=".MessageAcitvity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".LoginActivity">
+
 
         </activity>
         <activity
@@ -86,6 +88,7 @@
         <activity android:name=".mytask">
 
         </activity>
+
         <activity android:name=".jobSuggestion" />
         <activity android:name=".signin" />
         <activity android:name=".dashboard">

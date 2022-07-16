@@ -104,9 +104,12 @@ public class  SignupFragment extends Fragment {
         //Firebase
         mAuth=FirebaseAuth.getInstance();
         firebaseUser = mAuth.getCurrentUser();
-        String logged_user = firebaseUser.getEmail();
+        if(firebaseUser!=null) {
+            String logged_user = firebaseUser.getEmail();
+            OneSignal.sendTag("user_ID",logged_user);
+        }
 
-        OneSignal.sendTag("user_ID",logged_user);
+
 
 
 
